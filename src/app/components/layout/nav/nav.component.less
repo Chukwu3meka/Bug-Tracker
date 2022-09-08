@@ -1,0 +1,45 @@
+@import "/libs/less/variables.less";
+@import "/libs/less/mixinFunctions.less";
+
+nav {
+  position: sticky;
+  bottom: 0;
+  .flex(@justify: space-evenly);
+
+  // background-color: @primary;
+  border-top: 1px solid @secondary;
+  padding: 10px;
+  & > div {
+    cursor: pointer;
+    .flex(@dir:column; @justify: space-evenly);
+    //   color: white;
+    //   // display: block;
+  }
+
+  //   nz-tabset {
+  //     border: 3px solid blue !important;
+  //   }
+  //   // height: 65px;
+  //   // transition: all 1s;
+  //   // width: 100%;
+}
+
+// nav {
+//   position: sticky;
+//   bottom: 0;
+
+//   // background-color: @primary;
+//   // .flex(@justify: space-evenly);
+//   & > * {
+//     padding: 10px;
+//     //   color: white;
+//     //   // display: block;
+//   }
+
+//   nz-tabset {
+//     border: 3px solid blue !important;
+//   }
+//   // height: 65px;
+//   // transition: all 1s;
+//   // width: 100%;
+// }

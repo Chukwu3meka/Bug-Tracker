@@ -14,11 +14,12 @@ import { IconsProviderModule } from '../../libs/ngZorro/nzIcons';
 
 import { nzModules } from 'libs/ngZorro/nzModules';
 import { HeaderComponent } from './components/layout/header/header.component';
+import { NavComponent } from './components/layout/nav/nav.component';
 
 registerLocaleData(en);
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent],
+  declarations: [AppComponent, HeaderComponent, NavComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

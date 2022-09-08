@@ -1,4 +1,4 @@
-<div>
+<div class="app-layout">
   <app-header></app-header>
   <div>
     <section>Section</section>
@@ -6,12 +6,14 @@
       <aside>
         Main
 
-        <div [ngStyle]="{ border: '3px solid red', height: '1800px' }">ss</div>
+        <div [ngStyle]="{ border: '3px solid white', height: '1800px' }">
+          ss
+        </div>
       </aside>
       <footer>Footer</footer>
     </main>
   </div>
-  <nav>Nav bar</nav>
+  <app-nav></app-nav>
 </div>
 
 <!-- <nz-layout>

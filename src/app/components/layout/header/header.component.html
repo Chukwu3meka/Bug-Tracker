@@ -1,9 +1,12 @@
 <header [class.headerHidden]="headerHidden">
-  Header
+  <nz-avatar
+    [nzSize]="50"
+    [nzShape]="'square'"
+    nzIcon="user"
+    [nzSrc]="appLogo"
+  ></nz-avatar>
 
-  <!-- <Image src="/images/soccermass.webp" alt="SoccerMASS" width={35} height={35} />
-  <Typography component="h1">SoccerMASS</Typography>
-  <span /> -->
+  <h1 nz-typography>Bug Tracker</h1>
 
-  <!-- <p>header works!</p> -->
+  <nz-avatar nzIcon="user" [nzSrc]="profilePicture"></nz-avatar>
 </header>

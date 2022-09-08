@@ -9,6 +9,8 @@ import { Component, OnInit, HostListener } from '@angular/core';
 export class HeaderComponent implements OnInit {
   private lastScrollTop: number = 0;
   public headerHidden: boolean = false;
+  public profilePicture: string = '//joeschmoe.io/api/v1/random';
+  public appLogo: string = '/assets/images/zenith_logo.png';
 
   @HostListener('window:scroll', []) onWindowScroll() {
     // do some stuff here when the window is scrolled

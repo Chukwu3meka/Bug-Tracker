@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.less'],
 })
 export class NavComponent implements OnInit {
-  public selectedTab: number = 0;
+  public selectedTab: number = 2;
 
   public tabs: Array<{ name: string; icon: string }> = [
     { name: 'Bugs', icon: 'bug' },
@@ -15,6 +15,11 @@ export class NavComponent implements OnInit {
     { name: 'Feedback', icon: 'wechat' },
     { name: 'Profile', icon: 'user' },
   ];
+
+  public switchTabHandler = (activeTab: number) => {
+    console.log({ activeTab, s: this.selectedTab });
+    this.selectedTab = activeTab;
+  };
 
   constructor() {}
 

@@ -1,48 +1,10 @@
 <nav>
-  <div *ngFor="let tab of tabs">
-    <span nz-icon [nzType]="tab.icon" #titleTemplate></span>
+  <div
+    *ngFor="let tab of tabs; index as activeTab"
+    [class.activeTab]="selectedTab === activeTab"
+    (click)="switchTabHandler(activeTab)"
+  >
+    <span nz-icon [nzType]="tab.icon"></span>
     <span nz-typography> {{ tab.name }} </span>
   </div>
-
-  <!-- <nz-tabset nzCentered [nzSelectedIndex]="selectedTab">
-    <nz-tab *ngFor="let tab of tabs; index" [nzTitle]="titleTemplate">
-      <ng-template #titleTemplate>
-
-      </ng-template>
-    </nz-tab>
-  </nz-tabset> -->
-
-  <!-- <nz-tab nzTitle="Tab 1">Content of Tab Pane 1</nz-tab>
-        <nz-tab nzTitle="Tab 2">Content of Tab Pane 2</nz-tab>
-        <nz-tab nzTitle="Tab 3">Content of Tab Pane 3</nz-tab>
-      </nz-tabset> -->
-  <!-- ` }) export class NzDemoTabsCenteredComponent {} -->
-
-  <!-- <ul
-      nz-menu
-      nzTheme="dark"
-      nzMode="inline"
-      [nzInlineCollapsed]="isCollapsed"
-    >
-      <li nz-menu-item nzMatchRouter>
-        <span nz-icon nzType="bug" routerLink="/"></span>
-        <span>Bugs</span>
-      </li>
-      <li nz-menu-item nzMatchRouter>
-        <span nz-icon nzType="file-add" routerLink="/"></span>
-        <span>Add Bugs</span>
-      </li>
-      <li nz-menu-item nzMatchRouter>
-        <span nz-icon nzType="dashboard" routerLink="/"></span>
-        <span>Dashboard</span>
-      </li>
-      <li nz-menu-item nzMatchRouter>
-        <span nz-icon nzType="wechat" routerLink="/"></span>
-        <span>Feedback</span>
-      </li>
-      <li nz-menu-item nzMatchRouter>
-        <span nz-icon nzType="user" routerLink="/"></span>
-        <span>Profile</span>
-      </li>
-    </ul> -->
 </nav>

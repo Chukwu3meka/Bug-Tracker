@@ -1,12 +1,20 @@
 <header [class.headerHidden]="headerHidden">
-  <nz-avatar
-    [nzSize]="50"
-    [nzShape]="'square'"
-    nzIcon="user"
-    [nzSrc]="appLogo"
-  ></nz-avatar>
+  <div>
+    <div>
+      <nz-avatar
+        [nzSize]="50"
+        [nzShape]="'square'"
+        nzIcon="user"
+        [nzSrc]="appLogo"
+      ></nz-avatar>
 
-  <h1 nz-typography>Bug Tracker</h1>
+      <ng-template #suffixIconSearch>
+        <span nz-icon nzType="search"></span>
+      </ng-template>
+    </div>
+    <!-- <h1 nz-typography>Bug Tracker</h1> -->
 
-  <nz-avatar nzIcon="user" [nzSrc]="profilePicture"></nz-avatar>
+    <app-nav></app-nav>
+    <!-- <nz-avatar nzIcon="user" [nzSrc]="profilePicture"></nz-avatar> -->
+  </div>
 </header>

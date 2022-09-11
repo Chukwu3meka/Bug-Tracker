@@ -1,20 +1,37 @@
-<header [class.headerHidden]="headerHidden">
+<header>
   <div>
-    <div>
-      <nz-avatar
-        [nzSize]="50"
-        [nzShape]="'square'"
-        nzIcon="user"
-        [nzSrc]="appLogo"
-      ></nz-avatar>
+    <nz-avatar
+      [nzSize]="50"
+      [nzShape]="'square'"
+      nzIcon="user"
+      [nzSrc]="appLogo"
+    ></nz-avatar>
 
-      <ng-template #suffixIconSearch>
-        <span nz-icon nzType="search"></span>
-      </ng-template>
-    </div>
-    <!-- <h1 nz-typography>Bug Tracker</h1> -->
+    <nav>
+      <div
+        *ngFor="let tab of tabs; index as activeTab"
+        [class.activeTab]="selectedTab === activeTab"
+        (click)="switchTabHandler(activeTab)"
+      >
+        <span
+          *ngIf="tab.name !== 'Profile'; else elseBlock"
+          nz-icon
+          [nzType]="tab.icon"
+          nzTheme="fill"
+        ></span>
 
-    <app-nav></app-nav>
-    <!-- <nz-avatar nzIcon="user" [nzSrc]="profilePicture"></nz-avatar> -->
+        <ng-template #elseBlock>
+          <span *ngIf="!profilePicture" nz-icon [nzType]="tab.icon"></span>
+          <nz-avatar
+            [nzSize]="15"
+            *ngIf="profilePicture"
+            nzIcon="user"
+            [nzSrc]="profilePicture"
+          ></nz-avatar>
+        </ng-template>
+
+        <span nz-typography> {{ tab.name }} </span>
+      </div>
+    </nav>
   </div>
 </header>

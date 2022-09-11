@@ -1,41 +1,17 @@
 @import "/libs/less/variables.less";
 @import "/libs/less/mixinFunctions.less";
 
-ng-template {
-  border: 3px solid red;
-}
-
 header {
-  // border: 3px solid red;
-
   position: fixed;
   top: 0;
-  // position: sticky;
-  // top: 0;
-
   width: 100%;
   background-color: #fff;
+  padding: 5px 10px 0;
   & > div {
     margin: auto;
-    // transition: all 1s;
-
-    // border: 3px solid red;
-
-    .flex(@justify: space-between);
-    width: 100%;
+    .flex(@justify: space-between, @width: 100%    );
     padding: 0 20px;
     max-width: 1200px;
-    & > div {
-      // h1 {
-      //   color: @textPrimary;
-      //   margin-bottom: -5px;
-      //   font-size: 02em;
-      // }
-
-      // nz-avatar:last-of-type {
-      //   border: 1px groove @secondary;
-      // }
-    }
   }
 }
 // .headerHidden {
@@ -43,3 +19,27 @@ header {
 //   background: linear-gradient(to bottom right, @primary, @secondary);
 //   transition: all 2s;
 // }
+
+nav {
+  padding: 0 10px;
+  .flex(@justify: space-evenly);
+  & > div {
+    min-width: 70px;
+    padding: 5px 15px;
+    cursor: pointer;
+    .flex(@dir:column; @justify: space-evenly);
+
+    transition: 5s linear all;
+    span {
+      color: darken(@secondary, 15%);
+    }
+  }
+
+  .activeTab {
+    transition: none;
+    border-bottom: 2px solid @primary;
+    span {
+      color: darken(@secondary, 100%);
+    }
+  }
+}

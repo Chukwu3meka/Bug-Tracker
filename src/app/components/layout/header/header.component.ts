@@ -8,9 +8,28 @@ import { Component, OnInit, HostListener } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   private lastScrollTop: number = 0;
+
+  value?: string;
+
   public headerHidden: boolean = false;
-  public profilePicture: string = '//joeschmoe.io/api/v1/random';
   public appLogo: string = '/assets/images/zenith_logo.png';
+
+  public selectedTab: number = 2;
+
+  public profilePicture?: string = '//joeschmoe.io/api/v1/random';
+
+  public tabs: Array<{ name: string; icon: string }> = [
+    { name: 'Bugs', icon: 'bug' },
+    { name: 'Add Bugs', icon: 'file-add' },
+    { name: 'Dashboard', icon: 'dashboard' },
+    { name: 'Feedback', icon: 'wechat' },
+    { name: 'Profile', icon: 'user' },
+  ];
+
+  public switchTabHandler = (activeTab: number) => {
+    console.log({ activeTab, s: this.selectedTab });
+    this.selectedTab = activeTab;
+  };
 
   @HostListener('window:scroll', []) onWindowScroll() {
     // do some stuff here when the window is scrolled

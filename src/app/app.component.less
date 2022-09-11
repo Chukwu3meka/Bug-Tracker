@@ -30,14 +30,22 @@
   // ::-webkit-scrollbar-thumb {
   //   background: #ff0000;
   // }
+  // height: max-content;
+  border: 3px solid blue;
 }
 
 .app-content {
-  margin-top: 55px;
+  max-width: 1200px;
+  padding: 0 20px;
+
+  margin: 55px auto 0;
   // .flex( @width: 100%  ,@align:flex-start  );
   display: grid;
   grid-template-columns: 300px auto;
   & > main {
+    // overflow: hidden;
+    //
+    min-height: calc(100vh - 61px);
     width: 100%;
     border: 3px solid blue;
   }

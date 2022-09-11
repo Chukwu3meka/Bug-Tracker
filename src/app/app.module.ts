@@ -15,11 +15,16 @@ import { IconsProviderModule } from '../../libs/ngZorro/nzIcons';
 import { nzModules } from 'libs/ngZorro/nzModules';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { SidebarComponent } from './components/layout/sidebar/sidebar.component';
+import { FooterComponent } from './components/layout/footer/footer.component';
+import { AddBugsComponent } from './components/add-bugs/add-bugs.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { FeedbackComponent } from './components/feedback/feedback.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 registerLocaleData(en);
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, SidebarComponent],
+  declarations: [AppComponent, HeaderComponent, SidebarComponent, FooterComponent, AddBugsComponent, DashboardComponent, FeedbackComponent, ProfileComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -4,11 +4,8 @@
     <app-sidebar></app-sidebar>
 
     <main>
-        <div [ngStyle]="{ border: '3px solid white', height: '1800px' }">
-          ss
-        </div>
-      </aside>
-      <footer>Footer</footer>
+      <!-- <div [ngStyle]="{ border: '3px solid white', height: '1800px' }">ss</div> -->
+      <router-outlet></router-outlet>
     </main>
   </div>
   <!-- <app-nav></app-nav> -->
@@ -71,7 +68,6 @@
       </div>
 
       <div class="inner-content">
-        <router-outlet></router-outlet>
       </div>
     </nz-content>
   </nz-layout>

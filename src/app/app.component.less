@@ -1,4 +1,4 @@
-// // @vars: "/source/less/variables.less";
+@import "/libs/less/mixinFunctions.less";
 @import "/libs/less/variables.less";
 
 .app-layout {
@@ -30,4 +30,15 @@
   // ::-webkit-scrollbar-thumb {
   //   background: #ff0000;
   // }
+}
+
+.app-content {
+  margin-top: 55px;
+  // .flex( @width: 100%  ,@align:flex-start  );
+  display: grid;
+  grid-template-columns: 300px auto;
+  & > main {
+    width: 100%;
+    border: 3px solid blue;
+  }
 }

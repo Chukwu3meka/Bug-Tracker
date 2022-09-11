@@ -4,14 +4,14 @@
       [nzSize]="50"
       [nzShape]="'square'"
       nzIcon="user"
-      [nzSrc]="appLogo"
+      nzSrc="/assets/images/zenith_logo.png"
     ></nz-avatar>
 
     <nav>
       <div
-        *ngFor="let tab of tabs; index as activeTab"
-        [class.activeTab]="selectedTab === activeTab"
-        (click)="switchTabHandler(activeTab)"
+        *ngFor="let tab of tabs; index as tabIndex"
+        [class.activeTab]="activeTab === tabIndex"
+        (click)="switchTabHandler(tabIndex)"
       >
         <span
           *ngIf="tab.name !== 'Profile'; else elseBlock"

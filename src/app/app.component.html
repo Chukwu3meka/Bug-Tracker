@@ -1,74 +1,17 @@
-<div class="app-layout">
-  <app-header></app-header>
-  <div class="app-content">
-    <app-sidebar></app-sidebar>
-
-    <main>
-      <!-- <div [ngStyle]="{ border: '3px solid white', height: '1800px' }">ss</div> -->
-      <router-outlet></router-outlet>
-    </main>
+<div [ngSwitch]="wideScreen">
+  <div *ngSwitchCase="false" [ngStyle]="{ maxWidth: '1200px', margin: 'auto' }">
+    Use a wider Screen
   </div>
-  <!-- <app-nav></app-nav> -->
+
+  <div *ngSwitchCase="true">
+    <div class="app-layout">
+      <app-header></app-header>
+      <div class="app-content">
+        <app-sidebar></app-sidebar>
+        <main>
+          <router-outlet></router-outlet>
+        </main>
+      </div>
+    </div>
+  </div>
 </div>
-
-<!-- <nz-layout>
-  <nz-sider
-    class="menu-sidebar"
-    nzCollapsible
-    nzWidth="256px"
-    [nzTrigger]="null"
-  >
-    <img src="/assets/images/zenith_logo.png" alt="logo" class="sidebar-logo" />
-
-    <nz-divider></nz-divider> -->
-
-<!-- <ul
-      nz-menu
-      nzTheme="dark"
-      nzMode="inline"
-      [nzInlineCollapsed]="isCollapsed"
-    >
-      <li nz-menu-item nzMatchRouter>
-        <span nz-icon nzType="bug" routerLink="/"></span>
-        <span>Bugs</span>
-      </li>
-      <li nz-menu-item nzMatchRouter>
-        <span nz-icon nzType="file-add" routerLink="/"></span>
-        <span>Add Bugs</span>
-      </li>
-      <li nz-menu-item nzMatchRouter>
-        <span nz-icon nzType="dashboard" routerLink="/"></span>
-        <span>Dashboard</span>
-      </li>
-      <li nz-menu-item nzMatchRouter>
-        <span nz-icon nzType="wechat" routerLink="/"></span>
-        <span>Feedback</span>
-      </li>
-      <li nz-menu-item nzMatchRouter>
-        <span nz-icon nzType="user" routerLink="/"></span>
-        <span>Profile</span>
-      </li>
-    </ul>
-  </nz-sider> -->
-<!-- <nz-layout>
-    <nz-header>
-      <div class="app-header">
-        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
-          <span
-            class="trigger"
-            nz-icon
-            [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-          ></span>
-        </span>
-      </div>
-    </nz-header>
-    <nz-content>
-      <div [ngStyle]="{ border: '3px solid red', height: '300px' }">
-        fdsfsfa
-      </div>
-
-      <div class="inner-content">
-      </div>
-    </nz-content>
-  </nz-layout>
-</nz-layout> -->

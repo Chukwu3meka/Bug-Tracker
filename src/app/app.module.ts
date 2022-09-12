@@ -20,11 +20,12 @@ import { AddBugsComponent } from './components/add-bugs/add-bugs.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { BugsComponent } from './components/bugs/bugs.component';
 
 registerLocaleData(en);
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, SidebarComponent, FooterComponent, AddBugsComponent, DashboardComponent, FeedbackComponent, ProfileComponent],
+  declarations: [AppComponent, HeaderComponent, SidebarComponent, FooterComponent, AddBugsComponent, DashboardComponent, FeedbackComponent, ProfileComponent, BugsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

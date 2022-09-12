@@ -2,51 +2,21 @@
 @import "/libs/less/variables.less";
 
 .app-layout {
-  // border: 3px solid red;
   margin: auto;
-  // max-width: 1200px;
-
   -ms-overflow-style: none;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-
   background-color: lighten(@secondary, 25%);
-
-  // border: 1px groove @secondary;
-
-  // overflow: scroll;
-  // overflow-x: hidden;
-
-  // -ms-overflow-style: none; /* Hide Scrollbar Internet Explorer 10+ */
-  // scrollbar-width: none; /* Hide Scrollbar Firefox */
-
-  // * {
-  //   outline: none;
-  //   -webkit-tap-highlight-color: transparent;
-  //   img {
-  //     overflow: hidden;
-  //   }
-  // }
-  // ::-webkit-scrollbar-thumb {
-  //   background: #ff0000;
-  // }
-  // height: max-content;
-  border: 3px solid blue;
 }
 
 .app-content {
   max-width: 1200px;
   padding: 0 20px;
-
   margin: 55px auto 0;
-  // .flex( @width: 100%  ,@align:flex-start  );
   display: grid;
   grid-template-columns: 300px auto;
   & > main {
-    // overflow: hidden;
-    //
     min-height: calc(100vh - 61px);
     width: 100%;
-    border: 3px solid blue;
   }
 }

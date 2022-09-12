@@ -12,6 +12,7 @@
         *ngFor="let tab of tabs; index as tabIndex"
         [class.activeTab]="activeTab === tabIndex"
         (click)="switchTabHandler(tabIndex)"
+        [routerLink]="tab.path"
       >
         <span
           *ngIf="tab.name !== 'Profile'; else elseBlock"
@@ -23,9 +24,9 @@
         <ng-template #elseBlock>
           <span *ngIf="!profilePicture" nz-icon [nzType]="tab.icon"></span>
           <nz-avatar
-            [nzSize]="15"
+            style="margin-top: -7px; margin-bottom: -5px"
+            [nzSize]="25"
             *ngIf="profilePicture"
-            nzIcon="user"
             [nzSrc]="profilePicture"
           ></nz-avatar>
         </ng-template>

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -12,12 +12,12 @@ export class HeaderComponent {
 
   public profilePicture?: string = '//joeschmoe.io/api/v1/random';
 
-  public tabs: Array<{ name: string; icon: string }> = [
-    { name: 'Bugs', icon: 'bug' },
-    { name: 'Add Bugs', icon: 'file-add' },
-    { name: 'Dashboard', icon: 'dashboard' },
-    { name: 'Feedback', icon: 'wechat' },
-    { name: 'Profile', icon: 'user' },
+  public tabs: Array<{ name: string; path: string; icon: string }> = [
+    { name: 'Bugs', path: '/bugs', icon: 'bug' },
+    { name: 'Add Bugs', path: '/add-bugs', icon: 'file-add' },
+    { name: 'Dashboard', path: '', icon: 'dashboard' },
+    { name: 'Feedback', path: '/feedback', icon: 'wechat' },
+    { name: 'Profile', path: '/profile', icon: 'user' },
   ];
 
   public switchTabHandler = (selectedTab: number) =>

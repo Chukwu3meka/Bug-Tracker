@@ -1,4 +1,51 @@
+@import "/libs/less/variables.less";
+
 .sidebar {
   position: sticky;
-  top: 55px;
+  top: 80px;
+  max-height: 100px;
+
+  nz-card {
+    padding: 0 !important;
+    text-align: center;
+    // border: 3px solid red;
+    border-radius: 10px;
+    overflow: hidden;
+    // color: lighten(@secondary, 30%);
+    color: secondary;
+    p {
+      font-size: 1.1em;
+      margin-top: 10px;
+    }
+
+    ul {
+      padding: 10px;
+      // .color-with-marker {
+      // list-style-position: inside;
+      list-style-position: outside;
+      text-align: left;
+      font-size: 0.9em;
+      // }
+      // .color-with-marker
+      ::marker {
+        color: @primary;
+      }
+      li {
+        padding-left: 10px;
+      }
+      li:not(:last-child) {
+        margin-top: 10px;
+      }
+    }
+
+    nz-list-item-meta {
+      text-align: left;
+      // vertical-align: bottom;
+      line-height: 40px;
+    }
+
+    & > div {
+      border: 3px solid red;
+    }
+  }
 }

@@ -10,9 +10,8 @@
     <nav>
       <div
         *ngFor="let tab of tabs; index as tabIndex"
-        [class.activeTab]="activeTab === tabIndex"
-        (click)="switchTabHandler(tabIndex)"
-        [routerLink]="tab.path"
+        routerLink="{{ tab.path }}"
+        routerLinkActive="activeTab"
       >
         <span
           *ngIf="tab.name !== 'Profile'; else elseBlock"

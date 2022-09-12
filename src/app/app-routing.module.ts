@@ -8,8 +8,9 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
-  { path: 'bugs', pathMatch: 'full', component: BugsComponent },
   { path: '', pathMatch: 'full', component: DashboardComponent },
+  { path: 'dashboard', pathMatch: 'full', component: DashboardComponent },
+  { path: 'bugs', pathMatch: 'full', component: BugsComponent },
   { path: 'profile', pathMatch: 'full', component: ProfileComponent },
   { path: 'add-bugs', pathMatch: 'full', component: AddBugsComponent },
   { path: 'feedback', pathMatch: 'full', component: FeedbackComponent },

@@ -25,7 +25,17 @@ import { BugsComponent } from './components/bugs/bugs.component';
 registerLocaleData(en);
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, SidebarComponent, FooterComponent, AddBugsComponent, DashboardComponent, FeedbackComponent, ProfileComponent, BugsComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    SidebarComponent,
+    FooterComponent,
+    AddBugsComponent,
+    DashboardComponent,
+    FeedbackComponent,
+    ProfileComponent,
+    BugsComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

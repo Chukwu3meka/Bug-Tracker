@@ -6,7 +6,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./header.component.less'],
 })
 export class HeaderComponent {
-  @Input() activeTab: number = 0;
+  // @Input() activeTab = null;
+
+  // public activeTab: ?number;
 
   @Output() activeTabHandler = new EventEmitter();
 
@@ -15,11 +17,13 @@ export class HeaderComponent {
   public tabs: Array<{ name: string; path: string; icon: string }> = [
     { name: 'Bugs', path: '/bugs', icon: 'bug' },
     { name: 'Add Bugs', path: '/add-bugs', icon: 'file-add' },
-    { name: 'Dashboard', path: '', icon: 'dashboard' },
+    { name: 'Dashboard', path: '/dashboard', icon: 'dashboard' },
     { name: 'Feedback', path: '/feedback', icon: 'wechat' },
     { name: 'Profile', path: '/profile', icon: 'user' },
   ];
 
-  public switchTabHandler = (selectedTab: number) =>
+  public switchTabHandler = (selectedTab: number) => {
+    console.log('hey');
     this.activeTabHandler.emit(selectedTab);
+  };
 }

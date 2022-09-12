@@ -12,6 +12,7 @@
         *ngFor="let tab of tabs; index as tabIndex"
         routerLink="{{ tab.path }}"
         routerLinkActive="activeTab"
+        [routerLinkActiveOptions]="{ exact: true }"
       >
         <span
           *ngIf="tab.name !== 'Profile'; else elseBlock"

@@ -16,6 +16,16 @@ export class AddBugComponent implements OnInit {
 
   constructor(private msg: NzMessageService) {}
 
+  isLoadingOne = false;
+  isLoadingTwo = false;
+
+  loadOne(): void {
+    this.isLoadingOne = true;
+    setTimeout(() => {
+      this.isLoadingOne = false;
+    }, 5000);
+  }
+
   handleChange({ file, fileList }: NzUploadChangeParam): void {
     try {
       const { type, size } = file;

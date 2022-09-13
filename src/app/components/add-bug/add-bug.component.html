@@ -52,7 +52,8 @@
     [nzAutosize]="{ minRows: 7, maxRows: 13 }"
   ></textarea>
 
-  <label for="bug-screenshot">Bug Screenshot</label>
+  <div></div>
+
   <nz-upload
     id="bug-screenshot"
     nzType="drag"
@@ -69,4 +70,13 @@
       any of our application or platform
     </p>
   </nz-upload>
+
+  <button
+    nz-button
+    nzType="primary"
+    (click)="loadOne()"
+    [nzLoading]="isLoadingOne"
+  >
+    Submit Bug
+  </button>
 </main>

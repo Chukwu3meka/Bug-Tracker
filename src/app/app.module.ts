@@ -16,7 +16,7 @@ import { nzModules } from 'libs/ngZorro/nzModules';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { SidebarComponent } from './components/layout/sidebar/sidebar.component';
 import { FooterComponent } from './components/layout/footer/footer.component';
-import { AddBugsComponent } from './components/add-bugs/add-bugs.component';
+import { AddBugComponent } from './components/add-bug/add-bug.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NotificationComponent } from './components/notification/notification.component';
 import { ProfileComponent } from './components/profile/profile.component';
@@ -30,7 +30,7 @@ registerLocaleData(en);
     HeaderComponent,
     SidebarComponent,
     FooterComponent,
-    AddBugsComponent,
+    AddBugComponent,
     DashboardComponent,
     NotificationComponent,
     ProfileComponent,

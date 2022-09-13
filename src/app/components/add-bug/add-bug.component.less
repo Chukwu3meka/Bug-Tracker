@@ -1,3 +1,5 @@
+@import "/libs/less/variables.less";
+
 main {
   max-width: 600px;
   margin: auto;
@@ -10,6 +12,7 @@ main {
   }
   // border: 3px solid red;
   label {
+    color: darken(@primary, 20%);
     display: block;
     font-weight: 700;
     font-size: 0.8em;
@@ -18,9 +21,14 @@ main {
   }
 
   nz-select,
+  textarea,
+  nz-date-picker,
   nz-input-group {
     width: 100%;
     // overflow: hidden;
     border-radius: 5px;
+  }
+  nz-upload p {
+    padding: 0 10px;
   }
 }

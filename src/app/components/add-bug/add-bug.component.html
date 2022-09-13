@@ -10,7 +10,7 @@
       type="text"
       nz-input
       [(ngModel)]="inputValue"
-      placeholder="input with clear icon"
+      placeholder="Bug description in one sentence"
     />
   </nz-input-group>
 
@@ -41,28 +41,32 @@
     ></nz-option>
   </nz-select>
 
-  <label for="bug-platform">Bug Severity</label>
-  <nz-select
-    nzSize="large"
-    id="bug-severity"
-    ngModel="lucy"
-    nzAllowClear
-    nzPlaceHolder="Choose"
-  >
-    <nz-option
-      *ngFor="let platform of platformOptions"
-      [nzValue]="platform.id"
-      [nzLabel]="platform.name"
-    ></nz-option>
-  </nz-select>
-</main>
+  <label for="date-noticed">First Noticed</label>
+  <nz-date-picker id="date-noticed" nzSize="large"></nz-date-picker>
 
-<!-- <p>Card conte    <nz-select ngModel="lucy" nzAllowClear nzPlaceHolder="Choose">
-      <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
-    </nz-select>nt</p>
-  <p>Card content</p> -->
-<!-- </nz-card> -->
-<!-- </div> -->
-<!-- <ng-template #extraTemplate>
-  <a>More</a>
-</ng-template> -->
+  <label for="bug-description">Bug Description</label>
+  <textarea
+    nz-input
+    id="bug-description"
+    placeholder="Clearly describe your findings or issues, to enable swift debugging from our developers"
+    [nzAutosize]="{ minRows: 7, maxRows: 13 }"
+  ></textarea>
+
+  <label for="bug-screenshot">Bug Screenshot</label>
+  <nz-upload
+    id="bug-screenshot"
+    nzType="drag"
+    [nzMultiple]="true"
+    (nzChange)="handleChange($event)"
+  >
+    <!-- nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76" -->
+    <p class="ant-upload-drag-icon">
+      <span nz-icon nzType="inbox"></span>
+    </p>
+    <p class="ant-upload-text">Click or drag file to this area to upload</p>
+    <p class="ant-upload-hint">
+      Support for a single or bulk upload. Kindly upload screenshots of Bugs in
+      any of our application or platform
+    </p>
+  </nz-upload>
+</main>

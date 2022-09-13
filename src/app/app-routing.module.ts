@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { BugsComponent } from './components/bugs/bugs.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AddBugsComponent } from './components/add-bugs/add-bugs.component';
-import { FeedbackComponent } from './components/feedback/feedback.component';
+import { NotificationComponent } from './components/notification/notification.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'bugs', pathMatch: 'full', component: BugsComponent },
   { path: 'profile', pathMatch: 'full', component: ProfileComponent },
   { path: 'add-bugs', pathMatch: 'full', component: AddBugsComponent },
-  { path: 'feedback', pathMatch: 'full', component: FeedbackComponent },
+  { path: 'notification', pathMatch: 'full', component: NotificationComponent },
 ];
 
 @NgModule({

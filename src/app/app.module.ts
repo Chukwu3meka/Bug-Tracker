@@ -18,7 +18,7 @@ import { SidebarComponent } from './components/layout/sidebar/sidebar.component'
 import { FooterComponent } from './components/layout/footer/footer.component';
 import { AddBugsComponent } from './components/add-bugs/add-bugs.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { FeedbackComponent } from './components/feedback/feedback.component';
+import { NotificationComponent } from './components/notification/notification.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { BugsComponent } from './components/bugs/bugs.component';
 
@@ -32,7 +32,7 @@ registerLocaleData(en);
     FooterComponent,
     AddBugsComponent,
     DashboardComponent,
-    FeedbackComponent,
+    NotificationComponent,
     ProfileComponent,
     BugsComponent,
   ],

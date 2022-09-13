@@ -3,10 +3,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-feedback',
-  templateUrl: './feedback.component.html',
-  styleUrls: ['./feedback.component.less'],
+  templateUrl: './notification.component.html',
+  styleUrls: ['./notification.component.less'],
 })
-export class FeedbackComponent implements OnInit {
+export class NotificationComponent implements OnInit {
   // constructor(private route: Router, private activatedRoute: ActivatedRoute) {}
   //   this.activatedRoute.url.subscribe((currentUrl) => {
   //     console.log('url is:    ' + currentUrl);

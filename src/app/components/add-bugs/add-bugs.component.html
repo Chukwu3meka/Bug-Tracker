@@ -1,8 +1,65 @@
 <!-- <div style="background: #ececec; padding: 30px"> -->
 <!-- <nz-card style="width: 300px" [nzBordered]="false" nzTitle="Card title"> -->
 <!-- [nzExtra]="extraTemplate" -->
-<p>Add bugs here</p>
-<!-- <p>Card content</p>
+<main>
+  <img src="/assets/images/add-bug.png" alt="Add Bug" />
+  <!-- add-bugs.png -->
+  <label for="bug-title">Bug Title</label>
+  <nz-input-group [nzSuffix]="inputClearTpl" nzSize="large">
+    <input
+      type="text"
+      nz-input
+      [(ngModel)]="inputValue"
+      placeholder="input with clear icon"
+    />
+  </nz-input-group>
+
+  <ng-template #inputClearTpl>
+    <span
+      nz-icon
+      class="ant-input-clear-icon"
+      nzTheme="fill"
+      nzType="close-circle"
+      *ngIf="inputValue"
+      (click)="inputValue = null"
+    ></span>
+  </ng-template>
+
+  <label for="bug-platform">Bug Platform</label>
+
+  <nz-select
+    nzSize="large"
+    id="bug-platform"
+    ngModel="platform"
+    nzAllowClear
+    nzPlaceHolder="Select Platform"
+  >
+    <nz-option
+      *ngFor="let platform of platformOptions"
+      [nzValue]="platform.id"
+      [nzLabel]="platform.name"
+    ></nz-option>
+  </nz-select>
+
+  <label for="bug-platform">Bug Severity</label>
+  <nz-select
+    nzSize="large"
+    id="bug-severity"
+    ngModel="lucy"
+    nzAllowClear
+    nzPlaceHolder="Choose"
+  >
+    <nz-option
+      *ngFor="let platform of platformOptions"
+      [nzValue]="platform.id"
+      [nzLabel]="platform.name"
+    ></nz-option>
+  </nz-select>
+</main>
+
+<!-- <p>Card conte    <nz-select ngModel="lucy" nzAllowClear nzPlaceHolder="Choose">
+      <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+    </nz-select>nt</p>
   <p>Card content</p> -->
 <!-- </nz-card> -->
 <!-- </div> -->

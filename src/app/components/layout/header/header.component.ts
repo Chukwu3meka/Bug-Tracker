@@ -12,13 +12,13 @@ export class HeaderComponent {
 
   @Output() activeTabHandler = new EventEmitter();
 
-  public profilePicture?: string = '//joeschmoe.io/api/v1/random';
+  public profilePicture?: string;
 
   public tabs: Array<{ name: string; path: string; icon: string }> = [
     { name: 'Add Bugs', path: '/add-bugs', icon: 'file-add' },
     { name: 'Dashboard', path: '/', icon: 'dashboard' },
     { name: 'Bugs', path: '/bugs', icon: 'bug' },
-    { name: 'Feedback', path: '/feedback', icon: 'wechat' },
+    { name: 'Notification', path: '/notification', icon: 'wechat' },
     { name: 'Profile', path: '/profile', icon: 'user' },
   ];
 

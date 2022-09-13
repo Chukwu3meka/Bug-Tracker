@@ -7,11 +7,16 @@ import { Component, HostListener } from '@angular/core';
   styleUrls: ['./app.component.less'],
 })
 export class AppComponent {
+  private wideScreenWidth: number = 1200;
+  private wideScreenHeight: number = 520;
+
   public wideScreen: boolean = true;
 
   @HostListener('window:resize', ['$event'])
   getScreenSize = () => {
-    this.wideScreen = window.innerHeight >= 720 && window.innerWidth >= 1200;
+    this.wideScreen =
+      window.innerHeight >= this.wideScreenHeight &&
+      window.innerWidth >= this.wideScreenWidth;
   };
 
   // public activeTab?: number;
@@ -24,7 +29,9 @@ export class AppComponent {
   // isCollapsed = false;
 
   constructor() {
-    this.wideScreen = window.innerHeight >= 720 && window.innerWidth >= 1200;
+    this.wideScreen =
+      window.innerHeight >= this.wideScreenHeight &&
+      window.innerWidth >= this.wideScreenWidth;
     //   // this.activatedRoute.url.subscribe((currentUrl) => {
     //     // console.log('url is:    ' + currentUrl);
     //     console.log('url is:    ' + window.);

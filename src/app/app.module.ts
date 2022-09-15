@@ -21,6 +21,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NotificationComponent } from './components/notification/notification.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { BugsComponent } from './components/bugs/bugs.component';
+// import { FileuploadComponent } from './components/fileupload/fileupload.component';
 
 registerLocaleData(en);
 
@@ -35,6 +36,7 @@ registerLocaleData(en);
     NotificationComponent,
     ProfileComponent,
     BugsComponent,
+    // FileuploadComponent,
   ],
   imports: [
     BrowserModule,

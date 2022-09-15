@@ -1,0 +1,503 @@
+<div class="wrapper">
+  <nz-divider
+    [nzText]="'Rejected Conversions'"
+    nzOrientation="left"
+    class="mb-3"
+  >
+  </nz-divider>
+  <!--<div>
+      <button nz-button nzType="primary" (click)="createTplModal(tplTitle, tplContent, tplFooter)">
+          <span>Rejected Conversions</span>
+        </button>
+        <ng-template #tplTitle>
+          <span>Rejected Conversions</span>
+        </ng-template>
+        <ng-template #tplContent >
+          <p>some contents...</p>
+          <p>some contents...</p>
+        </ng-template>
+        <ng-template #tplFooter>
+          <button nz-button nzType="primary" (click)="">Submit</button>
+        </ng-template>
+  </div>-->
+  <div>
+    <ng-template #modalContent>
+      <form [formGroup]="rejectedRecordForm" nz-form>
+        <div nz-row [nzGutter]="16">
+          <div nz-col [nzSpan]="12">
+            <nz-form-item>
+              <nz-form-label nzRequired nzFor="forwardAmount"
+                >SPOT Amount (USD)</nz-form-label
+              >
+              <nz-form-control>
+                <nz-input-number
+                  [nzMin]="0"
+                  [nzFormatter]="amountFormatter"
+                  formControlName="forwardAmount"
+                  [nzSize]="'large'"
+                  [nzStep]="1"
+                  required
+                >
+                </nz-input-number>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col [nzSpan]="12">
+            <nz-form-item>
+              <nz-form-label nzRequired nzFor="spotRate"
+                >SPOT Rate</nz-form-label
+              >
+              <nz-form-control>
+                <nz-input-number
+                  [nzMin]="0"
+                  [nzFormatter]="amountFormatter"
+                  formControlName="spotRate"
+                  [nzSize]="'large'"
+                  [nzStep]="1"
+                  required
+                >
+                </nz-input-number>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col [nzSpan]="12">
+            <nz-form-item>
+              <nz-form-label nzRequired nzFor="ngnEquiv"
+                >Naira Equivalent</nz-form-label
+              >
+              <nz-form-control>
+                <nz-input-number
+                  [nzDisabled]="true"
+                  [nzMin]="0"
+                  [nzFormatter]="amountFormatter"
+                  formControlName="ngnEquiv"
+                  [nzSize]="'large'"
+                  [nzStep]="1"
+                >
+                </nz-input-number>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col [nzSpan]="12">
+            <nz-form-item>
+              <nz-form-label nzRequired nzFor="ngnEquiv"
+                >3rd CCY SPOT Amount
+              </nz-form-label>
+              <nz-form-control>
+                <nz-input-number
+                  [nzDisabled]="true"
+                  [nzMin]="0"
+                  [nzFormatter]="amountFormatter"
+                  formControlName="spotAmt"
+                  [nzSize]="'large'"
+                  [nzStep]="1"
+                >
+                </nz-input-number>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+        <!--
+                  Commented Out -- for show previous attachment for rejection modal
+                  <div class="upload-row">
+                  <div *ngFor="let document of convertedRecordAttachments; let i = index" class="">
+                      <span>View {{documentTabNames[i]}} </span>
+                      <button *ngIf="!!convertedRecordAttachments" nz-button class="view-icon" nzType="default"
+                          (click)="showPreviousFile(document.docFile, documentTabNames[i])">
+                          <i nz-icon nzType="eye" nzTheme="outline"></i>
+                      </button>
+                  </div>
+              </div> -->
+        <nz-divider></nz-divider>
+        <!-- <div nz-row class="upload-row ">
+                  <nz-form-item>
+                      <nz-form-label nzRequired nzFor="uploadAttachment">Upload Contract Letter
+                          <span *ngIf="maxFileSizeDisplay">({{ maxFileSizeDisplay }}MB or Less)</span>
+                      </nz-form-label>
+                      <nz-upload [nzSize]="maxFileSize" [(nzFileList)]="premiereFileList"
+                          [nzBeforeUpload]="beforeFirstUpload" [nzAccept]="'application/pdf'" nzRequired
+                          [nzRemove]="onFileRemove">
+                          <button nz-button>
+                              <i nz-icon nzType="upload"></i><span>Select File</span>
+                          </button>
+                          &nbsp;&nbsp;
+                          <button *ngIf="!!premiereFileList.length" nz-button
+                              (click)="previewFirstPDFDocument($event)">
+                              <i nz-icon nzType="eye" nzTheme="outline"></i>
+                              <span>Preview File</span>
+                          </button>
+                      </nz-upload>
+                  </nz-form-item>
+              </div> -->
+        <span>Upload Attachments </span>
+        <div
+          nz-row
+          class="mb-3"
+          nzGutter="20"
+          nzAlign="bottom"
+          style="border: 1px solid #e8e8e8; padding: 7px 2px"
+        >
+          <div nz-col nzSpan="6" style="border-right: 1px solid #e8e8e8">
+            <p style="margin-bottom: 6px">
+              <span class="upload-require"> * </span>Contract Letter<br />
+              <span *ngIf="maxFileSizeDisplay"
+                >({{ maxFileSizeDisplay }}MB or Less):</span
+              >
+            </p>
+            <nz-upload
+              [(nzFileList)]="newFileList.fileList1.file"
+              [nzBeforeUpload]="beforeFirstUpload"
+              [nzAccept]="'application/pdf'"
+              [nzRemove]="onFileRemove1"
+              [nzShowUploadList]="false"
+            >
+              <button nzSize="small" nz-button>
+                <i nz-icon nzType="upload"></i><span>Select File</span>
+              </button>
+            </nz-upload>
+            <div class="upload-list-wrapper-new">
+              <div
+                class="upload-list"
+                *ngFor="let file of newFileList.fileList1.file"
+              >
+                <span class="upload-name">{{ file.name }}</span>
+                <div>
+                  <button
+                    *ngIf="!!newFileList.fileList1.file.length"
+                    nz-button
+                    class="view-icon"
+                    nzType="default"
+                    (click)="
+                      previewPDFDocument($event, newFileList.fileList1.file)
+                    "
+                  >
+                    <i nz-icon nzType="eye" nzTheme="outline"></i>
+                  </button>
+                  <span
+                    nz-tooltip
+                    nzTooltipTitle="Remove File"
+                    nzTooltipPlacement="right"
+                    class="upload-icon__delete"
+                    (click)="onFileRemove1(file)"
+                  >
+                    <i nz-icon nzType="delete" nzTheme="outline"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div nz-col nzSpan="6" style="border-right: 1px solid #e8e8e8">
+            <p style="margin-bottom: 6px">
+              <span class="upload-require"> * </span>Application Letter<br />
+              <span *ngIf="maxFileSizeDisplay"
+                >({{ maxFileSizeDisplay }}MB or Less):</span
+              >
+            </p>
+            <nz-upload
+              [(nzFileList)]="newFileList.fileList2.file"
+              [nzBeforeUpload]="beforeSecondUpload"
+              [nzAccept]="'application/pdf'"
+              [nzRemove]="onFileRemove2"
+              [nzShowUploadList]="false"
+            >
+              <button nzSize="small" nz-button>
+                <i nz-icon nzType="upload"></i><span>Select File</span>
+              </button>
+            </nz-upload>
+            <div class="upload-list-wrapper-new">
+              <div
+                class="upload-list"
+                *ngFor="let file of newFileList.fileList2.file"
+              >
+                <span class="upload-name">{{ file.name }}</span>
+                <div>
+                  <button
+                    *ngIf="!!newFileList.fileList2.file.length"
+                    nz-button
+                    class="view-icon"
+                    nzType="default"
+                    (click)="
+                      previewPDFDocument($event, newFileList.fileList2.file)
+                    "
+                  >
+                    <i nz-icon nzType="eye" nzTheme="outline"></i>
+                  </button>
+                  <span
+                    nz-tooltip
+                    nzTooltipTitle="Remove File"
+                    nzTooltipPlacement="right"
+                    class="upload-icon__delete"
+                    (click)="onFileRemove2(file)"
+                  >
+                    <i nz-icon nzType="delete" nzTheme="outline"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div nz-col nzSpan="6" style="border-right: 1px solid #e8e8e8">
+            <p style="margin-bottom: 6px">
+              <span class="upload-require"> * </span> Approval Letter<br />
+              <span *ngIf="maxFileSizeDisplay"
+                >({{ maxFileSizeDisplay }}MB or Less):</span
+              >
+            </p>
+            <nz-upload
+              [(nzFileList)]="newFileList.fileList3.file"
+              [nzBeforeUpload]="beforeThirdUpload"
+              [nzAccept]="'application/pdf'"
+              [nzRemove]="onFileRemove3"
+              [nzShowUploadList]="false"
+            >
+              <button nzSize="small" nz-button>
+                <i nz-icon nzType="upload"></i><span>Select File</span>
+              </button>
+            </nz-upload>
+            <div class="upload-list-wrapper-new">
+              <div
+                class="upload-list"
+                *ngFor="let file of newFileList.fileList3.file"
+              >
+                <span class="upload-name">{{ file.name }}</span>
+                <div>
+                  <button
+                    *ngIf="!!newFileList.fileList3.file.length"
+                    nz-button
+                    class="view-icon"
+                    nzType="default"
+                    (click)="
+                      previewPDFDocument($event, newFileList.fileList3.file)
+                    "
+                  >
+                    <i nz-icon nzType="eye" nzTheme="outline"></i>
+                  </button>
+                  <span
+                    nz-tooltip
+                    nzTooltipTitle="Remove File"
+                    nzTooltipPlacement="right"
+                    class="upload-icon__delete"
+                    (click)="onFileRemove3(file)"
+                  >
+                    <i nz-icon nzType="delete" nzTheme="outline"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div nz-col nzSpan="5">
+            <p style="margin-bottom: 6px">
+              Others<br />
+              <span *ngIf="maxFileSizeDisplay"
+                >({{ maxFileSizeDisplay }}MB or Less):</span
+              >
+            </p>
+            <nz-upload
+              [(nzFileList)]="newFileList.fileList4.file"
+              [nzBeforeUpload]="beforeFourthUpload"
+              [nzAccept]="'application/pdf'"
+              [nzRemove]="onFileRemove4"
+              [nzShowUploadList]="false"
+            >
+              <button nzSize="small" nz-button>
+                <i nz-icon nzType="upload"></i><span>Select File</span>
+              </button>
+            </nz-upload>
+            <div class="upload-list-wrapper-new">
+              <div
+                class="upload-list"
+                *ngFor="let file of newFileList.fileList4.file"
+              >
+                <span class="upload-name">{{ file.name }}</span>
+                <div>
+                  <button
+                    *ngIf="!!newFileList.fileList4.file.length"
+                    nz-button
+                    class="view-icon"
+                    nzType="default"
+                    (click)="
+                      previewPDFDocument($event, newFileList.fileList4.file)
+                    "
+                  >
+                    <i nz-icon nzType="eye" nzTheme="outline"></i>
+                  </button>
+                  <span
+                    nz-tooltip
+                    nzTooltipTitle="Remove File"
+                    nzTooltipPlacement="right"
+                    class="upload-icon__delete"
+                    (click)="onFileRemove4(file)"
+                  >
+                    <i nz-icon nzType="delete" nzTheme="outline"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </ng-template>
+    <app-full-page-loading [modalDisplay]="true" *ngIf="loading.updatingRecord">
+      Updating Record...
+    </app-full-page-loading>
+  </div>
+  <!-- <nz-divider [nzDashed]="true"></nz-divider> -->
+  <ng-template #loadingIndicator>
+    <span>
+      <i nz-icon nzType="loading" nzTheme="outline" style="font-size: 32px"></i>
+    </span>
+  </ng-template>
+  <button
+    nz-button
+    nzType="default"
+    class="mb-2 outline"
+    [disabled]="!checkedItem"
+    (click)="showDeleteConfirm()"
+  >
+    <i nz-icon nzType="check" nzTheme="outline"></i>
+    Cancel Record(s)
+  </button>
+  <div nz-row nzType="flex" nzJustify="start" [nzGutter]="16">
+    <div nz-col nzSpan="24">
+      <nz-table
+        #spotConvertedTable
+        [nzLoadingIndicator]="loadingIndicator"
+        [nzLoading]="loading.spotConvertedRecords"
+        [nzData]="spotConvertedRecords.content"
+        [nzTitle]="
+          spotConvertedRecords.totalElements > 0 ? totalRecordsSummary : ''
+        "
+        [nzPageIndex]="spotConvertedRecords.pageable.pageNumber + 1"
+        [nzPageSize]="spotConvertedRecords.pageable.pageSize"
+        [nzTotal]="spotConvertedRecords.totalElements"
+        [nzFrontPagination]="false"
+        [nzScroll]="{ x: '2000px' }"
+        (nzPageIndexChange)="setPage($event)"
+      >
+        <thead>
+          <tr>
+            <th
+              [nzLeft]="'0px'"
+              nzShowCheckbox
+              [(nzChecked)]="allChecked"
+              [nzIndeterminate]="isIndeterminate"
+              [nzDisabled]="isDisabled"
+              (nzCheckedChange)="checkAll($event)"
+            ></th>
+            <th nzWidth="20px" nzAlign="center">S/N</th>
+            <th nzWidth="300px">Customer Name</th>
+            <th nzAlign="center">Account Number</th>
+            <th nzAlign="center">Form Number</th>
+            <th nzAlign="right">USD Won</th>
+            <th nzAlign="right">Third Currency Equivalent</th>
+            <th nzAlign="center">Request Currency</th>
+            <th nzAlign="right">Requested Currency Rate</th>
+            <th nzAlign="right">NGN Equivalent</th>
+            <th nzAlign="center">Unutilized Amount</th>
+            <th nzAlign="center">File Number</th>
+            <th nzAlign="center" nzWidth="150px">Tenor</th>
+            <th nzAlign="center">Transaction Date</th>
+            <th nzAlign="right">Forward Amount</th>
+            <th nzAlign="center">Transaction CCY</th>
+            <th nzWidth="150px" nzAlign="left">Rejection Reason</th>
+            <th nzRight="0px" nzAlign="center" nzWidth="180px">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let data of spotConvertedTable.data; let i = index"
+            [class.danger]="data.rejectReason === null"
+          >
+            <td
+              [nzLeft]="'0px'"
+              nzShowCheckbox
+              [(nzChecked)]="data.checked"
+              (nzCheckedChange)="refreshStatus($event)"
+              [nzDisabled]="data.disabled"
+            ></td>
+            <td nzAlign="center">
+              {{
+                spotConvertedRecords.pageable.pageNumber *
+                  spotConvertedRecords.pageable.pageSize +
+                  i +
+                  1
+              }}
+            </td>
+            <td nzWidth="300px">{{ data.customerName }}</td>
+            <td nzAlign="center">{{ data.accountNo }}</td>
+            <td nzAlign="center">{{ data?.formNo }}</td>
+            <td nzAlign="right">{{ data.usdWon | number: "1.2-2" }}</td>
+            <td nzAlign="right">
+              {{ data.thirdCurrencyEquivalent | number: "1.2-2" }}
+            </td>
+            <td nzAlign="center">{{ data.transactionCurrency }}</td>
+            <td nzAlign="right">
+              {{ data.rate | number: "1.2-2" }}
+            </td>
+            <td nzAlign="right">{{ data.ngnEquivalent | number: "1.2-2" }}</td>
+            <td nzAlign="right">
+              {{ data.unutilizedAmount | number: "1.2-2" }}
+            </td>
+            <td nzAlign="center">{{ data.fileNo }}</td>
+            <td nzAlign="center" nzWidth="150px">{{ data.tenor }}</td>
+            <td nzAlign="center">{{ data.transactionDate | date }}</td>
+            <td nzAlign="right">{{ data.forwardAmount | number: "1.2-2" }}</td>
+            <td nzAlign="center">{{ data.requestCurrency }}</td>
+            <td nzAlign="left">{{ data.rejectReason }}</td>
+            <td nzRight="0px" nzAlign="center">
+              <a
+                class="grid-link"
+                (click)="createRejectionModal(modalContent, data)"
+              >
+                Update Record
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </nz-table>
+    </div>
+  </div>
+</div>
+<nz-drawer
+  [nzZIndex]="9999"
+  [nzVisible]="drawerVisible"
+  nzPlacement="right"
+  nzTitle="Preview PDF Document"
+  [nzContent]="!!pdfFile ? previewDoc : emptyDoc"
+  [nzWidth]="'750px'"
+  [nzMaskClosable]="true"
+  (nzOnClose)="closeDrawer()"
+>
+  <ng-template #previewDoc>
+    <iframe
+      [src]="pdfFile | safe"
+      frameborder="0"
+      width="100%"
+      style="min-height: 700px"
+    ></iframe>
+  </ng-template>
+  <ng-template #emptyDoc>
+    <div class="empty-drawer">
+      <i nz-icon nzType="file-pdf" nzTheme="outline"></i>
+      <span>No PDF Document</span>
+    </div>
+  </ng-template>
+</nz-drawer>
+<nz-drawer
+  [nzZIndex]="9999"
+  [nzVisible]="previewVisible"
+  nzPlacement="right"
+  nzTitle="{{ tabName }}"
+  [nzContent]="viewDoc"
+  [nzWidth]="'750px'"
+  [nzMaskClosable]="true"
+  (nzOnClose)="closeDrawerTwo()"
+>
+  <ng-template #viewDoc>
+    <iframe
+      [src]="previousFile | safe"
+      frameborder="0"
+      width="100%"
+      style="min-height: 700px"
+    ></iframe>
+  </ng-template>
+</nz-drawer>

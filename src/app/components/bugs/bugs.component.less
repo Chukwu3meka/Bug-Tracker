@@ -1,0 +1,40 @@
+@import "/libs/less/mixinFunctions.less";
+@import "/libs/less/variables.less";
+
+.bugsStat {
+  .flex(@justify:space-between;  @align:stretch);
+  // border: 3px solid red;
+  gap: 10px;
+
+  & > nz-card:nth-of-type(1) {
+    .bugStatStyle(@allBugs);
+  }
+  & > nz-card:nth-of-type(2) {
+    .bugStatStyle(@openBugs);
+  }
+  & > nz-card:nth-of-type(3) {
+    .bugStatStyle(@closedBugs);
+  }
+  & > nz-card:nth-of-type(4) {
+    .bugStatStyle(@pendingBugs);
+  }
+
+  // [color] {
+  //    content: attr(data-foo) " ";
+  // }
+
+  // [style-color] {
+  //   background-color: attr(style-color color, red);
+  // }
+
+  // border: 3px solid attr(style-color);
+
+  // border: 3px solid green;
+  // background-color: transparent;
+  // color: white;
+
+  // @allBugs: #ffffff;
+  // @openBugs: #ff0000;
+  // @closedBugs: #11ff00;
+  // @pendingBugs: #0026ff;
+}

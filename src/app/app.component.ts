@@ -7,7 +7,7 @@ import { Component, HostListener } from '@angular/core';
   styleUrls: ['./app.component.less'],
 })
 export class AppComponent {
-  private wideScreenWidth: number = 1200;
+  private wideScreenWidth: number = 1000;
   private wideScreenHeight: number = 520;
 
   public wideScreen: boolean = true;

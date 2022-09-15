@@ -5,3 +5,27 @@
   justify-content: @justify;
   align-items: @align;
 }
+
+.bugStatStyle(@color) {
+  border-top: 8px solid @color;
+
+  // border: 3px solid blue;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  // .flex(@dir:column; );
+  padding: 0 !important;
+  // color: @color;
+
+  & > * {
+    border: 3px solid red;
+  }
+
+  div:first-of-type {
+    border: 3px solid blue;
+    .flex(@justify:space-between ;@width:100%);
+    span {
+      // font-size: 50px;
+    }
+  }
+}

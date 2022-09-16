@@ -1,5 +1,6 @@
 <div class="bugsStat">
-  <nz-card nzHoverable *ngFor="let stat of bugsStat">
+  <div *ngFor="let stat of bugsStat">
+    <!-- <nz-card nzHoverable   > -->
     <div>
       <h2 nz-typography>{{ stat.label }}</h2>
       <span nz-icon [nzType]="stat.icon" style-color="blue"></span>
@@ -27,5 +28,6 @@
       </Paper>
  -->
     <!-- {{ stat.total }} -->
-  </nz-card>
+    <!-- </nz-card> -->
+  </div>
 </div>

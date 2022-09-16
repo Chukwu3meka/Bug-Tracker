@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconsProviderModule } from '../../libs/ngZorro/nzIcons';
 
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+
 import { nzModules } from 'libs/ngZorro/nzModules';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { SidebarComponent } from './components/layout/sidebar/sidebar.component';
@@ -36,7 +38,6 @@ registerLocaleData(en);
     NotificationComponent,
     ProfileComponent,
     BugsComponent,
-    // FileuploadComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +47,7 @@ registerLocaleData(en);
     BrowserAnimationsModule,
     IconsProviderModule,
     nzModules,
+    NgxChartsModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],

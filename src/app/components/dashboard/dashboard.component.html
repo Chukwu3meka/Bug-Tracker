@@ -1,1 +1,15 @@
 <p>dashboard works!</p>
+
+<!-- [view]="view" -->
+<ngx-charts-gauge
+  [results]="single"
+  [legend]="legend"
+  (select)="onSelect($event)"
+  (activate)="onActivate($event)"
+  (deactivate)="onDeactivate($event)"
+>
+  <!--
+  [scheme]="colorScheme"
+    [legendPosition]="legendPosition"
+-->
+</ngx-charts-gauge>

@@ -1,60 +1,62 @@
 <!-- <div style="background: #ececec; padding: 30px"> -->
 <!-- <nz-card style="width: 300px" [nzBordered]="false" nzTitle="Card title"> -->
 <!-- [nzExtra]="extraTemplate" -->
-<main>
-  <img src="/assets/images/add-bug.png" alt="Add Bug" />
-  <!-- add-bugs.png -->
-  <label for="bug-title">Bug Title</label>
-  <nz-input-group [nzSuffix]="inputClearTpl" nzSize="large">
-    <input
-      type="text"
+
+<nz-card>
+  <main>
+    <img src="/assets/images/add-bug.png" alt="Add Bug" />
+    <!-- add-bugs.png -->
+    <label for="bug-title">Bug Title</label>
+    <nz-input-group [nzSuffix]="inputClearTpl" nzSize="large">
+      <input
+        type="text"
+        nz-input
+        [(ngModel)]="inputValue"
+        placeholder="Bug description in one sentence"
+      />
+    </nz-input-group>
+
+    <ng-template #inputClearTpl>
+      <span
+        nz-icon
+        class="ant-input-clear-icon"
+        nzTheme="fill"
+        nzType="close-circle"
+        *ngIf="inputValue"
+        (click)="inputValue = null"
+      ></span>
+    </ng-template>
+
+    <label for="bug-platform">Bug Platform</label>
+
+    <nz-select
+      nzSize="large"
+      id="bug-platform"
+      ngModel="platform"
+      nzAllowClear
+      nzPlaceHolder="Select Platform"
+    >
+      <nz-option
+        *ngFor="let platform of platformOptions"
+        [nzValue]="platform.id"
+        [nzLabel]="platform.name"
+      ></nz-option>
+    </nz-select>
+
+    <label for="date-noticed">First Noticed</label>
+    <nz-date-picker id="date-noticed" nzSize="large"></nz-date-picker>
+
+    <label for="bug-description">Bug Description</label>
+    <textarea
       nz-input
-      [(ngModel)]="inputValue"
-      placeholder="Bug description in one sentence"
-    />
-  </nz-input-group>
+      id="bug-description"
+      placeholder="Clearly describe your findings or issues, to enable swift debugging from our developers"
+      [nzAutosize]="{ minRows: 7, maxRows: 13 }"
+    ></textarea>
 
-  <ng-template #inputClearTpl>
-    <span
-      nz-icon
-      class="ant-input-clear-icon"
-      nzTheme="fill"
-      nzType="close-circle"
-      *ngIf="inputValue"
-      (click)="inputValue = null"
-    ></span>
-  </ng-template>
+    <div></div>
 
-  <label for="bug-platform">Bug Platform</label>
-
-  <nz-select
-    nzSize="large"
-    id="bug-platform"
-    ngModel="platform"
-    nzAllowClear
-    nzPlaceHolder="Select Platform"
-  >
-    <nz-option
-      *ngFor="let platform of platformOptions"
-      [nzValue]="platform.id"
-      [nzLabel]="platform.name"
-    ></nz-option>
-  </nz-select>
-
-  <label for="date-noticed">First Noticed</label>
-  <nz-date-picker id="date-noticed" nzSize="large"></nz-date-picker>
-
-  <label for="bug-description">Bug Description</label>
-  <textarea
-    nz-input
-    id="bug-description"
-    placeholder="Clearly describe your findings or issues, to enable swift debugging from our developers"
-    [nzAutosize]="{ minRows: 7, maxRows: 13 }"
-  ></textarea>
-
-  <div></div>
-
-  <!-- <nz-upload [(nzFileList)]="fileList" [nzBeforeUpload]="beforeUpload">
+    <!-- <nz-upload [(nzFileList)]="fileList" [nzBeforeUpload]="beforeUpload">
     <button nz-button>
       <span nz-icon nzType="upload"></span>
       Select File
@@ -71,45 +73,46 @@
     {{ uploading ? "Uploading" : "Start Upload" }}
   </button> -->
 
-  <!-- [(nzFileList)]="fileList"
+    <!-- [(nzFileList)]="fileList"
   [nzBeforeUpload]="beforeUpload" -->
-  <nz-upload
-    [(nzFileList)]="fileList"
-    [nzBeforeUpload]="beforeUpload"
-    id="bug-screenshot"
-    nzType="drag"
-    [nzFileType]="'image/png,image/jpeg,image/gif,image/bmp'"
-    [nzMultiple]="true"
-    [nzSize]="5120"
-    [nzLimit]="5"
-  >
-    <!-- (nzChange)="handleChange($event)" -->
-    <!-- nzBeforeUpload="nzbeforeUploadHandler" -->
-    <!-- nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76" -->
-    <p class="ant-upload-drag-icon">
-      <span nz-icon nzType="inbox"></span>
-    </p>
-    <p class="ant-upload-text">Click or drag file to this area to upload</p>
-    <p class="ant-upload-hint">
-      Kindly upload screenshots of Bugs in any of our application or platform.
-      Supports single or bulk upload. Screenshots cannot be more than Five(5)
-    </p>
-  </nz-upload>
+    <nz-upload
+      [(nzFileList)]="fileList"
+      [nzBeforeUpload]="beforeUpload"
+      id="bug-screenshot"
+      nzType="drag"
+      [nzFileType]="'image/png,image/jpeg,image/gif,image/bmp'"
+      [nzMultiple]="true"
+      [nzSize]="5120"
+      [nzLimit]="5"
+    >
+      <!-- (nzChange)="handleChange($event)" -->
+      <!-- nzBeforeUpload="nzbeforeUploadHandler" -->
+      <!-- nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76" -->
+      <p class="ant-upload-drag-icon">
+        <span nz-icon nzType="inbox"></span>
+      </p>
+      <p class="ant-upload-text">Click or drag file to this area to upload</p>
+      <p class="ant-upload-hint">
+        Kindly upload screenshots of Bugs in any of our application or platform.
+        Supports single or bulk upload. Screenshots cannot be more than Five(5)
+      </p>
+    </nz-upload>
 
-  <button
-    nz-button
-    nzType="primary"
-    (click)="submitBug()"
-    [nzLoading]="isLoadingOne"
-  >
-    Submit Bug
-  </button>
+    <button
+      nz-button
+      nzType="primary"
+      (click)="submitBug()"
+      [nzLoading]="isLoadingOne"
+    >
+      Submit Bug
+    </button>
 
-  <!-- [nzSize]="maxFileSize" -->
-  <nz-alert
-    nzShowIcon
-    nzType="warning"
-    nzMessage="Reviewing Bugs"
-    nzDescription="Kindly note that bugs without proper description will be removed without further trobleshooting. We expect all bugs to have Platform/Browser, Time and Date of error, Device in use before bug was noticed; as this will enable our developers debug reported application seamlessly"
-  ></nz-alert>
-</main>
+    <!-- [nzSize]="maxFileSize" -->
+    <nz-alert
+      nzShowIcon
+      nzType="warning"
+      nzMessage="Reviewing Bugs"
+      nzDescription="Kindly note that bugs without proper description will be removed without further trobleshooting. We expect all bugs to have Platform/Browser, Time and Date of error, Device in use before bug was noticed; as this will enable our developers debug reported application seamlessly"
+    ></nz-alert>
+  </main>
+</nz-card>

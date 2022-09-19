@@ -1,33 +1,26 @@
 <div class="bugsStat">
   <div *ngFor="let stat of bugsStat">
-    <!-- <nz-card nzHoverable   > -->
     <div>
       <h2 nz-typography>{{ stat.label }}</h2>
       <span nz-icon [nzType]="stat.icon" style-color="blue"></span>
     </div>
+    <h1>
+      {{ stat.total }}
+    </h1>
+    <p>
+      {{ stat.description }}
+    </p>
+  </div>
+</div>
 
-    <!-- <Stack padding={1} spacing={2}>
-          <Stack direction="row" alignItems="flex-start" justifyContent="space-between">
-            <Stack>
-              <Typography textTransform="capitalize" sx={{ color: appColors.lightLabel, letterSpacing: ".03em" }}>
-                {label}
-              </Typography>
+<div class="bugListHeader">
+  <h1 nz-typography>Bug List</h1>
+</div>
 
-              <Typography fontWeight={700} fontSize={27} sx={{ color: appColors.lightLabel }}>
-                {shortNumber(total)}
-              </Typography>
-            </Stack>
-            <IconButton size="inherit" sx={{ fontSize: "70px", p: 0, color: appColors.lightLabel }}>
-              <Icon fontSize="inherit" />
-            </IconButton>
-          </Stack>
-          <Typography variant="subtitle2" fontSize={14} sx={{ color: appColors.lightLabel }}>
-            {description}
-          </Typography>
-        </Stack>
-      </Paper>
- -->
-    <!-- {{ stat.total }} -->
-    <!-- </nz-card> -->
+<div class="bugsList">
+  <div *ngFor="let bug of appBugs">
+    <div>icon</div>
+    <div>description</div>
+    <div>details</div>
   </div>
 </div>

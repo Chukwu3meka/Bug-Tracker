@@ -1,27 +1,6 @@
 @import "/libs/less/mixinFunctions.less";
 @import "/libs/less/variables.less";
 
-.bugsStat {
-  border-radius: 10px;
-  main {
-    .flex( @justify:space-between;  @align:stretch);
-    gap: 20px;
-
-    & > div:nth-of-type(1) {
-      .bugStatStyle(@allBugs);
-    }
-    & > div:nth-of-type(2) {
-      .bugStatStyle(@openBugs);
-    }
-    & > div:nth-of-type(3) {
-      .bugStatStyle(@closedBugs);
-    }
-    & > div:nth-of-type(4) {
-      .bugStatStyle(@pendingBugs);
-    }
-  }
-}
-
 .bugListHeader {
   border-bottom: 1px solid @secondary;
   max-width: 270px;
@@ -55,32 +34,20 @@
     }
 
     & > span:first-of-type {
-      // display: block;
-      // justify-items: center;
-      // justify-items: center;
-      // align-items: center;
-      // -ms-grid-row-align: center;
-      // vertical-align: auto;
-      // margin-top: 20px;
       margin: auto;
     }
 
     & > section:first-of-type {
-      // border: 3px solid red;
       padding-left: 20px;
-      // border-right: 1px solid lighten(@secondary, 25%);
       .flex(@dir:column;@align:flex-start;@justify:space-between);
       & > div:first-of-type {
-        // .flex();
         width: 100%;
         nz-divider {
           font-weight: bold;
           color: darken(@secondary, 10%);
-
           border-color: lighten(@secondary, 20%);
           font-size: 1.1em;
           margin: 5px 0;
-          // font-weight: 600;
         }
         p {
           margin: 0;
@@ -104,7 +71,6 @@
 
     ul:first-of-type {
       display: block;
-      // border: 3px solid red;
       margin: 15px 0 0 10px;
       & li {
         margin-left: -20px;
@@ -115,16 +81,11 @@
         color: darken(@secondary, 30%);
         font-weight: bold;
       }
-
-      // ul li:not(:last-child) {
-      //   margin-bottom: 10px;
-      // }
       & li:before {
         content: "";
         position: absolute;
         top: 0.7em;
         left: -10px;
-        // margin-top: -0.9em;
         background: #f69ec4;
         height: 5px;
         width: 5px;

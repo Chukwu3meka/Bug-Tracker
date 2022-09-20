@@ -1,1 +1,16 @@
-<p>bug-stat works!</p>
+<nz-card class="bugsStat">
+  <main>
+    <div *ngFor="let stat of bugsStat">
+      <div>
+        <h2 nz-typography>{{ stat.label }}</h2>
+        <span nz-icon [nzType]="stat.icon"></span>
+      </div>
+      <h1>
+        {{ stat.total }}
+      </h1>
+      <p>
+        {{ stat.description }}
+      </p>
+    </div>
+  </main>
+</nz-card>

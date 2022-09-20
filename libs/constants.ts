@@ -1,5 +1,12 @@
 export const colors = {
   primary: '#121212',
+
+  // open: '#64242c',
+  // closed: '#54a593',
+  // pending: '#eaa649',
+  open: '#b30000',
+  closed: '#00bfa0',
+  pending: '#ef9b20',
 };
 
 export const severity = [

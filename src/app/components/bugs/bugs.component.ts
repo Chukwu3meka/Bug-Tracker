@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { colors } from 'libs/constants';
 import { ColorScheme } from 'src/app/interface/Charts';
 import { Bugs } from 'src/app/mock-bugs';
 import { single } from './data';
@@ -12,19 +13,24 @@ interface inin {}
 })
 export class BugsComponent {
   private role = 'user';
-  private bugsCount = {
-    totalBugs: 200,
-    open: 31,
-    closed: 47,
-    pending: 93,
-  };
 
-  public appBugs = Bugs;
+  public appBugs = Bugs.map((bug) => ({
+    ...bug,
+    color: colors[bug.status],
+    label: bug.label,
+    ticket: `Ticket ID #${bug.id}`,
+    info: `Reported on ${new Date(bug.created).toDateString()}`,
+    platform: `Platform or Application: ${bug.platform}`,
+    severity: `Severity Status: ${bug.severity}`,
+    developer: bug.developer
+      ? `Assigned to ${bug.developer.name}`
+      : `Not yet assigned`,
+  }));
 
   public bugsStat = [
     {
       label: 'All Bugs',
-      total: this.bugsCount?.totalBugs,
+      total: 200,
       icon: 'bug',
       description: `Total number of Bugs reported by ${
         this.role === 'user' ? 'me' : 'users'
@@ -32,19 +38,19 @@ export class BugsComponent {
     },
     {
       label: 'Open',
-      total: this.bugsCount?.open,
+      total: 31,
       icon: 'folder-open',
       description: `All Bugs yet to be assigned to a developer`,
     },
     {
       label: 'Closed',
-      total: this.bugsCount?.closed,
+      total: 47,
       icon: 'issues-close',
       description: 'Bugs that has been Resolved or Closed ',
     },
     {
       label: 'Pending',
-      total: this.bugsCount?.pending,
+      total: 93,
       icon: 'tool',
       description: 'Bugs currently being fixed by developers',
     },

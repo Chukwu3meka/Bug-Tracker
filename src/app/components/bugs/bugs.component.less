@@ -2,30 +2,34 @@
 @import "/libs/less/variables.less";
 
 .bugsStat {
-  .flex( @justify:space-between;  @align:stretch);
-  gap: 20px;
+  border-radius: 10px;
+  main {
+    .flex( @justify:space-between;  @align:stretch);
+    gap: 20px;
 
-  & > div:nth-of-type(1) {
-    .bugStatStyle(@allBugs);
-  }
-  & > div:nth-of-type(2) {
-    .bugStatStyle(@openBugs);
-  }
-  & > div:nth-of-type(3) {
-    .bugStatStyle(@closedBugs);
-  }
-  & > div:nth-of-type(4) {
-    .bugStatStyle(@pendingBugs);
+    & > div:nth-of-type(1) {
+      .bugStatStyle(@allBugs);
+    }
+    & > div:nth-of-type(2) {
+      .bugStatStyle(@openBugs);
+    }
+    & > div:nth-of-type(3) {
+      .bugStatStyle(@closedBugs);
+    }
+    & > div:nth-of-type(4) {
+      .bugStatStyle(@pendingBugs);
+    }
   }
 }
 
 .bugListHeader {
   border-bottom: 1px solid @secondary;
-  max-width: 250px;
+  max-width: 270px;
   margin: 30px auto 10px;
   h1 {
     font-size: 1.7em;
-    padding: 0 30px;
+    padding: 0 20px;
+    color: darken(@primary, 10%);
     width: max-content;
     background-color: lighten(@secondary, 25%);
     text-align: center;
@@ -37,15 +41,96 @@
 .bugsList {
   margin-top: 20px;
   & > div {
-    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 20px auto 250px;
+    border-radius: 10px;
     background: #fff;
     padding: 10px;
-    border: 1px solid lighten(@secondary, 18%);
+    border: 1px solid lighten(@secondary, 20%);
     cursor: pointer;
     &:hover {
       box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 2px -2px,
         rgba(0, 0, 0, 0.12) 0px 3px 6px 0px,
         rgba(0, 0, 0, 0.09) 0px 5px 12px 4px;
+    }
+
+    & > span:first-of-type {
+      // display: block;
+      // justify-items: center;
+      // justify-items: center;
+      // align-items: center;
+      // -ms-grid-row-align: center;
+      // vertical-align: auto;
+      // margin-top: 20px;
+      margin: auto;
+    }
+
+    & > section:first-of-type {
+      // border: 3px solid red;
+      padding-left: 20px;
+      // border-right: 1px solid lighten(@secondary, 25%);
+      .flex(@dir:column;@align:flex-start;@justify:space-between);
+      & > div:first-of-type {
+        // .flex();
+        width: 100%;
+        nz-divider {
+          font-weight: bold;
+          color: darken(@secondary, 10%);
+
+          border-color: lighten(@secondary, 20%);
+          font-size: 1.1em;
+          margin: 5px 0;
+          // font-weight: 600;
+        }
+        p {
+          margin: 0;
+          overflow: hidden;
+          text-align: justify;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 4;
+          -webkit-box-orient: vertical;
+        }
+      }
+      & > div:last-of-type {
+        margin-top: 5px;
+        gap: 5px;
+        .flex();
+        font-size: 0.8em;
+        font-weight: bold;
+        color: darken(@secondary, 10%);
+      }
+    }
+
+    ul:first-of-type {
+      display: block;
+      // border: 3px solid red;
+      margin: 15px 0 0 10px;
+      & li {
+        margin-left: -20px;
+        padding-left: 5px;
+        display: block;
+        position: relative;
+        font-size: 0.85em;
+        color: darken(@secondary, 30%);
+        font-weight: bold;
+      }
+
+      // ul li:not(:last-child) {
+      //   margin-bottom: 10px;
+      // }
+      & li:before {
+        content: "";
+        position: absolute;
+        top: 0.7em;
+        left: -10px;
+        // margin-top: -0.9em;
+        background: #f69ec4;
+        height: 5px;
+        width: 5px;
+        border-radius: 50%;
+        background: linear-gradient(45deg, @primary, @secondary);
+      }
     }
   }
 

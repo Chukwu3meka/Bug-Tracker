@@ -1,26 +1,55 @@
-<div class="bugsStat">
-  <div *ngFor="let stat of bugsStat">
-    <div>
-      <h2 nz-typography>{{ stat.label }}</h2>
-      <span nz-icon [nzType]="stat.icon" style-color="blue"></span>
+<nz-card class="bugsStat">
+  <main>
+    <div *ngFor="let stat of bugsStat">
+      <div>
+        <h2 nz-typography>{{ stat.label }}</h2>
+        <span nz-icon [nzType]="stat.icon"></span>
+      </div>
+      <h1>
+        {{ stat.total }}
+      </h1>
+      <p>
+        {{ stat.description }}
+      </p>
     </div>
-    <h1>
-      {{ stat.total }}
-    </h1>
-    <p>
-      {{ stat.description }}
-    </p>
-  </div>
-</div>
+  </main>
+</nz-card>
 
 <div class="bugListHeader">
-  <h1 nz-typography>Bug List</h1>
+  <h1 nz-typography>List of Bugs</h1>
 </div>
 
 <div class="bugsList">
   <div *ngFor="let bug of appBugs">
-    <div>icon</div>
-    <div>description</div>
-    <div>details</div>
+    <span
+      nz-icon
+      nzType="flag"
+      nzTheme="outline"
+      [style]="{ color: bug.color }"
+    ></span>
+
+    <section>
+      <div>
+        <nz-divider
+          nzPlain
+          [nzText]="bug.label"
+          nzOrientation="left"
+        ></nz-divider>
+        <p>{{ bug.description }}</p>
+      </div>
+      <div>
+        <nz-avatar [nzSize]="15" [nzSrc]="bug.reporter.img"></nz-avatar>
+        <span>
+          {{ bug.reporter.name }}
+        </span>
+      </div>
+    </section>
+    <ul>
+      <li>{{ bug.ticket }}</li>
+      <li>{{ bug.info }}</li>
+      <li>{{ bug.platform }}</li>
+      <li>{{ bug.severity }}</li>
+      <li>{{ bug.developer }}</li>
+    </ul>
   </div>
 </div>

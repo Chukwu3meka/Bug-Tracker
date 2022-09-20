@@ -8,11 +8,8 @@
   -->
   <!-- [scheme]="colorScheme" -->
 
-  <ngx-charts-pie-grid
-    [scheme]="colorScheme"
-    [results]="severityData"
-    (select)="onSelect($event)"
-  >
+  <ngx-charts-pie-grid [scheme]="colorScheme" [results]="severityData">
+    <!-- (select)="onSelect($event)" -->
   </ngx-charts-pie-grid>
 
   <!-- severityData -->
@@ -20,10 +17,23 @@
 
 <!-- [view]="view"
 -->
+
+[view]="view"
+<ngx-charts-heat-map
+  class="chart-container"
+  [results]="heatMapData"
+  [xAxis]="true"
+  [yAxis]="true"
+  [scheme]="'flame'"
+>
+  <!-- [customColors]="customColors" -->
+</ngx-charts-heat-map>
+
 <div class="heatmap">
+  <!-- [scheme]="heatmapColorScheme" -->
   <ngx-charts-heat-map
+    [customColors]="customColors"
     [legend]="legend"
-    [scheme]="heatmapColorScheme"
     [showXAxisLabel]="showXAxisLabel"
     [showYAxisLabel]="showYAxisLabel"
     [xAxis]="xAxis"
@@ -31,10 +41,10 @@
     [xAxisLabel]="xAxisLabel"
     [yAxisLabel]="yAxisLabel"
     [results]="heatMapData"
-    (select)="onSelect($event)"
-    (activate)="onActivate($event)"
-    (deactivate)="onDeactivate($event)"
   >
+    <!-- (select)="onSelect($event)"
+    (activate)="onActivate($event)"
+    (deactivate)="onDeactivate($event)" -->
   </ngx-charts-heat-map>
 </div>
 

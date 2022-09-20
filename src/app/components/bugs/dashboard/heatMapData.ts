@@ -378,31 +378,31 @@ export const heatMapData = [
     series: [
       {
         name: 'Saturday',
-        value: 58000000,
+        value: 1,
       },
       {
         name: 'Friday',
-        value: 50000020,
+        value: 10,
       },
       {
         name: 'Thursday',
-        value: 58000000,
+        value: 100,
       },
       {
         name: 'Wednessday',
-        value: 58000000,
+        value: 1000,
       },
       {
         name: 'Tuesday',
-        value: 58000000,
+        value: 10000,
       },
       {
         name: 'Monday',
-        value: 58000000,
+        value: 100000,
       },
       {
         name: 'Sunday',
-        value: 58000000,
+        value: 1000000,
       },
     ],
   },

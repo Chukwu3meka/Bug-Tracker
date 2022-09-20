@@ -4,11 +4,11 @@ import { colors } from 'libs/constants';
 import { Bugs } from 'src/app/mock-bugs';
 
 @Component({
-  selector: 'app-bugs',
-  templateUrl: './bugs.component.html',
-  styleUrls: ['./bugs.component.less'],
+  selector: 'bug-list',
+  templateUrl: './bug-list.component.html',
+  styleUrls: ['./bug-list.component.less'],
 })
-export class BugsComponent {
+export class BugListsComponent {
   private role = 'user';
 
   public appBugs = Bugs.map((bug) => ({

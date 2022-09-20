@@ -18,11 +18,12 @@ import { nzModules } from 'libs/ngZorro/nzModules';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { SidebarComponent } from './components/layout/sidebar/sidebar.component';
 import { FooterComponent } from './components/layout/footer/footer.component';
-import { AddBugComponent } from './components/add-bug/add-bug.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AddBugComponent } from './components/bugs/add-bug/add-bug.component';
+import { DashboardComponent } from './components/bugs/dashboard/dashboard.component';
 import { NotificationComponent } from './components/notification/notification.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { BugsComponent } from './components/bugs/bugs.component';
+import { BugListsComponent } from './components/bugs/bug-list/bug-list.component';
+import { BugStatComponent } from './components/bugs/bug-stat/bug-stat.component';
 // import { FileuploadComponent } from './components/fileupload/fileupload.component';
 
 registerLocaleData(en);
@@ -37,7 +38,8 @@ registerLocaleData(en);
     DashboardComponent,
     NotificationComponent,
     ProfileComponent,
-    BugsComponent,
+    BugListsComponent,
+    BugStatComponent,
   ],
   imports: [
     BrowserModule,

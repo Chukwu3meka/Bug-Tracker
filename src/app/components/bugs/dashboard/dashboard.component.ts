@@ -1,4 +1,4 @@
-import { Color, ScaleType } from '@swimlane/ngx-charts';
+import { Color, ScaleType, colorSets } from '@swimlane/ngx-charts';
 
 import { Component, OnInit } from '@angular/core';
 import { severityData } from './severityData';
@@ -37,6 +37,24 @@ export class DashboardComponent {
   //   domain: ['#5AA454', '#E44D25', '#CFC0BB', '#7aa3e5', '#a8385d', '#aae3f5'],
   // };
 
+  customColors = (value) => {
+    switch (value) {
+      case 'Rate of change':
+        return '#31badb';
+      case 'Trend':
+        return '#D33F93';
+      case 'Average':
+        return '#9fa1a9';
+      case 'Total':
+        return '#CECB62';
+      default:
+        return '#1f3165';
+    }
+
+    // console.log(value + 'CXvvcbvcbvc vc bvc bvc b ');
+    // return '#ff0000';
+  };
+
   heatMapData?: any[];
   severityData?: any[];
   view: number[] = [700, 300];
@@ -70,6 +88,8 @@ export class DashboardComponent {
       colors.normalActivity,
       colors.lowActivity,
       colors.noActivity,
+      'green',
+      'blue',
     ],
     group: ScaleType.Ordinal,
     selectable: true,
@@ -100,17 +120,17 @@ export class DashboardComponent {
     Object.assign(this, { heatMapData, severityData });
   }
 
-  onSelect(data): void {
-    console.log('Item clicked', JSON.parse(JSON.stringify(data)));
-  }
+  // onSelect(data): void {
+  //   console.log('Item clicked', JSON.parse(JSON.stringify(data)));
+  // }
 
-  onActivate(data): void {
-    console.log('Activate', JSON.parse(JSON.stringify(data)));
-  }
+  // onActivate(data): void {
+  //   console.log('Activate', JSON.parse(JSON.stringify(data)));
+  // }
 
-  onDeactivate(data): void {
-    console.log('Deactivate', JSON.parse(JSON.stringify(data)));
-  }
+  // onDeactivate(data): void {
+  //   console.log('Deactivate', JSON.parse(JSON.stringify(data)));
+  // }
 
   severityDataSingle?: any[];
   severityDataView: any[] = [500, 400];

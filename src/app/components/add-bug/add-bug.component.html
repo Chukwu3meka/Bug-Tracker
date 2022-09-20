@@ -1,11 +1,6 @@
-<!-- <div style="background: #ececec; padding: 30px"> -->
-<!-- <nz-card style="width: 300px" [nzBordered]="false" nzTitle="Card title"> -->
-<!-- [nzExtra]="extraTemplate" -->
-
 <nz-card>
   <main>
     <img src="/assets/images/add-bug.png" alt="Add Bug" />
-    <!-- add-bugs.png -->
     <label for="bug-title">Bug Title</label>
     <nz-input-group [nzSuffix]="inputClearTpl" nzSize="large">
       <input
@@ -55,26 +50,8 @@
     ></textarea>
 
     <div></div>
+    <!-- ! don't delete this -->
 
-    <!-- <nz-upload [(nzFileList)]="fileList" [nzBeforeUpload]="beforeUpload">
-    <button nz-button>
-      <span nz-icon nzType="upload"></span>
-      Select File
-    </button>
-  </nz-upload>
-  <button
-    nz-button
-    [nzType]="'primary'"
-    [nzLoading]="uploading"
-    (click)="handleUpload()"
-    [disabled]="fileList.length === 0"
-    style="margin-top: 16px"
-  >
-    {{ uploading ? "Uploading" : "Start Upload" }}
-  </button> -->
-
-    <!-- [(nzFileList)]="fileList"
-  [nzBeforeUpload]="beforeUpload" -->
     <nz-upload
       [(nzFileList)]="fileList"
       [nzBeforeUpload]="beforeUpload"
@@ -85,9 +62,6 @@
       [nzSize]="5120"
       [nzLimit]="5"
     >
-      <!-- (nzChange)="handleChange($event)" -->
-      <!-- nzBeforeUpload="nzbeforeUploadHandler" -->
-      <!-- nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76" -->
       <p class="ant-upload-drag-icon">
         <span nz-icon nzType="inbox"></span>
       </p>
@@ -107,7 +81,6 @@
       Submit Bug
     </button>
 
-    <!-- [nzSize]="maxFileSize" -->
     <nz-alert
       nzShowIcon
       nzType="warning"

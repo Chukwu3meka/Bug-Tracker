@@ -1,4 +1,6 @@
+import { ViewportScroller } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
+import { NavigationStart, Router } from '@angular/router';
 // import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -7,8 +9,8 @@ import { Component, HostListener } from '@angular/core';
   styleUrls: ['./app.component.less'],
 })
 export class AppComponent {
-  private wideScreenWidth: number = 1000;
-  private wideScreenHeight: number = 520;
+  private wideScreenWidth: number = 1300;
+  private wideScreenHeight: number = 620;
 
   public wideScreen: boolean = true;
 
@@ -28,7 +30,22 @@ export class AppComponent {
 
   // isCollapsed = false;
 
-  constructor() {
+  constructor(
+    private router: Router,
+    private viewPortscroller: ViewportScroller
+  ) {
+    router.events.forEach((event) => {
+      if (event instanceof NavigationStart) {
+        this.viewPortscroller.scrollToPosition([0, 0]); // <= scroll to op on route change
+      }
+      // NavigationEnd
+      // NavigationCancel
+      // NavigationError
+      // RoutesRecognized
+    });
+
+    // detect browser
+
     this.wideScreen =
       window.innerHeight >= this.wideScreenHeight &&
       window.innerWidth >= this.wideScreenWidth;

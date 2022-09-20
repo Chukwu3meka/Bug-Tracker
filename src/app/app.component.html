@@ -1,9 +1,5 @@
-<div [ngSwitch]="wideScreen" id="app">
-  <div *ngSwitchCase="false" [ngStyle]="{ maxWidth: '1200px', margin: 'auto' }">
-    Use a wider Screen and a chrome browser
-  </div>
-
-  <div *ngSwitchCase="true">
+<div [ngSwitch]="appNotCompatible" id="app">
+  <div *ngSwitchCase="''">
     <div class="app-layout">
       <app-header></app-header>
       <div class="app-content">
@@ -13,5 +9,9 @@
         </main>
       </div>
     </div>
+  </div>
+
+  <div *ngSwitchDefault [ngStyle]="{ maxWidth: '1200px', margin: 'auto' }">
+    {{ appNotCompatible }}
   </div>
 </div>

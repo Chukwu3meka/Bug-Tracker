@@ -12,14 +12,12 @@ export class AppComponent {
   private wideScreenWidth: number = 1300;
   private wideScreenHeight: number = 620;
 
-  public wideScreen: boolean = true;
+  public appNotCompatible: string = 'Fdsfdsf';
 
   @HostListener('window:resize', ['$event'])
-  getScreenSize = () => {
-    this.wideScreen =
-      window.innerHeight >= this.wideScreenHeight &&
-      window.innerWidth >= this.wideScreenWidth;
-  };
+  private detectWideScreen = () =>
+    window.innerHeight >= this.wideScreenHeight &&
+    window.innerWidth >= this.wideScreenWidth;
 
   // public activeTab?: number;
 
@@ -46,12 +44,38 @@ export class AppComponent {
 
     // detect browser
 
-    this.wideScreen =
-      window.innerHeight >= this.wideScreenHeight &&
-      window.innerWidth >= this.wideScreenWidth;
+    const initChromeBrowser: boolean = 'chrome' === this.getBrowserName();
+
+    const initWideScreen: boolean = this.detectWideScreen();
+
     //   // this.activatedRoute.url.subscribe((currentUrl) => {
     //     // console.log('url is:    ' + currentUrl);
-    //     console.log('url is:    ' + window.);
     //   // });
+
+    this.appNotCompatible = !initChromeBrowser
+      ? 'Kindly use a Chrome browser'
+      : !initWideScreen
+      ? 'Use a wider Screen and a chrome browser'
+      : '';
+  }
+
+  public getBrowserName() {
+    const agent = window.navigator.userAgent.toLowerCase();
+    switch (true) {
+      case agent.indexOf('edge') > -1:
+        return 'edge';
+      case agent.indexOf('opr') > -1 && !!(<any>window).opr:
+        return 'opera';
+      case agent.indexOf('chrome') > -1 && !!(<any>window).chrome:
+        return 'chrome';
+      case agent.indexOf('trident') > -1:
+        return 'ie';
+      case agent.indexOf('firefox') > -1:
+        return 'firefox';
+      case agent.indexOf('safari') > -1:
+        return 'safari';
+      default:
+        return 'other';
+    }
   }
 }

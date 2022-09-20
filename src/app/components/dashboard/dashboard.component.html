@@ -1,15 +1,57 @@
+<!-- bugstat -->
+<!-- heatmap -->
+<!-- bug severity -->
+<!-- graph -->
+
+<div class="severityData">
+  <!-- [view]="view"
+  -->
+  <!-- [scheme]="colorScheme" -->
+
+  <ngx-charts-pie-grid
+    [scheme]="colorScheme"
+    [results]="severityData"
+    (select)="onSelect($event)"
+  >
+  </ngx-charts-pie-grid>
+
+  <!-- severityData -->
+</div>
+
+<!-- [view]="view"
+-->
+<div class="heatmap">
+  <ngx-charts-heat-map
+    [legend]="legend"
+    [scheme]="heatmapColorScheme"
+    [showXAxisLabel]="showXAxisLabel"
+    [showYAxisLabel]="showYAxisLabel"
+    [xAxis]="xAxis"
+    [yAxis]="yAxis"
+    [xAxisLabel]="xAxisLabel"
+    [yAxisLabel]="yAxisLabel"
+    [results]="heatMapData"
+    (select)="onSelect($event)"
+    (activate)="onActivate($event)"
+    (deactivate)="onDeactivate($event)"
+  >
+  </ngx-charts-heat-map>
+</div>
+
 <p>dashboard works!</p>
 
 <!-- [view]="view" -->
-<ngx-charts-gauge
+
+<!-- <ngx-charts-gauge
   [results]="single"
   [legend]="legend"
   (select)="onSelect($event)"
   (activate)="onActivate($event)"
   (deactivate)="onDeactivate($event)"
 >
-  <!--
-  [scheme]="colorScheme"
-    [legendPosition]="legendPosition"
+</ngx-charts-gauge> -->
+
+<!--
+[scheme]="colorScheme"
+  [legendPosition]="legendPosition"
 -->
-</ngx-charts-gauge>

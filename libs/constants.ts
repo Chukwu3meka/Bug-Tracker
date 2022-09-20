@@ -7,6 +7,15 @@ export const colors = {
   open: '#b30000',
   closed: '#00bfa0',
   pending: '#ef9b20',
+
+  high: '#800000',
+  normal: '#CD5C5C',
+  low: '#FFA07A',
+
+  highActivity: '#006400',
+  normalActivity: '#32CD32',
+  lowActivity: '#98FB98',
+  noActivity: '#8FBC8F',
 };
 
 export const severity = [

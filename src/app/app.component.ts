@@ -9,15 +9,21 @@ import { NavigationStart, Router } from '@angular/router';
   styleUrls: ['./app.component.less'],
 })
 export class AppComponent {
-  private wideScreenWidth: number = 1300;
-  private wideScreenHeight: number = 620;
+  private wideScreenWidth: number = 300;
+  private wideScreenHeight: number = 20;
 
   public appNotCompatible: string = 'Fdsfdsf';
 
-  @HostListener('window:resize', ['$event'])
   private detectWideScreen = () =>
     window.innerHeight >= this.wideScreenHeight &&
     window.innerWidth >= this.wideScreenWidth;
+
+  @HostListener('window:resize', ['$event'])
+  private detectResize = (): void => {
+    this.appNotCompatible = this.detectWideScreen()
+      ? this.appNotCompatible
+      : 'Kindly use a wider Screen';
+  };
 
   // public activeTab?: number;
 
@@ -55,7 +61,7 @@ export class AppComponent {
     this.appNotCompatible = !initChromeBrowser
       ? 'Kindly use a Chrome browser'
       : !initWideScreen
-      ? 'Use a wider Screen and a chrome browser'
+      ? 'Kindly use a wider Screen'
       : '';
   }
 

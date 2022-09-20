@@ -1,11 +1,11 @@
 import { Color, ScaleType, colorSets } from '@swimlane/ngx-charts';
 
 import { Component, OnInit } from '@angular/core';
-import { severityData } from './severityData';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { heatMapData } from './heatMapData';
+import { bugReport, severityData } from './data';
 import { colors } from 'libs/constants';
 
 // export interface Color {
@@ -57,47 +57,88 @@ export class DashboardComponent {
 
   heatMapData?: any[];
   severityData?: any[];
+  bugReport?: any[];
+
   view: number[] = [700, 300];
 
+  bugReportView: any[] = [700, 400];
+
   // options
-  legend: boolean = false;
-  showLabels: boolean = true;
-  animations: boolean = true;
-  xAxis: boolean = true;
-  yAxis: boolean = true;
-  showYAxisLabel: boolean = false;
-  showXAxisLabel: boolean = false;
-  xAxisLabel: string = 'Country';
-  yAxisLabel: string = 'Year';
+  bugReportShowXAxis = true;
+  bugReportShowYAxis = true;
+  bugReportGradient = false;
+  bugReportShowLegend = true;
+  bugReportShowXAxisLabel = true;
+  bugReportXAxisLabel = 'Country';
+  bugReportShowYAxisLabel = true;
+  bugReportYAxisLabel = 'Population';
 
-  // colorScheme: domainColor = {
-  //   name: 'color',
-  //   domain: ['green', 'green', 'blue'],
-  // };
-
-  colorScheme: Color = {
-    domain: [colors.high, colors.normal, colors.low],
-    group: ScaleType.Ordinal,
-    selectable: true,
-    name: 'Customer Usage',
-  };
-
-  heatmapColorScheme: Color = {
+  bugReportColorScheme: Color = {
     domain: [
-      colors.highActivity,
-      colors.normalActivity,
-      colors.lowActivity,
-      colors.noActivity,
-      'green',
-      'blue',
+      '#E9967A',
+      '#F08080',
+      '#CD5C5C',
+      '#FF7F50',
+      '#FF6347',
+      '#FF0000',
+      '#B22222',
+      '#A52A2A',
+      //
     ],
     group: ScaleType.Ordinal,
     selectable: true,
     name: 'Customer Usage',
   };
 
-  schemeType: any;
-  yDomain = [0, 150];
+  // single: any[] = [];
+
+  // // options
+  // showLegend: boolean = true;
+  // showLabels: boolean = true;
+
+  // colorScheme = {
+  //   domain: ['#5AA454', '#E44D25', '#CFC0BB', '#7aa3e5', '#a8385d', '#aae3f5']
+  // };
+
+  // // options
+  // legend: boolean = false;
+  // showLabels: boolean = true;
+  // animations: boolean = true;
+  // xAxis: boolean = true;
+  // yAxis: boolean = true;
+  // showYAxisLabel: boolean = false;
+  // showXAxisLabel: boolean = false;
+  // xAxisLabel: string = 'Country';
+  // yAxisLabel: string = 'Year';
+
+  // colorScheme: domainColor = {
+  //   name: 'color',
+  //   domain: ['green', 'green', 'blue'],
+  // };
+
+  // colorScheme: Color = {
+  //   domain: [colors.high, colors.normal, colors.low],
+  //   group: ScaleType.Ordinal,
+  //   selectable: true,
+  //   name: 'Customer Usage',
+  // };
+
+  // heatmapColorScheme: Color = {
+  //   domain: [
+  //     colors.highActivity,
+  //     colors.normalActivity,
+  //     colors.lowActivity,
+  //     colors.noActivity,
+  //     'green',
+  //     'blue',
+  //   ],
+  //   group: ScaleType.Ordinal,
+  //   selectable: true,
+  //   name: 'Customer Usage',
+  // };
+
+  // schemeType: any;
+  // yDomain = [0, 150];
 
   // getColors() {
   //   this.colors = new ColorHelper(this.colorScheme, this.schemeType, this.yDomain);
@@ -117,7 +158,7 @@ export class DashboardComponent {
   // };
 
   constructor() {
-    Object.assign(this, { heatMapData, severityData });
+    Object.assign(this, { heatMapData, severityData, bugReport });
   }
 
   // onSelect(data): void {

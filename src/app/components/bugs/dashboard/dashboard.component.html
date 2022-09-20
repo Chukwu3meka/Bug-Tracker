@@ -1,54 +1,80 @@
-<!-- bugstat -->
+<app-bug-stat></app-bug-stat>
+
+<div class="dailyBugReport">
+  <ngx-charts-bar-vertical
+    [scheme]="bugReportColorScheme"
+    [results]="bugReport"
+    [gradient]="bugReportGradient"
+    [xAxis]="bugReportShowXAxis"
+    [yAxis]="bugReportShowYAxis"
+    [legend]="false"
+    [showXAxisLabel]="bugReportShowXAxisLabel"
+    [showYAxisLabel]="false"
+    [roundDomains]="true"
+    xAxisLabel="Previous Daily Commit"
+  >
+  </ngx-charts-bar-vertical>
+</div>
+
+<div>
+  <ngx-charts-pie-grid
+    [view]="[1200, 200]"
+    [results]="severityData"
+  ></ngx-charts-pie-grid>
+</div>
+<!-- [scheme]="" -->
+
+<!-- <div class="severityData"> -->
 <!-- heatmap -->
 <!-- bug severity -->
 <!-- graph -->
 
-<div class="severityData">
-  <!-- [view]="view"
+<!-- <div class="severityData"> -->
+<!-- [view]="view"
   -->
-  <!-- [scheme]="colorScheme" -->
+<!-- [scheme]="colorScheme" -->
 
-  <ngx-charts-pie-grid [scheme]="colorScheme" [results]="severityData">
-    <!-- (select)="onSelect($event)" -->
-  </ngx-charts-pie-grid>
+<!-- <ngx-charts-pie-grid [scheme]="colorScheme" [results]="severityData"> -->
+<!-- (select)="onSelect($event)" -->
+<!-- </ngx-charts-pie-grid> -->
 
-  <!-- severityData -->
-</div>
+<!-- severityData -->
+<!-- </div> -->
 
 <!-- [view]="view"
 -->
 
-[view]="view"
-<ngx-charts-heat-map
-  class="chart-container"
-  [results]="heatMapData"
-  [xAxis]="true"
-  [yAxis]="true"
-  [scheme]="'flame'"
->
-  <!-- [customColors]="customColors" -->
-</ngx-charts-heat-map>
-
-<div class="heatmap">
-  <!-- [scheme]="heatmapColorScheme" -->
+<!-- [view]="view"
   <ngx-charts-heat-map
-    [customColors]="customColors"
-    [legend]="legend"
-    [showXAxisLabel]="showXAxisLabel"
-    [showYAxisLabel]="showYAxisLabel"
-    [xAxis]="xAxis"
-    [yAxis]="yAxis"
-    [xAxisLabel]="xAxisLabel"
-    [yAxisLabel]="yAxisLabel"
+    class="chart-container"
     [results]="heatMapData"
-  >
-    <!-- (select)="onSelect($event)"
+    [xAxis]="true"
+    [yAxis]="true"
+    [scheme]="'flame'"
+  > -->
+<!-- [customColors]="customColors" -->
+<!-- </ngx-charts-heat-map> -->
+<!--
+  <div class="heatmap"> -->
+<!-- [scheme]="heatmapColorScheme" -->
+<!-- <ngx-charts-heat-map
+      [customColors]="customColors"
+      [legend]="legend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxis]="xAxis"
+      [yAxis]="yAxis"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      [results]="heatMapData"
+    > -->
+<!-- (select)="onSelect($event)"
     (activate)="onActivate($event)"
     (deactivate)="onDeactivate($event)" -->
-  </ngx-charts-heat-map>
-</div>
+<!-- </ngx-charts-heat-map>
+  </div> -->
 
-<p>dashboard works!</p>
+<!-- <p>dashboard works!</p> -->
 
 <!-- [view]="view" -->
 
@@ -64,4 +90,5 @@
 <!--
 [scheme]="colorScheme"
   [legendPosition]="legendPosition"
--->
+ /div> -->
+<!-- </div> -->

@@ -1,1 +1,19 @@
-<p>notification works!</p>
+<div class="notification">
+  <h1>Notifications</h1>
+
+  <p *ngIf="!notifications?.length">
+    You’re all caught up! Check back later for new notifications
+  </p>
+
+  <ul
+    *ngIf="notifications?.length"
+    nzItemLayout="horizontal"
+    class="color-with-marker"
+  >
+    <li *ngFor="let description of notifications">
+      <p>
+        {{ description }}
+      </p>
+    </li>
+  </ul>
+</div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-// import { ActivatedRoute, Router } from '@angular/router';
+
+import { Bugs } from 'src/app/mock-bugs';
 
 @Component({
   selector: 'app-feedback',
@@ -7,12 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./notification.component.less'],
 })
 export class NotificationComponent implements OnInit {
-  // constructor(private route: Router, private activatedRoute: ActivatedRoute) {}
-  //   this.activatedRoute.url.subscribe((currentUrl) => {
-  //     console.log('url is:    ' + currentUrl);
-  //   });
+  notifications!: string[];
 
-  constructor() {}
+  public notificationsLoading: boolean = true;
+
+  constructor() {
+    setTimeout(() => {
+      this.notifications = Bugs.map(
+        (x) =>
+          // img: 'https://placeimg.com/100/100/people',
+          x.description
+      ).slice(0, 4);
+      this.notificationsLoading = false;
+    }, 1000);
+  }
 
   ngOnInit(): void {}
 }

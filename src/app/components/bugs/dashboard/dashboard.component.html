@@ -15,16 +15,17 @@
   </div>
 
   <div>
-    <ngx-charts-gauge
-      [tooltipDisabled]="true"
-      [bigSegments]="4"
+    <ngx-charts-pie-chart
       [scheme]="gaugeColors"
-      [results]="gaugeData"
-      [legend]="true"
+      [results]="statusData"
+      [gradient]="true"
+      [legend]="showLegend"
       legendTitle="Bugs"
       [legendPosition]="legendPosition"
+      [labels]="showLabels"
+      [doughnut]="isDoughnut"
     >
-    </ngx-charts-gauge>
+    </ngx-charts-pie-chart>
   </div>
 </div>
 

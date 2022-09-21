@@ -29,8 +29,8 @@ export const severityData = [
   { name: 'Severity Low', value: 72 },
 ];
 
-export const gaugeData = [
-  { name: 'Closed Bugs', value: 50 },
-  { name: 'Open Bugs', value: 100 },
-  { name: 'Pending Bugs', value: 10 },
+export const statusData = [
+  { name: 'Closed Bugs', value: 120 },
+  { name: 'Open Bugs', value: 200 },
+  { name: 'Pending Bugs', value: 90 },
 ];

@@ -19,7 +19,7 @@ export class AppComponent {
     window.innerWidth >= this.wideScreenWidth;
 
   @HostListener('window:resize', ['$event'])
-  private detectResize = (): void => {
+  detectResize = (): void => {
     this.appNotCompatible = this.detectWideScreen()
       ? this.appNotCompatible
       : 'Kindly use a wider Screen';

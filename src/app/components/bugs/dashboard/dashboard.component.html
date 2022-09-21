@@ -3,7 +3,7 @@
 <div class="dailyBugReport">
   <ngx-charts-bar-vertical
     [scheme]="bugReportColorScheme"
-    [results]="bugReport"
+    [results]="bugReportData"
     [gradient]="bugReportGradient"
     [xAxis]="bugReportShowXAxis"
     [yAxis]="bugReportShowYAxis"
@@ -16,33 +16,24 @@
   </ngx-charts-bar-vertical>
 </div>
 
-<div>
+<div class="severity">
   <ngx-charts-pie-grid
-    [view]="[1200, 200]"
+    [scheme]="severityColors"
     [results]="severityData"
   ></ngx-charts-pie-grid>
 </div>
-<!-- [scheme]="" -->
 
-<!-- <div class="severityData"> -->
-<!-- heatmap -->
-<!-- bug severity -->
-<!-- graph -->
+<div class="gauge">
+  <ngx-charts-gauge
+    [scheme]="gaugeColors"
+    [results]="gaugeData"
+    [legend]="true"
+    [legendPosition]="legendPosition"
+  >
+  </ngx-charts-gauge>
+</div>
 
-<!-- <div class="severityData"> -->
-<!-- [view]="view"
-  -->
-<!-- [scheme]="colorScheme" -->
-
-<!-- <ngx-charts-pie-grid [scheme]="colorScheme" [results]="severityData"> -->
-<!-- (select)="onSelect($event)" -->
-<!-- </ngx-charts-pie-grid> -->
-
-<!-- severityData -->
-<!-- </div> -->
-
-<!-- [view]="view"
--->
+<!-- bugsGauge -->
 
 <!-- [view]="view"
   <ngx-charts-heat-map
@@ -55,40 +46,14 @@
 <!-- [customColors]="customColors" -->
 <!-- </ngx-charts-heat-map> -->
 <!--
-  <div class="heatmap"> -->
-<!-- [scheme]="heatmapColorScheme" -->
-<!-- <ngx-charts-heat-map
-      [customColors]="customColors"
-      [legend]="legend"
-      [showXAxisLabel]="showXAxisLabel"
-      [showYAxisLabel]="showYAxisLabel"
-      [xAxis]="xAxis"
-      [yAxis]="yAxis"
-      [xAxisLabel]="xAxisLabel"
-      [yAxisLabel]="yAxisLabel"
-      [results]="heatMapData"
-    > -->
-<!-- (select)="onSelect($event)"
-    (activate)="onActivate($event)"
-    (deactivate)="onDeactivate($event)" -->
-<!-- </ngx-charts-heat-map>
-  </div> -->
 
-<!-- <p>dashboard works!</p> -->
 
-<!-- [view]="view" -->
-
-<!-- <ngx-charts-gauge
+  <!-- <ngx-charts-gauge
   [results]="single"
   [legend]="legend"
   (select)="onSelect($event)"
   (activate)="onActivate($event)"
   (deactivate)="onDeactivate($event)"
 >
-</ngx-charts-gauge> -->
 
-<!--
-[scheme]="colorScheme"
-  [legendPosition]="legendPosition"
- /div> -->
-<!-- </div> -->
+</ngx-charts-gauge> -->

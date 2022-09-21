@@ -24,13 +24,13 @@ export const bugReportData = [
 ];
 
 export const severityData = [
-  { name: 'High', value: 8940000 },
-  { name: 'Normal', value: 5000000 },
-  { name: 'Low', value: 7200000 },
+  { name: 'Severity High', value: 94 },
+  { name: 'Severity Normal', value: 50 },
+  { name: 'Severity Low', value: 72 },
 ];
 
 export const gaugeData = [
-  { name: 'Closed', value: 50 },
-  { name: 'Open', value: 100 },
-  { name: 'Pending', value: 10 },
+  { name: 'Closed Bugs', value: 50 },
+  { name: 'Open Bugs', value: 100 },
+  { name: 'Pending Bugs', value: 10 },
 ];

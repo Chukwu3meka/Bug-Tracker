@@ -15,7 +15,7 @@ export class BugListsComponent {
     label: bug.label,
     ticket: `Ticket ID #${bug.id}`,
     info: `Reported on ${new Date(bug.created).toDateString()}`,
-    platform: `Platform or Application: ${bug.platform}`,
+    platform: `Platform: ${bug.platform}`,
     severity: `Severity Status: ${bug.severity}`,
     developer: bug.developer
       ? `Assigned to ${bug.developer.name}`

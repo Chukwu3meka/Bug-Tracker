@@ -1,14 +1,44 @@
+@import "/libs/less/mixinFunctions.less";
+@import "/libs/less/variables.less";
+
 .dailyBugReport {
   height: 350px;
 }
 
-.severity {
+.miniStat {
+  margin-top: 20px;
+  .flex();
   background-color: #fff;
+  border-radius: 10px !important;
+  & > div:first-of-type {
+    width: 100%;
+    border-right: 1px solid lighten(@secondary, 20%);
+    height: 250px;
+    p {
+      font-weight: 700;
+      color: @secondary;
+      text-align: center;
+    }
+  }
+  & > div:last-of-type {
+    // display: block;
+    // border: 3px solid red;
+
+    // height: 300px;
+    border-radius: 10px;
+    margin-left: 10px;
+    background-color: #fff;
+    // max-width: 300px;
+    // width: 300px;
+  }
+}
+
+.severity {
   height: 200px;
 }
 
 .gauge {
   height: 200px;
-  width: 300px;
+  // width: 300px;
   border: 3px solid red;
 }

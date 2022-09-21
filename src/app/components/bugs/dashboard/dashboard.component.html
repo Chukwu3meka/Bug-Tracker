@@ -1,37 +1,39 @@
 <app-bug-stat></app-bug-stat>
 
-<div class="dailyBugReport">
-  <ngx-charts-bar-vertical
-    [scheme]="bugReportColorScheme"
-    [results]="bugReportData"
-    [gradient]="bugReportGradient"
-    [xAxis]="bugReportShowXAxis"
-    [yAxis]="bugReportShowYAxis"
-    [legend]="false"
-    [showXAxisLabel]="bugReportShowXAxisLabel"
-    [showYAxisLabel]="false"
-    [roundDomains]="true"
-    xAxisLabel="Previous Daily Commit"
-  >
-  </ngx-charts-bar-vertical>
+<div class="miniStat">
+  <div>
+    <ngx-charts-bar-vertical
+      [scheme]="bugReportColorScheme"
+      [results]="bugReportData"
+      [gradient]="true"
+      [xAxis]="false"
+      [yAxis]="bugReportShowYAxis"
+      [roundDomains]="true"
+    >
+    </ngx-charts-bar-vertical>
+    <p>Previous Daily Commit</p>
+  </div>
+
+  <div>
+    <ngx-charts-gauge
+      [tooltipDisabled]="true"
+      [bigSegments]="4"
+      [scheme]="gaugeColors"
+      [results]="gaugeData"
+      [legend]="true"
+      legendTitle="Bugs"
+      [legendPosition]="legendPosition"
+    >
+    </ngx-charts-gauge>
+  </div>
 </div>
 
-<div class="severity">
+<!-- <div>
   <ngx-charts-pie-grid
     [scheme]="severityColors"
     [results]="severityData"
   ></ngx-charts-pie-grid>
-</div>
-
-<div class="gauge">
-  <ngx-charts-gauge
-    [scheme]="gaugeColors"
-    [results]="gaugeData"
-    [legend]="true"
-    [legendPosition]="legendPosition"
-  >
-  </ngx-charts-gauge>
-</div>
+</div> -->
 
 <!-- bugsGauge -->
 

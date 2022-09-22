@@ -11,37 +11,31 @@
       nzType="flag"
       nzTheme="outline"
       [style]="{ color: bug.color }"
+      (click)="displayBugHandler(bug.id)"
     ></span>
 
     <section>
       <div>
         <nz-divider
+          (click)="displayBugHandler(bug.id)"
           nzPlain
           [nzText]="bug.label"
           nzOrientation="left"
         ></nz-divider>
-        <p>{{ bug.description }}</p>
+        <p (click)="displayBugHandler(bug.id)">{{ bug.description }}</p>
       </div>
       <div>
-        <div>
-          <nz-avatar [nzSize]="15" [nzSrc]="bug.reporter.img"></nz-avatar>
-          <span (click)="displayProfileHandler(bug.reporter.id)">
-            {{ bug.reporter.name }}
-          </span>
-        </div>
-        <span
-          nz-icon
-          nzType="more"
-          nzTheme="outline"
-          style="cursor: pointer"
-        ></span>
+        <nz-avatar [nzSize]="15" [nzSrc]="bug.reporter.img"></nz-avatar>
+        <span (click)="displayProfileHandler(bug.reporter.id)">
+          {{ bug.reporter.name }}
+        </span>
       </div>
     </section>
     <ul>
-      <li>{{ bug.ticket }}</li>
-      <li>{{ bug.info }}</li>
-      <li>{{ bug.platform }}</li>
-      <li>{{ bug.severity }}</li>
+      <li (click)="displayBugHandler(bug.id)">{{ bug.ticket }}</li>
+      <li (click)="displayBugHandler(bug.id)">{{ bug.info }}</li>
+      <li (click)="displayBugHandler(bug.id)">{{ bug.platform }}</li>
+      <li (click)="displayBugHandler(bug.id)">{{ bug.severity }}</li>
       <li (click)="displayProfileHandler(bug.developer.id)">
         {{ bug.developer.assigned }}
       </li>
@@ -49,17 +43,13 @@
   </div>
 </div>
 
-<div
-  *ngIf="profileData.id"
-  class="displayProfile"
-  (click)="displayProfileHandler()"
->
+<div *ngIf="profileData.id" class="drawer" (click)="displayProfileHandler()">
   <div>
     <app-profile></app-profile>
   </div>
 </div>
 
-<div *ngIf="profileData.id" class="drawer" (click)="displayProfileHandler()">
+<div *ngIf="bugData.id" class="drawer" (click)="displayBugHandler()">
   <div>
     <app-profile></app-profile>
   </div>

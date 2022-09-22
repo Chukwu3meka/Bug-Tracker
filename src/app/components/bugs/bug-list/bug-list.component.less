@@ -33,6 +33,7 @@
     }
 
     & > span:first-of-type {
+      cursor: pointer;
       margin: auto;
     }
 
@@ -42,13 +43,15 @@
       & > div:first-of-type {
         width: 100%;
         nz-divider {
-          font-weight: bold;
-          color: darken(@secondary, 10%);
-          border-color: lighten(@secondary, 20%);
-          font-size: 1.1em;
+          cursor: pointer;
+          font-weight: 600;
+          color: darken(@secondary, 15%);
+          border-color: lighen(@secondary, 10%);
+          font-size: 1em;
           margin: 5px 0;
         }
         p {
+          cursor: pointer;
           margin: 0;
           overflow: hidden;
           text-align: justify;
@@ -59,16 +62,12 @@
         }
       }
       & > div:last-of-type {
-        .flex(@justify:space-between;@width:100%);
-        & > div {
-          margin-top: 5px;
-          gap: 5px;
-          .flex();
-          font-size: 0.8em;
-          font-weight: bold;
-          color: darken(@secondary, 10%);
-          cursor: pointer;
-        }
+        gap: 5px;
+        .flex();
+        font-size: 0.8em;
+        font-weight: 600;
+        color: darken(@secondary, 15%);
+        cursor: pointer;
       }
     }
 
@@ -83,8 +82,6 @@
         font-size: 0.85em;
         color: darken(@secondary, 30%);
         font-weight: bold;
-      }
-      & li:last-of-type {
         cursor: pointer;
       }
       & li:before {
@@ -106,7 +103,7 @@
   }
 }
 
-.displayProfile {
+.drawer {
   position: fixed;
   top: 0;
   right: 0;

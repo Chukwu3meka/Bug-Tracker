@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 
 import { colors } from 'libs/constants';
-import { Bugs } from 'src/app/mock-bugs';
+import { Bug, Developer } from 'src/app/interface/Bug';
+import { Bugs } from 'src/app/mock-database';
 
 @Component({
   selector: 'bug-list',
@@ -9,6 +10,8 @@ import { Bugs } from 'src/app/mock-bugs';
   styleUrls: ['./bug-list.component.less'],
 })
 export class BugListsComponent {
+  public profileData: Developer = { id: undefined };
+
   public appBugs = Bugs.map((bug) => ({
     ...bug,
     color: colors[bug.status],
@@ -17,8 +20,20 @@ export class BugListsComponent {
     info: `Reported on ${new Date(bug.created).toDateString()}`,
     platform: `Platform: ${bug.platform}`,
     severity: `Severity Status: ${bug.severity}`,
-    developer: bug.developer
-      ? `Assigned to ${bug.developer.name}`
-      : `Not yet assigned`,
+    developer: {
+      ...bug.developer,
+      assigned: bug.developer?.name
+        ? `Assigned to '${bug.developer.name}'`
+        : `Not yet assigned`,
+    },
   }));
+
+  public displayProfileHandler = (id?: number) => {
+    if (id) {
+      this.profileData = { id: 1 };
+      console.log(id);
+    } else {
+      this.profileData = {};
+    }
+  };
 }

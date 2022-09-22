@@ -23,10 +23,18 @@
         <p>{{ bug.description }}</p>
       </div>
       <div>
-        <nz-avatar [nzSize]="15" [nzSrc]="bug.reporter.img"></nz-avatar>
-        <span>
-          {{ bug.reporter.name }}
-        </span>
+        <div>
+          <nz-avatar [nzSize]="15" [nzSrc]="bug.reporter.img"></nz-avatar>
+          <span (click)="displayProfileHandler(bug.reporter.id)">
+            {{ bug.reporter.name }}
+          </span>
+        </div>
+        <span
+          nz-icon
+          nzType="more"
+          nzTheme="outline"
+          style="cursor: pointer"
+        ></span>
       </div>
     </section>
     <ul>
@@ -34,7 +42,25 @@
       <li>{{ bug.info }}</li>
       <li>{{ bug.platform }}</li>
       <li>{{ bug.severity }}</li>
-      <li>{{ bug.developer }}</li>
+      <li (click)="displayProfileHandler(bug.developer.id)">
+        {{ bug.developer.assigned }}
+      </li>
     </ul>
+  </div>
+</div>
+
+<div
+  *ngIf="profileData.id"
+  class="displayProfile"
+  (click)="displayProfileHandler()"
+>
+  <div>
+    <app-profile></app-profile>
+  </div>
+</div>
+
+<div *ngIf="profileData.id" class="drawer" (click)="displayProfileHandler()">
+  <div>
+    <app-profile></app-profile>
   </div>
 </div>

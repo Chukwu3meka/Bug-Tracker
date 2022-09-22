@@ -11,12 +11,14 @@ export interface Bug {
 }
 
 export interface Developer {
-  img: string;
-  name: string;
+  img?: string;
+  id?: number;
+  name?: string;
 }
 
 export interface Reporter {
   img: string;
+  id: number;
   name: string;
   email: string;
 }

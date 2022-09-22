@@ -7,6 +7,7 @@ export const Bugs: Bug[] = [
     created: 'Thu Aug 11 2022 11:16:00 GMT+0100 (West Africa Standard Time)',
     platform: 'XPath',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Amelia Feil',
       email: 'Camylle@B2B.org',
@@ -22,6 +23,7 @@ export const Bugs: Bug[] = [
     created: 'Tue Jul 26 2022 10:22:48 GMT+0100 (West Africa Standard Time)',
     platform: 'Mobile App',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Amelia Feil',
       email: 'Camylle@B2B.org',
@@ -29,6 +31,7 @@ export const Bugs: Bug[] = [
     label: 'Velit voluptas harum.',
     status: 'closed',
     developer: {
+      id: 20220010,
       img: '//joeschmoe.io/api/v1/random',
       name: 'Eugene Turcotte',
     },
@@ -40,6 +43,7 @@ export const Bugs: Bug[] = [
     created: 'Thu Jun 02 2022 19:23:50 GMT+0100 (West Africa Standard Time)',
     platform: 'Internet Banking',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Moses Brekke',
       email: 'Colton@compelling.org',
@@ -47,6 +51,7 @@ export const Bugs: Bug[] = [
     label: 'Vel ut laudantium necessitatibus iusto earum.',
     status: 'closed',
     developer: {
+      id: 20220010,
       img: '//joeschmoe.io/api/v1/random',
       name: 'Rodolfo Bins',
     },
@@ -59,6 +64,7 @@ export const Bugs: Bug[] = [
     created: 'Wed Jul 20 2022 13:07:58 GMT+0100 (West Africa Standard Time)',
     platform: 'Form A',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Dr. Brittany DuBuque',
       email: 'Darian@efficient.org',
@@ -74,6 +80,7 @@ export const Bugs: Bug[] = [
     created: 'Thu Sep 23 2021 13:14:49 GMT+0100 (West Africa Standard Time)',
     platform: 'Workflow',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Terry Turcotte',
       email: 'Gust@visionary.org',
@@ -89,6 +96,7 @@ export const Bugs: Bug[] = [
     created: 'Sun May 01 2022 11:48:28 GMT+0100 (West Africa Standard Time)',
     platform: 'Form A',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Jana Welch',
       email: 'Sydni@B2C.org',
@@ -96,6 +104,7 @@ export const Bugs: Bug[] = [
     label: 'Veritatis eius omnis et veritatis officiis qui unde.',
     status: 'pending',
     developer: {
+      id: 20220010,
       img: '//joeschmoe.io/api/v1/random',
       name: 'Spencer Kuvalis',
     },
@@ -108,6 +117,7 @@ export const Bugs: Bug[] = [
     created: 'Sat Oct 30 2021 02:50:42 GMT+0100 (West Africa Standard Time)',
     platform: 'Workflow',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Darrel Jast',
       email: 'Waylon@Open-source.org',
@@ -123,6 +133,7 @@ export const Bugs: Bug[] = [
     created: 'Wed Nov 24 2021 21:32:24 GMT+0100 (West Africa Standard Time)',
     platform: 'Workflow',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Glen Blanda',
       email: 'Don@intuitive.org',
@@ -131,6 +142,7 @@ export const Bugs: Bug[] = [
       'Dolorem laboriosam velit sunt necessitatibus vel odit quidem saepe.',
     status: 'pending',
     developer: {
+      id: 20220010,
       img: '//joeschmoe.io/api/v1/random',
       name: 'Tara MacGyver',
     },
@@ -143,6 +155,7 @@ export const Bugs: Bug[] = [
     created: 'Fri Aug 27 2021 00:02:24 GMT+0100 (West Africa Standard Time)',
     platform: 'Mobile App',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Mattie Medhurst',
       email: 'Caitlyn@magnetic.org',
@@ -150,6 +163,7 @@ export const Bugs: Bug[] = [
     label: 'Est dicta modi quod in ad ab est sed.',
     status: 'pending',
     developer: {
+      id: 20220010,
       img: '//joeschmoe.io/api/v1/random',
       name: 'Hattie Graham',
     },
@@ -162,6 +176,7 @@ export const Bugs: Bug[] = [
     created: 'Fri Sep 03 2021 02:39:20 GMT+0100 (West Africa Standard Time)',
     platform: 'Mobile App',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Mr. Dustin Kunze',
       email: 'Keshawn@next-generation.org',
@@ -169,6 +184,7 @@ export const Bugs: Bug[] = [
     label: 'Et laborum aut.',
     status: 'pending',
     developer: {
+      id: 20220010,
       img: '//joeschmoe.io/api/v1/random',
       name: 'Rex Gutmann',
     },
@@ -180,6 +196,7 @@ export const Bugs: Bug[] = [
     created: 'Mon Sep 20 2021 00:41:49 GMT+0100 (West Africa Standard Time)',
     platform: 'Mobile App',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Cedric Yost',
       email: 'Domingo@value-added.org',
@@ -187,6 +204,7 @@ export const Bugs: Bug[] = [
     label: 'At molestiae corporis.',
     status: 'closed',
     developer: {
+      id: 20220010,
       img: '//joeschmoe.io/api/v1/random',
       name: 'Cynthia Collins',
     },
@@ -199,6 +217,7 @@ export const Bugs: Bug[] = [
     created: 'Tue Jul 12 2022 02:59:07 GMT+0100 (West Africa Standard Time)',
     platform: 'Mobile App',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Beatrice Reinger',
       email: 'Mireille@sexy.org',
@@ -206,6 +225,7 @@ export const Bugs: Bug[] = [
     label: 'Veniam accusamus occaecati.',
     status: 'closed',
     developer: {
+      id: 20220010,
       img: '//joeschmoe.io/api/v1/random',
       name: 'Kari Bartell',
     },
@@ -219,6 +239,7 @@ export const Bugs: Bug[] = [
     severity: 'High',
     created: 'Sun Feb 27 2022 03:04:24 GMT+0100 (West Africa Standard Time)',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Edgar Jerde',
       email: 'Garnet@bleeding-edge.org',
@@ -232,6 +253,7 @@ export const Bugs: Bug[] = [
     created: 'Thu Apr 14 2022 03:12:01 GMT+0100 (West Africa Standard Time)',
     platform: 'Appraisal',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Steve Rath',
       email: 'Glen@plug-and-play.org',
@@ -239,6 +261,7 @@ export const Bugs: Bug[] = [
     label: 'Velit quia quam quasi qui tempore.',
     status: 'pending',
     developer: {
+      id: 20220010,
       img: '//joeschmoe.io/api/v1/random',
       name: 'Javier Torp',
     },
@@ -251,6 +274,7 @@ export const Bugs: Bug[] = [
     created: 'Mon Dec 20 2021 21:16:52 GMT+0100 (West Africa Standard Time)',
     platform: 'Workflow',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Traci Will',
       email: 'Miguel@wireless.org',
@@ -258,6 +282,7 @@ export const Bugs: Bug[] = [
     label: 'Officiis est et commodi libero quidem repellat in non iusto.',
     status: 'pending',
     developer: {
+      id: 20220010,
       img: '//joeschmoe.io/api/v1/random',
       name: 'Brian Rogahn V',
     },
@@ -269,6 +294,7 @@ export const Bugs: Bug[] = [
     created: 'Tue Jun 14 2022 22:05:03 GMT+0100 (West Africa Standard Time)',
     platform: 'Mobile App',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Mrs. Phil Botsford',
       email: 'Jaida@real-time.org',
@@ -283,6 +309,7 @@ export const Bugs: Bug[] = [
     created: 'Mon Mar 14 2022 02:55:37 GMT+0100 (West Africa Standard Time)',
     platform: 'Mobile App',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Julius Schroeder',
       email: 'Merritt@end-to-end.org',
@@ -298,6 +325,7 @@ export const Bugs: Bug[] = [
     created: 'Sat Jul 23 2022 23:43:20 GMT+0100 (West Africa Standard Time)',
     platform: 'Mobile App',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Traci Willms PhD',
       email: 'Malvina@collaborative.org',
@@ -313,6 +341,7 @@ export const Bugs: Bug[] = [
     created: 'Wed Jul 20 2022 02:49:12 GMT+0100 (West Africa Standard Time)',
     platform: 'Mobile App',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Miss Rudy Schaden',
       email: 'Rhett@intuitive.org',
@@ -328,6 +357,7 @@ export const Bugs: Bug[] = [
     created: 'Tue Aug 24 2021 12:15:57 GMT+0100 (West Africa Standard Time)',
     platform: 'Workflow',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Lola Boyer',
       email: 'Fernando@virtual.org',
@@ -343,6 +373,7 @@ export const Bugs: Bug[] = [
     created: 'Mon Oct 18 2021 08:49:25 GMT+0100 (West Africa Standard Time)',
     platform: 'Mobile App',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Luther Schowalter',
       email: 'Tierra@bleeding-edge.org',
@@ -358,6 +389,7 @@ export const Bugs: Bug[] = [
     created: 'Wed Jun 22 2022 16:21:46 GMT+0100 (West Africa Standard Time)',
     platform: 'Form A',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Saul Kassulke',
       email: 'Crawford@sexy.org',
@@ -373,6 +405,7 @@ export const Bugs: Bug[] = [
     created: 'Thu Aug 12 2021 04:29:31 GMT+0100 (West Africa Standard Time)',
     platform: 'Form A',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Debbie Grant',
       email: 'Dante@strategic.org',
@@ -388,6 +421,7 @@ export const Bugs: Bug[] = [
     created: 'Wed Dec 29 2021 08:10:12 GMT+0100 (West Africa Standard Time)',
     platform: 'Form A',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Forrest Hoeger II',
       email: 'Judy@seamless.org',
@@ -403,6 +437,7 @@ export const Bugs: Bug[] = [
     created: 'Thu Dec 23 2021 20:37:35 GMT+0100 (West Africa Standard Time)',
     platform: 'Form A',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Phil Senger MD',
       email: 'Skye@transparent.org',
@@ -410,6 +445,7 @@ export const Bugs: Bug[] = [
     label: 'Quia quas unde amet.',
     status: 'pending',
     developer: {
+      id: 20220010,
       img: '//joeschmoe.io/api/v1/random',
       name: 'Damon Dicki',
     },
@@ -422,6 +458,7 @@ export const Bugs: Bug[] = [
     created: 'Mon Aug 01 2022 20:00:16 GMT+0100 (West Africa Standard Time)',
     platform: 'Mobile App',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Lynne Carroll',
       email: 'Ima@innovative.org',
@@ -429,6 +466,7 @@ export const Bugs: Bug[] = [
     label: 'Corrupti deserunt aut ipsam ut sapiente non.',
     status: 'pending',
     developer: {
+      id: 20220010,
       img: '//joeschmoe.io/api/v1/random',
       name: 'Mrs. Dora Langosh',
     },
@@ -441,6 +479,7 @@ export const Bugs: Bug[] = [
     created: 'Thu Apr 14 2022 09:40:29 GMT+0100 (West Africa Standard Time)',
     platform: 'USSD',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Mrs. Kelly Olson',
       email: 'Christopher@magnetic.org',
@@ -448,6 +487,7 @@ export const Bugs: Bug[] = [
     label: 'In sit expedita.',
     status: 'pending',
     developer: {
+      id: 20220010,
       img: '//joeschmoe.io/api/v1/random',
       name: 'Juana Cassin',
     },
@@ -460,6 +500,7 @@ export const Bugs: Bug[] = [
     created: 'Fri Dec 03 2021 20:14:46 GMT+0100 (West Africa Standard Time)',
     platform: 'Mobile App',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Ken Mante',
       email: 'Mireya@end-to-end.org',
@@ -467,6 +508,7 @@ export const Bugs: Bug[] = [
     label: 'Ea consectetur sint a illum quo quam.',
     status: 'pending',
     developer: {
+      id: 20220010,
       img: '//joeschmoe.io/api/v1/random',
       name: "Laura O'Hara",
     },
@@ -478,6 +520,7 @@ export const Bugs: Bug[] = [
     created: 'Wed Jul 13 2022 16:23:21 GMT+0100 (West Africa Standard Time)',
     platform: 'Appraisal',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Stanley Ruecker',
       email: 'Enid@sticky.org',
@@ -493,6 +536,7 @@ export const Bugs: Bug[] = [
     created: 'Fri Jul 15 2022 08:06:08 GMT+0100 (West Africa Standard Time)',
     platform: 'USSD',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Gilberto Fisher',
       email: 'Ellen@front-end.org',
@@ -508,6 +552,7 @@ export const Bugs: Bug[] = [
     created: 'Wed Jun 15 2022 08:28:01 GMT+0100 (West Africa Standard Time)',
     platform: 'USSD',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Mr. Alfonso Witting',
       email: 'Elliott@cross-media.org',
@@ -523,6 +568,7 @@ export const Bugs: Bug[] = [
     created: 'Fri Jun 17 2022 10:18:05 GMT+0100 (West Africa Standard Time)',
     platform: 'USSD',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Miss Ira Collins',
       email: 'Bartholome@viral.org',
@@ -538,6 +584,7 @@ export const Bugs: Bug[] = [
     created: 'Thu Sep 23 2021 16:02:21 GMT+0100 (West Africa Standard Time)',
     platform: 'USSD',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Miss Allen Green',
       email: 'Corine@bleeding-edge.org',
@@ -552,6 +599,7 @@ export const Bugs: Bug[] = [
     created: 'Thu Sep 16 2021 06:24:59 GMT+0100 (West Africa Standard Time)',
     platform: 'Mobile App',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Mrs. Antonia Reichel',
       email: 'Clementina@interactive.org',
@@ -560,6 +608,7 @@ export const Bugs: Bug[] = [
       'Nam veritatis molestiae et praesentium consequatur id maiores temporibus.',
     status: 'pending',
     developer: {
+      id: 20220010,
       img: '//joeschmoe.io/api/v1/random',
       name: 'Mrs. Sheila Marks',
     },
@@ -572,6 +621,7 @@ export const Bugs: Bug[] = [
     created: 'Sun May 29 2022 15:52:53 GMT+0100 (West Africa Standard Time)',
     platform: 'Appraisal',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Lyle Lind',
       email: 'Wyatt@real-time.org',
@@ -579,6 +629,7 @@ export const Bugs: Bug[] = [
     label: 'Et maxime quidem in blanditiis maiores.',
     status: 'pending',
     developer: {
+      id: 20220010,
       img: '//joeschmoe.io/api/v1/random',
       name: 'Leona Crooks',
     },
@@ -591,6 +642,7 @@ export const Bugs: Bug[] = [
     created: 'Sun Jul 10 2022 09:28:20 GMT+0100 (West Africa Standard Time)',
     platform: 'Mobile App',
     reporter: {
+      id: 20220011,
       img: 'https://placeimg.com/100/100/people',
       name: 'Ida Abernathy',
       email: 'Cicero@customized.org',
@@ -598,10 +650,134 @@ export const Bugs: Bug[] = [
     label: 'Voluptatem repellat odit.',
     status: 'closed',
     developer: {
+      id: 20220010,
       img: '//joeschmoe.io/api/v1/random',
       name: 'Camille Cronin',
     },
     description:
       'Lorem in commodo nostrud deserunt est Lorem dolor minim irure reprehenderit. Exercitation commodo enim aute incididunt amet consectetur officia sit cupidatat magna consequat proident enim. Ex nulla adipisicing dolor sint veniam. Reprehenderit ea non ea culpa. Laboris velit occaecat enim nisi laborum occaecat cupidatat cillum sunt aliqua.',
+  },
+];
+
+export const Developer = [
+  {
+    id: 20220001,
+    img: 'https://placeimg.com/100/100/people',
+    name: 'Roxanne Nicolas',
+    firstSignin:
+      'Thu Dec 16 2021 12:50:30 GMT+0100 (West Africa Standard Time)',
+    contributions: '211',
+    branch: 'Kentucky',
+    department: 'Bike',
+  },
+  {
+    id: 20220002,
+    img: 'https://placeimg.com/100/100/people',
+    name: 'Mrs. Kent Sanford',
+    firstSignin:
+      'Sun Dec 05 2021 13:11:51 GMT+0100 (West Africa Standard Time)',
+    contributions: '8',
+    branch: 'New Hampshire',
+    department: 'digital',
+  },
+  {
+    id: 20220003,
+    img: 'https://placeimg.com/100/100/people',
+    name: 'Ed Sporer DVM',
+    firstSignin:
+      'Thu Mar 17 2022 23:19:11 GMT+0100 (West Africa Standard Time)',
+    contributions: '250',
+    branch: 'New York',
+    department: 'proactive',
+  },
+  {
+    id: 20220004,
+    img: 'https://placeimg.com/100/100/people',
+    name: 'Mrs. Marvin Champlin',
+    firstSignin:
+      'Sat Jan 15 2022 21:50:41 GMT+0100 (West Africa Standard Time)',
+    contributions: '500',
+    branch: 'Texas',
+    department: 'GB',
+  },
+  {
+    id: 20220005,
+    img: 'https://placeimg.com/100/100/people',
+    name: 'Sherry Will DVM',
+    firstSignin:
+      'Sat May 28 2022 23:45:09 GMT+0100 (West Africa Standard Time)',
+    contributions: '333',
+    branch: 'Illinois',
+    department: 'Concrete',
+  },
+  {
+    id: 20220006,
+    img: 'https://placeimg.com/100/100/people',
+    name: 'Mr. Kay Senger',
+    firstSignin:
+      'Fri Sep 02 2022 15:43:54 GMT+0100 (West Africa Standard Time)',
+    contributions: '374',
+    branch: 'Pennsylvania',
+    department: 'index',
+  },
+  {
+    id: 20220007,
+    img: 'https://placeimg.com/100/100/people',
+    name: 'Preston Schoen',
+    firstSignin:
+      'Wed Aug 24 2022 09:43:55 GMT+0100 (West Africa Standard Time)',
+    contributions: '654',
+    branch: 'Michigan',
+    department: 'Utah',
+  },
+  {
+    id: 20220008,
+    img: 'https://placeimg.com/100/100/people',
+    name: 'Faith Parisian Jr.',
+    firstSignin:
+      'Sat Aug 06 2022 20:04:08 GMT+0100 (West Africa Standard Time)',
+    contributions: '161',
+    branch: 'Connecticut',
+    department: 'Avon',
+  },
+  {
+    id: 20220010,
+    img: 'https://placeimg.com/100/100/people',
+    name: 'Joanna Rice',
+    firstSignin:
+      'Sat Aug 20 2022 23:49:24 GMT+0100 (West Africa Standard Time)',
+    contributions: '466',
+    branch: 'West Virginia',
+    department: 'HTTP',
+  },
+  {
+    id: 20220011,
+    img: 'https://placeimg.com/100/100/people',
+    name: 'Blanche Reilly',
+    firstSignin:
+      'Fri May 20 2022 19:01:44 GMT+0100 (West Africa Standard Time)',
+    contributions: '788',
+    branch: 'Iowa',
+    department: 'schemas',
+  },
+  {
+    id: 20220012,
+    img: 'https://placeimg.com/100/100/people',
+    name: 'Terry Nader',
+    firstSignin:
+      'Fri May 06 2022 15:59:38 GMT+0100 (West Africa Standard Time)',
+    contributions: '58',
+    branch: 'Arkansas',
+    department: 'Computers',
+  },
+  {
+    id: 20220013,
+    img: 'https://placeimg.com/100/100/people',
+    name: 'Douglas Mosciski',
+    firstSignin:
+      'Sun Jun 26 2022 02:16:29 GMT+0100 (West Africa Standard Time)',
+    contributions: '85',
+    branch: 'South Dakota',
+    department: 'Islands',
   },
 ];

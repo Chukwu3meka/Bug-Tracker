@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Bugs } from 'src/app/mock-bugs';
+import { Bugs } from 'src/app/mock-database';
 import { DateAgoPipe } from 'src/app/pipes/dateago.pipe';
 
 @Component({

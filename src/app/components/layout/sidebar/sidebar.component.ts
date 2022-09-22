@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Bugs } from 'src/app/mock-bugs';
+import { Bugs } from 'src/app/mock-database';
 
 @Component({
   selector: 'app-sidebar',

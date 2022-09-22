@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
 import { colors } from 'libs/constants';
-import { Bug, Developer } from 'src/app/interface/Bug';
 import { Bugs } from 'src/app/mock-database';
 
 interface ProfileData {
@@ -20,7 +19,7 @@ interface BugData {
   styleUrls: ['./bug-list.component.less'],
 })
 export class BugListsComponent {
-  public profileData: ProfileData = { id: undefined };
+  public profileData: ProfileData = {};
   public bugData: BugData = {};
 
   public appBugs = Bugs.map((bug) => ({
@@ -39,20 +38,13 @@ export class BugListsComponent {
     },
   }));
 
-  public displayProfileHandler = (id?: number) => {
-    if (id) {
-      this.profileData = { id: 1 };
-    } else {
-      this.profileData = {};
-    }
+  public displayProfileHandler = (id?: number): void => {
+    if (!id) this.profileData = {};
+    if (id) this.profileData = { id: 1 };
   };
 
-  public displayBugHandler = (id?: string) => {
-    if (id) {
-      console.log(id);
-      this.bugData = { id: '2' };
-    } else {
-      this.bugData = {};
-    }
+  public displayBugHandler = (id?: string): void => {
+    if (!id) this.bugData = {};
+    if (id) this.bugData = { id: '2' };
   };
 }

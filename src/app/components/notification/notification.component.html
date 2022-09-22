@@ -10,10 +10,8 @@
     nzItemLayout="horizontal"
     class="color-with-marker"
   >
-    <li *ngFor="let description of notifications">
-      <p>
-        {{ description }}
-      </p>
+    <li *ngFor="let notification of notifications">
+      <p>{{ notification.description }}</p>
     </li>
   </ul>
 </div>

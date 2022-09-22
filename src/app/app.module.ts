@@ -24,6 +24,7 @@ import { NotificationComponent } from './components/notification/notification.co
 import { ProfileComponent } from './components/profile/profile.component';
 import { BugListsComponent } from './components/bugs/bug-list/bug-list.component';
 import { BugStatComponent } from './components/bugs/bug-stat/bug-stat.component';
+import { DateAgoPipe } from './pipes/dateago.pipe';
 // import { FileuploadComponent } from './components/fileupload/fileupload.component';
 
 registerLocaleData(en);
@@ -40,6 +41,7 @@ registerLocaleData(en);
     ProfileComponent,
     BugListsComponent,
     BugStatComponent,
+    DateAgoPipe,
   ],
   imports: [
     BrowserModule,

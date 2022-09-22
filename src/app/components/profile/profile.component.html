@@ -1,1 +1,11 @@
-<p>profile works!</p>
+<div class="profile">
+  <img [src]="profileImg" />
+
+  <main>
+    <div *ngFor="let value of profileData">
+      <span>{{ value.title }}</span>
+      <span></span>
+      <p>{{ value.data }}</p>
+    </div>
+  </main>
+</div>

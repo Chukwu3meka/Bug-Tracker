@@ -1,18 +1,25 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { BugListsComponent } from './components/bugs/bug-list/bug-list.component';
+// routes
 import { ProfileComponent } from './components/profile/profile.component';
 import { AddBugComponent } from './components/bugs/add-bug/add-bug.component';
-import { NotificationComponent } from './components/notification/notification.component';
+import { BugListsComponent } from './components/bugs/bug-list/bug-list.component';
 import { DashboardComponent } from './components/bugs/dashboard/dashboard.component';
+import { NotificationComponent } from './components/notification/notification.component';
+import { SelectOptionsComponent } from './components/bugs/select-options/select-options.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: DashboardComponent },
   { path: 'bugs', pathMatch: 'full', component: BugListsComponent },
-  { path: 'profile', pathMatch: 'full', component: ProfileComponent },
   { path: 'add-bug', pathMatch: 'full', component: AddBugComponent },
+  { path: 'profile', pathMatch: 'full', component: ProfileComponent },
   { path: 'notification', pathMatch: 'full', component: NotificationComponent },
+  {
+    path: 'select-options',
+    pathMatch: 'full',
+    component: SelectOptionsComponent,
+  },
 ];
 
 @NgModule({

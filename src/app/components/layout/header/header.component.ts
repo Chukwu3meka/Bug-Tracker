@@ -13,6 +13,7 @@ export class HeaderComponent {
     { name: 'Dashboard', path: '/', icon: 'dashboard' },
     { name: 'Bugs', path: '/bugs', icon: 'bug' },
     { name: 'Notification', path: '/notification', icon: 'wechat' },
+    { name: 'Options', path: '/select-options', icon: 'edit' },
     { name: 'Profile', path: '/profile', icon: 'user' },
   ];
 }

@@ -95,15 +95,3 @@ export interface DashboardDeveloper {
   name?: string;
   email?: string;
 }
-
-export enum DashboardSeverity {
-  SeverityStatusHigh = 'Severity Status: High',
-  SeverityStatusLow = 'Severity Status: Low',
-  SeverityStatusNormal = 'Severity Status: Normal',
-}
-
-export enum DashboardStatus {
-  Closed = 'closed',
-  Open = 'open',
-  Pending = 'pending',
-}

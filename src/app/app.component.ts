@@ -10,8 +10,8 @@ import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 export class AppComponent implements OnInit {
   public pageLoading: boolean = true;
   public appNotCompatible: string = '';
-  private wideScreenWidth: number = 1200;
-  private wideScreenHeight: number = 600;
+  private wideScreenWidth: number = 120;
+  private wideScreenHeight: number = 60;
 
   private pageLoadingHandler(): void {
     setTimeout(() => {

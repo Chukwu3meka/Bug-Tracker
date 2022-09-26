@@ -9,6 +9,8 @@ import { NavigationStart, Router } from '@angular/router';
   styleUrls: ['./app.component.less'],
 })
 export class AppComponent {
+  public pageLoading: boolean = true;
+
   private wideScreenWidth: number = 300;
   private wideScreenHeight: number = 20;
 

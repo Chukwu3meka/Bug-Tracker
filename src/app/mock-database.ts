@@ -659,7 +659,7 @@ export const Bugs: Bug[] = [
   },
 ];
 
-export const Developer = [
+export const Users = [
   {
     id: 20220001,
     img: 'https://placeimg.com/100/100/people',

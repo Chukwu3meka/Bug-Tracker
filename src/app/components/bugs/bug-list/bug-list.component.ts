@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { colors } from 'libs/constants';
+import { Bug } from 'src/app/interface/Bug';
 import { Bugs } from 'src/app/mock-database';
+
+import { BugsService } from '../../../services/bugs.service';
 
 interface ProfileData {
   img?: string;
@@ -18,7 +21,9 @@ interface BugData {
   templateUrl: './bug-list.component.html',
   styleUrls: ['./bug-list.component.less'],
 })
-export class BugListsComponent {
+export class BugListsComponent implements OnInit {
+  public bugs: Bug[] = [];
+
   public profileData: ProfileData = {};
   public bugData: BugData = {};
 
@@ -47,4 +52,14 @@ export class BugListsComponent {
     if (!id) this.bugData = {};
     if (id) this.bugData = { id: '2' };
   };
+
+  constructor(private bugService: BugsService) {}
+
+  ngOnInit(): void {
+    this.bugService.getBugs().subscribe((bugs) => {
+      this.bugs = bugs;
+    });
+
+    console.log('helloe', this.bugService.getBugs());
+  }
 }

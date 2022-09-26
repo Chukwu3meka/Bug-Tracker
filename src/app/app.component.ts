@@ -10,11 +10,9 @@ import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   public pageLoading: boolean = true;
-
+  public appNotCompatible: string = '';
   private wideScreenWidth: number = 1200;
   private wideScreenHeight: number = 600;
-
-  public appNotCompatible: string = 'Fdsfdsf';
 
   private pageLoadingHandler(): void {
     setTimeout(() => {
@@ -41,43 +39,11 @@ export class AppComponent implements OnInit {
     this.minScreenAllowed();
   };
 
-  //   ():void=>{
-
-  // }
-
-  // detectResize = (): void => {
-  //   console.log(
-  //     // 'resize windows',
-  //     // this.minScreenAllowed(),
-  //     // window.innerHeight,
-  //     // window.innerWidth
-
-  //     window.innerHeight,
-  //     this.wideScreenHeight,
-  //     window.innerWidth,
-  //     this.wideScreenWidth,
-  //     this.minScreenAllowed()
-  //   );
-  //   // this.appNotCompatible = this.minScreenAllowed()
-  //   this.appNotCompatible = this.minScreenAllowed()
-  //     ? this.appNotCompatible
-  //     : 'Kindly use a wider Screen';
-  // };
-
-  // public activeTab?: number;
-
-  // public activeTabHandler = (selectedTab: number) => {
-  //   console.log(selectedTab, this.activeTab);
-  //   this.activeTab = selectedTab;
-  // };
-
-  // isCollapsed = false;
-
   constructor(
     private router: Router,
     private viewPortscroller: ViewportScroller
   ) {
-    router.events.forEach((event) => {
+    this.router.events.forEach((event) => {
       if (event instanceof NavigationStart) {
         this.viewPortscroller.scrollToPosition([0, 0]); // <= scroll to op on route change
         this.pageLoadingHandler();
@@ -90,23 +56,7 @@ export class AppComponent implements OnInit {
       // RoutesRecognized
     });
 
-    // detect browser
-
-    this.minScreenAllowed();
-
-    // const initChromeBrowser: boolean = 'chrome' === this.getBrowserName();
-
-    // const initWideScreen: boolean = this.minScreenAllowed();
-
-    // //   // this.activatedRoute.url.subscribe((currentUrl) => {
-    // //     // console.log('url is:    ' + currentUrl);
-    // //   // });
-
-    // this.appNotCompatible = !initChromeBrowser
-    //   ? 'Kindly use a Chrome browser'
-    //   : !initWideScreen
-    //   ? 'Kindly use a wider Screen'
-    //   : '';
+    this.minScreenAllowed(); // <= detect browser and device width/height
   }
 
   private getBrowserName() {

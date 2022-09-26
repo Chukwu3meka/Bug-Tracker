@@ -1,6 +1,6 @@
 import { ViewportScroller } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
-import { NavigationStart, Router } from '@angular/router';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 // import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -8,24 +8,61 @@ import { NavigationStart, Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   public pageLoading: boolean = true;
 
-  private wideScreenWidth: number = 300;
-  private wideScreenHeight: number = 20;
+  private wideScreenWidth: number = 1200;
+  private wideScreenHeight: number = 600;
 
   public appNotCompatible: string = 'Fdsfdsf';
 
-  private detectWideScreen = () =>
-    window.innerHeight >= this.wideScreenHeight &&
-    window.innerWidth >= this.wideScreenWidth;
+  private pageLoadingHandler(): void {
+    setTimeout(() => {
+      this.pageLoading = false;
+    }, 3000);
+  }
+
+  private minScreenAllowed(): void {
+    const chromeBrowser: boolean = 'chrome' === this.getBrowserName();
+
+    const wideScreen: boolean =
+      window.innerHeight >= this.wideScreenHeight &&
+      window.innerWidth >= this.wideScreenWidth;
+
+    this.appNotCompatible = !chromeBrowser
+      ? 'Kindly use a Chrome browser'
+      : !wideScreen
+      ? 'Kindly use a wider Screen'
+      : '';
+  }
 
   @HostListener('window:resize', ['$event'])
   detectResize = (): void => {
-    this.appNotCompatible = this.detectWideScreen()
-      ? this.appNotCompatible
-      : 'Kindly use a wider Screen';
+    this.minScreenAllowed();
   };
+
+  //   ():void=>{
+
+  // }
+
+  // detectResize = (): void => {
+  //   console.log(
+  //     // 'resize windows',
+  //     // this.minScreenAllowed(),
+  //     // window.innerHeight,
+  //     // window.innerWidth
+
+  //     window.innerHeight,
+  //     this.wideScreenHeight,
+  //     window.innerWidth,
+  //     this.wideScreenWidth,
+  //     this.minScreenAllowed()
+  //   );
+  //   // this.appNotCompatible = this.minScreenAllowed()
+  //   this.appNotCompatible = this.minScreenAllowed()
+  //     ? this.appNotCompatible
+  //     : 'Kindly use a wider Screen';
+  // };
 
   // public activeTab?: number;
 
@@ -43,8 +80,11 @@ export class AppComponent {
     router.events.forEach((event) => {
       if (event instanceof NavigationStart) {
         this.viewPortscroller.scrollToPosition([0, 0]); // <= scroll to op on route change
+        this.pageLoadingHandler();
       }
-      // NavigationEnd
+      if (event instanceof NavigationEnd) {
+        this.pageLoading = true;
+      }
       // NavigationCancel
       // NavigationError
       // RoutesRecognized
@@ -52,22 +92,24 @@ export class AppComponent {
 
     // detect browser
 
-    const initChromeBrowser: boolean = 'chrome' === this.getBrowserName();
+    this.minScreenAllowed();
 
-    const initWideScreen: boolean = this.detectWideScreen();
+    // const initChromeBrowser: boolean = 'chrome' === this.getBrowserName();
 
-    //   // this.activatedRoute.url.subscribe((currentUrl) => {
-    //     // console.log('url is:    ' + currentUrl);
-    //   // });
+    // const initWideScreen: boolean = this.minScreenAllowed();
 
-    this.appNotCompatible = !initChromeBrowser
-      ? 'Kindly use a Chrome browser'
-      : !initWideScreen
-      ? 'Kindly use a wider Screen'
-      : '';
+    // //   // this.activatedRoute.url.subscribe((currentUrl) => {
+    // //     // console.log('url is:    ' + currentUrl);
+    // //   // });
+
+    // this.appNotCompatible = !initChromeBrowser
+    //   ? 'Kindly use a Chrome browser'
+    //   : !initWideScreen
+    //   ? 'Kindly use a wider Screen'
+    //   : '';
   }
 
-  public getBrowserName() {
+  private getBrowserName() {
     const agent = window.navigator.userAgent.toLowerCase();
     switch (true) {
       case agent.indexOf('edge') > -1:
@@ -85,5 +127,9 @@ export class AppComponent {
       default:
         return 'other';
     }
+  }
+
+  ngOnInit(): void {
+    this.pageLoadingHandler();
   }
 }

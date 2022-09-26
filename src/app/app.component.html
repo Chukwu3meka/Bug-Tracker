@@ -1,4 +1,4 @@
-<div [ngSwitch]="appNotCompatible" id="app">
+<div [ngSwitch]="appNotCompatible">
   <div *ngSwitchCase="''">
     <div class="app-layout">
       <app-header></app-header>
@@ -12,7 +12,11 @@
     </div>
   </div>
 
-  <div *ngSwitchDefault [ngStyle]="{ maxWidth: '1200px', margin: 'auto' }">
-    {{ appNotCompatible }}
+  <div
+    class="appNotCompatible"
+    *ngSwitchDefault
+    [ngStyle]="{ maxWidth: '1200px', margin: 'auto' }"
+  >
+    <p>{{ appNotCompatible }}</p>
   </div>
 </div>

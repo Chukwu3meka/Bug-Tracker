@@ -1,7 +1,6 @@
 import { ViewportScroller } from '@angular/common';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
-// import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -21,14 +20,14 @@ export class AppComponent implements OnInit {
   }
 
   private minScreenAllowed(): void {
-    const chromeBrowser: boolean = 'chrome' === this.getBrowserName();
+    const isChromiumBased: boolean = !!window['chrome'];
 
     const wideScreen: boolean =
       window.innerHeight >= this.wideScreenHeight &&
       window.innerWidth >= this.wideScreenWidth;
 
-    this.appNotCompatible = !chromeBrowser
-      ? 'Kindly use a Chrome browser'
+    this.appNotCompatible = !isChromiumBased
+      ? 'Kindly use a Chromium-based browser'
       : !wideScreen
       ? 'Kindly use a wider Screen'
       : '';
@@ -57,26 +56,6 @@ export class AppComponent implements OnInit {
     });
 
     this.minScreenAllowed(); // <= detect browser and device width/height
-  }
-
-  private getBrowserName() {
-    const agent = window.navigator.userAgent.toLowerCase();
-    switch (true) {
-      case agent.indexOf('edge') > -1:
-        return 'edge';
-      case agent.indexOf('opr') > -1 && !!(<any>window).opr:
-        return 'opera';
-      case agent.indexOf('chrome') > -1 && !!(<any>window).chrome:
-        return 'chrome';
-      case agent.indexOf('trident') > -1:
-        return 'ie';
-      case agent.indexOf('firefox') > -1:
-        return 'firefox';
-      case agent.indexOf('safari') > -1:
-        return 'safari';
-      default:
-        return 'other';
-    }
   }
 
   ngOnInit(): void {

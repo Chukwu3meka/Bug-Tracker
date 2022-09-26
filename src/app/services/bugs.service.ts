@@ -5,6 +5,7 @@ import {
   HttpParams,
 } from '@angular/common/http';
 import { Injectable, EventEmitter } from '@angular/core';
+import { colors } from 'libs/constants';
 import { Observable, throwError, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Bug } from '../interface/Bug';
@@ -27,6 +28,8 @@ import { Bugs } from '../mock-database';
   providedIn: 'root',
 })
 export class BugsService {
+  private apiUrl = 'http://localhost:5000';
+
   // GET_FORWARD_FUNDING_RECORDS_API = environment.gatewayHostApi + '/das/dollar/overdraft/bidrequest/spot';
   // CONVERT_FORWARD_TO_SPOT_API = environment.gatewayHostApi + '/das/dollar/overdraft/convert/spot';
   // GET_SPOT_REJECTED_RECORDS_API = environment.gatewayHostApi + '/das/dollar/overdraft/search/rejection/spot';
@@ -48,9 +51,7 @@ export class BugsService {
   constructor(private http: HttpClient) {}
 
   getBugs(): Observable<Bug[]> {
-    HttpHeaders;
-    const bugs = of(Bugs);
-    return bugs;
+    return this.http.get<Bug[]>(`${this.apiUrl}/bugs`);
   }
 
   // getForwardFundingRecords(

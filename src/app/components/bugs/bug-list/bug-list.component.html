@@ -4,8 +4,8 @@
   <h1 nz-typography>List of Bugs</h1>
 </div>
 
-<div class="bugsList">
-  <div *ngFor="let bug of appBugs">
+<div class="bugsList" *ngIf="dashboardBugs?.length">
+  <div *ngFor="let bug of dashboardBugs">
     <span
       nz-icon
       nzType="flag"

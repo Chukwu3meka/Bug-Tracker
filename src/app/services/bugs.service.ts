@@ -1,6 +1,7 @@
 import {
   HttpClient,
   HttpErrorResponse,
+  HttpHeaders,
   HttpParams,
 } from '@angular/common/http';
 import { Injectable, EventEmitter } from '@angular/core';
@@ -47,6 +48,7 @@ export class BugsService {
   constructor(private http: HttpClient) {}
 
   getBugs(): Observable<Bug[]> {
+    HttpHeaders;
     const bugs = of(Bugs);
     return bugs;
   }

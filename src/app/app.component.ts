@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   private pageLoadingHandler(): void {
     setTimeout(() => {
       this.pageLoading = false;
-    }, 3000);
+    }, 1000);
   }
 
   private minScreenAllowed(): void {

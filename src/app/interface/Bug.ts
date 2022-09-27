@@ -42,7 +42,7 @@ export interface BugsStat {
   description: string;
 }
 
-export interface BugReportData {
+export interface DailyBugReport {
   name: string;
   value: number;
 }

@@ -1,10 +1,14 @@
-import { Color, LegendPosition, ScaleType } from '@swimlane/ngx-charts';
-
-import { Component, OnInit } from '@angular/core';
-import { bugReportData, severityData, statusData } from './data';
 import { colors, profile } from 'libs/constants';
+import { Component, OnInit } from '@angular/core';
 import { BugsService } from 'src/app/services/bugs.service';
-import { BugReportData, BugsStat, SeverityData, StatusData } from 'src/app/interface/Bug';
+import { LegendPosition, ScaleType } from '@swimlane/ngx-charts';
+
+import {
+  DailyBugReport,
+  BugsStat,
+  SeverityData,
+  StatusData,
+} from 'src/app/interface/Bug';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,41 +19,43 @@ export class DashboardComponent implements OnInit {
   private role: string = 'user';
   constructor(private bugService: BugsService) {
     this.role = profile.role;
-
-    Object.assign(this, { statusData, severityData, bugReportData });
   }
 
   public bugsStat?: BugsStat[];
-  public severityData?: SeverityData[];
-  public bugReportData?: BugReportData[];
   public statusData?: StatusData[];
+  public severityData?: SeverityData[];
+  public bugReportData?: DailyBugReport[];
 
-  public pieChart = {
+  public chartOptions = {
     legendPosition: LegendPosition.Below,
-  };
 
-  public bugReportColorScheme: Color = {
-    domain: [colors.primary],
-    group: ScaleType.Ordinal,
-    selectable: true,
-    name: 'Customer Usage',
-  };
+    bugReportColorScheme: {
+      domain: [colors.primary],
+      group: ScaleType.Ordinal,
+      selectable: true,
+      name: 'Customer Usage',
+    },
 
-  public severityColors: Color = {
-    domain: [colors.high, colors.normal, colors.low],
-    group: ScaleType.Ordinal,
-    selectable: true,
-    name: 'Customer Usage',
-  };
+    severityColors: {
+      domain: [colors.high, colors.normal, colors.low],
+      group: ScaleType.Ordinal,
+      selectable: true,
+      name: 'Customer Usage',
+    },
 
-  public gaugeColors: Color = {
-    domain: [colors.closed, colors.primary, colors.pending],
-    group: ScaleType.Ordinal,
-    selectable: true,
-    name: 'Customer Usage',
+    gaugeColors: {
+      domain: [colors.closed, colors.primary, colors.pending],
+      group: ScaleType.Ordinal,
+      selectable: true,
+      name: 'Customer Usage',
+    },
   };
 
   ngOnInit(): void {
+    this.bugService
+      .getDailyBugReport()
+      .subscribe((bugReportData) => (this.bugReportData = bugReportData));
+
     this.bugService.getBugs().subscribe((bugs) => {
       this.statusData = [
         {

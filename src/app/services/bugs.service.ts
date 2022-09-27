@@ -8,7 +8,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 import { colors } from 'libs/constants';
 import { Observable, throwError, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Bug } from '../interface/Bug';
+import { Bug, DailyBugReport } from '../interface/Bug';
 import { Bugs } from '../mock-database';
 // import { IPagedContent } from 'src/app/module/global/interface/IPagedContent';
 // import { IRestResponse } from 'src/app/module/global/interface/IRestResponse';
@@ -54,7 +54,9 @@ export class BugsService {
     return this.http.get<Bug[]>(`${this.apiUrl}/bugs`);
   }
 
-  // getDailyBugReport(): Observable
+  getDailyBugReport(): Observable<DailyBugReport[]> {
+    return this.http.get<DailyBugReport[]>(`${this.apiUrl}/dailyBugReport`);
+  }
 
   // getForwardFundingRecords(
   //   params: HttpParams

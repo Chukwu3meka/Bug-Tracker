@@ -4,7 +4,7 @@
   <div class="miniStat">
     <div>
       <ngx-charts-bar-vertical
-        [scheme]="bugReportColorScheme"
+        [scheme]="chartOptions.bugReportColorScheme"
         [results]="bugReportData"
         [gradient]="true"
         [xAxis]="false"
@@ -18,13 +18,13 @@
     <div>
       <ngx-charts-pie-chart
         [view]="[300, 200]"
-        [scheme]="gaugeColors"
+        [scheme]="chartOptions.gaugeColors"
         [results]="statusData"
         [gradient]="true"
         [legend]="true"
         legendTitle="Bugs"
         [labels]="true"
-        [legendPosition]="pieChart.legendPosition"
+        [legendPosition]="chartOptions.legendPosition"
         [doughnut]="false"
       >
       </ngx-charts-pie-chart>
@@ -33,7 +33,7 @@
 
   <div class="gauge">
     <ngx-charts-pie-grid
-      [scheme]="severityColors"
+      [scheme]="chartOptions.severityColors"
       [results]="severityData"
     ></ngx-charts-pie-grid>
   </div>

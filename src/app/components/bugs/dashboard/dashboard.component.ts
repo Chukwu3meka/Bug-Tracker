@@ -13,53 +13,38 @@ import { BugsService } from 'src/app/services/bugs.service';
   styleUrls: ['./dashboard.component.less'],
 })
 export class DashboardComponent implements OnInit {
+  private role: string = 'user';
   constructor(private bugService: BugsService) {
     this.role = profile.role;
 
     Object.assign(this, { statusData, severityData, bugReportData });
   }
 
-  // dailyBugReport
-
-  private role: string = 'user';
-  public bugsStat: BugsStat[] | undefined;
-
-  legendPosition: LegendPosition = LegendPosition.Below;
-
   severityData?: any[];
   bugReportData?: any[];
   statusData!: any[];
 
-  gradient: boolean = true;
-  showLegend: boolean = true;
-  showLabels: boolean = true;
-  isDoughnut: boolean = false;
+  public bugsStat: BugsStat[] | undefined;
 
-  // options
-  bugReportShowXAxis = true;
-  bugReportShowYAxis = true;
-  bugReportGradient = false;
-  bugReportShowLegend = true;
-  bugReportShowXAxisLabel = true;
-  bugReportXAxisLabel = 'Country';
-  bugReportShowYAxisLabel = true;
-  bugReportYAxisLabel = 'Population';
+  public pieChart = {
+    legendPosition: LegendPosition.Below,
+  };
 
-  bugReportColorScheme: Color = {
+  public bugReportColorScheme: Color = {
     domain: [colors.primary],
     group: ScaleType.Ordinal,
     selectable: true,
     name: 'Customer Usage',
   };
 
-  severityColors: Color = {
+  public severityColors: Color = {
     domain: [colors.high, colors.normal, colors.low],
     group: ScaleType.Ordinal,
     selectable: true,
     name: 'Customer Usage',
   };
 
-  gaugeColors: Color = {
+  public gaugeColors: Color = {
     domain: [colors.closed, colors.primary, colors.pending],
     group: ScaleType.Ordinal,
     selectable: true,

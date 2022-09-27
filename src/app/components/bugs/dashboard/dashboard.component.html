@@ -8,7 +8,7 @@
         [results]="bugReportData"
         [gradient]="true"
         [xAxis]="false"
-        [yAxis]="bugReportShowYAxis"
+        [yAxis]="true"
         [roundDomains]="true"
       >
       </ngx-charts-bar-vertical>
@@ -20,11 +20,11 @@
         [scheme]="gaugeColors"
         [results]="statusData"
         [gradient]="true"
-        [legend]="showLegend"
+        [legend]="true"
         legendTitle="Bugs"
-        [legendPosition]="legendPosition"
-        [labels]="showLabels"
-        [doughnut]="isDoughnut"
+        [labels]="true"
+        [legendPosition]="pieChart.legendPosition"
+        [doughnut]="false"
       >
       </ngx-charts-pie-chart>
     </div>

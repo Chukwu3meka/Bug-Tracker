@@ -1,4 +1,4 @@
-import { colors, profile } from 'libs/constants';
+import { colors } from 'libs/constants';
 import { Component, OnInit } from '@angular/core';
 import { BugsService } from 'src/app/services/bugs.service';
 import { LegendPosition, ScaleType } from '@swimlane/ngx-charts';
@@ -18,7 +18,11 @@ import {
 export class DashboardComponent implements OnInit {
   private role: string = 'user';
   constructor(private bugService: BugsService) {
-    this.role = profile.role;
+    // Put the object into storage
+    // // Retrieve the object from storage
+    // var retrievedObject = JSON.parse(localStorage.getItem('testObject'));
+    // console.log('retrievedObject: ', JSON.parse(retrievedObject));
+    // this.role = initStore.profile.role;
   }
 
   public bugsStat?: BugsStat[];

@@ -3,8 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { NzUploadFile } from 'ng-zorro-antd/upload';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { HttpClient, HttpRequest, HttpResponse } from '@angular/common/http';
+import { getLocalProfile } from 'src/libs/commonFunction';
 
-import { platforms } from 'libs/constants';
+// import { platforms } from 'libs/constants';
 
 @Component({
   selector: 'app-add-bugs',
@@ -15,7 +16,7 @@ export class AddBugComponent implements OnInit {
   inputValue: string | null = null;
   textValue: string | null = null;
 
-  public platformOptions = platforms;
+  public platformOptions;
   public maxFileSize: number = 5120;
 
   isLoadingOne = false;
@@ -73,5 +74,9 @@ export class AddBugComponent implements OnInit {
       );
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const { user } = getLocalProfile('profile', localStorage);
+
+    // this.platforms = JSON.parse();
+  }
 }

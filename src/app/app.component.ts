@@ -10,8 +10,8 @@ import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 export class AppComponent implements OnInit {
   public pageLoading: boolean = true;
   public appNotCompatible: string = '';
-  private wideScreenWidth: number = 120;
-  private wideScreenHeight: number = 60;
+  private wideScreenWidth: number = 1020;
+  private wideScreenHeight: number = 600;
 
   private pageLoadingHandler(): void {
     setTimeout(() => {
@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
     this.appNotCompatible = !isChromiumBased
       ? 'Kindly use a Chromium-based browser'
       : !wideScreen
-      ? 'Kindly use a wider Screen'
+      ? 'Kindly use a bigger Screen'
       : '';
   }
 

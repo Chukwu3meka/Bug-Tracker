@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { colors } from 'libs/constants';
-import { Bug, DashboardBug } from 'src/app/interface/Bug';
+import { Bug, BugsStat, DashboardBug } from 'src/app/interface/Bug';
 import { Bugs } from 'src/app/mock-database';
 
 import { BugsService } from '../../../services/bugs.service';
@@ -42,14 +42,8 @@ interface BugData {
 })
 export class BugListsComponent implements OnInit {
   public bugs: Bug[] = [];
-  public ss: string = 'asaasdsa';
 
-  public bugsStat?: {
-    label?: string;
-    total?: number;
-    icon: string;
-    description?: string;
-  }[];
+  public bugsStat?: BugsStat[];
 
   public profileData: ProfileData = {};
   public bugData: BugData = {};

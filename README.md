@@ -30,3 +30,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 for charts <!-- https://swimlane.gitbook.io/ngx-charts/examples/bar-charts/stacked-vertical-bar-chart -->
 for our loading page <!-- https://css-tricks.com/lets-make-a-fancy-but-uncomplicated-page-loader/ -->
+
+### Todo
+
+1. fix open bug color in bug stat
+2. delete mock db

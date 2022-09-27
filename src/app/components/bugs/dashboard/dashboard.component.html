@@ -1,37 +1,39 @@
-<app-bug-stat [bugsStat]="bugsStat"></app-bug-stat>
+<div class="dashboard">
+  <app-bug-stat [bugsStat]="bugsStat"></app-bug-stat>
 
-<div class="miniStat">
-  <div>
-    <ngx-charts-bar-vertical
-      [scheme]="bugReportColorScheme"
-      [results]="bugReportData"
-      [gradient]="true"
-      [xAxis]="false"
-      [yAxis]="bugReportShowYAxis"
-      [roundDomains]="true"
-    >
-    </ngx-charts-bar-vertical>
-    <p>Previous Daily Commit</p>
+  <div class="miniStat">
+    <div>
+      <ngx-charts-bar-vertical
+        [scheme]="bugReportColorScheme"
+        [results]="bugReportData"
+        [gradient]="true"
+        [xAxis]="false"
+        [yAxis]="bugReportShowYAxis"
+        [roundDomains]="true"
+      >
+      </ngx-charts-bar-vertical>
+      <p>Daily Bug Report</p>
+    </div>
+
+    <div>
+      <ngx-charts-pie-chart
+        [scheme]="gaugeColors"
+        [results]="statusData"
+        [gradient]="true"
+        [legend]="showLegend"
+        legendTitle="Bugs"
+        [legendPosition]="legendPosition"
+        [labels]="showLabels"
+        [doughnut]="isDoughnut"
+      >
+      </ngx-charts-pie-chart>
+    </div>
   </div>
 
-  <div>
-    <ngx-charts-pie-chart
-      [scheme]="gaugeColors"
-      [results]="statusData"
-      [gradient]="true"
-      [legend]="showLegend"
-      legendTitle="Bugs"
-      [legendPosition]="legendPosition"
-      [labels]="showLabels"
-      [doughnut]="isDoughnut"
-    >
-    </ngx-charts-pie-chart>
+  <div class="gauge">
+    <ngx-charts-pie-grid
+      [scheme]="severityColors"
+      [results]="severityData"
+    ></ngx-charts-pie-grid>
   </div>
-</div>
-
-<div class="gauge">
-  <ngx-charts-pie-grid
-    [scheme]="severityColors"
-    [results]="severityData"
-  ></ngx-charts-pie-grid>
 </div>

@@ -1,9 +1,13 @@
 @import "/libs/less/mixinFunctions.less";
 @import "/libs/less/variables.less";
 
+.dashboard {
+  .flex(@dir:column; @width: 100%);
+  row-gap: 20px;
+}
+
 .miniStat {
-  margin: 30px 0;
-  .flex();
+  .flex(@width: 100%);
   background-color: #fff;
   border-radius: 10px !important;
   & > div:first-of-type {
@@ -26,6 +30,6 @@
 .gauge {
   background-color: #fff;
   border-radius: 10px !important;
-  height: 260px;
-  // width: 300px;
+  height: 210px;
+  width: 100%;
 }

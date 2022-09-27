@@ -626,6 +626,7 @@
       "description": "Lorem in commodo nostrud deserunt est Lorem dolor minim irure reprehenderit. Exercitation commodo enim aute incididunt amet consectetur officia sit cupidatat magna consequat proident enim. Ex nulla adipisicing dolor sint veniam. Reprehenderit ea non ea culpa. Laboris velit occaecat enim nisi laborum occaecat cupidatat cillum sunt aliqua."
     }
   ],
+
   "users": [
     {
       "id": 20220001,
@@ -735,5 +736,30 @@
       "branch": "South Dakota",
       "department": "Islands"
     }
+  ],
+
+  "dailyBugReport": [
+    { "name": "Day 22", "value": 72 },
+    { "name": "Day 21", "value": 72 },
+    { "name": "Day 20", "value": 72 },
+    { "name": "Day 19", "value": 72 },
+    { "name": "Day 18", "value": 50 },
+    { "name": "Day 17", "value": 89 },
+    { "name": "Day 16", "value": 72 },
+    { "name": "Day 15", "value": 50 },
+    { "name": "Day 14", "value": 89 },
+    { "name": "Day 13", "value": 72 },
+    { "name": "Day 12", "value": 51 },
+    { "name": "Day 11", "value": 19 },
+    { "name": "Day 10", "value": 53 },
+    { "name": "Day 9", "value": 70 },
+    { "name": "Day 8", "value": 37 },
+    { "name": "Day 7", "value": 9 },
+    { "name": "Day 6", "value": 57 },
+    { "name": "Day 5", "value": 5 },
+    { "name": "Day 4", "value": 8 },
+    { "name": "Day 3", "value": 72 },
+    { "name": "Day 2", "value": 50 },
+    { "name": "Day 1", "value": 89 }
   ]
 }

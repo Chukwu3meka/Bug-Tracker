@@ -15,6 +15,40 @@ export class DashboardComponent {
     // console.log(statusData);
   }
 
+  role = 'user';
+
+  bugsStat = [
+    {
+      label: 'All Bugs',
+      total: 20,
+      icon: 'bug',
+      description:
+        this.role === 'admin'
+          ? 'Total number of Bugs reported by all users'
+          : this.role === 'developer'
+          ? 'Total number of Bugs assigned to me'
+          : 'Total number of Bugs reported by me',
+    },
+    {
+      label: 'Open',
+      total: 39,
+      icon: 'folder-open',
+      description: `All Bugs yet to be assigned to a developer`,
+    },
+    {
+      label: 'Closed',
+      total: 39,
+      icon: 'issues-close',
+      description: 'Bugs that has been Resolved or Closed ',
+    },
+    {
+      label: 'Pending',
+      total: 39,
+      icon: 'tool',
+      description: 'Bugs currently being fixed by developers',
+    },
+  ];
+
   legendPosition: LegendPosition = LegendPosition.Below;
 
   severityData?: any[];

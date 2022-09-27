@@ -2,7 +2,7 @@
   "bugs": [
     {
       "id": "4d75p7684z05-owf8",
-      "severity": "High",
+      "severity": "high",
       "created": "Thu Aug 11 2022 11:16:00 GMT+0100 (West Africa Standard Time)",
       "platform": "XPath",
       "reporter": {
@@ -17,7 +17,7 @@
     },
     {
       "id": "4d75d7684f05-bbf8",
-      "severity": "Normal",
+      "severity": "normal",
       "created": "Tue Jul 26 2022 10:22:48 GMT+0100 (West Africa Standard Time)",
       "platform": "Mobile App",
       "reporter": {
@@ -37,7 +37,7 @@
     },
     {
       "id": "9809eb8c910e-86fc",
-      "severity": "Low",
+      "severity": "low",
       "created": "Thu Jun 02 2022 19:23:50 GMT+0100 (West Africa Standard Time)",
       "platform": "Internet Banking",
       "reporter": {
@@ -57,7 +57,7 @@
     },
     {
       "id": "b2b080ddb297-a8de",
-      "severity": "High",
+      "severity": "high",
       "created": "Wed Jul 20 2022 13:07:58 GMT+0100 (West Africa Standard Time)",
       "platform": "Form A",
       "reporter": {
@@ -72,7 +72,7 @@
     },
     {
       "id": "cc60318c5a56-a802",
-      "severity": "Low",
+      "severity": "low",
       "created": "Thu Sep 23 2021 13:14:49 GMT+0100 (West Africa Standard Time)",
       "platform": "Workflow",
       "reporter": {
@@ -87,7 +87,7 @@
     },
     {
       "id": "13ae8ec4c695-8370",
-      "severity": "Low",
+      "severity": "low",
       "created": "Sun May 01 2022 11:48:28 GMT+0100 (West Africa Standard Time)",
       "platform": "Form A",
       "reporter": {
@@ -107,7 +107,7 @@
     },
     {
       "id": "99bae23a27e8-b656",
-      "severity": "Low",
+      "severity": "low",
       "created": "Sat Oct 30 2021 02:50:42 GMT+0100 (West Africa Standard Time)",
       "platform": "Workflow",
       "reporter": {
@@ -122,7 +122,7 @@
     },
     {
       "id": "c2c9819464d1-8f1d",
-      "severity": "Normal",
+      "severity": "normal",
       "created": "Wed Nov 24 2021 21:32:24 GMT+0100 (West Africa Standard Time)",
       "platform": "Workflow",
       "reporter": {
@@ -142,7 +142,7 @@
     },
     {
       "id": "1f59cda74dcb-9771",
-      "severity": "Normal",
+      "severity": "normal",
       "created": "Fri Aug 27 2021 00:02:24 GMT+0100 (West Africa Standard Time)",
       "platform": "Mobile App",
       "reporter": {
@@ -162,7 +162,7 @@
     },
     {
       "id": "300fce9032b0-8ad4",
-      "severity": "High",
+      "severity": "high",
       "created": "Fri Sep 03 2021 02:39:20 GMT+0100 (West Africa Standard Time)",
       "platform": "Mobile App",
       "reporter": {
@@ -182,7 +182,7 @@
     },
     {
       "id": "e11ebbff95cf-8a56",
-      "severity": "High",
+      "severity": "high",
       "created": "Mon Sep 20 2021 00:41:49 GMT+0100 (West Africa Standard Time)",
       "platform": "Mobile App",
       "reporter": {
@@ -202,7 +202,7 @@
     },
     {
       "id": "dec5f25a6ae5-a124",
-      "severity": "High",
+      "severity": "high",
       "created": "Tue Jul 12 2022 02:59:07 GMT+0100 (West Africa Standard Time)",
       "platform": "Mobile App",
       "reporter": {
@@ -224,7 +224,7 @@
       "id": "820c48c17093-a842",
       "label": "Labore omnis fugit officiis temporibus delectus.",
       "platform": "USSD",
-      "severity": "High",
+      "severity": "high",
       "created": "Sun Feb 27 2022 03:04:24 GMT+0100 (West Africa Standard Time)",
       "reporter": {
         "id": 20220011,
@@ -237,7 +237,7 @@
     },
     {
       "id": "5d809a0e4cf8-96d1",
-      "severity": "Normal",
+      "severity": "normal",
       "created": "Thu Apr 14 2022 03:12:01 GMT+0100 (West Africa Standard Time)",
       "platform": "Appraisal",
       "reporter": {
@@ -257,7 +257,7 @@
     },
     {
       "id": "531c037f9ba5-85e3",
-      "severity": "Normal",
+      "severity": "normal",
       "created": "Mon Dec 20 2021 21:16:52 GMT+0100 (West Africa Standard Time)",
       "platform": "Workflow",
       "reporter": {
@@ -277,7 +277,7 @@
     },
     {
       "id": "dd5f7544e10c-b9eb",
-      "severity": "Normal",
+      "severity": "normal",
       "created": "Tue Jun 14 2022 22:05:03 GMT+0100 (West Africa Standard Time)",
       "platform": "Mobile App",
       "reporter": {
@@ -292,7 +292,7 @@
     },
     {
       "id": "4c10f0c1ac98-a9ea",
-      "severity": "Normal",
+      "severity": "normal",
       "created": "Mon Mar 14 2022 02:55:37 GMT+0100 (West Africa Standard Time)",
       "platform": "Mobile App",
       "reporter": {
@@ -307,7 +307,7 @@
     },
     {
       "id": "dbbc66a237f5-b780",
-      "severity": "Low",
+      "severity": "low",
       "created": "Sat Jul 23 2022 23:43:20 GMT+0100 (West Africa Standard Time)",
       "platform": "Mobile App",
       "reporter": {
@@ -322,7 +322,7 @@
     },
     {
       "id": "fd9cf2321659-a19f",
-      "severity": "Low",
+      "severity": "low",
       "created": "Wed Jul 20 2022 02:49:12 GMT+0100 (West Africa Standard Time)",
       "platform": "Mobile App",
       "reporter": {
@@ -337,7 +337,7 @@
     },
     {
       "id": "caa57cb83377-be58",
-      "severity": "Normal",
+      "severity": "normal",
       "created": "Tue Aug 24 2021 12:15:57 GMT+0100 (West Africa Standard Time)",
       "platform": "Workflow",
       "reporter": {
@@ -352,7 +352,7 @@
     },
     {
       "id": "10034d5d8bee-b04d",
-      "severity": "Normal",
+      "severity": "normal",
       "created": "Mon Oct 18 2021 08:49:25 GMT+0100 (West Africa Standard Time)",
       "platform": "Mobile App",
       "reporter": {
@@ -367,7 +367,7 @@
     },
     {
       "id": "c6a6e1d8d1a7-818f",
-      "severity": "Normal",
+      "severity": "normal",
       "created": "Wed Jun 22 2022 16:21:46 GMT+0100 (West Africa Standard Time)",
       "platform": "Form A",
       "reporter": {
@@ -382,7 +382,7 @@
     },
     {
       "id": "7be33ace9761-8055",
-      "severity": "Normal",
+      "severity": "normal",
       "created": "Thu Aug 12 2021 04:29:31 GMT+0100 (West Africa Standard Time)",
       "platform": "Form A",
       "reporter": {
@@ -397,7 +397,7 @@
     },
     {
       "id": "b79a3456f869-ae1c",
-      "severity": "Normal",
+      "severity": "normal",
       "created": "Wed Dec 29 2021 08:10:12 GMT+0100 (West Africa Standard Time)",
       "platform": "Form A",
       "reporter": {
@@ -412,7 +412,7 @@
     },
     {
       "id": "86936eb68384-be4e",
-      "severity": "Normal",
+      "severity": "normal",
       "created": "Thu Dec 23 2021 20:37:35 GMT+0100 (West Africa Standard Time)",
       "platform": "Form A",
       "reporter": {
@@ -432,7 +432,7 @@
     },
     {
       "id": "08aa9a2e178c-9430",
-      "severity": "Normal",
+      "severity": "normal",
       "created": "Mon Aug 01 2022 20:00:16 GMT+0100 (West Africa Standard Time)",
       "platform": "Mobile App",
       "reporter": {
@@ -452,7 +452,7 @@
     },
     {
       "id": "f92a412bb86d-a7ce",
-      "severity": "Normal",
+      "severity": "normal",
       "created": "Thu Apr 14 2022 09:40:29 GMT+0100 (West Africa Standard Time)",
       "platform": "USSD",
       "reporter": {
@@ -472,7 +472,7 @@
     },
     {
       "id": "caa3b6c10ff0-a7dc",
-      "severity": "Normal",
+      "severity": "normal",
       "created": "Fri Dec 03 2021 20:14:46 GMT+0100 (West Africa Standard Time)",
       "platform": "Mobile App",
       "reporter": {
@@ -492,7 +492,7 @@
     },
     {
       "id": "be8d8cdc1ab0-94a8",
-      "severity": "Normal",
+      "severity": "normal",
       "created": "Wed Jul 13 2022 16:23:21 GMT+0100 (West Africa Standard Time)",
       "platform": "Appraisal",
       "reporter": {
@@ -507,7 +507,7 @@
     },
     {
       "id": "b75233bb3973-9018",
-      "severity": "Normal",
+      "severity": "normal",
       "created": "Fri Jul 15 2022 08:06:08 GMT+0100 (West Africa Standard Time)",
       "platform": "USSD",
       "reporter": {
@@ -522,7 +522,7 @@
     },
     {
       "id": "6a4568d87d0e-be26",
-      "severity": "Low",
+      "severity": "low",
       "created": "Wed Jun 15 2022 08:28:01 GMT+0100 (West Africa Standard Time)",
       "platform": "USSD",
       "reporter": {
@@ -537,7 +537,7 @@
     },
     {
       "id": "7135dc270c78-9065",
-      "severity": "Low",
+      "severity": "low",
       "created": "Fri Jun 17 2022 10:18:05 GMT+0100 (West Africa Standard Time)",
       "platform": "USSD",
       "reporter": {
@@ -552,7 +552,7 @@
     },
     {
       "id": "4fe79af8d9e1-bf63",
-      "severity": "Normal",
+      "severity": "normal",
       "created": "Thu Sep 23 2021 16:02:21 GMT+0100 (West Africa Standard Time)",
       "platform": "USSD",
       "reporter": {
@@ -567,7 +567,7 @@
     },
     {
       "id": "2f60dbd456e8-bf8e",
-      "severity": "High",
+      "severity": "high",
       "created": "Thu Sep 16 2021 06:24:59 GMT+0100 (West Africa Standard Time)",
       "platform": "Mobile App",
       "reporter": {
@@ -587,7 +587,7 @@
     },
     {
       "id": "7f92bb44698a-a214",
-      "severity": "High",
+      "severity": "high",
       "created": "Sun May 29 2022 15:52:53 GMT+0100 (West Africa Standard Time)",
       "platform": "Appraisal",
       "reporter": {
@@ -607,7 +607,7 @@
     },
     {
       "id": "95bc71427b96-aa95",
-      "severity": "Low",
+      "severity": "low",
       "created": "Sun Jul 10 2022 09:28:20 GMT+0100 (West Africa Standard Time)",
       "platform": "Mobile App",
       "reporter": {
@@ -761,5 +761,5 @@
     { "name": "Day 3", "value": 72 },
     { "name": "Day 2", "value": 50 },
     { "name": "Day 1", "value": 89 }
-  ]
+  ],
 }

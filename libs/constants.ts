@@ -9,7 +9,7 @@ export const colors = {
   // closed: '#00bfa0',
   // pending: '#ef9b20',
 
-  open: '#64242c',
+  open: '#892934',
   closed: '#54a593',
   pending: '#eaa649',
 
@@ -39,3 +39,9 @@ export const platforms = [
   { id: 'workflow', name: 'Workflow' },
   { id: 'appraisal', name: 'Appraisal' },
 ];
+
+export const profile = {
+  name: 'Terri Cummings',
+  role: 'user',
+  //
+};

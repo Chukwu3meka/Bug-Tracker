@@ -54,6 +54,8 @@ export class BugsService {
     return this.http.get<Bug[]>(`${this.apiUrl}/bugs`);
   }
 
+  // getDailyBugReport(): Observable
+
   // getForwardFundingRecords(
   //   params: HttpParams
   // ): Observable<IRestResponse<IQualifiedFunding[]>> {

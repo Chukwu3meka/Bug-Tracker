@@ -2,10 +2,9 @@ import { Color, LegendPosition, ScaleType } from '@swimlane/ngx-charts';
 
 import { Component, OnInit } from '@angular/core';
 import { bugReportData, severityData, statusData } from './data';
-import { colors } from 'libs/constants';
-import { profile } from 'libs/profile';
-import { BugsStat } from 'src/app/interface/Dashboard';
+import { colors, profile } from 'libs/constants';
 import { BugsService } from 'src/app/services/bugs.service';
+import { BugReportData, BugsStat, SeverityData, StatusData } from 'src/app/interface/Bug';
 
 @Component({
   selector: 'app-dashboard',
@@ -20,11 +19,10 @@ export class DashboardComponent implements OnInit {
     Object.assign(this, { statusData, severityData, bugReportData });
   }
 
-  severityData?: any[];
-  bugReportData?: any[];
-  statusData!: any[];
-
-  public bugsStat: BugsStat[] | undefined;
+  public bugsStat?: BugsStat[];
+  public severityData?: SeverityData[];
+  public bugReportData?: BugReportData[];
+  public statusData?: StatusData[];
 
   public pieChart = {
     legendPosition: LegendPosition.Below,
@@ -53,6 +51,36 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.bugService.getBugs().subscribe((bugs) => {
+      this.statusData = [
+        {
+          name: 'Closed Bugs',
+          value: bugs.filter((bug) => bug.status === 'closed').length,
+        },
+        {
+          name: 'Open Bugs',
+          value: bugs.filter((bug) => bug.status === 'open').length,
+        },
+        {
+          name: 'Pending Bugs',
+          value: bugs.filter((bug) => bug.status === 'pending').length,
+        },
+      ];
+
+      this.severityData = [
+        {
+          name: 'Severity High',
+          value: bugs.filter((bug) => bug.severity === 'high').length,
+        },
+        {
+          name: 'Severity Normal',
+          value: bugs.filter((bug) => bug.severity === 'normal').length,
+        },
+        {
+          name: 'Severity Low',
+          value: bugs.filter((bug) => bug.severity === 'low').length,
+        },
+      ];
+
       this.bugsStat = [
         {
           label: 'All Bugs',

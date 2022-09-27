@@ -8,14 +8,6 @@ export interface Bug {
   status: string;
   description: string;
   developer?: Developer;
-  color?: string;
-  ticket?: string;
-  info?: string;
-
-  //   label: bug.label,
-  //   ticket: `Ticket ID #${bug.id}`,
-  //   info: `Reported on ${new Date(bug.created).toDateString()}`,
-  //   platform: `Platform: ${bug.platform}`,
 }
 
 export interface Developer {
@@ -31,6 +23,28 @@ export interface Reporter {
   id: number;
   name: string;
   email: string;
+}
+
+export interface SeverityData {
+  name: 'Severity High' | 'Severity Normal' | 'Severity Low';
+  value: number;
+}
+
+export interface StatusData {
+  name: 'Closed Bugs' | 'Open Bugs' | 'Pending Bugs';
+  value: number;
+}
+
+export interface BugsStat {
+  label: 'All Bugs' | 'Open' | 'Closed' | 'Pending';
+  total: number;
+  icon: 'bug' | 'folder-open' | 'issues-close' | 'tool';
+  description: string;
+}
+
+export interface BugReportData {
+  name: string;
+  value: number;
 }
 
 // export interface DasboardBug {

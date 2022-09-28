@@ -30,6 +30,8 @@ import { Bug, DailyBugReport } from '../interface/Bug';
 export class BugsService {
   private apiUrl = 'http://localhost:5000';
 
+  // force re deployment on server
+
   // GET_FORWARD_FUNDING_RECORDS_API = environment.gatewayHostApi + '/das/dollar/overdraft/bidrequest/spot';
   // CONVERT_FORWARD_TO_SPOT_API = environment.gatewayHostApi + '/das/dollar/overdraft/convert/spot';
   // GET_SPOT_REJECTED_RECORDS_API = environment.gatewayHostApi + '/das/dollar/overdraft/search/rejection/spot';

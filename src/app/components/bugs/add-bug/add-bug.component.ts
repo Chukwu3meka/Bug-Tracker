@@ -75,8 +75,10 @@ export class AddBugComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const { user } = getLocalProfile('profile', localStorage);
+    const { role } = getLocalProfile('profile', localStorage);
 
     // this.platforms = JSON.parse();
+
+    console.log(role);
   }
 }

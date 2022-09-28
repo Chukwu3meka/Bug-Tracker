@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { colors } from 'libs/constants';
 import { Bug, BugsStat, DashboardBug } from 'src/app/interface/Bug';
-import { Bugs } from 'src/app/mock-database';
+// import { Bugs } from 'src/app/mock-database';
 
 import { BugsService } from '../../../services/bugs.service';
 

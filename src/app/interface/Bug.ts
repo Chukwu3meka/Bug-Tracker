@@ -1,11 +1,11 @@
 export interface Bug {
   id: string;
-  severity: string;
-  created: string;
-  platform: string;
-  reporter: Reporter;
   label: string;
   status: string;
+  created: string;
+  platform: string;
+  severity: string;
+  reporter: Reporter;
   description: string;
   developer?: Developer;
 }
@@ -14,7 +14,6 @@ export interface Developer {
   img: string;
   id: number;
   name: string;
-
   assigned?: string;
 }
 
@@ -22,7 +21,7 @@ export interface Reporter {
   img: string;
   id: number;
   name: string;
-  email: string;
+  // email: string;
 }
 
 export interface SeverityData {
@@ -36,10 +35,10 @@ export interface StatusData {
 }
 
 export interface BugsStat {
-  label: 'All Bugs' | 'Open' | 'Closed' | 'Pending';
   total: number;
-  icon: 'bug' | 'folder-open' | 'issues-close' | 'tool';
   description: string;
+  label: 'All Bugs' | 'Open' | 'Closed' | 'Pending';
+  icon: 'bug' | 'folder-open' | 'issues-close' | 'tool';
 }
 
 export interface DailyBugReport {
@@ -107,5 +106,5 @@ export interface DashboardDeveloper {
   id?: number;
   img?: string;
   name?: string;
-  email?: string;
+  // email?: string;
 }

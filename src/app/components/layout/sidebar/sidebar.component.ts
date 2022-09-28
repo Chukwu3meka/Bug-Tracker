@@ -1,17 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { Bugs } from 'src/app/mock-database';
-
+import { Bugs } from './mockBugs';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.less'],
 })
 export class SidebarComponent implements OnInit {
+  Bugs: any;
   notifications!: string[];
 
   public notificationsLoading: boolean = true;
 
   constructor() {
+    this.Bugs = Bugs;
+  }
+
+  ngOnInit(): void {
     setTimeout(() => {
       this.notifications = Bugs.map(
         (x) =>
@@ -21,6 +25,4 @@ export class SidebarComponent implements OnInit {
       this.notificationsLoading = false;
     }, 1000);
   }
-
-  ngOnInit(): void {}
 }

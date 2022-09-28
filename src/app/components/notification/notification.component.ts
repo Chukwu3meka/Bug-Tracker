@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Bugs } from 'src/app/mock-database';
+import { Bugs } from '../layout/sidebar/mockBugs';
 import { DateAgoPipe } from 'src/app/pipes/dateago.pipe';
+import { Bug } from 'src/app/interface/Bug';
 
 @Component({
   selector: 'app-feedback',
@@ -10,13 +11,15 @@ import { DateAgoPipe } from 'src/app/pipes/dateago.pipe';
 })
 export class NotificationComponent implements OnInit {
   notifications!: any[];
-
+  Bugs: Bug[] = Bugs;
   public notificationsLoading: boolean = true;
 
-  constructor() {
+  constructor() {}
+
+  ngOnInit(): void {
     const dateAgoPipe = new DateAgoPipe();
     setTimeout(() => {
-      this.notifications = Bugs.map((x) => ({
+      this.notifications = this.Bugs.map((x) => ({
         // img: 'https://placeimg.com/100/100/people',
         description: x.description,
         date: dateAgoPipe.transform(x.created),
@@ -24,6 +27,4 @@ export class NotificationComponent implements OnInit {
       this.notificationsLoading = false;
     }, 1000);
   }
-
-  ngOnInit(): void {}
 }

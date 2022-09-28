@@ -37,9 +37,8 @@ export class AddBugComponent implements OnInit {
 
   submitBug(): null {
     this.isLoadingOne = true;
-    setTimeout(() => {
-      this.isLoadingOne = false;
-    }, 5000);
+
+    setTimeout(() => (this.isLoadingOne = false), 3000);
 
     return null;
 
@@ -76,9 +75,12 @@ export class AddBugComponent implements OnInit {
 
   ngOnInit(): void {
     const { role } = getLocalProfile('profile', localStorage);
+    const platforms = getLocalProfile('platforms', localStorage);
+
+    this.platformOptions = platforms;
 
     // this.platforms = JSON.parse();
 
-    console.log(role);
+    console.log({ role, platforms });
   }
 }

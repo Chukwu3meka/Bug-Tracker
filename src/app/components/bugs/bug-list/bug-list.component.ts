@@ -46,7 +46,8 @@ export class BugListsComponent implements OnInit {
   public bugsStat?: BugsStat[];
 
   public profileData: ProfileData = {};
-  public bugData: BugData = {};
+  // public bugData: BugData = {};
+  public bugData: BugData = { id: 'sa' };
 
   // public dashboardBugs: DashboardBug[] | undefined;
   public dashboardBugs: any[] | undefined;

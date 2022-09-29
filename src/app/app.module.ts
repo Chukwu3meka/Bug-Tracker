@@ -27,6 +27,7 @@ import { BugStatComponent } from './components/bugs/bug-stat/bug-stat.component'
 import { DateAgoPipe } from './pipes/dateago.pipe';
 import { SelectOptionsComponent } from './components/bugs/select-options/select-options.component';
 import { LoadingComponent } from './components/layout/loading/loading.component';
+import { BugDetailsComponent } from './components/bugs/bug-details/bug-details.component';
 // import { FileuploadComponent } from './components/fileupload/fileupload.component';
 
 registerLocaleData(en);
@@ -46,6 +47,7 @@ registerLocaleData(en);
     DateAgoPipe,
     SelectOptionsComponent,
     LoadingComponent,
+    BugDetailsComponent,
   ],
   imports: [
     BrowserModule,

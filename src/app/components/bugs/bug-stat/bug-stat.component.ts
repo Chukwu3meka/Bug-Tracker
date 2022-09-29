@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { BugsStat } from 'src/app/interface/Bug';
+import { BugsStat } from 'src/app/interface/Old-Bug';
 
 @Component({
   selector: 'app-bug-stat',

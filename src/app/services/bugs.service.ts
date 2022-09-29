@@ -8,7 +8,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 import { colors } from 'libs/constants';
 import { Observable, throwError, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Bug, DailyBugReport } from '../interface/Bug';
+import { Bug, DailyBugReport } from '../interface/Old-Bug';
 // import db { Bugs } from '../../../db.json';
 // import { IPagedContent } from 'src/app/module/global/interface/IPagedContent';
 // import { IRestResponse } from 'src/app/module/global/interface/IRestResponse';

@@ -8,7 +8,7 @@ import {
   BugsStat,
   SeverityData,
   StatusData,
-} from 'src/app/interface/Bug';
+} from 'src/app/interface/Old-Bug';
 
 @Component({
   selector: 'app-dashboard',

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Bugs } from '../layout/sidebar/mockBugs';
 import { DateAgoPipe } from 'src/app/pipes/dateago.pipe';
-import { Bug } from 'src/app/interface/Bug';
+import { Bug } from 'src/app/interface/Old-Bug';
 
 @Component({
   selector: 'app-feedback',

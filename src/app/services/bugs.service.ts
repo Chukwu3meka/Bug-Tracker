@@ -29,6 +29,7 @@ import { Bug, DailyBugReport } from '../interface/Old-Bug';
 })
 export class BugsService {
   private apiUrl = 'http://localhost:5000';
+  // private apiUrl = "'http://10.128.32.59:8080/api/v1'";
 
   // force re deployment on server
 

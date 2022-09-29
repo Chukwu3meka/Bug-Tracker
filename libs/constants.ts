@@ -9,8 +9,7 @@ export const colors = {
   // closed: '#00bfa0',
   // pending: '#ef9b20',
 
-  // open: '#64242c',
-  open: 'white',
+  open: '#64242c',
   closed: '#54a593',
   pending: '#eaa649',
 
@@ -18,4 +17,3 @@ export const colors = {
   normal: '#CD5C5C',
   low: '#FFA07A',
 };
-

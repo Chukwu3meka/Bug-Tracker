@@ -4,7 +4,63 @@
   <h1 nz-typography>List of Bugs</h1>
 </div>
 
-<div class="bugsList" *ngIf="dashboardBugs?.length">
+<!-- bugs skelenton -->
+<div *ngIf="dashboardBugs === undefined">
+  <div class="bugsList" *ngFor="let i of [1, 2, 3, 4, 5]">
+    <div>
+      <span>
+        <nz-skeleton-element
+          nzType="button"
+          [nzActive]="true"
+          [nzSize]="'small'"
+          nzShape="default"
+          style="width: 20px; overflow: hidden"
+        ></nz-skeleton-element>
+      </span>
+      <section>
+        <div>
+          <nz-skeleton
+            [nzAvatar]="false"
+            [nzParagraph]="{ rows: 2 }"
+          ></nz-skeleton>
+        </div>
+        <div>
+          <span>
+            <nz-skeleton-element
+              nzType="button"
+              [nzActive]="true"
+              [nzSize]="'small'"
+              [nzShape]="'circle'"
+            ></nz-skeleton-element>
+          </span>
+
+          <span [ngStyle]="{ height: '20px', overflow: 'hidden' }">
+            <nz-skeleton-element
+              nzType="input"
+              [nzActive]="true"
+              [nzSize]="'small'"
+              style="width: 200px"
+            ></nz-skeleton-element>
+          </span>
+        </div>
+      </section>
+      <ul>
+        <li
+          *ngFor="let i of [1, 2, 3, 4, 5]"
+          [ngStyle]="{ height: '15px', overflow: 'hidden', marginTop: '10px' }"
+        >
+          <nz-skeleton-element
+            nzType="input"
+            [nzActive]="true"
+            [nzSize]="'small'"
+          ></nz-skeleton-element>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="bugsList" *ngIf="dashboardBugs">
   <div *ngFor="let bug of dashboardBugs">
     <span
       nz-icon

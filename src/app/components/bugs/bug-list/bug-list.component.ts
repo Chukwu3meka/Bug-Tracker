@@ -68,9 +68,6 @@ export class BugListsComponent implements OnInit {
   ngOnInit(): void {
     this.bugService.getBugs().subscribe((res) => {
       setTimeout(() => {
-        // get user role
-        const role: string = 'user';
-
         const bugs = tempMockResponse.map((bug) => ({
           ...bug,
           id: bug.bugId,
@@ -91,15 +88,6 @@ export class BugListsComponent implements OnInit {
           closed: bugs.filter((bug) => bug.status === 'closed').length,
           pending: bugs.filter((bug) => bug.status === 'pending').length,
         };
-
-        // console.log('sadsadsa', this.role);
-        // this.bugs[0].total = this.bugsStat.allBugs;
-        // this.bugs[1].total = this.bugsStat.open;
-        // this.bugs[2].total = this.bugsStat.closed;
-        // this.bugs[3].total = this.bugsStat.pending;
-        // this.bugs[]. = this.bugsStat.
-
-        // console.log(this.bugsStat[0]);
 
         this.dashboardBugs = bugs.map((bug) => ({
           id: bug.id,

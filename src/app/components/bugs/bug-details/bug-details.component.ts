@@ -18,6 +18,9 @@ Ex cupidatat fugiat sint proident qui esse. Cillum ullamco tempor consectetur eu
 
 Aute officia qui magna exercitation officia adipisicing tempor cillum sit non et pariatur. Sunt non ut occaecat est. Sint id magna mollit aute do nisi. Tempor ex ea laborum nisi officia nostrud magna ullamco cillum cupidatat cillum. Aliquip sint id id laborum anim culpa amet est eu sunt eu ad.`,
     screenshots: [
+      '/assets/images/zenith-logo.png',
+      '/assets/images/zenith-logo.png',
+      '/assets/images/add-bug.png',
       'https://placeimg.com/200/200/people',
       'https://placeimg.com/200/200/people',
       'https://placeimg.com/200/200/people',

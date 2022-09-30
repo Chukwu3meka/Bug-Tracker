@@ -10,25 +10,11 @@
 
   <p>bugs actions</p>
 
-  <div>
-    <img
-      *ngFor="let data of details.screenshots"
-      [src]="data"
-      alt="bug screenshot"
-    />
-  </div>
-
-  <!-- <div> -->
-  <!-- <p>bug activity</p> -->
-
-  <!-- <ul>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li>5</li>
-    </ul> -->
-  <!-- </div> -->
+  <ul>
+    <li *ngFor="let data of details.screenshots">
+      <img [src]="data" alt="bug screenshot" />
+    </li>
+  </ul>
 
   <div class="dashedTitleWhite">
     <h1 nz-typography>Bug Activity Table</h1>

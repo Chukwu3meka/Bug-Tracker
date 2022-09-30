@@ -4,11 +4,11 @@
 .bug-details {
   padding: 10px;
   // .flex(@width:100%;@dir:column);
-
+  overflow: hidden;
   & > span:first-of-type {
     font-size: 20px;
     position: sticky;
-    top: 10px;
+
     color: @primary;
     z-index: 1;
     text-align: right;
@@ -40,18 +40,42 @@
     text-align: justify;
     margin-top: 10px;
     color: darken(@secondary;10%);
-    flex-wrap: nowrap;
+    // flex-wrap: nowrap;
   }
 
-  & > div:nth-of-type(2) {
-    .flex(@width:100%; @dir: row);
-    overflow: auto;
-    border: 3px solid red;
-    & > img {
-      display: inline-block;
-      width: 200px;
-      min-width: 200px;
-      height: 200px;
+  & > ul:nth-of-type(1) {
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    // width: 600px;
+    overflow-x: auto;
+
+    // .flex();
+    // display: grid;
+    // grid-template-columns: repeat(200px);
+    // flex-wrap: nowrap;
+
+    // display: inline;
+    // border: 3px solid red;
+    & > li {
+      display: inline;
+      & > img {
+        height: 200px;
+        width: 200px;
+        border: 1px solid @primary;
+        border-radius: 10px;
+        padding: 10px;
+      }
+      & > img:hover {
+        transform: scale(1.2);
+        border: none;
+      }
     }
+    & > li:not(:last-of-type) {
+      margin-right: 20px;
+    }
+  }
+  & > ul:nth-of-type(1)::-webkit-scrollbar {
+    display: none;
   }
 }

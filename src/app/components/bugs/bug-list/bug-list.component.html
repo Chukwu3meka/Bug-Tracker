@@ -117,14 +117,16 @@
   </div>
 </div>
 
-<div *ngIf="profileData.id" class="drawer" (click)="displayProfileHandler()">
+<div *ngIf="profileData" class="drawer" (click)="displayProfileHandler()">
   <div>
     <app-profile></app-profile>
   </div>
 </div>
 
-<div *ngIf="bugData.id" class="drawer" (click)="displayBugHandler()">
+<div *ngIf="bugData" class="drawer" (click)="displayBugHandler()">
   <div>
-    <app-bug-details></app-bug-details>
+    <main>
+      <app-bug-details></app-bug-details>
+    </main>
   </div>
 </div>

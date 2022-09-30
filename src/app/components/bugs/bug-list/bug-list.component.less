@@ -113,15 +113,27 @@
   left: 0;
   z-index: 1;
   background-color: rgba(lighten(#000, 0%), 0.5);
-  .flex();
-  padding: 10px;
+  .flex(@width: 100%);
+  padding: 40px 10px;
   transition: all 2s;
+  overflow: hidden;
   & > div {
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: #fff;
-    & > div {
-      border: 3px solid red;
-      padding: 10px !important;
+    overflow: hidden;
+    main {
+      scrollbar-color: red;
+      // margin-right: -12px;
+      max-height: calc(100vh - 50px);
+      overflow: auto;
+    }
+
+    main::-webkit-scrollbar {
+      width: 3px;
+    }
+    main::-webkit-scrollbar-thumb {
+      background-color: @primary;
+      border-radius: 6px;
     }
   }
 }

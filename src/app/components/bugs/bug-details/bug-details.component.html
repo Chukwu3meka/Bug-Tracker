@@ -6,15 +6,30 @@
   <p>bug description</p>
   <p>images</p>
 
-  <div>
-    <p>bug activity</p>
+  <!-- <div> -->
+  <!-- <p>bug activity</p> -->
 
-    <ul>
+  <!-- <ul>
       <li>1</li>
       <li>2</li>
       <li>3</li>
       <li>4</li>
       <li>5</li>
-    </ul>
-  </div>
+    </ul> -->
+  <!-- </div> -->
+
+  <nz-table #smallTable nzSize="small" [nzData]="activities">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of activities">
+        <td [width]="'160px'">{{ data.date }}</td>
+        <td>{{ data.description }}</td>
+      </tr>
+    </tbody>
+  </nz-table>
 </div>

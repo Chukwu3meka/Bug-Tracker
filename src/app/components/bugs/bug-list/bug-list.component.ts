@@ -46,9 +46,10 @@ export class BugListsComponent implements OnInit {
   // public bugsStat?: BugsStat[];
   public bugsStat?: any;
 
-  public profileData: ProfileData = {};
+  // public profileData: ProfileData = {};
+  public profileData?: ProfileData;
   // public bugData: BugData = {};
-  public bugData: BugData = {};
+  public bugData?: any = {};
 
   // public dashboardBugs: DashboardBug[] | undefined;
   public dashboardBugs: any[] | undefined;
@@ -56,14 +57,14 @@ export class BugListsComponent implements OnInit {
   public displayProfileHandler = (id?: number): void => {
     console.log(id);
 
-    if (!id) this.profileData = {};
-    if (id) this.profileData = { id: 1 };
+    if (!id) this.profileData = undefined;
+    if (id) this.profileData = {};
   };
 
   public displayBugHandler = (id?: string): void => {
     console.log(id);
-    if (!id) this.bugData = {};
-    if (id) this.bugData = { id: '2' };
+    if (!id) this.bugData = undefined;
+    if (id) this.bugData = {};
   };
 
   constructor(private bugService: BugsService) {}

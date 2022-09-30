@@ -1,25 +1,23 @@
-<nz-card class="bugsStat">
-  <main>
-    <div *ngFor="let stat of bugs">
-      <div>
-        <h2 nz-typography>{{ stat.label }}</h2>
-        <span nz-icon [nzType]="stat.icon"></span>
-      </div>
-
-      <nz-skeleton-element
-        *ngIf="stat.total === undefined"
-        nzType="avatar"
-        [nzActive]="true"
-        [nzSize]="'small'"
-        [nzShape]="'circle'"
-      ></nz-skeleton-element>
-
-      <h1 *ngIf="stat.total !== undefined">
-        {{ stat.total }}
-      </h1>
-      <p>
-        {{ stat.description }}
-      </p>
+<main class="bugsStat">
+  <div *ngFor="let stat of bugs">
+    <div>
+      <h2 nz-typography>{{ stat.label }}</h2>
+      <span nz-icon [nzType]="stat.icon"></span>
     </div>
-  </main>
-</nz-card>
+
+    <nz-skeleton-element
+      *ngIf="stat.total === undefined"
+      nzType="avatar"
+      [nzActive]="true"
+      [nzSize]="'small'"
+      [nzShape]="'circle'"
+    ></nz-skeleton-element>
+
+    <h1 *ngIf="stat.total !== undefined">
+      {{ stat.total }}
+    </h1>
+    <p>
+      {{ stat.description }}
+    </p>
+  </div>
+</main>

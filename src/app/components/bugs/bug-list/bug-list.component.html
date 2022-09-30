@@ -88,12 +88,30 @@
       </div>
     </section>
     <ul>
-      <li (click)="displayBugHandler(bug.id)">{{ bug.ticket }}</li>
-      <li (click)="displayBugHandler(bug.id)">{{ bug.info }}</li>
-      <li (click)="displayBugHandler(bug.id)">{{ bug.platform }}</li>
-      <li (click)="displayBugHandler(bug.id)">{{ bug.severity }}</li>
+      <li (click)="displayBugHandler(bug.id)">
+        <span>
+          {{ bug.ticket }}
+        </span>
+      </li>
+      <li (click)="displayBugHandler(bug.id)">
+        <span>
+          {{ bug.info }}
+        </span>
+      </li>
+      <li (click)="displayBugHandler(bug.id)">
+        <span>
+          {{ bug.platform }}
+        </span>
+      </li>
+      <li (click)="displayBugHandler(bug.id)">
+        <span>
+          {{ bug.severity }}
+        </span>
+      </li>
       <li (click)="displayProfileHandler(bug.developer.id)">
-        {{ bug.developer.assigned }}
+        <span>
+          {{ bug.developer.assigned }}
+        </span>
       </li>
     </ul>
   </div>
@@ -105,7 +123,7 @@
   </div>
 </div>
 
-<div *ngIf="bugData.id" class="drawer" 0 (click)="displayBugHandler()">
+<div *ngIf="bugData.id" class="drawer" (click)="displayBugHandler()">
   <div>
     <app-bug-details></app-bug-details>
   </div>

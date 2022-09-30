@@ -48,17 +48,20 @@ export class BugListsComponent implements OnInit {
 
   public profileData: ProfileData = {};
   // public bugData: BugData = {};
-  public bugData: BugData = { id: 'sa' };
+  public bugData: BugData = {};
 
   // public dashboardBugs: DashboardBug[] | undefined;
   public dashboardBugs: any[] | undefined;
 
   public displayProfileHandler = (id?: number): void => {
+    console.log(id);
+
     if (!id) this.profileData = {};
     if (id) this.profileData = { id: 1 };
   };
 
   public displayBugHandler = (id?: string): void => {
+    console.log(id);
     if (!id) this.bugData = {};
     if (id) this.bugData = { id: '2' };
   };

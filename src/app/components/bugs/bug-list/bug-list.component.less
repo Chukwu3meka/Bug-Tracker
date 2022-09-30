@@ -82,7 +82,9 @@
         font-size: 0.85em;
         color: darken(@secondary, 30%);
         font-weight: bold;
-        cursor: pointer;
+        & > span {
+          cursor: pointer;
+        }
       }
       & li:before {
         content: "";

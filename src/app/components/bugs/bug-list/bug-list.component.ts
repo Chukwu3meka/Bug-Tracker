@@ -43,7 +43,8 @@ interface BugData {
 export class BugListsComponent implements OnInit {
   public bugs: Bug[] = [];
 
-  public bugsStat?: BugsStat[];
+  // public bugsStat?: BugsStat[];
+  public bugsStat?: any;
 
   public profileData: ProfileData = {};
   // public bugData: BugData = {};
@@ -66,79 +67,63 @@ export class BugListsComponent implements OnInit {
 
   ngOnInit(): void {
     this.bugService.getBugs().subscribe((res) => {
-      // get user role
-      const role: string = 'user';
+      setTimeout(() => {
+        // get user role
+        const role: string = 'user';
 
-      const bugs = tempMockResponse.map((bug) => ({
-        ...bug,
-        id: bug.bugId,
-        description: bug.bugReview,
-        status: bug.bugTreatmentStage?.toLowerCase(),
-        severity: bug.severity?.toLowerCase(),
-        created: bug.reportDate,
-        platform: bug.platformses?.platformName,
-        developer: {
-          id: bug.userAssignedToBug?.id,
-          name: `${bug.userAssignedToBug?.lastName} ${bug.userAssignedToBug?.firstName}`,
-        },
-      }));
+        const bugs = tempMockResponse.map((bug) => ({
+          ...bug,
+          id: bug.bugId,
+          description: bug.bugReview,
+          status: bug.bugTreatmentStage?.toLowerCase(),
+          severity: bug.severity?.toLowerCase(),
+          created: bug.reportDate,
+          platform: bug.platformses?.platformName,
+          developer: {
+            id: bug.userAssignedToBug?.id,
+            name: `${bug.userAssignedToBug?.lastName} ${bug.userAssignedToBug?.firstName}`,
+          },
+        }));
 
-      this.bugsStat = [
-        {
-          label: 'All Bugs',
-          total: bugs.length,
-          icon: 'bug',
-          description:
-            role === 'admin'
-              ? 'Total number of Bugs reported by all users'
-              : role === 'developer'
-              ? 'Total number of Bugs assigned to me'
-              : 'Total number of Bugs reported by me',
-        },
-        {
-          label: 'Open',
-          total: bugs.filter((bug) => bug.status === 'open').length,
-          icon: 'folder-open',
-          description: `All Bugs yet to be assigned to a developer`,
-        },
-        {
-          label: 'Closed',
-          total: bugs.filter((bug) => bug.status === 'closed').length,
-          icon: 'issues-close',
-          description: 'Bugs that has been Resolved or Closed ',
-        },
-        {
-          label: 'Pending',
-          total: bugs.filter((bug) => bug.status === 'pending').length,
-          icon: 'tool',
-          description: 'Bugs currently being fixed by developers',
-        },
-      ];
+        this.bugsStat = {
+          allBugs: 30,
+          open: 21,
+          closed: 23,
+          pending: 0,
+        };
 
-      // console.log(this.bugsStat[0]);
+        // console.log('sadsadsa', this.role);
+        // this.bugs[0].total = this.bugsStat.allBugs;
+        // this.bugs[1].total = this.bugsStat.open;
+        // this.bugs[2].total = this.bugsStat.closed;
+        // this.bugs[3].total = this.bugsStat.pending;
+        // this.bugs[]. = this.bugsStat.
 
-      this.dashboardBugs = bugs.map((bug) => ({
-        id: bug.id,
-        label: bug.label,
-        description: bug.description,
-        color: colors[bug.status],
-        ticket: `Ticket ID #${null}`,
-        info: `Reported on ${new Date(bug.created).toDateString()}`,
-        platform: `Platform: ${bug?.platform}`,
-        severity: `Severity Status: ${bug?.severity}`,
-        reporter: {
-          name: '' || 'Unknown User',
-          id: '' || null,
-          img: '' || 'https://placeimg.com/100/100/people',
-        },
-        developer: {
-          id: bug.developer.id,
-          // ...bug.developer,
-          assigned: bug.developer?.id
-            ? `Assigned to '${bug?.developer.name}'`
-            : `Not yet assigned`,
-        },
-      }));
+        // console.log(this.bugsStat[0]);
+
+        this.dashboardBugs = bugs.map((bug) => ({
+          id: bug.id,
+          label: bug.label,
+          description: bug.description,
+          color: colors[bug.status],
+          ticket: `Ticket ID #${null}`,
+          info: `Reported on ${new Date(bug.created).toDateString()}`,
+          platform: `Platform: ${bug?.platform}`,
+          severity: `Severity Status: ${bug?.severity}`,
+          reporter: {
+            name: '' || 'Unknown User',
+            id: '' || null,
+            img: '' || 'https://placeimg.com/100/100/people',
+          },
+          developer: {
+            id: bug.developer.id,
+            // ...bug.developer,
+            assigned: bug.developer?.id
+              ? `Assigned to '${bug?.developer.name}'`
+              : `Not yet assigned`,
+          },
+        }));
+      }, 3000);
     });
   }
 }

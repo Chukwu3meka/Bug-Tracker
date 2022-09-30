@@ -16,13 +16,17 @@
       font-size: 0.8em;
     }
   }
+  span {
+    color: @color;
+  }
   h1 {
-    margin: -5px 0 5px 0;
+    margin: -10px 0;
     color: @color;
   }
   p:first-of-type {
-    margin: -3px 0 -5px;
-    // color: @color;
+    color: darken(@secondary, 10%);
+    font-weight: 600;
+    margin: 5px 0 -5px;
   }
 }
 
@@ -45,4 +49,14 @@
       .bugStatStyle(@pendingBugs);
     }
   }
+}
+
+.notBugsStat {
+  .flex( @justify:space-between;  @align:stretch);
+  gap: 20px;
+  background-color: #fff;
+  border-radius: 8px 8px 5px 5px;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 2px -2px,
+    rgba(0, 0, 0, 0.12) 0px 3px 6px 0px, rgba(0, 0, 0, 0.09) 0px 5px 12px 4px;
 }

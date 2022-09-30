@@ -16,13 +16,13 @@ export class SidebarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.notifications = Bugs.map(
-        (x) =>
-          // img: 'https://placeimg.com/100/100/people',
-          x.description
-      ).slice(0, 4);
-      this.notificationsLoading = false;
-    }, 1000);
+    // setTimeout(() => {
+    //   this.notifications = Bugs.map(
+    //     (x) =>
+    //       // img: 'https://placeimg.com/100/100/people',
+    //       x.description
+    //   ).slice(0, 4);
+    //   this.notificationsLoading = false;
+    // }, 1000);
   }
 }

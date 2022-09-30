@@ -8,6 +8,14 @@ import { DateAgoPipe } from 'src/app/pipes/dateago.pipe';
 })
 export class BugDetailsComponent implements OnInit {
   public details = {
+    platformDevelopers: [
+      { id: '1', name: 'Clay Robel' },
+      { id: '2', name: 'Cathy Shanahan' },
+      { id: '3', name: 'Jill Jacobs' },
+      { id: '4', name: 'Deanna Bednar' },
+      { id: '5', name: 'Lloyd Muller`' },
+    ],
+    developer: { id: '2', name: 'Cathy Shanahan' },
     title: 'Bug Title her',
     platform: 'Mobile app',
     description: `Aliquip esse tempor reprehenderit commodo aute in. Nisi ad ut ipsum eu ipsum commodo tempor laboris veniam enim. Incididunt est culpa dolor incididunt aliquip velit non esse. Tempor laboris veniam cillum commodo irure sunt esse. Occaecat veniam amet consectetur incididunt velit.
@@ -18,16 +26,17 @@ Ex cupidatat fugiat sint proident qui esse. Cillum ullamco tempor consectetur eu
 
 Aute officia qui magna exercitation officia adipisicing tempor cillum sit non et pariatur. Sunt non ut occaecat est. Sint id magna mollit aute do nisi. Tempor ex ea laborum nisi officia nostrud magna ullamco cillum cupidatat cillum. Aliquip sint id id laborum anim culpa amet est eu sunt eu ad.`,
     screenshots: [
-      '/assets/images/zenith-logo.png',
+      'https://placeimg.com/200/200/people',
       '/assets/images/zenith-logo.png',
       '/assets/images/add-bug.png',
+      '/assets/images/profilePic.png',
       'https://placeimg.com/200/200/people',
       'https://placeimg.com/200/200/people',
       'https://placeimg.com/200/200/people',
       'https://placeimg.com/200/200/people',
       'https://placeimg.com/200/200/people',
       'https://placeimg.com/200/200/people',
-      'https://placeimg.com/200/200/people',
+      '/assets/images/zenith-logo.png',
     ],
   };
 
@@ -43,216 +52,6 @@ Aute officia qui magna exercitation officia adipisicing tempor cillum sit non et
 }
 
 const data = [
-  {
-    date: 'Mon Oct 18 2021 13:33:42 GMT+0100 (West Africa Standard Time)',
-    description: 'Eu laboris est est id ea Lorem anim ex.',
-  },
-  {
-    date: 'Thu Aug 11 2022 17:21:59 GMT+0100 (West Africa Standard Time)',
-    description: 'Ipsum fugiat nostrud id dolore esse elit.',
-  },
-  {
-    date: 'Fri Apr 29 2022 03:19:32 GMT+0100 (West Africa Standard Time)',
-    description:
-      'Culpa laborum labore culpa fugiat ad aliqua in quis labore cillum.',
-  },
-  {
-    date: 'Mon Jul 04 2022 12:53:29 GMT+0100 (West Africa Standard Time)',
-    description:
-      'Velit proident incididunt esse ut excepteur pariatur exercitation esse laboris voluptate dolore elit ad.',
-  },
-  {
-    date: 'Tue Mar 22 2022 11:13:16 GMT+0100 (West Africa Standard Time)',
-    description: 'Magna ea qui amet quis est non ut nulla consectetur.',
-  },
-  {
-    date: 'Sun Jan 23 2022 16:48:19 GMT+0100 (West Africa Standard Time)',
-    description:
-      'Id irure aliquip anim sit nostrud consequat aliqua nisi quis.',
-  },
-  {
-    date: 'Fri Feb 04 2022 12:56:22 GMT+0100 (West Africa Standard Time)',
-    description:
-      'Ullamco qui esse velit consectetur laboris excepteur officia sint sint.',
-  },
-  {
-    date: 'Mon May 09 2022 05:14:24 GMT+0100 (West Africa Standard Time)',
-    description:
-      'Officia laborum est aute fugiat fugiat labore officia labore esse sunt eu.',
-  },
-  {
-    date: 'Fri Jan 28 2022 22:49:56 GMT+0100 (West Africa Standard Time)',
-    description:
-      'Sint pariatur elit anim pariatur cupidatat consequat ex dolore duis duis fugiat.',
-  },
-  {
-    date: 'Mon Oct 18 2021 13:33:42 GMT+0100 (West Africa Standard Time)',
-    description: 'Eu laboris est est id ea Lorem anim ex.',
-  },
-  {
-    date: 'Thu Aug 11 2022 17:21:59 GMT+0100 (West Africa Standard Time)',
-    description: 'Ipsum fugiat nostrud id dolore esse elit.',
-  },
-  {
-    date: 'Fri Apr 29 2022 03:19:32 GMT+0100 (West Africa Standard Time)',
-    description:
-      'Culpa laborum labore culpa fugiat ad aliqua in quis labore cillum.',
-  },
-  {
-    date: 'Mon Jul 04 2022 12:53:29 GMT+0100 (West Africa Standard Time)',
-    description:
-      'Velit proident incididunt esse ut excepteur pariatur exercitation esse laboris voluptate dolore elit ad.',
-  },
-  {
-    date: 'Tue Mar 22 2022 11:13:16 GMT+0100 (West Africa Standard Time)',
-    description: 'Magna ea qui amet quis est non ut nulla consectetur.',
-  },
-  {
-    date: 'Sun Jan 23 2022 16:48:19 GMT+0100 (West Africa Standard Time)',
-    description:
-      'Id irure aliquip anim sit nostrud consequat aliqua nisi quis.',
-  },
-  {
-    date: 'Fri Feb 04 2022 12:56:22 GMT+0100 (West Africa Standard Time)',
-    description:
-      'Ullamco qui esse velit consectetur laboris excepteur officia sint sint.',
-  },
-  {
-    date: 'Mon May 09 2022 05:14:24 GMT+0100 (West Africa Standard Time)',
-    description:
-      'Officia laborum est aute fugiat fugiat labore officia labore esse sunt eu.',
-  },
-  {
-    date: 'Fri Jan 28 2022 22:49:56 GMT+0100 (West Africa Standard Time)',
-    description:
-      'Sint pariatur elit anim pariatur cupidatat consequat ex dolore duis duis fugiat.',
-  },
-  {
-    date: 'Mon Oct 18 2021 13:33:42 GMT+0100 (West Africa Standard Time)',
-    description: 'Eu laboris est est id ea Lorem anim ex.',
-  },
-  {
-    date: 'Thu Aug 11 2022 17:21:59 GMT+0100 (West Africa Standard Time)',
-    description: 'Ipsum fugiat nostrud id dolore esse elit.',
-  },
-  {
-    date: 'Fri Apr 29 2022 03:19:32 GMT+0100 (West Africa Standard Time)',
-    description:
-      'Culpa laborum labore culpa fugiat ad aliqua in quis labore cillum.',
-  },
-  {
-    date: 'Mon Jul 04 2022 12:53:29 GMT+0100 (West Africa Standard Time)',
-    description:
-      'Velit proident incididunt esse ut excepteur pariatur exercitation esse laboris voluptate dolore elit ad.',
-  },
-  {
-    date: 'Tue Mar 22 2022 11:13:16 GMT+0100 (West Africa Standard Time)',
-    description: 'Magna ea qui amet quis est non ut nulla consectetur.',
-  },
-  {
-    date: 'Sun Jan 23 2022 16:48:19 GMT+0100 (West Africa Standard Time)',
-    description:
-      'Id irure aliquip anim sit nostrud consequat aliqua nisi quis.',
-  },
-  {
-    date: 'Fri Feb 04 2022 12:56:22 GMT+0100 (West Africa Standard Time)',
-    description:
-      'Ullamco qui esse velit consectetur laboris excepteur officia sint sint.',
-  },
-  {
-    date: 'Mon May 09 2022 05:14:24 GMT+0100 (West Africa Standard Time)',
-    description:
-      'Officia laborum est aute fugiat fugiat labore officia labore esse sunt eu.',
-  },
-  {
-    date: 'Fri Jan 28 2022 22:49:56 GMT+0100 (West Africa Standard Time)',
-    description:
-      'Sint pariatur elit anim pariatur cupidatat consequat ex dolore duis duis fugiat.',
-  },
-  {
-    date: 'Mon Oct 18 2021 13:33:42 GMT+0100 (West Africa Standard Time)',
-    description: 'Eu laboris est est id ea Lorem anim ex.',
-  },
-  {
-    date: 'Thu Aug 11 2022 17:21:59 GMT+0100 (West Africa Standard Time)',
-    description: 'Ipsum fugiat nostrud id dolore esse elit.',
-  },
-  {
-    date: 'Fri Apr 29 2022 03:19:32 GMT+0100 (West Africa Standard Time)',
-    description:
-      'Culpa laborum labore culpa fugiat ad aliqua in quis labore cillum.',
-  },
-  {
-    date: 'Mon Jul 04 2022 12:53:29 GMT+0100 (West Africa Standard Time)',
-    description:
-      'Velit proident incididunt esse ut excepteur pariatur exercitation esse laboris voluptate dolore elit ad.',
-  },
-  {
-    date: 'Tue Mar 22 2022 11:13:16 GMT+0100 (West Africa Standard Time)',
-    description: 'Magna ea qui amet quis est non ut nulla consectetur.',
-  },
-  {
-    date: 'Sun Jan 23 2022 16:48:19 GMT+0100 (West Africa Standard Time)',
-    description:
-      'Id irure aliquip anim sit nostrud consequat aliqua nisi quis.',
-  },
-  {
-    date: 'Fri Feb 04 2022 12:56:22 GMT+0100 (West Africa Standard Time)',
-    description:
-      'Ullamco qui esse velit consectetur laboris excepteur officia sint sint.',
-  },
-  {
-    date: 'Mon May 09 2022 05:14:24 GMT+0100 (West Africa Standard Time)',
-    description:
-      'Officia laborum est aute fugiat fugiat labore officia labore esse sunt eu.',
-  },
-  {
-    date: 'Fri Jan 28 2022 22:49:56 GMT+0100 (West Africa Standard Time)',
-    description:
-      'Sint pariatur elit anim pariatur cupidatat consequat ex dolore duis duis fugiat.',
-  },
-  {
-    date: 'Mon Oct 18 2021 13:33:42 GMT+0100 (West Africa Standard Time)',
-    description: 'Eu laboris est est id ea Lorem anim ex.',
-  },
-  {
-    date: 'Thu Aug 11 2022 17:21:59 GMT+0100 (West Africa Standard Time)',
-    description: 'Ipsum fugiat nostrud id dolore esse elit.',
-  },
-  {
-    date: 'Fri Apr 29 2022 03:19:32 GMT+0100 (West Africa Standard Time)',
-    description:
-      'Culpa laborum labore culpa fugiat ad aliqua in quis labore cillum.',
-  },
-  {
-    date: 'Mon Jul 04 2022 12:53:29 GMT+0100 (West Africa Standard Time)',
-    description:
-      'Velit proident incididunt esse ut excepteur pariatur exercitation esse laboris voluptate dolore elit ad.',
-  },
-  {
-    date: 'Tue Mar 22 2022 11:13:16 GMT+0100 (West Africa Standard Time)',
-    description: 'Magna ea qui amet quis est non ut nulla consectetur.',
-  },
-  {
-    date: 'Sun Jan 23 2022 16:48:19 GMT+0100 (West Africa Standard Time)',
-    description:
-      'Id irure aliquip anim sit nostrud consequat aliqua nisi quis.',
-  },
-  {
-    date: 'Fri Feb 04 2022 12:56:22 GMT+0100 (West Africa Standard Time)',
-    description:
-      'Ullamco qui esse velit consectetur laboris excepteur officia sint sint.',
-  },
-  {
-    date: 'Mon May 09 2022 05:14:24 GMT+0100 (West Africa Standard Time)',
-    description:
-      'Officia laborum est aute fugiat fugiat labore officia labore esse sunt eu.',
-  },
-  {
-    date: 'Fri Jan 28 2022 22:49:56 GMT+0100 (West Africa Standard Time)',
-    description:
-      'Sint pariatur elit anim pariatur cupidatat consequat ex dolore duis duis fugiat.',
-  },
   {
     date: 'Mon Oct 18 2021 13:33:42 GMT+0100 (West Africa Standard Time)',
     description: 'Eu laboris est est id ea Lorem anim ex.',

@@ -8,8 +8,6 @@
   </div>
   <p>{{ details.description }}</p>
 
-  <p>bugs actions</p>
-
   <ul>
     <li *ngFor="let data of details.screenshots">
       <img [src]="data" alt="bug screenshot" />
@@ -17,7 +15,7 @@
   </ul>
 
   <div class="dashedTitleWhite">
-    <h1 nz-typography>Bug Activity Table</h1>
+    <h1 nz-typography>Bug Activities</h1>
   </div>
 
   <nz-table
@@ -34,9 +32,11 @@
     </thead>
     <tbody>
       <tr *ngFor="let data of activities">
-        <td [width]="'160px'">{{ data.date }}</td>
+        <td [width]="'200px'">{{ data.date }}</td>
         <td>{{ data.description }}</td>
       </tr>
     </tbody>
   </nz-table>
+
+  <div>assign developer here</div>
 </div>

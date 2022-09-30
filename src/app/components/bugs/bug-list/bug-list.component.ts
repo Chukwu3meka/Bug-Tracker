@@ -86,10 +86,10 @@ export class BugListsComponent implements OnInit {
         }));
 
         this.bugsStat = {
-          allBugs: 30,
-          open: 21,
-          closed: 23,
-          pending: 0,
+          allBugs: bugs.length,
+          open: bugs.filter((bug) => bug.status === 'open').length,
+          closed: bugs.filter((bug) => bug.status === 'closed').length,
+          pending: bugs.filter((bug) => bug.status === 'pending').length,
         };
 
         // console.log('sadsadsa', this.role);

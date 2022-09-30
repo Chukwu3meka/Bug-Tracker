@@ -35,3 +35,4 @@ for our loading page <!-- https://css-tricks.com/lets-make-a-fancy-but-uncomplic
 
 1. fix open bug color in bug stat
 2. delete mock db
+3. All developers must belong to a team, such that only developers working on specific platform can be assigned

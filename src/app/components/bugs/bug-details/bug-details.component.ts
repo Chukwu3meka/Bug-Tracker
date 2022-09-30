@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bug-details.component.less'],
 })
 export class BugDetailsComponent implements OnInit {
-  public activities = data.map(({ date, description }) => ({
-    date: new Date(date).toDateString(),
-    description,
-  }));
+  public activities = [...data]
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .map(({ date, description }) => ({
+      date: new Date(date).toDateString(),
+      description,
+    }));
   constructor() {}
 
   ngOnInit(): void {}

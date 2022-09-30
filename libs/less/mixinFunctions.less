@@ -1,7 +1,41 @@
+@import "./variables.less";
+
 .flex(@width:initial, @dir:row,  @justify:center,@align:center ) {
   display: flex;
   width: @width;
   flex-direction: @dir;
   justify-content: @justify;
   align-items: @align;
+}
+
+.dashedTitleWhite {
+  border-bottom: 1px solid @secondary;
+  max-width: 270px;
+  margin: 20px auto 20px;
+  h1 {
+    font-size: 1.7em;
+    padding: 0 20px;
+    color: darken(@primary, 10%);
+    width: max-content;
+    background-color: #fff;
+    text-align: center;
+    margin: 0 auto -15px;
+    font-family: "Job Clarendon", "Roslindale", serif;
+  }
+}
+
+.dashedTitleGrey {
+  border-bottom: 1px solid @secondary;
+  max-width: 270px;
+  margin: 20px auto 20px;
+  h1 {
+    font-size: 1.7em;
+    padding: 0 20px;
+    color: darken(@primary, 10%);
+    width: max-content;
+    background-color: lighten(@secondary, 25%);
+    text-align: center;
+    margin: 0 auto -15px;
+    font-family: "Job Clarendon", "Roslindale", serif;
+  }
 }

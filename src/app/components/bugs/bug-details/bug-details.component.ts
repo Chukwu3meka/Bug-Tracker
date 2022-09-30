@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DateAgoPipe } from 'src/app/pipes/dateago.pipe';
 
 @Component({
   selector: 'app-bug-details',
@@ -6,10 +7,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bug-details.component.less'],
 })
 export class BugDetailsComponent implements OnInit {
+  public details = {
+    title: 'Bug Title her',
+    platform: 'Mobile app',
+    description: `Aliquip esse tempor reprehenderit commodo aute in. Nisi ad ut ipsum eu ipsum commodo tempor laboris veniam enim. Incididunt est culpa dolor incididunt aliquip velit non esse. Tempor laboris veniam cillum commodo irure sunt esse. Occaecat veniam amet consectetur incididunt velit.
+
+Eu amet et non id proident deserunt in voluptate culpa ad excepteur cupidatat ad non. Cillum minim sit sit consequat voluptate laborum. Aliqua sint occaecat velit adipisicing.
+
+Ex cupidatat fugiat sint proident qui esse. Cillum ullamco tempor consectetur eu. Ex laborum aute officia nulla anim aliqua anim id cupidatat elit nisi. Ullamco excepteur ipsum incididunt id qui quis in id in non proident minim qui. Mollit proident eu quis sunt voluptate ex quis tempor.
+
+Aute officia qui magna exercitation officia adipisicing tempor cillum sit non et pariatur. Sunt non ut occaecat est. Sint id magna mollit aute do nisi. Tempor ex ea laborum nisi officia nostrud magna ullamco cillum cupidatat cillum. Aliquip sint id id laborum anim culpa amet est eu sunt eu ad.`,
+    screenshots: [
+      'https://placeimg.com/200/200/people',
+      'https://placeimg.com/200/200/people',
+      'https://placeimg.com/200/200/people',
+      'https://placeimg.com/200/200/people',
+      'https://placeimg.com/200/200/people',
+      'https://placeimg.com/200/200/people',
+      'https://placeimg.com/200/200/people',
+    ],
+  };
+
   public activities = [...data]
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .map(({ date, description }) => ({
-      date: new Date(date).toDateString(),
+      date: new DateAgoPipe().transform(date),
       description,
     }));
   constructor() {}

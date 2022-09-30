@@ -3,5 +3,55 @@
 
 .bug-details {
   padding: 10px;
-  // border: 3px solid green;
+  // .flex(@width:100%;@dir:column);
+
+  & > span:first-of-type {
+    font-size: 20px;
+    position: sticky;
+    top: 10px;
+    color: @primary;
+    z-index: 1;
+    text-align: right;
+    display: block;
+    margin-right: 0;
+    background-color: #fff;
+  }
+
+  & > div:first-of-type {
+    .flex(@width:max-content;@align:flex-end);
+    // border: 3px soli d red;
+    gap: 5px;
+    * {
+      display: block;
+      padding: 0;
+      margin: 0;
+    }
+    h1 {
+      margin-bottom: -3px;
+      font-size: 1.4em;
+    }
+    p {
+      font-weight: 600;
+      color: darken(@secondary;10%);
+      font-size: 0.8em;
+    }
+  }
+  & > p:first-of-type {
+    text-align: justify;
+    margin-top: 10px;
+    color: darken(@secondary;10%);
+    flex-wrap: nowrap;
+  }
+
+  & > div:nth-of-type(2) {
+    .flex(@width:100%; @dir: row);
+    overflow: auto;
+    border: 3px solid red;
+    & > img {
+      display: inline-block;
+      width: 200px;
+      min-width: 200px;
+      height: 200px;
+    }
+  }
 }

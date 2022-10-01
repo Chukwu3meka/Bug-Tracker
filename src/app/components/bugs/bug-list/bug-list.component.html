@@ -127,7 +127,9 @@
   <!-- (click)="displayBugHandler()" -->
   <div>
     <main>
-      <app-bug-details></app-bug-details>
+      <app-bug-details
+        (closeDrawerHandler)="closeDrawerHandler()"
+      ></app-bug-details>
     </main>
   </div>
 </div>

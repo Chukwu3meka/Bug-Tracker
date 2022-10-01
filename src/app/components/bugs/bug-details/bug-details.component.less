@@ -2,29 +2,33 @@
 @import "/libs/less/variables.less";
 
 .bug-details {
+  // border: 3px solid red;
   padding: 10px;
-  & > span:first-of-type {
+  & > div:first-of-type {
     position: sticky;
-    top: 10px;
-    padding: 10px;
-    font-size: 20px;
-    color: @primary;
-    z-index: 1;
+    top: 0px;
+    padding: 5px 0;
     text-align: right;
-    display: block;
-    margin-right: 0;
-    background-color: lighten(@primary;59%);
+    & > span {
+      border-radius: 50%;
+      font-size: 20px;
+      z-index: 1;
+      color: @primary;
+      background-color: #fff;
+      cursor: pointer;
+    }
   }
 
-  & > div:first-of-type {
+  & > div:nth-of-type(2) {
     .flex(@width:max-content;@align:flex-end);
-    // border: 3px soli d red;
+    margin-top: -30px;
     gap: 5px;
     * {
       display: block;
       padding: 0;
       margin: 0;
     }
+
     h1 {
       margin-bottom: -3px;
       font-size: 1.4em;

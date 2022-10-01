@@ -54,6 +54,11 @@ export class BugListsComponent implements OnInit {
   // public dashboardBugs: DashboardBug[] | undefined;
   public dashboardBugs: any[] | undefined;
 
+  public closeDrawerHandler = () => {
+    this.profileData = undefined;
+    this.bugData = undefined;
+  };
+
   public displayProfileHandler = (id?: number): void => {
     console.log(id);
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { DateAgoPipe } from 'src/app/pipes/dateago.pipe';
 
 @Component({
@@ -7,6 +7,14 @@ import { DateAgoPipe } from 'src/app/pipes/dateago.pipe';
   styleUrls: ['./bug-details.component.less'],
 })
 export class BugDetailsComponent implements OnInit {
+  @Output() closeDrawerHandler = new EventEmitter();
+
+  public hideDrawer = () => {
+    this.closeDrawerHandler.emit();
+
+    console.log('closeDrawerHandler');
+  };
+
   public details = {
     platformDevelopers: [
       { id: '1', name: 'Clay Robel' },

@@ -1,5 +1,12 @@
 <div class="bug-details">
-  <span nz-icon nzType="close-circle" nzTheme="outline"></span>
+  <div>
+    <span
+      nz-icon
+      nzType="close-circle"
+      nzTheme="outline"
+      (click)="hideDrawer()"
+    ></span>
+  </div>
 
   <div>
     <h1>{{ details.title }}</h1>

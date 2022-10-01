@@ -18,7 +18,7 @@
 
   <ul>
     <li *ngFor="let data of details.screenshots">
-      <img [src]="data" alt="bug screenshot" />
+      <img [src]="data" alt="bug screenshot" (click)="zoomImagehandler(data)" />
     </li>
   </ul>
 
@@ -47,4 +47,18 @@
   </nz-table>
 
   <div>assign developer here</div>
+  <div
+    *ngIf="zoomImage"
+    class="zoomImage"
+    (click)="zoomImagehandler(undefined)"
+  >
+    <span
+      nz-icon
+      nzType="close-circle"
+      nzTheme="outline"
+      (click)="zoomImagehandler(undefined)"
+    ></span>
+
+    <img [src]="zoomImage" alt="zoomed image" />
+  </div>
 </div>

@@ -9,6 +9,17 @@ import { DateAgoPipe } from 'src/app/pipes/dateago.pipe';
 export class BugDetailsComponent implements OnInit {
   @Output() closeDrawerHandler = new EventEmitter();
 
+  public zoomImage;
+
+  public zoomImagehandler = (imgSrc) => {
+    if (imgSrc) {
+      console.log(imgSrc);
+      this.zoomImage = imgSrc;
+    } else {
+      this.zoomImage = undefined;
+    }
+  };
+
   public hideDrawer = () => {
     this.closeDrawerHandler.emit();
 

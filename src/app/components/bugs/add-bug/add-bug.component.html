@@ -6,8 +6,8 @@
       <input
         type="text"
         nz-input
-        [(ngModel)]="inputValue"
-        placeholder="Bug description in one sentence"
+        [(ngModel)]="formData.bugTitle"
+        placeholder="Bug Title in one sentence"
       />
     </nz-input-group>
 
@@ -29,6 +29,7 @@
       id="bug-platform"
       ngModel="platform"
       nzAllowClear
+      [(ngModel)]="formData.platform"
       nzPlaceHolder="Select Platform"
     >
       <nz-option
@@ -39,13 +40,18 @@
     </nz-select>
 
     <label for="date-noticed">First Noticed</label>
-    <nz-date-picker id="date-noticed" nzSize="large"></nz-date-picker>
+    <nz-date-picker
+      id="date-noticed"
+      [(ngModel)]="formData.date"
+      nzSize="large"
+    ></nz-date-picker>
 
     <label for="bug-description">Bug Description</label>
     <textarea
       nz-input
       id="bug-description"
       placeholder="Clearly describe your findings or issues, to enable swift debugging from our developers"
+      [(ngModel)]="formData.description"
       [nzAutosize]="{ minRows: 7, maxRows: 13 }"
     ></textarea>
 

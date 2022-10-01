@@ -16,6 +16,13 @@ export class AddBugComponent implements OnInit {
   inputValue: string | null = null;
   textValue: string | null = null;
 
+  public formData = {
+    bugTitle: '',
+    platform: 'mobile-app',
+    date: new Date(),
+    description: '',
+  };
+
   public platformOptions;
   public maxFileSize: number = 5120;
 
@@ -35,18 +42,21 @@ export class AddBugComponent implements OnInit {
     return false;
   };
 
-  submitBug(): null {
+  submitBug = (): null => {
     this.isLoadingOne = true;
 
+    // console.log(this.formData);
     setTimeout(() => (this.isLoadingOne = false), 3000);
-
-    return null;
 
     const formData = new FormData();
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     this.fileList.forEach((file: any) => {
       formData.append('files[]', file);
     });
+
+    console.log(formData);
+
+    return null;
     this.uploading = true;
     // You can use any AJAX library you like
     const req = new HttpRequest(
@@ -71,7 +81,7 @@ export class AddBugComponent implements OnInit {
           this.msg.error('upload failed.');
         }
       );
-  }
+  };
 
   ngOnInit(): void {
     const { role } = getLocalProfile('profile', localStorage);
@@ -81,6 +91,6 @@ export class AddBugComponent implements OnInit {
 
     // this.platforms = JSON.parse();
 
-    console.log({ role, platforms });
+    // console.log({ role, platforms });
   }
 }

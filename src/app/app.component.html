@@ -1,6 +1,8 @@
+<!-- check if viewport is wide enough and browser is compatible with app -->
 <div [ngSwitch]="appNotCompatible">
   <div *ngSwitchCase="''">
-    <div class="app-layout">
+    <!-- check if user is authorised to use app -->
+    <div class="app-layout" *ngIf="authorised">
       <app-header></app-header>
       <div class="app-content">
         <!-- <app-sidebar></app-sidebar> -->
@@ -9,6 +11,20 @@
           <router-outlet *ngIf="!pageLoading"></router-outlet>
         </main>
       </div>
+    </div>
+
+    <div class="app-auth" *ngIf="!authorised">
+      <app-signup></app-signup>
+      <div>
+        <div></div>
+        <nz-avatar
+          [nzSize]="50"
+          [nzShape]="'square'"
+          nzIcon="user"
+          nzSrc="/assets/images/zenith-logo.png"
+        ></nz-avatar>
+      </div>
+      <app-signin></app-signin>
     </div>
   </div>
 

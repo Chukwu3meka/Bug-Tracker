@@ -46,7 +46,7 @@ export class AddBugComponent implements OnInit {
     this.isLoadingOne = true;
 
     // console.log(this.formData);
-    setTimeout(() => (this.isLoadingOne = false), 3000);
+    setTimeout(() => (this.isLoadingOne = false), 1000);
 
     const formData = new FormData();
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -8,4 +8,35 @@
       <p>{{ value.data }}</p>
     </div>
   </main>
+
+  <!-- display this only if user is admin -->
+  <!--
+    <div>
+      <nz-select
+      nzSize="small"
+      [nzAllowClear]="false"
+      id="developer"
+      ngModel="developer"
+      [(ngModel)]="details.developer.id"
+      nzPlaceHolder="Assign Dveloper"
+    >
+      <nz-option
+        *ngFor="let developer of details.platformDevelopers"
+        [nzDisabled]="details.developer.id === developer.id"
+        [nzValue]="developer.id"
+        [nzLabel]="developer.name"
+      ></nz-option>
+    </nz-select>
+
+    <button
+      nz-button
+      nzType="primary"
+      [disabled]="details.developer.id === currentDeveloper"
+      (click)="assignDeveloper()"
+      [nzLoading]="isLoadingOne"
+    >
+      Assign developer
+    </button>
+  </div>
+  -->
 </div>

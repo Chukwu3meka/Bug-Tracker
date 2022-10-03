@@ -6,35 +6,6 @@ import { Bug, BugsStat, DashboardBug } from 'src/app/interface/Old-Bug';
 
 import { BugsService } from '../../../services/bugs.service';
 
-export interface bugInterface {
-  color: any;
-  label: string;
-  ticket: string;
-  info: string;
-  platform: string;
-  severity: string;
-  developer: {
-    assigned: string;
-    img?: string | undefined;
-    id?: number | undefined;
-    name?: string | undefined;
-  };
-  //  ... 4 more ...;
-  description: string;
-  //  }
-  //  []' is not assignable to type 'never[]'
-}
-
-interface ProfileData {
-  img?: string;
-  id?: number;
-  name?: string;
-}
-
-interface BugData {
-  id?: string;
-}
-
 @Component({
   selector: 'bug-list',
   templateUrl: './bug-list.component.html',
@@ -47,9 +18,9 @@ export class BugListsComponent implements OnInit {
   public bugsStat?: any;
 
   // public profileData: ProfileData = {};
-  public profileData?: ProfileData;
+  public profileData?: any;
   // public bugData: BugData = {};
-  public bugData?: any = {};
+  public bugData?: any;
 
   // public dashboardBugs: DashboardBug[] | undefined;
   public dashboardBugs: any[] | undefined;

@@ -28,6 +28,9 @@ import { DateAgoPipe } from './pipes/dateago.pipe';
 import { SelectOptionsComponent } from './components/bugs/select-options/select-options.component';
 import { LoadingComponent } from './components/layout/loading/loading.component';
 import { BugDetailsComponent } from './components/bugs/bug-details/bug-details.component';
+import { SigninComponent } from './components/auth/signin/signin.component';
+import { SignupComponent } from './components/auth/signup/signup.component';
+import { ResetComponent } from './components/auth/reset/reset.component';
 // import { FileuploadComponent } from './components/fileupload/fileupload.component';
 
 registerLocaleData(en);
@@ -48,6 +51,9 @@ registerLocaleData(en);
     SelectOptionsComponent,
     LoadingComponent,
     BugDetailsComponent,
+    SigninComponent,
+    SignupComponent,
+    ResetComponent,
   ],
   imports: [
     BrowserModule,

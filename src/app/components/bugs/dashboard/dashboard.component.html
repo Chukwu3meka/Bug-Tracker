@@ -1,6 +1,7 @@
-dashboard
-
-<!-- <div class="dashboard">
+<div
+  class="dashboard"
+  *ngIf="!!bugsStat && !!bugReportData && !!statusData && !!severityData"
+>
   <app-bug-stat [bugsStat]="bugsStat"></app-bug-stat>
 
   <div class="miniStat">
@@ -39,4 +40,4 @@ dashboard
       [results]="severityData"
     ></ngx-charts-pie-grid>
   </div>
-</div> -->
+</div>

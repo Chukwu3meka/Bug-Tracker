@@ -44,7 +44,7 @@ export class BugListsComponent implements OnInit {
   };
 
   public displayProfileHandler = (id?: number): void => {
-    console.log(id);
+    // console.log(id);
 
     if (!id) this.profileData = undefined;
     if (id) this.profileData = {};
@@ -52,18 +52,8 @@ export class BugListsComponent implements OnInit {
 
   private getBugs = (page: number = 0) => {
     this.bugService.getBugs(page).subscribe((res) => {
-      // console.log(res.content);
-
-      console.log(page, 'sadasdsadsad', res);
-
-      // 10.128.32.54:8080/api/v1/bug/pages?page=1
-
       const totalBugs = res.totalElements;
       this.totalPages = res.totalPages;
-
-      console.log(res, res.totalPages);
-
-      // console.log(res);
 
       const bugs = res.content.map((bug) => ({
         ...bug,
@@ -112,9 +102,46 @@ export class BugListsComponent implements OnInit {
   };
 
   public displayBugHandler = (id?: string): void => {
-    console.log(id);
-    if (!id) this.bugData = undefined;
-    if (id) this.bugData = {};
+    this.bugService.getBug(id).subscribe((res) => {
+      // const totalBugs = res.totalElements;
+      // this.totalPages = res.totalPages;
+
+      this.bugData = {
+        platformDevelopers: [
+          { id: '1', name: 'Clay Robel' },
+          { id: '2', name: 'Cathy Shanahan' },
+          { id: '3', name: 'Jill Jacobs' },
+          { id: '4', name: 'Deanna Bednar' },
+          { id: '5', name: 'Lloyd Muller`' },
+        ],
+        developer: { id: res.id, name: `${res.lastName} ${res.firstName}` },
+        title: res.label,
+        platform: res.platformses.platformName,
+        description: res.bugReview,
+        screenshots: [
+          'https://placeimg.com/200/200/people',
+          '/assets/images/zenith-logo.png',
+          '/assets/images/add-bug.png',
+          '/assets/images/profilePic.png',
+          'https://placeimg.com/200/200/people',
+          'https://placeimg.com/200/200/people',
+          'https://placeimg.com/200/200/people',
+          'https://placeimg.com/200/200/people',
+          'https://placeimg.com/200/200/people',
+          'https://placeimg.com/200/200/people',
+          '/assets/images/zenith-logo.png',
+        ],
+      };
+
+      // this.currentDeveloper = res.id;
+
+      // }
+
+      // console.log(id, res);
+    });
+
+    // if (!id) this.bugData = undefined;
+    // if (id) this.bugData = {};
   };
 
   constructor(private bugService: BugsService) {}

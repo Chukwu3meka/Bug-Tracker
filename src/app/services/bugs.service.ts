@@ -28,8 +28,8 @@ import { Bug, DailyBugReport } from '../interface/Old-Bug';
   providedIn: 'root',
 })
 export class BugsService {
-  // private apiUrl = 'http://localhost:5000';
-  private apiUrl = 'http://10.128.32.54:8080/api/v1';
+  private apiUrl = 'http://localhost:5000';
+  // private apiUrl = 'http://10.128.32.54:8080/api/v1';
 
   // force re deployment on server
 
@@ -53,6 +53,14 @@ export class BugsService {
 
   constructor(private http: HttpClient) {}
 
+  private httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization:
+        'Basic ' + btoa('donaldwisdomnengi@gmail.com:Cassillas1nengi!'),
+    }),
+  };
+
   // getBugs() {
   //   // const params = new HttpParams()
   //   //     .set('title', title)
@@ -70,17 +78,16 @@ export class BugsService {
   //   return this.http.put(`http://myurl/${id}`, updateData, httpOptions);
   // }
 
+  getBug(id): Observable<any> {
+    return this.http.get(`${this.apiUrl}/bug/${id}`, this.httpOptions);
+  }
+
   // bug/pages?page=1
   getBugs(page: number = 1): Observable<any> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        Authorization:
-          'Basic ' + btoa('donaldwisdomnengi@gmail.com:Cassillas1nengi!'),
-      }),
-    };
-
-    return this.http.get(`${this.apiUrl}/bug/pages?page=${page}`, httpOptions);
+    return this.http.get(
+      `${this.apiUrl}/bug/pages?page=${page}`,
+      this.httpOptions
+    );
     // return this.http.get<Bug[]>(`${this.apiUrl}/bugs`);
 
     // const headers_object = new HttpHeaders();
@@ -117,9 +124,9 @@ export class BugsService {
   // "approvedForReassignment": null
   // }
 
-  // getDailyBugReport(): Observable<DailyBugReport[]> {
-  //   return this.http.get<DailyBugReport[]>(`${this.apiUrl}/dailyBugReport`);
-  // }
+  getDailyBugReport(): Observable<DailyBugReport[]> {
+    return this.http.get<DailyBugReport[]>(`${this.apiUrl}/dailyBugReport`);
+  }
 
   // getForwardFundingRecords(
   //   params: HttpParams

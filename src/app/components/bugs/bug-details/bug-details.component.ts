@@ -1,4 +1,11 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  SimpleChange,
+} from '@angular/core';
 import { DateAgoPipe } from 'src/app/pipes/dateago.pipe';
 
 @Component({
@@ -7,20 +14,22 @@ import { DateAgoPipe } from 'src/app/pipes/dateago.pipe';
   styleUrls: ['./bug-details.component.less'],
 })
 export class BugDetailsComponent implements OnInit {
+  @Input() bugData?: any;
   @Output() closeDrawerHandler = new EventEmitter();
 
   public currentDeveloper = 3;
 
   public assignDeveloper = () => {
     // save to database here
-    this.currentDeveloper = this.details.developer.id;
+    // this.currentDeveloper = this.details.developer.id;
+    // this.currentDeveloper = this.details.developer.id;
   };
 
   public zoomImage;
 
   public zoomImagehandler = (imgSrc) => {
     if (imgSrc) {
-      console.log(imgSrc);
+      // console.log(imgSrc);
       this.zoomImage = imgSrc;
     } else {
       this.zoomImage = undefined;
@@ -44,40 +53,46 @@ export class BugDetailsComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.details = {
-      platformDevelopers: [
-        { id: '1', name: 'Clay Robel' },
-        { id: '2', name: 'Cathy Shanahan' },
-        { id: '3', name: 'Jill Jacobs' },
-        { id: '4', name: 'Deanna Bednar' },
-        { id: '5', name: 'Lloyd Muller`' },
-      ],
-      developer: { id: '2', name: 'Cathy Shanahan' },
-      title: 'Bug Title her',
-      platform: 'Mobile app',
-      description: `Aliquip esse tempor reprehenderit commodo aute in. Nisi ad ut ipsum eu ipsum commodo tempor laboris veniam enim. Incididunt est culpa dolor incididunt aliquip velit non esse. Tempor laboris veniam cillum commodo irure sunt esse. Occaecat veniam amet consectetur incididunt velit.
+    //   this.details = {
+    //     platformDevelopers: [
+    //       { id: '1', name: 'Clay Robel' },
+    //       { id: '2', name: 'Cathy Shanahan' },
+    //       { id: '3', name: 'Jill Jacobs' },
+    //       { id: '4', name: 'Deanna Bednar' },
+    //       { id: '5', name: 'Lloyd Muller`' },
+    //     ],
+    //     developer: { id: '2', name: 'Cathy Shanahan' },
+    //     title: 'Bug Title her',
+    //     platform: 'Mobile app',
+    //     description: `Aliquip esse tempor reprehenderit commodo aute in. Nisi ad ut ipsum eu ipsum commodo tempor laboris veniam enim. Incididunt est culpa dolor incididunt aliquip velit non esse. Tempor laboris veniam cillum commodo irure sunt esse. Occaecat veniam amet consectetur incididunt velit.
+    // Eu amet et non id proident deserunt in voluptate culpa ad excepteur cupidatat ad non. Cillum minim sit sit consequat voluptate laborum. Aliqua sint occaecat velit adipisicing.
+    // Ex cupidatat fugiat sint proident qui esse. Cillum ullamco tempor consectetur eu. Ex laborum aute officia nulla anim aliqua anim id cupidatat elit nisi. Ullamco excepteur ipsum incididunt id qui quis in id in non proident minim qui. Mollit proident eu quis sunt voluptate ex quis tempor.
+    // Aute officia qui magna exercitation officia adipisicing tempor cillum sit non et pariatur. Sunt non ut occaecat est. Sint id magna mollit aute do nisi. Tempor ex ea laborum nisi officia nostrud magna ullamco cillum cupidatat cillum. Aliquip sint id id laborum anim culpa amet est eu sunt eu ad.`,
+    //     screenshots: [
+    //       'https://placeimg.com/200/200/people',
+    //       '/assets/images/zenith-logo.png',
+    //       '/assets/images/add-bug.png',
+    //       '/assets/images/profilePic.png',
+    //       'https://placeimg.com/200/200/people',
+    //       'https://placeimg.com/200/200/people',
+    //       'https://placeimg.com/200/200/people',
+    //       'https://placeimg.com/200/200/people',
+    //       'https://placeimg.com/200/200/people',
+    //       'https://placeimg.com/200/200/people',
+    //       '/assets/images/zenith-logo.png',
+    //     ],
+    //   };
+    // this.currentDeveloper = this.details.developer.id;
+  }
 
-  Eu amet et non id proident deserunt in voluptate culpa ad excepteur cupidatat ad non. Cillum minim sit sit consequat voluptate laborum. Aliqua sint occaecat velit adipisicing.
-
-  Ex cupidatat fugiat sint proident qui esse. Cillum ullamco tempor consectetur eu. Ex laborum aute officia nulla anim aliqua anim id cupidatat elit nisi. Ullamco excepteur ipsum incididunt id qui quis in id in non proident minim qui. Mollit proident eu quis sunt voluptate ex quis tempor.
-
-  Aute officia qui magna exercitation officia adipisicing tempor cillum sit non et pariatur. Sunt non ut occaecat est. Sint id magna mollit aute do nisi. Tempor ex ea laborum nisi officia nostrud magna ullamco cillum cupidatat cillum. Aliquip sint id id laborum anim culpa amet est eu sunt eu ad.`,
-      screenshots: [
-        'https://placeimg.com/200/200/people',
-        '/assets/images/zenith-logo.png',
-        '/assets/images/add-bug.png',
-        '/assets/images/profilePic.png',
-        'https://placeimg.com/200/200/people',
-        'https://placeimg.com/200/200/people',
-        'https://placeimg.com/200/200/people',
-        'https://placeimg.com/200/200/people',
-        'https://placeimg.com/200/200/people',
-        'https://placeimg.com/200/200/people',
-        '/assets/images/zenith-logo.png',
-      ],
-    };
-
-    this.currentDeveloper = this.details.developer.id;
+  ngOnChanges(changes: SimpleChange) {
+    if (typeof this.bugData !== 'undefined') {
+      console.log(this.bugData);
+      // this.bugs[0].total = this.bugsStat.allBugs;
+      // this.bugs[1].total = this.bugsStat.open;
+      // this.bugs[2].total = this.bugsStat.closed;
+      // this.bugs[3].total = this.bugsStat.pending;
+    }
   }
 }
 

@@ -1,4 +1,4 @@
-<div class="bug-details">
+<div class="bug-details" *ngIf="!!bugData">
   <div>
     <span
       nz-icon
@@ -90,3 +90,5 @@
     <img [src]="zoomImage" alt="zoomed image" />
   </div>
 </div>
+
+<div *ngIf="!bugData">loading...</div>

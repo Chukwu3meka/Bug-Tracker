@@ -6,7 +6,7 @@
 
 <!-- bugs skelenton -->
 <div *ngIf="dashboardBugs === undefined">
-  <div class="bugsList" *ngFor="let i of [1, 2, 3, 4, 5]">
+  <div class="bugsList" *ngFor="let i of [1, 2, 3]">
     <div>
       <span>
         <nz-skeleton-element
@@ -61,70 +61,73 @@
 </div>
 
 <div class="bugsList" *ngIf="dashboardBugs">
-  <!-- disabled dashboardBugs, delete immediate child div -->
-  <div *ngIf="!dashboardBugs">
-    <div *ngFor="let bug of dashboardBugs">
-      <span
-        nz-icon
-        nzType="flag"
-        nzTheme="outline"
-        [style]="{ color: bug.color }"
-        (click)="displayBugHandler(bug.id)"
-      ></span>
+  <div *ngFor="let bug of dashboardBugs">
+    <span
+      nz-icon
+      nzType="flag"
+      nzTheme="outline"
+      [style]="{ color: bug.color }"
+      (click)="displayBugHandler(bug.id)"
+    ></span>
 
-      <section>
-        <div>
-          <nz-divider
-            (click)="displayBugHandler(bug.id)"
-            nzPlain
-            [nzText]="bug.label"
-            nzOrientation="left"
-          ></nz-divider>
-          <p (click)="displayBugHandler(bug.id)">{{ bug.description }}</p>
-        </div>
-        <div>
-          <nz-avatar [nzSize]="15" [nzSrc]="bug.reporter.img"></nz-avatar>
-          <span (click)="displayProfileHandler(bug.reporter.id)">
-            {{ bug.reporter.name }}
-          </span>
-        </div>
-      </section>
-      <ul>
-        <li (click)="displayBugHandler(bug.id)">
-          <span>
-            {{ bug.ticket }}
-          </span>
-        </li>
-        <li (click)="displayBugHandler(bug.id)">
-          <span>
-            {{ bug.info }}
-          </span>
-        </li>
-        <li (click)="displayBugHandler(bug.id)">
-          <span>
-            {{ bug.platform }}
-          </span>
-        </li>
-        <li (click)="displayBugHandler(bug.id)">
-          <span>
-            {{ bug.severity }}
-          </span>
-        </li>
-        <li (click)="displayProfileHandler(bug.developer.id)">
-          <span>
-            {{ bug.developer.assigned }}
-          </span>
-        </li>
-      </ul>
-    </div>
+    <section>
+      <div>
+        <nz-divider
+          (click)="displayBugHandler(bug.id)"
+          nzPlain
+          [nzText]="bug.label"
+          nzOrientation="left"
+        ></nz-divider>
+        <p (click)="displayBugHandler(bug.id)">{{ bug.description }}</p>
+      </div>
+      <div>
+        <nz-avatar [nzSize]="15" [nzSrc]="bug.reporter.img"></nz-avatar>
+        <span (click)="displayProfileHandler(bug.reporter.id)">
+          {{ bug.reporter.name }}
+        </span>
+      </div>
+    </section>
+    <ul>
+      <li (click)="displayBugHandler(bug.id)">
+        <span>
+          {{ bug.ticket }}
+        </span>
+      </li>
+      <li (click)="displayBugHandler(bug.id)">
+        <span>
+          {{ bug.info }}
+        </span>
+      </li>
+      <li (click)="displayBugHandler(bug.id)">
+        <span>
+          {{ bug.platform }}
+        </span>
+      </li>
+      <li (click)="displayBugHandler(bug.id)">
+        <span>
+          {{ bug.severity }}
+        </span>
+      </li>
+      <li (click)="displayProfileHandler(bug.developer.id)">
+        <span>
+          {{ bug.developer.assigned }}
+        </span>
+      </li>
+    </ul>
   </div>
 
   <main>
-    <div [ngClass]="currentPage === 1 ? 'disabled' : ''">
+    <div
+      [ngClass]="currentPage === 1 ? 'disabled' : ''"
+      (click)="nextPage('-')"
+    >
       <span nz-icon nzType="backward" nzTheme="outline"></span>
     </div>
     <span>{{ currentPage }}</span>
-    <div [ngClass]="currentPage === maxPage ? 'disabled' : ''">
+    <div
+      [ngClass]="currentPage === totalPages ? 'disabled' : ''"
+      (click)="nextPage('+')"
+    >
       <span nz-icon nzType="forward" nzTheme="outline"></span>
     </div>
   </main>

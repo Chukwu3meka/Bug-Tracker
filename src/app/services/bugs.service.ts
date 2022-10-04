@@ -70,7 +70,8 @@ export class BugsService {
   //   return this.http.put(`http://myurl/${id}`, updateData, httpOptions);
   // }
 
-  getBugs(): Observable<any> {
+  // bug/pages?page=1
+  getBugs(page: number = 1): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -78,6 +79,9 @@ export class BugsService {
           'Basic ' + btoa('donaldwisdomnengi@gmail.com:Cassillas1nengi!'),
       }),
     };
+
+    return this.http.get(`${this.apiUrl}/bug/pages?page=${page}`, httpOptions);
+    // return this.http.get<Bug[]>(`${this.apiUrl}/bugs`);
 
     // const headers_object = new HttpHeaders();
     // headers_object.append('Content-Type', 'application/json');
@@ -94,9 +98,6 @@ export class BugsService {
     //     .set('title', title)
     //     .set('year', year.toString());
     // return this.http.get<Movie>(this.moviePath, {params})
-
-    return this.http.get(`${this.apiUrl}/bug/pages`, httpOptions);
-    // return this.http.get<Bug[]>(`${this.apiUrl}/bugs`);
   }
   // "assignedTo": null,
   // "bugId": 1,

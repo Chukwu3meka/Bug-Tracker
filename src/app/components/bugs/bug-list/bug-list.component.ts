@@ -18,7 +18,7 @@ export class BugListsComponent implements OnInit {
   public bugsStat?: any;
 
   public currentPage: number = 1;
-  public maxPage: number = 2;
+  public totalPages: number = 2;
 
   // public profileData: ProfileData = {};
   public profileData?: any;
@@ -27,6 +27,16 @@ export class BugListsComponent implements OnInit {
 
   // public dashboardBugs: DashboardBug[] | undefined;
   public dashboardBugs: any[] | undefined;
+
+  public nextPage = (page: string) => {
+    if (page === '-' && this.currentPage > 1) {
+      this.currentPage -= 1;
+      this.getBugs(this.currentPage - 1);
+    } else if (page === '+' && this.currentPage < this.totalPages) {
+      this.currentPage += 1;
+      this.getBugs(this.currentPage - 1);
+    }
+  };
 
   public closeDrawerHandler = () => {
     this.profileData = undefined;
@@ -40,6 +50,67 @@ export class BugListsComponent implements OnInit {
     if (id) this.profileData = {};
   };
 
+  private getBugs = (page: number = 0) => {
+    this.bugService.getBugs(page).subscribe((res) => {
+      // console.log(res.content);
+
+      console.log(page, 'sadasdsadsad', res);
+
+      // 10.128.32.54:8080/api/v1/bug/pages?page=1
+
+      const totalBugs = res.totalElements;
+      this.totalPages = res.totalPages;
+
+      console.log(res, res.totalPages);
+
+      // console.log(res);
+
+      const bugs = res.content.map((bug) => ({
+        ...bug,
+        id: bug.bugId,
+        description: bug.bugReview,
+        status: bug.bugTreatmentStage?.toLowerCase(),
+        severity: bug.severity?.toLowerCase(),
+        created: bug.reportDate,
+        platform: bug.platformses?.platformName,
+        developer: {
+          id: bug.userAssignedToBug?.id,
+          name: `${bug.userAssignedToBug?.lastName} ${bug.userAssignedToBug?.firstName}`,
+        },
+      }));
+
+      this.bugsStat = {
+        allBugs: totalBugs,
+        open: bugs.filter((bug) => bug.status === 'open').length,
+        closed: bugs.filter((bug) => bug.status === 'closed').length,
+        pending: bugs.filter((bug) => bug.status === 'pending').length,
+      };
+
+      this.dashboardBugs = bugs.map((bug) => ({
+        id: bug.id,
+        label: bug.label,
+        description: bug.description,
+        color: colors[bug.status],
+        ticket: `Ticket ID #${null}`,
+        info: `Reported on ${new Date(bug.created).toDateString()}`,
+        platform: `Platform: ${bug?.platform}`,
+        severity: `Severity Status: ${bug?.severity}`,
+        reporter: {
+          name: '' || 'Unknown User',
+          id: '' || null,
+          img: '' || 'https://placeimg.com/100/100/people',
+        },
+        developer: {
+          id: bug.developer.id,
+          // ...bug.developer,
+          assigned: bug.developer?.id
+            ? `Assigned to '${bug?.developer.name}'`
+            : `Not yet assigned`,
+        },
+      }));
+    });
+  };
+
   public displayBugHandler = (id?: string): void => {
     console.log(id);
     if (!id) this.bugData = undefined;
@@ -49,63 +120,7 @@ export class BugListsComponent implements OnInit {
   constructor(private bugService: BugsService) {}
 
   ngOnInit(): void {
-    this.bugService.getBugs().subscribe((res) => {
-      console.log(res.content);
-
-      // 10.128.32.54:8080/api/v1/bug/pages?page=1
-
-      const totalBugs = res.totalElements;
-
-      console.log(totalBugs);
-
-      setTimeout(() => {
-        console.log(res);
-
-        const bugs = res.content.map((bug) => ({
-          ...bug,
-          id: bug.bugId,
-          description: bug.bugReview,
-          status: bug.bugTreatmentStage?.toLowerCase(),
-          severity: bug.severity?.toLowerCase(),
-          created: bug.reportDate,
-          platform: bug.platformses?.platformName,
-          developer: {
-            id: bug.userAssignedToBug?.id,
-            name: `${bug.userAssignedToBug?.lastName} ${bug.userAssignedToBug?.firstName}`,
-          },
-        }));
-
-        this.bugsStat = {
-          allBugs: totalBugs,
-          open: bugs.filter((bug) => bug.status === 'open').length,
-          closed: bugs.filter((bug) => bug.status === 'closed').length,
-          pending: bugs.filter((bug) => bug.status === 'pending').length,
-        };
-
-        this.dashboardBugs = bugs.map((bug) => ({
-          id: bug.id,
-          label: bug.label,
-          description: bug.description,
-          color: colors[bug.status],
-          ticket: `Ticket ID #${null}`,
-          info: `Reported on ${new Date(bug.created).toDateString()}`,
-          platform: `Platform: ${bug?.platform}`,
-          severity: `Severity Status: ${bug?.severity}`,
-          reporter: {
-            name: '' || 'Unknown User',
-            id: '' || null,
-            img: '' || 'https://placeimg.com/100/100/people',
-          },
-          developer: {
-            id: bug.developer.id,
-            // ...bug.developer,
-            assigned: bug.developer?.id
-              ? `Assigned to '${bug?.developer.name}'`
-              : `Not yet assigned`,
-          },
-        }));
-      }, 1500);
-    });
+    setTimeout(() => this.getBugs(), 1500);
   }
 }
 

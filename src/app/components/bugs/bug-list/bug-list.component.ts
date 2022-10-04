@@ -17,6 +17,9 @@ export class BugListsComponent implements OnInit {
   // public bugsStat?: BugsStat[];
   public bugsStat?: any;
 
+  public currentPage: number = 1;
+  public maxPage: number = 2;
+
   // public profileData: ProfileData = {};
   public profileData?: any;
   // public bugData: BugData = {};
@@ -47,10 +50,18 @@ export class BugListsComponent implements OnInit {
 
   ngOnInit(): void {
     this.bugService.getBugs().subscribe((res) => {
-      console.log(res);
+      console.log(res.content);
+
+      // 10.128.32.54:8080/api/v1/bug/pages?page=1
+
+      const totalBugs = res.totalElements;
+
+      console.log(totalBugs);
 
       setTimeout(() => {
-        const bugs = tempMockResponse.map((bug) => ({
+        console.log(res);
+
+        const bugs = res.content.map((bug) => ({
           ...bug,
           id: bug.bugId,
           description: bug.bugReview,
@@ -65,7 +76,7 @@ export class BugListsComponent implements OnInit {
         }));
 
         this.bugsStat = {
-          allBugs: bugs.length,
+          allBugs: totalBugs,
           open: bugs.filter((bug) => bug.status === 'open').length,
           closed: bugs.filter((bug) => bug.status === 'closed').length,
           pending: bugs.filter((bug) => bug.status === 'pending').length,
@@ -93,7 +104,7 @@ export class BugListsComponent implements OnInit {
               : `Not yet assigned`,
           },
         }));
-      }, 3000);
+      }, 1500);
     });
   }
 }

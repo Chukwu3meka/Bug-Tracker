@@ -87,6 +87,33 @@
   & > div:not(:last-of-type) {
     margin-bottom: 10px;
   }
+
+  & > main {
+    .flex();
+
+    // border: 3px solid red;
+    & > span {
+      // border: 3px solid red;
+      margin: -5px 10px 0;
+      font-weight: 700;
+      font-size: 1.5em;
+      // border-radius: 50%;
+      color: darken(@primary; 10);
+    }
+
+    .disabled {
+      color: @secondary;
+      border: 1px solid @secondary;
+    }
+
+    & > div {
+      font-size: 1.3em;
+      padding: 0px 5px;
+      color: @primary;
+      border-radius: 50%;
+      border: 1px solid @primary;
+    }
+  }
 }
 
 .drawer {

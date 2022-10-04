@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
 
   public pageLoading: boolean = true;
   public appNotCompatible: string = '';
-  private wideScreenWidth: number = 1020;
+  private wideScreenWidth: number = 1200;
   private wideScreenHeight: number = 600;
 
   private pageLoadingHandler(): void {
@@ -28,13 +28,15 @@ export class AppComponent implements OnInit {
       window.innerHeight >= this.wideScreenHeight &&
       window.innerWidth >= this.wideScreenWidth;
 
+    // console.log(wideScreen);
+
     this.appNotCompatible = !isChromiumBased
       ? 'Kindly use a Chromium-based browser'
       : !wideScreen
       ? 'Kindly use a bigger Screen'
       : '';
 
-    this.appNotCompatible = '';
+    // this.appNotCompatible = '';
   }
 
   @HostListener('window:resize', ['$event'])

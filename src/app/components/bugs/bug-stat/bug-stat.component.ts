@@ -25,7 +25,7 @@ export class BugStatComponent implements OnInit {
       label: 'Open',
       total: undefined,
       icon: 'folder-open',
-      description: `All Bugs yet to be assigned to a developer`,
+      description: `Bugs yet to be assigned to a developer`,
     },
     {
       label: 'Closed',

@@ -53,31 +53,72 @@ export class BugsService {
 
   constructor(private http: HttpClient) {}
 
-  getBugs(): Observable<[]> {
-    return this.http.get<[]>(`${this.apiUrl}/bug/pages`);
+  // getBugs() {
+  //   // const params = new HttpParams()
+  //   //     .set('title', title)
+  //   //     .set('year', year.toString());
+  //   // return this.http.get<Movie>(this.moviePath, {params})
+  //   return this.http.get<>(`${this.apiUrl}/bug/pages`);
+  // }
+
+  // httpOptions = {
+  //   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+  // };
+
+  // update(id, title, content) {
+  //   const updateData = { id: id, title: title, content: content };
+  //   return this.http.put(`http://myurl/${id}`, updateData, httpOptions);
+  // }
+
+  getBugs(): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization:
+          'Basic ' + btoa('donaldwisdomnengi@gmail.com:Cassillas1nengi!'),
+      }),
+    };
+
+    // const headers_object = new HttpHeaders();
+    // headers_object.append('Content-Type', 'application/json');
+    // headers_object.append(
+    //   'Authorization',
+    //   'Basic ' + btoa('donaldwisdomnengi@gmail.com:Cassillas1nengi!')
+    // );
+
+    // const httpOptions = {
+    //   headers: headers_object,
+    // };
+
+    // const params = new HttpParams()
+    //     .set('title', title)
+    //     .set('year', year.toString());
+    // return this.http.get<Movie>(this.moviePath, {params})
+
+    return this.http.get(`${this.apiUrl}/bug/pages`, httpOptions);
     // return this.http.get<Bug[]>(`${this.apiUrl}/bugs`);
-
-    // "assignedTo": null,
-    // "bugId": 1,
-    // "label": "Wisdom Donald",
-    // "createdBy": null,
-    // "severity": "LOW",
-    // "enumSeverity": null,
-    // "ticketId": null,
-    // "bugTreatmentStage": "OPEN",
-    // "progressStatus": "COMPLETED",
-    // "bugReview": "The app no dey works",
-    // "platformses": {
-    //     "platformId": 1,
-    //     "platformName": "Mobile App",
-    //     "platformStatus": null
-    // },
-    // "approvedForReassignment": null
   }
+  // "assignedTo": null,
+  // "bugId": 1,
+  // "label": "Wisdom Donald",
+  // "createdBy": null,
+  // "severity": "LOW",
+  // "enumSeverity": null,
+  // "ticketId": null,
+  // "bugTreatmentStage": "OPEN",
+  // "progressStatus": "COMPLETED",
+  // "bugReview": "The app no dey works",
+  // "platformses": {
+  //     "platformId": 1,
+  //     "platformName": "Mobile App",
+  //     "platformStatus": null
+  // },
+  // "approvedForReassignment": null
+  // }
 
-  getDailyBugReport(): Observable<DailyBugReport[]> {
-    return this.http.get<DailyBugReport[]>(`${this.apiUrl}/dailyBugReport`);
-  }
+  // getDailyBugReport(): Observable<DailyBugReport[]> {
+  //   return this.http.get<DailyBugReport[]>(`${this.apiUrl}/dailyBugReport`);
+  // }
 
   // getForwardFundingRecords(
   //   params: HttpParams

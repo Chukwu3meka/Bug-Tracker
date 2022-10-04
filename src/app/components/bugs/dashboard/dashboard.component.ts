@@ -56,47 +56,45 @@ export class DashboardComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    this.bugService
-      .getDailyBugReport()
-      .subscribe((bugReportData) => (this.bugReportData = bugReportData));
-
-    this.bugService.getBugs().subscribe((bugs) => {
-      this.statusData = [
-        {
-          name: 'Closed Bugs',
-          value: bugs.filter((bug) => bug.status === 'closed').length,
-        },
-        {
-          name: 'Open Bugs',
-          value: bugs.filter((bug) => bug.status === 'open').length,
-        },
-        {
-          name: 'Pending Bugs',
-          value: bugs.filter((bug) => bug.status === 'pending').length,
-        },
-      ];
-
-      this.severityData = [
-        {
-          name: 'Severity High',
-          value: bugs.filter((bug) => bug.severity === 'high').length,
-        },
-        {
-          name: 'Severity Normal',
-          value: bugs.filter((bug) => bug.severity === 'normal').length,
-        },
-        {
-          name: 'Severity Low',
-          value: bugs.filter((bug) => bug.severity === 'low').length,
-        },
-      ];
-
-      this.bugsStat = {
-        allBugs: bugs.length,
-        open: bugs.filter((bug) => bug.status === 'open').length,
-        closed: bugs.filter((bug) => bug.status === 'closed').length,
-        pending: bugs.filter((bug) => bug.status === 'pending').length,
-      };
-    });
+    //   this.bugService
+    //     .getDailyBugReport()
+    //     .subscribe((bugReportData) => (this.bugReportData = bugReportData));
+    //   this.bugService.getBugs().subscribe((bugs) => {
+    //     this.statusData = [
+    //       {
+    //         name: 'Closed Bugs',
+    //         value: bugs.filter((bug) => bug.status === 'closed').length,
+    //       },
+    //       {
+    //         name: 'Open Bugs',
+    //         value: bugs.filter((bug) => bug.status === 'open').length,
+    //       },
+    //       {
+    //         name: 'Pending Bugs',
+    //         value: bugs.filter((bug) => bug.status === 'pending').length,
+    //       },
+    //     ];
+    //     this.severityData = [
+    //       {
+    //         name: 'Severity High',
+    //         value: bugs.filter((bug) => bug.severity === 'high').length,
+    //       },
+    //       {
+    //         name: 'Severity Normal',
+    //         value: bugs.filter((bug) => bug.severity === 'normal').length,
+    //       },
+    //       {
+    //         name: 'Severity Low',
+    //         value: bugs.filter((bug) => bug.severity === 'low').length,
+    //       },
+    //     ];
+    //     this.bugsStat = {
+    //       allBugs: bugs.length,
+    //       open: bugs.filter((bug) => bug.status === 'open').length,
+    //       closed: bugs.filter((bug) => bug.status === 'closed').length,
+    //       pending: bugs.filter((bug) => bug.status === 'pending').length,
+    //     };
+    //   });
+    //
   }
 }

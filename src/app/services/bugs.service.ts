@@ -28,8 +28,8 @@ import { Bug, DailyBugReport } from '../interface/Old-Bug';
   providedIn: 'root',
 })
 export class BugsService {
-  private apiUrl = 'http://localhost:5000';
-  // private apiUrl = "'http://10.128.32.59:8080/api/v1'";
+  // private apiUrl = 'http://localhost:5000';
+  private apiUrl = 'http://10.128.32.54:8080/api/v1';
 
   // force re deployment on server
 
@@ -53,8 +53,26 @@ export class BugsService {
 
   constructor(private http: HttpClient) {}
 
-  getBugs(): Observable<Bug[]> {
-    return this.http.get<Bug[]>(`${this.apiUrl}/bugs`);
+  getBugs(): Observable<[]> {
+    return this.http.get<[]>(`${this.apiUrl}/bug/pages`);
+    // return this.http.get<Bug[]>(`${this.apiUrl}/bugs`);
+
+    // "assignedTo": null,
+    // "bugId": 1,
+    // "label": "Wisdom Donald",
+    // "createdBy": null,
+    // "severity": "LOW",
+    // "enumSeverity": null,
+    // "ticketId": null,
+    // "bugTreatmentStage": "OPEN",
+    // "progressStatus": "COMPLETED",
+    // "bugReview": "The app no dey works",
+    // "platformses": {
+    //     "platformId": 1,
+    //     "platformName": "Mobile App",
+    //     "platformStatus": null
+    // },
+    // "approvedForReassignment": null
   }
 
   getDailyBugReport(): Observable<DailyBugReport[]> {

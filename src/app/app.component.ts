@@ -8,7 +8,7 @@ import { NavigationEnd, NavigationStart, Router } from '@angular/router';
   styleUrls: ['./app.component.less'],
 })
 export class AppComponent implements OnInit {
-  public authorised: boolean = false;
+  public authorised: boolean = true;
 
   public pageLoading: boolean = true;
   public appNotCompatible: string = '';

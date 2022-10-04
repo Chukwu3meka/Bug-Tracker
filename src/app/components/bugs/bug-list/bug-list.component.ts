@@ -47,6 +47,8 @@ export class BugListsComponent implements OnInit {
 
   ngOnInit(): void {
     this.bugService.getBugs().subscribe((res) => {
+      console.log(res);
+
       setTimeout(() => {
         const bugs = tempMockResponse.map((bug) => ({
           ...bug,

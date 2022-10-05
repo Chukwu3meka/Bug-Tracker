@@ -37,7 +37,8 @@ export class AppComponent implements OnInit {
       ? 'Kindly use a bigger Screen'
       : '';
 
-    // this.appNotCompatible = '';
+    // ! delete this to enfore wide screen
+    this.appNotCompatible = '';
   }
 
   @HostListener('window:resize', ['$event'])

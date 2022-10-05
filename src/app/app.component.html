@@ -13,8 +13,12 @@
       </div>
     </div>
 
-    <div class="app-auth" *ngIf="!authorised">
-      <app-signup></app-signup>
+    <div *ngIf="!authorised" [ngSwitch]="authPage">
+      <app-signup *ngSwitchCase="'signup'"></app-signup>
+      <app-reset *ngSwitchCase="'reset'"></app-reset>
+      <app-signin *ngSwitchDefault></app-signin>
+
+      <!-- <app-signup></app-signup>
       <div>
         <div></div>
         <nz-avatar
@@ -24,7 +28,8 @@
           nzSrc="/assets/images/zenith-logo.png"
         ></nz-avatar>
       </div>
-      <app-signin></app-signin>
+      <app-signin></app-signin> -->
+      <!-- <router-outlet></router-outlet> -->
     </div>
   </div>
 

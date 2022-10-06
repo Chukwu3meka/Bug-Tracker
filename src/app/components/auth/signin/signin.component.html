@@ -14,12 +14,37 @@
   </div>
 
   <div>
-    <img src="/assets/images/signin.jfif" alt="sigin logo" />
-    <h2>Hello Again!</h2>
-    <p>
-      Welcome to Zenith Bug Tracker, a community of developers and friendly
-      folks fixing
-    </p>
-    signin goes here
+    <main>
+      <img src="/assets/images/signin.jfif" alt="sigin logo" />
+      <h2>Hello Again!</h2>
+      <p>
+        Welcome to Zenith Bug Tracker, a community of developers and friendly
+        folks fixing
+      </p>
+
+      <nz-input-group nzAddOnAfterIcon="user">
+        <input type="text" nz-input [(ngModel)]="email" />
+      </nz-input-group>
+
+      <nz-input-group [nzSuffix]="suffixTemplate">
+        <input
+          size="large"
+          [type]="passwordVisible ? 'text' : 'password'"
+          nz-input
+          placeholder="input password"
+          [(ngModel)]="password"
+        />
+      </nz-input-group>
+      <ng-template #suffixTemplate>
+        <span
+          nz-icon
+          [nzType]="passwordVisible ? 'eye-invisible' : 'eye'"
+          (click)="passwordVisible = !passwordVisible"
+        ></span>
+      </ng-template>
+      <div>Recover Password</div>
+
+      <button [nzBlock]="true" nz-button nzType="primary">Login</button>
+    </main>
   </div>
 </div>

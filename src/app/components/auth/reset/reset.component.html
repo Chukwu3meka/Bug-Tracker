@@ -1,22 +1,21 @@
 <div class="auth">
   <div>
-    <img src="/assets/images/ziva.jpg" alt="Zenith auth logo" />
-  </div>
-
-  <div>
-    <nz-avatar
-      [nzShape]="'square'"
-      [nzSize]="60"
-      nzIcon="user"
-      nzSrc="/assets/images/zenith-logo.png"
-    ></nz-avatar>
-    <div></div>
+    <img src="/assets/images/reset.jpg" alt="Zenith Bug Tracker Reset" />
   </div>
 
   <div>
     <main>
-      <img src="/assets/images/signin.jfif" alt="sigin logo" />
-      <h2>Password Reset!</h2>
+      <div>
+        <nz-avatar
+          [nzShape]="'square'"
+          [nzSize]="70"
+          nzIcon="user"
+          nzSrc="/assets/images/zenith-logo.png"
+        ></nz-avatar>
+      </div>
+
+      <!-- <img src="/assets/images/signin.jfif" alt="sigin logo" /> -->
+      <h2>Bug Tracker!!!</h2>
       <p>
         Welcome to Zenith Bug Tracker, a community of developers and friendly
         folks fixing
@@ -42,11 +41,20 @@
           (click)="passwordVisible = !passwordVisible"
         ></span>
       </ng-template>
-      <div>Recover Password</div>
+      <div routerLink="reset">
+        <span> Recover Password </span>
+      </div>
 
       <button [nzBlock]="true" nzSize="large" nz-button nzType="primary">
         Login
       </button>
+
+      <div>
+        <span> Already a user? </span>
+        <button routerLink="signup" [nzBlock]="true" nz-button nzType="primary">
+          Signup
+        </button>
+      </div>
     </main>
   </div>
 </div>

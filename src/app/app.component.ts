@@ -52,6 +52,11 @@ export class AppComponent implements OnInit {
   ) {
     this.router.events.forEach((event) => {
       if (event instanceof NavigationStart) {
+        if (['/signup', '/signin', '/reset'].includes(event.url))
+          this.authPage = event.url.replace('/', '');
+
+        // console.log(this.authPage);
+
         this.viewPortscroller.scrollToPosition([0, 0]); // <= scroll to op on route change
         this.pageLoadingHandler();
       }

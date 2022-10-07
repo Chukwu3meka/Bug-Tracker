@@ -5,8 +5,8 @@
 
   <div>
     <nz-avatar
-      [nzSize]="50"
       [nzShape]="'square'"
+      [nzSize]="60"
       nzIcon="user"
       nzSrc="/assets/images/zenith-logo.png"
     ></nz-avatar>
@@ -22,11 +22,11 @@
         folks fixing
       </p>
 
-      <nz-input-group nzAddOnAfterIcon="user">
+      <nz-input-group nzAddOnAfterIcon="user" nzSize="large">
         <input type="text" nz-input [(ngModel)]="email" />
       </nz-input-group>
 
-      <nz-input-group [nzSuffix]="suffixTemplate">
+      <nz-input-group [nzSuffix]="suffixTemplate" nzSize="large">
         <input
           size="large"
           [type]="passwordVisible ? 'text' : 'password'"
@@ -44,7 +44,9 @@
       </ng-template>
       <div>Recover Password</div>
 
-      <button [nzBlock]="true" nz-button nzType="primary">Login</button>
+      <button [nzBlock]="true" nzSize="large" nz-button nzType="primary">
+        Login
+      </button>
     </main>
   </div>
 </div>

@@ -3,13 +3,14 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-reset',
   templateUrl: './reset.component.html',
-  styleUrls: ['./reset.component.less']
+  styleUrls: ['./reset.component.less'],
 })
 export class ResetComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-
+  passwordVisible = false;
+  password?: string;
+  email?: string;
 }

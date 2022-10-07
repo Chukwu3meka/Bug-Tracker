@@ -9,10 +9,14 @@ import { DashboardComponent } from './components/bugs/dashboard/dashboard.compon
 import { NotificationComponent } from './components/notification/notification.component';
 import { SelectOptionsComponent } from './components/bugs/select-options/select-options.component';
 import { SigninComponent } from './components/auth/signin/signin.component';
+import { SignupComponent } from './components/auth/signup/signup.component';
+import { ResetComponent } from './components/auth/reset/reset.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: DashboardComponent },
   { path: 'signin', pathMatch: 'full', component: SigninComponent },
+  { path: 'signup', pathMatch: 'full', component: SignupComponent },
+  { path: 'reset', pathMatch: 'full', component: ResetComponent },
   { path: 'bugs', pathMatch: 'full', component: BugListsComponent },
   { path: 'add-bug', pathMatch: 'full', component: AddBugComponent },
   { path: 'profile', pathMatch: 'full', component: ProfileComponent },

@@ -1,3 +1,52 @@
-<div>
-  <p>signup works!</p>
+<div class="auth">
+  <div>
+    <img src="/assets/images/ziva.jpg" alt="Zenith auth logo" />
+  </div>
+
+  <div>
+    <nz-avatar
+      [nzShape]="'square'"
+      [nzSize]="60"
+      nzIcon="user"
+      nzSrc="/assets/images/zenith-logo.png"
+    ></nz-avatar>
+    <div></div>
+  </div>
+
+  <div>
+    <main>
+      <img src="/assets/images/signin.jfif" alt="sigin logo" />
+      <h2>Hello Again!</h2>
+      <p>
+        Welcome to Zenith Bug Tracker, a community of developers and friendly
+        folks fixing
+      </p>
+
+      <nz-input-group nzAddOnAfterIcon="user" nzSize="large">
+        <input type="text" nz-input [(ngModel)]="email" />
+      </nz-input-group>
+
+      <nz-input-group [nzSuffix]="suffixTemplate" nzSize="large">
+        <input
+          size="large"
+          [type]="passwordVisible ? 'text' : 'password'"
+          nz-input
+          placeholder="input password"
+          [(ngModel)]="password"
+        />
+      </nz-input-group>
+      <ng-template #suffixTemplate>
+        <span
+          nz-icon
+          [nzType]="passwordVisible ? 'eye-invisible' : 'eye'"
+          (click)="passwordVisible = !passwordVisible"
+        ></span>
+      </ng-template>
+      <div>Recover Password</div>
+
+      <button [nzBlock]="true" nzSize="large" nz-button nzType="primary">
+        Login
+      </button>
+    </main>
+  </div>
 </div>

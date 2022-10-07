@@ -41,6 +41,7 @@
           (click)="passwordVisible = !passwordVisible"
         ></span>
       </ng-template>
+
       <div routerLink="reset">
         <span> Recover Password </span>
       </div>
@@ -50,9 +51,9 @@
       </button>
 
       <div>
-        <span> Already a user? </span>
+        <span> Not yet a user? </span>
         <button routerLink="signup" [nzBlock]="true" nz-button nzType="primary">
-          Signup
+          SIGNUP
         </button>
       </div>
     </main>

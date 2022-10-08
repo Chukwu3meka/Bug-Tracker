@@ -25,6 +25,10 @@
         <input type="text" nz-input [(ngModel)]="email" />
       </nz-input-group>
 
+      <nz-input-group nzAddOnAfterIcon="user" nzSize="large">
+        <input type="text" nz-input [(ngModel)]="email" />
+      </nz-input-group>
+
       <nz-input-group [nzSuffix]="suffixTemplate" nzSize="large">
         <input
           size="large"
@@ -46,13 +50,13 @@
       </div>
 
       <button [nzBlock]="true" nzSize="large" nz-button nzType="primary">
-        Login
+        REGISTER
       </button>
 
       <div>
         <span> Already a user? </span>
-        <button routerLink="signup" [nzBlock]="true" nz-button nzType="primary">
-          Signup
+        <button routerLink="signin" [nzBlock]="true" nz-button nzType="primary">
+          LOGIN
         </button>
       </div>
     </main>

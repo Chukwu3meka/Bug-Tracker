@@ -6,11 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signin.component.less'],
 })
 export class SigninComponent implements OnInit {
-  passwordVisible = false;
-  password?: string;
-  email?: string;
-
   constructor() {}
 
   ngOnInit(): void {}
+
+  public passwordVisible = false;
+  public auth = { email: '', password: '' };
+
+  public loginHandler = (): void => {
+    console.log(this.auth, 'Sdasdsa das ');
+  };
 }

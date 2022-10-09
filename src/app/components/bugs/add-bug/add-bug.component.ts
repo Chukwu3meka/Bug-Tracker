@@ -42,7 +42,7 @@ export class AddBugComponent implements OnInit {
     return false;
   };
 
-  submitBug = (): null => {
+  submitBug = (): void => {
     this.isLoadingOne = true;
 
     // console.log(this.formData);
@@ -56,31 +56,31 @@ export class AddBugComponent implements OnInit {
 
     console.log(formData);
 
-    return null;
-    this.uploading = true;
-    // You can use any AJAX library you like
-    const req = new HttpRequest(
-      'POST',
-      'https://www.mocky.io/v2/5cc8019d300000980a055e76',
-      formData,
-      {
-        // reportProgress: true
-      }
-    );
-    this.http
-      .request(req)
-      .pipe(filter((e) => e instanceof HttpResponse))
-      .subscribe(
-        () => {
-          this.uploading = false;
-          this.fileList = [];
-          this.msg.success('upload successfully.');
-        },
-        () => {
-          this.uploading = false;
-          this.msg.error('upload failed.');
-        }
-      );
+    // return null;
+    // this.uploading = true;
+    // // You can use any AJAX library you like
+    // const req = new HttpRequest(
+    //   'POST',
+    //   'https://www.mocky.io/v2/5cc8019d300000980a055e76',
+    //   formData,
+    //   {
+    //     // reportProgress: true
+    //   }
+    // );
+    // this.http
+    //   .request(req)
+    //   .pipe(filter((e) => e instanceof HttpResponse))
+    //   .subscribe(
+    //     () => {
+    //       this.uploading = false;
+    //       this.fileList = [];
+    //       this.msg.success('upload successfully.');
+    //     },
+    //     () => {
+    //       this.uploading = false;
+    //       this.msg.error('upload failed.');
+    //     }
+    //   );
   };
 
   ngOnInit(): void {

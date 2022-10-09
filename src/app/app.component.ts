@@ -8,7 +8,7 @@ import { NavigationEnd, NavigationStart, Router } from '@angular/router';
   styleUrls: ['./app.component.less'],
 })
 export class AppComponent implements OnInit {
-  public authorised: boolean = !true;
+  public authorised: boolean = true;
   public authPage: string = 'signin';
 
   public pageLoading: boolean = true;
@@ -52,6 +52,14 @@ export class AppComponent implements OnInit {
   ) {
     this.router.events.forEach((event) => {
       if (event instanceof NavigationStart) {
+        if (
+          this.authorised &&
+          ['/signup', '/signin', '/reset'].includes(event.url)
+        ) {
+          // If user is authenticated and trying to visit an auth route, Redirect him back to homepage
+          this.router.navigate(['/']);
+        }
+
         if (['/signup', '/signin', '/reset'].includes(event.url))
           this.authPage = event.url.replace('/', '');
 

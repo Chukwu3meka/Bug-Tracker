@@ -22,7 +22,7 @@
       </p>
 
       <nz-input-group nzAddOnAfterIcon="user" nzSize="large">
-        <input type="text" nz-input [(ngModel)]="email" />
+        <input type="text" nz-input [(ngModel)]="auth.email" />
       </nz-input-group>
 
       <nz-input-group [nzSuffix]="suffixTemplate" nzSize="large">
@@ -31,7 +31,7 @@
           [type]="passwordVisible ? 'text' : 'password'"
           nz-input
           placeholder="input password"
-          [(ngModel)]="password"
+          [(ngModel)]="auth.password"
         />
       </nz-input-group>
       <ng-template #suffixTemplate>
@@ -46,7 +46,13 @@
         <span> Recover Password </span>
       </div>
 
-      <button [nzBlock]="true" nzSize="large" nz-button nzType="primary">
+      <button
+        [nzBlock]="true"
+        nzSize="large"
+        nz-button
+        nzType="primary"
+        (click)="loginHandler()"
+      >
         LOGIN
       </button>
 

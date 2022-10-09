@@ -5,7 +5,7 @@ import {
   HttpParams,
 } from '@angular/common/http';
 import { Injectable, EventEmitter } from '@angular/core';
-import { colors } from 'libs/constants';
+// import { colors } from 'libs/constants';
 import { Observable, throwError, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Bug, DailyBugReport } from '../interface/Old-Bug';

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
-import { Profile } from '../models/profile.model';
+import { Profile } from '../models/index';
 
-export const SET_PROFILE = '[PROFILE] Set';
-export const REMOVE_PROFILE = '[PROFILE] Remove';
+// export const SET_PROFILE = '[PROFILE] Set';
+// export const REMOVE_PROFILE = '[PROFILE] Remove';
 
 import { createAction, props } from '@ngrx/store';
 

@@ -68,7 +68,9 @@ registerLocaleData(en);
     IconsProviderModule,
     nzModules,
     NgxChartsModule,
-    StoreModule.forRoot({ profile: ProfileReducer }),
+    StoreModule.forRoot({
+      profile: ProfileReducer,
+    }),
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],

@@ -1,6 +1,6 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { Profile } from '../models/profile.model';
-import * as ProfileActions from '../actions/profile.actions';
+import { Profile } from '../models/index';
+import { RemoveProfileAction, SetProfileAction } from '../actions/index';
 
 const initialState: Profile = {
   auth: false,
@@ -8,20 +8,15 @@ const initialState: Profile = {
 
 const reducer = createReducer(
   initialState,
-  on(ProfileActions.SetProfileAction, (state, action) => {
-    // return [...state, action.payload];
-    return action.payload;
-  }),
-  on(ProfileActions.RemoveProfileAction, (state, action) => {
-    // return [...state, action.payload];
-    return action.payload;
-  })
+  on(SetProfileAction, (state, action) => action.payload),
+  on(RemoveProfileAction, (state, action) => action.payload)
 );
 
 export function ProfileReducer(state: Profile | undefined, action: Action) {
   return reducer(state, action);
 }
 
+// return [...state, action.payload];
 // export function reducer(
 //   state: Profile = initialState,
 //   action: ProfileActions.Actions

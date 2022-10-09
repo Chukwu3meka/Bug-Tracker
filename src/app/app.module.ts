@@ -31,7 +31,9 @@ import { BugDetailsComponent } from './components/bugs/bug-details/bug-details.c
 import { SigninComponent } from './components/auth/signin/signin.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
 import { ResetComponent } from './components/auth/reset/reset.component';
+
 import { StoreModule } from '@ngrx/store';
+import { ProfileReducer } from './store/reducers/profile.reducer';
 // import { FileuploadComponent } from './components/fileupload/fileupload.component';
 
 registerLocaleData(en);
@@ -57,6 +59,7 @@ registerLocaleData(en);
     ResetComponent,
   ],
   imports: [
+    StoreModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -65,7 +68,7 @@ registerLocaleData(en);
     IconsProviderModule,
     nzModules,
     NgxChartsModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({ profile: ProfileReducer }),
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],

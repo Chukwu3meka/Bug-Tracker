@@ -11,6 +11,10 @@ const reducer = createReducer(
   on(ProfileActions.SetProfileAction, (state, action) => {
     // return [...state, action.payload];
     return action.payload;
+  }),
+  on(ProfileActions.RemoveProfileAction, (state, action) => {
+    // return [...state, action.payload];
+    return action.payload;
   })
 );
 

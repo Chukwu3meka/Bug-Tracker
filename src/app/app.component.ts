@@ -71,7 +71,9 @@ export class AppComponent implements OnInit {
 
     this.profile.subscribe(({ auth }) => {
       this.authorised = auth;
-      this.router.navigate(['/']);
+
+      if (['/signup', '/signin', '/reset'].includes(this.router.url))
+        this.router.navigate(['/']);
     });
 
     this.router.events.forEach((event) => {

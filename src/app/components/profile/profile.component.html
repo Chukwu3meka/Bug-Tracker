@@ -1,14 +1,16 @@
 <div class="profile">
-  <img [src]="profileImg" />
+  <div>
+    <img [src]="profileData.img" *ngIf="profileData.img" />
+    <button nz-button nzType="primary" (click)="logoutHandler()">LOGOUT</button>
+    <span>Logged in as {{ profileData.role }}</span>
+  </div>
 
-  <main>
-    <div *ngFor="let value of profileData">
+  <main *ngIf="profileData.list">
+    <div *ngFor="let value of profileData.list">
       <span>{{ value.title }}</span>
       <span></span>
       <p>{{ value.data }}</p>
     </div>
-
-    <button nz-button nzType="primary" (click)="logoutHandler()">LOGOUT</button>
   </main>
 
   <!-- display this only if user is admin -->

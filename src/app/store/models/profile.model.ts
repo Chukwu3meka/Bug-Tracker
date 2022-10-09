@@ -8,4 +8,5 @@ export interface Profile {
   img?: string;
   name?: string;
   role?: string;
+  team?: string;
 }

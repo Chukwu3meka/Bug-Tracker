@@ -7,6 +7,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/store/app.state';
 import { Profile } from 'src/app/store/models/profile.model';
 import { getLocalStorage } from './libs/commonFunction';
+import { SetProfileAction } from './store/actions/profile.actions';
 
 @Component({
   selector: 'app-root',
@@ -108,8 +109,11 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     const profile = getLocalStorage();
     // check if user auth was saved to local storage
-    if (profile && profile.auth) this.authorised = true;
-
+    if (profile && profile.auth) {
+      this.store.dispatch(
+        SetProfileAction({ payload: { auth: true, ...profile } })
+      );
+    }
     this.pageLoadingHandler();
   }
 }

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/store/app.state';
-import { Profile } from 'src/app/store/models/profile.model';
 import { SetProfileAction } from 'src/app/store/actions/profile.actions';
+import { UsersService } from 'src/app/services/users.service';
+import { setLocalStorage } from 'src/app/libs/commonFunction';
 
 @Component({
   selector: 'app-signin',
@@ -12,12 +12,10 @@ import { SetProfileAction } from 'src/app/store/actions/profile.actions';
   styleUrls: ['./signin.component.less'],
 })
 export class SigninComponent implements OnInit {
-  // profile: Observable<Profile>;
-
-  constructor(private store: Store<AppState>) {
-    // this.profile = store.select('profile');
-    // console.log(this.profile);
-  }
+  constructor(
+    private store: Store<AppState>,
+    private usersService: UsersService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -25,15 +23,19 @@ export class SigninComponent implements OnInit {
   public auth = { email: '', password: '' };
 
   public loginHandler = (): void => {
-    console.log(this.auth, 'Sdasdsa das ');
+    this.usersService.login(this.auth).subscribe((res) => {
+      const profile = res[0];
+      if (profile?.id) {
+        this.store.dispatch(
+          SetProfileAction({ payload: { auth: true, ...profile } })
+        );
+        setLocalStorage({ auth: true, ...profile });
+      }
+    });
 
-    this.store.dispatch(
-      SetProfileAction({
-        payload: {
-          name: 'esresr e es re',
-          id: 'sadsadsa',
-        },
-      })
-    );
+    // usersService
+
+    // UsersService
+    // console.log(this.auth, 'Sdasdsa das ');
   };
 }

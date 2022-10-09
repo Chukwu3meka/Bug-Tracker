@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { NzUploadFile } from 'ng-zorro-antd/upload';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { HttpClient, HttpRequest, HttpResponse } from '@angular/common/http';
-import { getLocalProfile } from 'src/libs/commonFunction';
+// import { getLocalProfile } from 'src/app/libs/commonFunction';
 
 // import { platforms } from 'libs/constants';
 

@@ -3,8 +3,7 @@ import { Profile } from '../models/profile.model';
 import * as ProfileActions from '../actions/profile.actions';
 
 const initialState: Profile = {
-  name: 'new User name',
-  id: 'a6as67d76as67sa',
+  auth: false,
 };
 
 const reducer = createReducer(

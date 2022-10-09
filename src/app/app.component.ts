@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/store/app.state';
 import { Profile } from 'src/app/store/models/profile.model';
+import { getLocalStorage } from './libs/commonFunction';
 
 @Component({
   selector: 'app-root',
@@ -68,8 +69,9 @@ export class AppComponent implements OnInit {
 
     // .pipe((_ => _.newField !== undefined))
 
-    this.profile.subscribe((x) => {
-      console.log(x);
+    this.profile.subscribe(({ auth }) => {
+      this.authorised = auth;
+      this.router.navigate(['/']);
     });
 
     this.router.events.forEach((event) => {
@@ -102,6 +104,10 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    const profile = getLocalStorage();
+    // check if user auth was saved to local storage
+    if (profile && profile.auth) this.authorised = true;
+
     this.pageLoadingHandler();
   }
 }

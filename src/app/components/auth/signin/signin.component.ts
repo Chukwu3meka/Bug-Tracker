@@ -26,6 +26,7 @@ export class SigninComponent implements OnInit {
     this.usersService.login(this.auth).subscribe((res) => {
       const profile = res[0];
       if (profile?.id) {
+        // console.log(profile);
         this.store.dispatch(
           SetProfileAction({ payload: { auth: true, ...profile } })
         );

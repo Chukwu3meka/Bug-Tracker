@@ -1,4 +1,4 @@
-export interface ProfileModel {
+export interface ConstantsModel {
   auth: boolean;
   id?: number;
   img?: string;

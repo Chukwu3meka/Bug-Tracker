@@ -1,4 +1,4 @@
-export interface PlatformsModels {
+export interface PlatformsModel {
   id?: number;
   title?: string;
 }

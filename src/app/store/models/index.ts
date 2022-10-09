@@ -1,5 +1,6 @@
-import { TeamsModels } from './teams.model';
-import { PlatformsModels } from './platforms.model';
-import { ProfileModels } from './profile.model';
+import { TeamsModel } from './teams.model';
+import { PlatformsModel } from './platforms.model';
+import { ProfileModel } from './profile.model';
+import { ConstantsModel } from './constants.model';
 
-export { TeamsModels, PlatformsModels, ProfileModels };
+export { TeamsModel, PlatformsModel, ProfileModel, ConstantsModel };

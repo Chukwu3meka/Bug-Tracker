@@ -1,8 +1,8 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { TeamsModels } from '../models/index';
+import { TeamsModel } from '../models/index';
 import { SetTeamsAction } from '../actions/index';
 
-const initialState: TeamsModels = {
+const initialState: TeamsModel = {
   // auth: false,
 };
 
@@ -14,6 +14,6 @@ const reducer = createReducer(
   })
 );
 
-export function TeamsReducer(state: TeamsModels | undefined, action: Action) {
+export function TeamsReducer(state: TeamsModel | undefined, action: Action) {
   return reducer(state, action);
 }

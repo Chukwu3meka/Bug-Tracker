@@ -7,7 +7,7 @@ import {
   SetProfileAction,
 } from 'src/app/store/actions/profile.actions';
 import { AppState } from 'src/app/store/app.state';
-import { ProfileModels } from 'src/app/store/models/index';
+import { ProfileModel } from 'src/app/store/models/index';
 
 @Component({
   selector: 'app-profile',
@@ -15,13 +15,15 @@ import { ProfileModels } from 'src/app/store/models/index';
   styleUrls: ['./profile.component.less'],
 })
 export class ProfileComponent implements OnInit {
-  profile: Observable<ProfileModels>;
+  profile: Observable<ProfileModel>;
 
   constructor(private store: Store<AppState>) {
     this.profile = store.select('profile');
   }
   ngOnInit(): void {
     this.profile.subscribe((profile) => {
+      console.log(profile);
+
       this.profileData = {
         img: profile.img,
         role: profile.role,
@@ -37,7 +39,7 @@ export class ProfileComponent implements OnInit {
             title: 'Contributions',
             data: `Reported and resolved ${profile.contributions} Bugs`,
           },
-          { title: 'Department', data: 'Cash and Teller' },
+          { title: 'Department', data: profile.department },
           { title: 'Team', data: profile.team ? 'd' : 'Regular Banking' },
         ],
       };

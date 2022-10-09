@@ -1,7 +1,7 @@
-import { ProfileModels, PlatformsModels, TeamsModels } from './models/index';
+import { ProfileModel, PlatformsModel, TeamsModel } from './models/index';
 
 export interface AppState {
-  readonly profile: ProfileModels;
-  readonly teams: TeamsModels;
-  readonly platfroms: PlatformsModels;
+  readonly profile: ProfileModel;
+  readonly teams: TeamsModel;
+  readonly platfroms: PlatformsModel;
 }

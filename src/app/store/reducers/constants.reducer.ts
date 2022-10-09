@@ -12,7 +12,7 @@ const reducer = createReducer(
   on(RemoveProfileAction, (state, action) => action.payload)
 );
 
-export function ProfileReducer(
+export function ConstantsReducer(
   state: ProfileModel | undefined,
   action: Action
 ) {

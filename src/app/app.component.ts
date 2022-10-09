@@ -5,7 +5,7 @@ import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/store/app.state';
-import { ProfileModels } from 'src/app/store/models/index';
+import { ProfileModel } from 'src/app/store/models/index';
 import { getLocalStorage } from './libs/commonFunction';
 import { SetProfileAction } from './store/actions/profile.actions';
 
@@ -15,7 +15,7 @@ import { SetProfileAction } from './store/actions/profile.actions';
   styleUrls: ['./app.component.less'],
 })
 export class AppComponent implements OnInit {
-  profile: Observable<ProfileModels>;
+  profile: Observable<ProfileModel>;
 
   constructor(
     private store: Store<AppState>,

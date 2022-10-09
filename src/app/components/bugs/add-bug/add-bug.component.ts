@@ -84,10 +84,19 @@ export class AddBugComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    const { role } = getLocalProfile('profile', localStorage);
-    const platforms = getLocalProfile('platforms', localStorage);
+    // const { role } = getLocalProfile('profile', localStorage);
+    // const platforms = getLocalProfile('platforms', localStorage);
 
-    this.platformOptions = platforms;
+    this.platformOptions = [
+      { id: 'mobile-app', name: 'Mobile App' },
+      { id: 'internet-banking', name: 'Internet Banking' },
+      { id: 'ussd', name: 'USSD' },
+      { id: 'form-a', name: 'FORM A' },
+      { id: 'x-path', name: 'XPath' },
+      { id: 'cip', name: 'CIP' },
+      { id: 'workflow', name: 'Workflow' },
+      { id: 'appraisal', name: 'Appraisal' },
+    ];
 
     // this.platforms = JSON.parse();
 

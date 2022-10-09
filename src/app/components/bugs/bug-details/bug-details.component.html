@@ -48,6 +48,12 @@
 
   <!-- display this only if user is admin -->
   <div>
+    <!-- "severity": [
+      { "name": "Low", "id": "low" },
+      { "name": "Normal", "id": "normal" },
+      { "name": "High", "id": "high" }
+    ],
+     -->
     <!-- nzSize="small" -->
     <nz-select
       [nzAllowClear]="false"
@@ -71,7 +77,7 @@
       (click)="assignDeveloper()"
     >
       <!-- [nzLoading]="isLoadingOne" -->
-      Assign developer
+      Assign developer & Update severity
     </button>
   </div>
 

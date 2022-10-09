@@ -1,8 +1,8 @@
 <div class="profile">
   <div>
     <img [src]="profileData.img" *ngIf="profileData.img" />
-    <button nz-button nzType="primary" (click)="logoutHandler()">LOGOUT</button>
     <span>Logged in as {{ profileData.role }}</span>
+    <button nz-button nzType="primary" (click)="logoutHandler()">LOGOUT</button>
   </div>
 
   <main *ngIf="profileData.list">

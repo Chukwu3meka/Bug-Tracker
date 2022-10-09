@@ -6,36 +6,41 @@
   background-color: #fff;
   padding: 50px;
   .flex();
-  img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 3px groove lighten(@primary, 40%);
-    margin-bottom: 20px;
+  & > div {
+    .flex(@dir:column);
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+    span {
+      color: @secondary;
+    }
   }
 
   & > main {
     padding-left: 50px;
     div {
       .flex(@dir:column ,@align:flex-start);
-      margin-bottom: 5px;
       span:first-of-type {
         display: block;
-        margin-bottom: -5px;
+        margin-bottom: -3px;
         min-width: 100px;
         font-size: 0.8em;
         color: @secondary;
       }
       span:last-of-type {
         width: 20px;
-        margin-top: 3px;
+        margin: 3px 0 3px;
         // height: 5px;
         border-bottom: 1px solid lighten(@secondary, 20%);
       }
       p {
-        margin: 0 0 0 10px;
+        margin: 0 0 5px 10px;
         font-weight: 600;
         // color: r;
+        font-size: 1.2em;
       }
     }
   }

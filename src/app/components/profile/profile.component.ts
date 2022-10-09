@@ -22,40 +22,6 @@ export class ProfileComponent implements OnInit {
   }
   ngOnInit(): void {
     this.profile.subscribe((profile) => {
-      // this.authorised = auth;
-
-      // if (['/signup', '/signin', '/reset'].includes(this.router.url))
-      //   this.router.navigate(['/']);
-      // contributions
-      // :
-      // "211"
-      // dateCreated
-      // :
-      // "Thu Dec 16 2021 12:50:30 GMT+0100 (West Africa Standard Time)"
-      // department
-      // :
-      // "Bike"
-      // email
-      // :
-      // "admin@alienforest.com"
-      // id
-      // :
-      // 20220001
-      // img
-      // :
-      // "https://placeimg.com/100/100/people"
-      // name
-      // :
-      // "Roxanne Nicolas"
-      // password
-      // :
-      // "7777"
-      // role
-      // :
-      // "admin"
-
-      console.log(profile);
-
       this.profileData = {
         img: profile.img,
         role: profile.role,
@@ -104,7 +70,8 @@ export class ProfileComponent implements OnInit {
   // ];
 
   public logoutHandler = (): void => {
-    // removeLocalStorage()
+    // permanently delete profile from local store
+    removeLocalStorage();
     this.store.dispatch(RemoveProfileAction({ payload: { auth: false } }));
   };
 }

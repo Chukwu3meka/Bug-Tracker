@@ -37,6 +37,7 @@ import { StoreModule } from '@ngrx/store';
 // import { ProfileReducer } from './store/reducers/profile.reducer';
 // import { TeamsReducer } from './store/reducers/teams.reducer';
 import {
+  ConstantsReducer,
   PlatformsReducer,
   ProfileReducer,
   TeamsReducer,
@@ -80,6 +81,7 @@ registerLocaleData(en);
       profile: ProfileReducer,
       teams: TeamsReducer,
       platforms: PlatformsReducer,
+      constants: ConstantsReducer,
     }),
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],

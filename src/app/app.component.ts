@@ -8,6 +8,8 @@ import { AppState } from 'src/app/store/app.state';
 import { ProfileModel } from 'src/app/store/models/index';
 import { getLocalStorage } from './libs/commonFunction';
 import { SetProfileAction } from './store/actions/profile.actions';
+import { PlatformsService } from './services/platforms.service';
+import { SetPlatformsAction } from './store/actions';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +22,8 @@ export class AppComponent implements OnInit {
   constructor(
     private store: Store<AppState>,
     private router: Router,
-    private viewPortscroller: ViewportScroller
+    private viewPortscroller: ViewportScroller,
+    private platformsService: PlatformsService
   ) {
     //   this.store.select(fromStore.getAllChannels).pipe(
     //    filter(channels => channels.length),
@@ -69,6 +72,13 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.platformsService.getPlatforms().subscribe((res) => {
+      console.log(res);
+
+      // getPlatforms
+      this.store.dispatch(SetPlatformsAction({ payload: res }));
+    });
+
     const profile = getLocalStorage();
     // check if user auth was saved to local storage
     if (profile && profile.auth) {

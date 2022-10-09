@@ -7,7 +7,7 @@ import {
   SetProfileAction,
 } from 'src/app/store/actions/profile.actions';
 import { AppState } from 'src/app/store/app.state';
-import { ProfileModel } from 'src/app/store/models/index';
+import { ConstantsModel, ProfileModel } from 'src/app/store/models/index';
 
 @Component({
   selector: 'app-profile',
@@ -16,11 +16,17 @@ import { ProfileModel } from 'src/app/store/models/index';
 })
 export class ProfileComponent implements OnInit {
   profile: Observable<ProfileModel>;
+  constants: Observable<ConstantsModel>;
 
   constructor(private store: Store<AppState>) {
     this.profile = store.select('profile');
+    this.constants = store.select('constants');
   }
   ngOnInit(): void {
+    this.constants.subscribe((constants) => {
+      console.log(constants, 'constants');
+    });
+
     this.profile.subscribe((profile) => {
       console.log(profile);
 

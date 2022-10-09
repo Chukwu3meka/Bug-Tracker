@@ -1,19 +1,22 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { ProfileModel } from '../models/index';
-import { RemoveProfileAction, SetProfileAction } from '../actions/index';
+import { ConstantsModel, PlatformsModel } from '../models/index';
+import { SetPlatformsAction } from '../actions/index';
 
-const initialState: ProfileModel = {
-  auth: false,
+const initialState: ConstantsModel = {
+  // platforms,
 };
 
 const reducer = createReducer(
   initialState,
-  on(SetProfileAction, (state, action) => action.payload),
-  on(RemoveProfileAction, (state, action) => action.payload)
+  on(SetPlatformsAction, (state, action) => ({
+    ...state,
+    // platforms: action.payload,
+    platforms: action.payload,
+  }))
 );
 
 export function ConstantsReducer(
-  state: ProfileModel | undefined,
+  state: ConstantsModel | undefined,
   action: Action
 ) {
   return reducer(state, action);

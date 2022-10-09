@@ -1,20 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
-import { ProfileModel } from '../models/index';
+import { ConstantsModel } from '../models/index';
 
 // export const SET_PROFILE = '[PROFILE] Set';
 // export const REMOVE_PROFILE = '[PROFILE] Remove';
 
 import { createAction, props } from '@ngrx/store';
 
-export const SetProfileAction = createAction(
-  '[PROFILE] Set',
-  props<{ payload: ProfileModel }>()
-);
-
-export const RemoveProfileAction = createAction(
-  '[PROFILE] Remove',
-  props<{ payload: ProfileModel }>()
+export const SetPlatformsAction = createAction(
+  '[PLATFORMS] Set',
+  // props<{ payload: ConstantsModel['platforms'][] }>()
+  props<{ payload: ConstantsModel['platforms'] }>()
 );
 
 // export class SetProfile implements Action {

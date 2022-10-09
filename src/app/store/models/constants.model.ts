@@ -1,12 +1,8 @@
 export interface ConstantsModel {
-  auth: boolean;
+  platforms?: PlatformsModel;
+}
+
+export interface PlatformsModel {
   id?: number;
-  img?: string;
-  name?: string;
-  dateCreated?: string;
-  contributions?: number;
-  department?: string;
-  team?: string;
-  email?: string;
-  role?: string;
+  title?: string;
 }

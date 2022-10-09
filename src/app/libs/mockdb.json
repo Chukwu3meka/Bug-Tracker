@@ -761,5 +761,23 @@
     { "name": "Day 3", "value": 72 },
     { "name": "Day 2", "value": 50 },
     { "name": "Day 1", "value": 89 }
+  ],
+
+  "platforms": [
+    { "id": 1, "title": "Mobile App" },
+    { "id": 2, "title": "Internet Banking" },
+    { "id": 3, "title": "USSD" },
+    { "id": 4, "title": "FORM A" },
+    { "id": 5, "title": "XPath" },
+    { "id": 6, "title": "CIP" },
+    { "id": 7, "title": "Workflow" },
+    { "id": 8, "title": "Appraisal" },
+    { "id": 9, "title": "Bug Tracker" }
+  ],
+
+  "teams": [
+    { "id": 1, "title": "Trade Service", "platforms": [1, 2, 3] },
+    { "id": 2, "title": "E-Channel", "platforms": [4, 5, 6] },
+    { "id": 3, "title": "Internal-Banking", "platforms": [7, 8, 9] }
   ]
 }

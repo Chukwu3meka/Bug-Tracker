@@ -11,6 +11,12 @@ export const removeLocalStorage = () => {
   localStorage.removeItem('profile');
 };
 
+export const handleHttpError = (err) => {
+  console.log(err);
+
+  return 'error occur';
+};
+
 // export const getLocalStorage = (key: string, localStorage: Storage) => {
 //   const data = localStorage.getItem(key);
 

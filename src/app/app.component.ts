@@ -15,44 +15,6 @@ import { SetProfileAction } from './store/actions/profile.actions';
   styleUrls: ['./app.component.less'],
 })
 export class AppComponent implements OnInit {
-  public authorised: boolean = !true;
-  public authPage: string = 'signin';
-
-  public pageLoading: boolean = true;
-  public appNotCompatible: string = '';
-  private wideScreenWidth: number = 1200;
-  private wideScreenHeight: number = 600;
-
-  private pageLoadingHandler(): void {
-    setTimeout(() => {
-      this.pageLoading = false;
-    }, 1000);
-  }
-
-  private minScreenAllowed(): void {
-    const isChromiumBased: boolean = !!window['chrome'];
-
-    const wideScreen: boolean =
-      window.innerHeight >= this.wideScreenHeight &&
-      window.innerWidth >= this.wideScreenWidth;
-
-    // console.log(wideScreen);
-
-    this.appNotCompatible = !isChromiumBased
-      ? 'Kindly use a Chromium-based browser'
-      : !wideScreen
-      ? 'Kindly use a bigger Screen'
-      : '';
-
-    // ! delete this to enfore wide screen
-    this.appNotCompatible = '';
-  }
-
-  @HostListener('window:resize', ['$event'])
-  detectResize = (): void => {
-    this.minScreenAllowed();
-  };
-
   profile: Observable<Profile>;
 
   constructor(
@@ -116,4 +78,42 @@ export class AppComponent implements OnInit {
     }
     this.pageLoadingHandler();
   }
+
+  public authorised: boolean = !true;
+  public authPage: string = 'signin';
+
+  public pageLoading: boolean = true;
+  public appNotCompatible: string = '';
+  private wideScreenWidth: number = 1200;
+  private wideScreenHeight: number = 600;
+
+  private pageLoadingHandler(): void {
+    setTimeout(() => {
+      this.pageLoading = false;
+    }, 1000);
+  }
+
+  private minScreenAllowed(): void {
+    const isChromiumBased: boolean = !!window['chrome'];
+
+    const wideScreen: boolean =
+      window.innerHeight >= this.wideScreenHeight &&
+      window.innerWidth >= this.wideScreenWidth;
+
+    // console.log(wideScreen);
+
+    this.appNotCompatible = !isChromiumBased
+      ? 'Kindly use a Chromium-based browser'
+      : !wideScreen
+      ? 'Kindly use a bigger Screen'
+      : '';
+
+    // ! delete this to enfore wide screen
+    this.appNotCompatible = '';
+  }
+
+  @HostListener('window:resize', ['$event'])
+  detectResize = (): void => {
+    this.minScreenAllowed();
+  };
 }

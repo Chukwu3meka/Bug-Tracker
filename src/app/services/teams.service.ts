@@ -9,12 +9,12 @@ import { apiUrl } from '../libs/appConstants';
 @Injectable({
   providedIn: 'root',
 })
-export class UsersService {
+export class TeamsService {
   constructor(private http: HttpClient) {}
 
-  login({ email, password }): Observable<any> {
+  getTeams(): Observable<any> {
     return this.http
-      .get(`${apiUrl}/users?email=${email}&password=${password}`)
+      .get(`${apiUrl}/teams`)
       .pipe(catchError((err) => handleHttpError(err)));
   }
 }

@@ -2,6 +2,11 @@ import { ViewportScroller } from '@angular/common';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/store/app.state';
+import { Profile } from 'src/app/store/models/profile.model';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -46,10 +51,27 @@ export class AppComponent implements OnInit {
     this.minScreenAllowed();
   };
 
+  profile: Observable<Profile>;
+
   constructor(
+    private store: Store<AppState>,
     private router: Router,
     private viewPortscroller: ViewportScroller
   ) {
+    //   this.store.select(fromStore.getAllChannels).pipe(
+    //    filter(channels => channels.length),
+    //    // channels.length should always be truthy at this point
+    //    tap(channels => console.log('channels', !!channels.length, channels),
+    //  );
+
+    this.profile = store.select('profile');
+
+    // .pipe((_ => _.newField !== undefined))
+
+    this.profile.subscribe((x) => {
+      console.log(x);
+    });
+
     this.router.events.forEach((event) => {
       if (event instanceof NavigationStart) {
         if (

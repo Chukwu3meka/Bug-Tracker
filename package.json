@@ -9,7 +9,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "server": "json-server --watch db.json --port 5000",
+    "json-server": "json-server --watch ./src/mockdb.json --port 5000",
     "n1": "ng serve --host=0.0.0.0 --port=5999 --disable-host-check",
     "n11": "$ ng serve --host 0.0.0.0 --public-host app.mypublicdomain.com"
   },

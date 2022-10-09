@@ -1,17 +1,22 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { ConstantsModel, PlatformsModel } from '../models/index';
-import { SetPlatformsAction } from '../actions/index';
+import { ConstantsModel } from '../models/index';
+import * as ConstantActions from '../actions/constants.actions';
 
-const initialState: ConstantsModel = {
-  // platforms,
-};
+const initialState: ConstantsModel = {};
 
 const reducer = createReducer(
   initialState,
-  on(SetPlatformsAction, (state, action) => ({
+  on(ConstantActions.SetPlatformsAction, (state, action) => ({
     ...state,
-    // platforms: action.payload,
     platforms: action.payload,
+  })),
+  on(ConstantActions.SetPlatformsAction, (state, action) => ({
+    ...state,
+    department: action.payload,
+  })),
+  on(ConstantActions.SetTeamsAction, (state, action) => ({
+    ...state,
+    teams: action.payload,
   }))
 );
 

@@ -9,7 +9,7 @@ import { ProfileModel } from 'src/app/store/models/index';
 import { getLocalStorage } from './libs/commonFunction';
 import { SetProfileAction } from './store/actions/profile.actions';
 import { PlatformsService } from './services/platforms.service';
-import { SetPlatformsAction } from './store/actions';
+import { SetPlatformsAction } from './store/actions/constants.actions';
 
 @Component({
   selector: 'app-root',

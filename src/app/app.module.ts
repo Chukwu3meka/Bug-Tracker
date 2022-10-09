@@ -36,12 +36,7 @@ import { StoreModule } from '@ngrx/store';
 // import { ProfileReducer } from './store/reducers/profile.reducer';
 // import { ProfileReducer } from './store/reducers/profile.reducer';
 // import { TeamsReducer } from './store/reducers/teams.reducer';
-import {
-  ConstantsReducer,
-  PlatformsReducer,
-  ProfileReducer,
-  TeamsReducer,
-} from './store/reducers/index';
+import { ConstantsReducer, ProfileReducer } from './store/reducers/index';
 // import { ProfileReducer } from './store/reducers/profile.reducer';
 // import { FileuploadComponent } from './components/fileupload/fileupload.component';
 
@@ -79,8 +74,6 @@ registerLocaleData(en);
     NgxChartsModule,
     StoreModule.forRoot({
       profile: ProfileReducer,
-      teams: TeamsReducer,
-      platforms: PlatformsReducer,
       constants: ConstantsReducer,
     }),
   ],

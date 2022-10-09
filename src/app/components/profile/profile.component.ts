@@ -59,6 +59,8 @@ export class ProfileComponent implements OnInit {
     role: undefined,
   };
 
+  public platforms;
+
   // public profileData;
   // public profileImg?: string;
 

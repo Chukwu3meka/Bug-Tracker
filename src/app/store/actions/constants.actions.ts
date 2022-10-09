@@ -9,20 +9,15 @@ import { createAction, props } from '@ngrx/store';
 
 export const SetPlatformsAction = createAction(
   '[PLATFORMS] Set',
-  // props<{ payload: ConstantsModel['platforms'][] }>()
   props<{ payload: ConstantsModel['platforms'] }>()
 );
 
-// export class SetProfile implements Action {
-//   readonly type = SET_PROFILE;
+export const SetTeamsAction = createAction(
+  '[Teams] Set',
+  props<{ payload: ConstantsModel['teams'] }>()
+);
 
-//   constructor(public payload: Profile) {}
-// }
-
-// export class RemoveProfile implements Action {
-//   readonly type = REMOVE_PROFILE;
-
-//   constructor(public payload: undefined) {}
-// }
-
-// export type Actions = SetProfile | RemoveProfile;
+export const SetDepartmentAction = createAction(
+  '[Department] Set',
+  props<{ payload: ConstantsModel['department'] }>()
+);

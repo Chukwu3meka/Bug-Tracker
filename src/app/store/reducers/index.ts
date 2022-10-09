@@ -1,5 +1,5 @@
-import { Teams } from '../models/teams.model';
-import { Profile } from '../models/profile.model';
-import { Platforms } from '../models/platforms.model';
+import { TeamsReducer } from './teams.reducer';
+import { ProfileReducer } from './profile.reducer';
+import { PlatformsReducer } from './platforms.reducer';
 
-export { Teams, Profile, Platforms };
+export { TeamsReducer, ProfileReducer, PlatformsReducer };

@@ -1,8 +1,8 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { Platforms } from '../models/index';
+import { PlatformsModels } from '../models/index';
 import { SetPlatformsAction } from '../actions/index';
 
-const initialState: Platforms = {
+const initialState: PlatformsModels = {
   // auth: false,
 };
 
@@ -14,6 +14,9 @@ const reducer = createReducer(
   })
 );
 
-export function PlatformsReducer(state: Platforms | undefined, action: Action) {
+export function PlatformsReducer(
+  state: PlatformsModels | undefined,
+  action: Action
+) {
   return reducer(state, action);
 }

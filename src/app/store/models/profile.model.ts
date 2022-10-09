@@ -1,4 +1,4 @@
-export interface Profile {
+export interface ProfileModels {
   auth: boolean;
   contributions?: number;
   department?: string;

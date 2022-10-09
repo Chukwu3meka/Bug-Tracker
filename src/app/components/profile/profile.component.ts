@@ -7,7 +7,7 @@ import {
   SetProfileAction,
 } from 'src/app/store/actions/profile.actions';
 import { AppState } from 'src/app/store/app.state';
-import { Profile } from 'src/app/store/models/profile.model';
+import { ProfileModels } from 'src/app/store/models/index';
 
 @Component({
   selector: 'app-profile',
@@ -15,7 +15,7 @@ import { Profile } from 'src/app/store/models/profile.model';
   styleUrls: ['./profile.component.less'],
 })
 export class ProfileComponent implements OnInit {
-  profile: Observable<Profile>;
+  profile: Observable<ProfileModels>;
 
   constructor(private store: Store<AppState>) {
     this.profile = store.select('profile');

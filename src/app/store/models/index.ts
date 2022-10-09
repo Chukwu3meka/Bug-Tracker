@@ -1,5 +1,5 @@
-import { Teams } from './teams.model';
-import { Platforms } from './platforms.model';
-import { Profile } from './profile.model';
+import { TeamsModels } from './teams.model';
+import { PlatformsModels } from './platforms.model';
+import { ProfileModels } from './profile.model';
 
-export { Teams, Platforms, Profile };
+export { TeamsModels, PlatformsModels, ProfileModels };

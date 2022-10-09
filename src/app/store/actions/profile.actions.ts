@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
-import { Profile } from '../models/index';
+import { ProfileModels } from '../models/index';
 
 // export const SET_PROFILE = '[PROFILE] Set';
 // export const REMOVE_PROFILE = '[PROFILE] Remove';
@@ -9,12 +9,12 @@ import { createAction, props } from '@ngrx/store';
 
 export const SetProfileAction = createAction(
   '[PROFILE] Set',
-  props<{ payload: Profile }>()
+  props<{ payload: ProfileModels }>()
 );
 
 export const RemoveProfileAction = createAction(
   '[PROFILE] Remove',
-  props<{ payload: Profile }>()
+  props<{ payload: ProfileModels }>()
 );
 
 // export class SetProfile implements Action {

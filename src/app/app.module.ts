@@ -33,7 +33,15 @@ import { SignupComponent } from './components/auth/signup/signup.component';
 import { ResetComponent } from './components/auth/reset/reset.component';
 
 import { StoreModule } from '@ngrx/store';
-import { ProfileReducer } from './store/reducers/profile.reducer';
+// import { ProfileReducer } from './store/reducers/profile.reducer';
+// import { ProfileReducer } from './store/reducers/profile.reducer';
+// import { TeamsReducer } from './store/reducers/teams.reducer';
+import {
+  PlatformsReducer,
+  ProfileReducer,
+  TeamsReducer,
+} from './store/reducers/index';
+// import { ProfileReducer } from './store/reducers/profile.reducer';
 // import { FileuploadComponent } from './components/fileupload/fileupload.component';
 
 registerLocaleData(en);
@@ -70,6 +78,8 @@ registerLocaleData(en);
     NgxChartsModule,
     StoreModule.forRoot({
       profile: ProfileReducer,
+      teams: TeamsReducer,
+      platforms: PlatformsReducer,
     }),
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],

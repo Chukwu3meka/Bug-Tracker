@@ -1,28 +1,41 @@
+import { Store } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
-import { Bugs } from './mockBugs';
+
+import { Observable } from 'rxjs';
+import { AppState } from 'src/app/store/app.state';
+import { NotificationService } from 'src/app/services';
+import { ProfileModel } from 'src/app/store/models/index';
+
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.less'],
 })
 export class SidebarComponent implements OnInit {
-  Bugs: any;
-  notifications!: string[];
+  profile: Observable<ProfileModel>;
+  notifications: any;
 
   public notificationsLoading: boolean = true;
 
-  constructor() {
-    this.Bugs = Bugs;
+  constructor(
+    private store: Store<AppState>,
+    private notificationService: NotificationService
+  ) {
+    this.profile = store.select('profile');
   }
 
   ngOnInit(): void {
-    // setTimeout(() => {
-    //   this.notifications = Bugs.map(
-    //     (x) =>
-    //       // img: 'https://placeimg.com/100/100/people',
-    //       x.description
-    //   ).slice(0, 4);
-    //   this.notificationsLoading = false;
-    // }, 1000);
+    this.profile.subscribe((profile) => {
+      const id = profile.id;
+
+      console.log(id);
+
+      this.notificationService.getNotification(id).subscribe((res) => {
+        this.notifications = res
+          .slice(0, 3)
+          .map((notifications) => notifications.event);
+        this.notificationsLoading = false;
+      });
+    });
   }
 }

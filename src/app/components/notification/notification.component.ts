@@ -1,8 +1,11 @@
+import { Store } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
 
-import { Bugs } from '../layout/sidebar/mockBugs';
+import { NotificationService } from 'src/app/services';
 import { DateAgoPipe } from 'src/app/pipes/dateago.pipe';
-import { Bug } from 'src/app/interface/Old-Bug';
+import { ProfileModel } from 'src/app/store/models/index';
+import { Observable } from 'rxjs';
+import { AppState } from 'src/app/store/app.state';
 
 @Component({
   selector: 'app-feedback',
@@ -10,21 +13,31 @@ import { Bug } from 'src/app/interface/Old-Bug';
   styleUrls: ['./notification.component.less'],
 })
 export class NotificationComponent implements OnInit {
-  notifications!: any[];
-  Bugs: Bug[] = Bugs;
-  public notificationsLoading: boolean = true;
+  profile: Observable<ProfileModel>;
 
-  constructor() {}
+  constructor(
+    private store: Store<AppState>,
+    private notificationService: NotificationService
+  ) {
+    this.profile = store.select('profile');
+  }
 
   ngOnInit(): void {
-    const dateAgoPipe = new DateAgoPipe();
-    setTimeout(() => {
-      this.notifications = this.Bugs.map((x) => ({
-        // img: 'https://placeimg.com/100/100/people',
-        description: x.description,
-        date: dateAgoPipe.transform(x.created),
-      })).slice(0, 4);
-      this.notificationsLoading = false;
-    }, 1000);
+    this.profile.subscribe((profile) => {
+      const id = profile.id;
+
+      const dateAgoPipe = new DateAgoPipe();
+
+      this.notificationService.getNotification(id).subscribe((res) => {
+        this.notifications = res.map((notifications) => ({
+          event: notifications.event,
+          date: dateAgoPipe.transform(notifications.date),
+        }));
+        this.notificationsLoading = false;
+      });
+    });
   }
+
+  public notifications: any;
+  public notificationsLoading: boolean = true;
 }

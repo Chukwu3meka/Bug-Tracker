@@ -592,7 +592,7 @@
   ],
   "users": [
     {
-      "id": 20220001,
+      "id": 1,
       "img": "https://placeimg.com/100/100/people",
       "name": "Roxanne Nicolas",
       "dateCreated": "Thu Dec 16 2021 12:50:30 GMT+0100 (West Africa Standard Time)",
@@ -608,7 +608,7 @@
       }
     },
     {
-      "id": 20220002,
+      "id": 2,
       "img": "https://placeimg.com/100/100/people",
       "name": "Mrs. Kent Sanford",
       "dateCreated": "Sun Dec 05 2021 13:11:51 GMT+0100 (West Africa Standard Time)",
@@ -620,7 +620,7 @@
       "email": "dev@alienforest.com"
     },
     {
-      "id": 20220003,
+      "id": 3,
       "img": "https://placeimg.com/100/100/people",
       "name": "Ed Sporer DVM",
       "dateCreated": "Thu Mar 17 2022 23:19:11 GMT+0100 (West Africa Standard Time)",
@@ -632,7 +632,7 @@
       "email": "user@alienforest.com"
     },
     {
-      "id": 20220004,
+      "id": 4,
       "img": "https://placeimg.com/100/100/people",
       "name": "Mrs. Marvin Champlin",
       "dateCreated": "Sat Jan 15 2022 21:50:41 GMT+0100 (West Africa Standard Time)",
@@ -644,7 +644,7 @@
       "email": "Karen@alienforest.com"
     },
     {
-      "id": 20220005,
+      "id": 5,
       "img": "https://placeimg.com/100/100/people",
       "name": "Sherry Will DVM",
       "dateCreated": "Sat May 28 2022 23:45:09 GMT+0100 (West Africa Standard Time)",
@@ -656,7 +656,7 @@
       "email": "Kolby@alienforest.com"
     },
     {
-      "id": 20220006,
+      "id": 6,
       "img": "https://placeimg.com/100/100/people",
       "name": "Mr. Kay Senger",
       "dateCreated": "Fri Sep 02 2022 15:43:54 GMT+0100 (West Africa Standard Time)",
@@ -668,7 +668,7 @@
       "email": "Jamey@alienforest.com"
     },
     {
-      "id": 20220007,
+      "id": 7,
       "img": "https://placeimg.com/100/100/people",
       "name": "Preston Schoen",
       "dateCreated": "Wed Aug 24 2022 09:43:55 GMT+0100 (West Africa Standard Time)",
@@ -680,7 +680,7 @@
       "email": "Alyson@alienforest.com"
     },
     {
-      "id": 20220008,
+      "id": 8,
       "img": "https://placeimg.com/100/100/people",
       "name": "Faith Parisian Jr.",
       "dateCreated": "Sat Aug 06 2022 20:04:08 GMT+0100 (West Africa Standard Time)",
@@ -692,7 +692,7 @@
       "email": "Ben@alienforest.com"
     },
     {
-      "id": 20220010,
+      "id": 9,
       "img": "https://placeimg.com/100/100/people",
       "name": "Joanna Rice",
       "dateCreated": "Sat Aug 20 2022 23:49:24 GMT+0100 (West Africa Standard Time)",
@@ -704,7 +704,7 @@
       "email": "Bianka@alienforest.com"
     },
     {
-      "id": 20220011,
+      "id": 10,
       "img": "https://placeimg.com/100/100/people",
       "name": "Blanche Reilly",
       "dateCreated": "Fri May 20 2022 19:01:44 GMT+0100 (West Africa Standard Time)",
@@ -716,7 +716,7 @@
       "email": "Steve@alienforest.com"
     },
     {
-      "id": 20220012,
+      "id": 11,
       "img": "https://placeimg.com/100/100/people",
       "name": "Terry Nader",
       "dateCreated": "Fri May 06 2022 15:59:38 GMT+0100 (West Africa Standard Time)",
@@ -728,7 +728,7 @@
       "email": "Sibyl@alienforest.com"
     },
     {
-      "id": 20220013,
+      "id": 13,
       "img": "https://placeimg.com/100/100/people",
       "name": "Douglas Mosciski",
       "dateCreated": "Sun Jun 26 2022 02:16:29 GMT+0100 (West Africa Standard Time)",
@@ -881,29 +881,133 @@
     {
       "id": 1,
       "title": "Trade Service",
-      "platforms": [
-        1,
-        2,
-        3
-      ]
+      "platforms": [1, 2, 3]
     },
     {
       "id": 2,
       "title": "E-Channel",
-      "platforms": [
-        4,
-        5,
-        6
-      ]
+      "platforms": [4, 5, 6]
     },
     {
       "id": 3,
       "title": "Mobile App",
-      "platforms": [
-        7,
-        8,
-        9
-      ]
+      "platforms": [7, 8, 9]
+    }
+  ],
+  "notifications": [
+    {
+      "id": 35644,
+      "event": "Elit non labore ex anim. Officia cillum duis sint pariatur aliquip aliquip occaecat duis enim sunt do. Veniam enim est voluptate commodo esse aliquip tempor.",
+      "date": "Tue Aug 23 2022 00:38:02 GMT+0100 (West Africa Standard Time)",
+      "user": "1"
+    },
+    {
+      "id": 79090,
+      "event": "Dolor pariatur mollit ullamco ullamco adipisicing pariatur in nostrud quis nulla duis ipsum. Tempor esse labore cupidatat excepteur ex ex. Cillum ea eiusmod cillum ea Lorem dolore excepteur aute. In officia officia amet ad excepteur.",
+      "date": "Sun Mar 13 2022 07:01:40 GMT+0100 (West Africa Standard Time)",
+      "user": "1"
+    },
+    {
+      "id": 6753,
+      "event": "Nostrud enim fugiat officia qui laboris magna nostrud excepteur aliquip veniam consectetur aute. Culpa excepteur proident enim cillum ea nisi do labore laboris est consectetur voluptate laboris. Fugiat dolor duis in do laboris in dolor mollit.",
+      "date": "Fri Sep 16 2022 19:44:49 GMT+0100 (West Africa Standard Time)",
+      "user": "2"
+    },
+    {
+      "id": 94566,
+      "event": "Nostrud in labore tempor anim consectetur reprehenderit eu quis. Sunt eiusmod pariatur non deserunt minim sit pariatur eu ut magna. Cillum qui culpa culpa deserunt officia do. Excepteur sunt eiusmod et occaecat. Culpa ea enim qui fugiat deserunt sint in ea elit voluptate laboris. Eu ad aute nulla culpa Lorem incididunt aliquip exercitation aliquip duis.",
+      "date": "Tue May 03 2022 14:18:58 GMT+0100 (West Africa Standard Time)",
+      "user": "2"
+    },
+    {
+      "id": 61793,
+      "event": "Ullamco officia irure mollit nisi. Nostrud dolore esse irure nulla pariatur sit sunt voluptate amet voluptate eu minim adipisicing. Pariatur sint proident nulla dolore commodo consequat magna qui. Enim sit quis voluptate Lorem ut et minim pariatur. Reprehenderit aute excepteur sunt cupidatat eu veniam nisi nisi occaecat exercitation nisi ea. Nulla do commodo sunt ea tempor laborum duis tempor. Veniam amet quis commodo sunt esse consequat.",
+      "date": "Thu Sep 22 2022 20:51:53 GMT+0100 (West Africa Standard Time)",
+      "user": "2"
+    },
+    {
+      "id": 95714,
+      "event": "Laborum proident eu est laboris commodo duis enim id do occaecat. Ullamco non non sit aliqua commodo pariatur et labore officia Lorem ex consequat cupidatat. Excepteur excepteur in nisi ea eu nostrud nulla culpa velit sunt adipisicing laboris excepteur officia. Exercitation eiusmod ipsum velit fugiat. Cillum culpa culpa ullamco eu incididunt officia et. Anim fugiat culpa nostrud Lorem officia occaecat qui exercitation amet.",
+      "date": "Fri Sep 30 2022 03:05:03 GMT+0100 (West Africa Standard Time)",
+      "user": "2"
+    },
+    {
+      "id": 15757,
+      "event": "Fugiat aute cupidatat enim quis culpa pariatur culpa quis aute ea irure irure. Eiusmod veniam sunt qui exercitation et elit ea tempor irure. Ea minim eu id minim deserunt ea veniam exercitation amet tempor reprehenderit.",
+      "date": "Wed Nov 24 2021 03:39:48 GMT+0100 (West Africa Standard Time)",
+      "user": "1"
+    },
+    {
+      "id": 61426,
+      "event": "Id adipisicing est ipsum cupidatat. Ipsum laboris ea ea consectetur exercitation id ad fugiat velit adipisicing duis et qui cupidatat. Voluptate amet elit enim eu.",
+      "date": "Fri Jan 14 2022 19:21:37 GMT+0100 (West Africa Standard Time)",
+      "user": "1"
+    },
+    {
+      "id": 81173,
+      "event": "Cillum officia anim consectetur velit amet amet enim nisi aute proident in sit. Eu eiusmod reprehenderit nulla laborum in ad pariatur commodo sit et velit adipisicing sit magna. Nostrud fugiat ex irure id voluptate ea laboris fugiat veniam deserunt laborum nulla nostrud culpa. Consequat laboris est voluptate non esse. Aliqua culpa ad pariatur ex sint ad nisi deserunt incididunt.",
+      "date": "Mon Feb 14 2022 19:59:01 GMT+0100 (West Africa Standard Time)",
+      "user": "1"
+    },
+    {
+      "id": 80919,
+      "event": "Laboris duis cupidatat et pariatur pariatur sunt commodo ea quis nulla dolore. Enim consequat occaecat laborum reprehenderit laboris velit exercitation Lorem esse pariatur. Pariatur esse fugiat amet pariatur qui. Qui ea occaecat et quis sunt ullamco anim ut deserunt nostrud do ad sunt veniam.",
+      "date": "Sat Mar 19 2022 01:13:29 GMT+0100 (West Africa Standard Time)",
+      "user": "1"
+    },
+    {
+      "id": 58441,
+      "event": "Officia elit occaecat laborum minim laborum voluptate esse et id incididunt aute et est. Ea ea laborum laboris nisi anim sint cupidatat officia ad aute duis est. Culpa nulla nisi consequat eu id do eiusmod deserunt amet aliquip proident sit. Laborum enim velit pariatur eu id adipisicing sit consequat consectetur nulla cupidatat minim. Esse fugiat ad consectetur aliquip reprehenderit. Id sit ad id sint duis ut sit sint reprehenderit sunt mollit.",
+      "date": "Fri Sep 09 2022 15:57:51 GMT+0100 (West Africa Standard Time)",
+      "user": "3"
+    },
+    {
+      "id": 56056,
+      "event": "Minim magna consequat esse aliqua est tempor et quis eu magna. Elit deserunt irure ex eu deserunt amet laboris irure quis elit laborum ea incididunt incididunt. Irure laboris sint minim proident ipsum cupidatat ut ex nulla sit voluptate Lorem est. Proident nulla ullamco occaecat laboris aliqua dolore. Non dolor duis aliqua reprehenderit duis est velit aliquip incididunt mollit nostrud Lorem ex. Voluptate aliquip veniam et sunt consequat sunt exercitation occaecat cupidatat. Quis minim aliquip elit in Lorem laborum qui in dolore est deserunt enim nostrud.",
+      "date": "Fri Dec 03 2021 04:40:25 GMT+0100 (West Africa Standard Time)",
+      "user": "3"
+    },
+    {
+      "id": 47593,
+      "event": "Laborum qui cupidatat nulla minim sint dolore aliquip mollit ex ipsum ipsum id ipsum elit. Consectetur est enim amet ex nostrud laboris aliquip minim cupidatat occaecat voluptate voluptate. Est dolore dolor velit sint Lorem. Cillum esse culpa reprehenderit deserunt laboris aute in incididunt fugiat cupidatat qui qui cillum magna. Duis eu incididunt minim est laborum sit. Enim aliqua reprehenderit nisi excepteur cupidatat mollit. Ullamco incididunt aliquip adipisicing eu laborum incididunt nostrud elit aliqua sunt cillum.",
+      "date": "Wed Jun 15 2022 20:09:43 GMT+0100 (West Africa Standard Time)",
+      "user": "3"
+    },
+    {
+      "id": 8867,
+      "event": "Incididunt ad Lorem ipsum fugiat est voluptate commodo ad fugiat. Magna do enim quis tempor in eu nostrud reprehenderit reprehenderit proident fugiat proident. Sit ullamco occaecat laborum proident id culpa aute consectetur et. Deserunt ad sint amet dolore amet nisi est duis officia id excepteur nulla. Dolore sunt ad exercitation non aute. Do voluptate et veniam ad consequat.",
+      "date": "Sat Oct 23 2021 23:56:06 GMT+0100 (West Africa Standard Time)",
+      "user": "3"
+    },
+    {
+      "id": 90994,
+      "event": "Voluptate aliqua ex amet culpa cupidatat elit consectetur proident do quis occaecat. Consequat ullamco qui commodo culpa laboris ullamco tempor Lorem ea. Et consequat velit ut culpa reprehenderit duis sunt sit dolore ea. Ut proident adipisicing velit dolore ad incididunt cupidatat aliqua in quis cillum dolor ad.",
+      "date": "Fri Oct 07 2022 03:39:35 GMT+0100 (West Africa Standard Time)",
+      "user": "3"
+    },
+    {
+      "id": 32821,
+      "event": "Fugiat nisi labore aliquip occaecat ea cillum exercitation est consectetur ex. Exercitation cupidatat nisi elit cillum. Qui aute veniam ullamco sint irure id. Magna in commodo consectetur aliquip reprehenderit fugiat voluptate nostrud eu veniam cupidatat.",
+      "date": "Sun Mar 20 2022 12:19:59 GMT+0100 (West Africa Standard Time)",
+      "user": "3"
+    },
+    {
+      "id": 68309,
+      "event": "Nostrud pariatur consequat incididunt adipisicing do aliquip in exercitation. Eu mollit laborum dolor sunt dolor incididunt excepteur elit sunt cillum velit culpa commodo sint. Voluptate aliquip voluptate eiusmod et dolore duis occaecat minim commodo elit dolor elit et velit. Ipsum deserunt veniam voluptate ullamco ipsum ut enim excepteur duis eu. Dolore fugiat tempor anim magna laborum. Pariatur ullamco fugiat et laboris do.",
+      "date": "Sat Jun 18 2022 04:12:26 GMT+0100 (West Africa Standard Time)",
+      "user": "4"
+    },
+    {
+      "id": 22418,
+      "event": "Tempor anim anim ipsum non nulla pariatur amet anim fugiat irure incididunt fugiat. Ex aliqua consequat qui velit ullamco cupidatat ea in laborum qui est qui enim. Aliquip commodo commodo Lorem mollit voluptate veniam veniam nisi in.",
+      "date": "Tue Aug 16 2022 07:29:30 GMT+0100 (West Africa Standard Time)",
+      "user": "54"
+    },
+    {
+      "id": 96563,
+      "event": "Est nostrud non non proident enim mollit. Aute incididunt excepteur nulla deserunt non. Sit reprehenderit tempor nisi dolore occaecat exercitation ullamco velit velit incididunt. Adipisicing magna esse nulla anim consequat aliqua ea non non.",
+      "date": "Mon Apr 25 2022 08:47:13 GMT+0100 (West Africa Standard Time)",
+      "user": "6"
     }
   ]
 }

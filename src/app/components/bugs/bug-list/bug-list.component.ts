@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { colors } from 'libs/constants';
+import { colors } from 'src/app/libs/appConstants';
 import { Bug, BugsStat, DashboardBug } from 'src/app/interface/Old-Bug';
 // import { Bugs } from 'src/app/mock-database';
 

@@ -1,4 +1,4 @@
-import { colors } from 'libs/constants';
+import { colors } from 'src/app/libs/appConstants';
 import { Component, OnInit } from '@angular/core';
 import { BugsService } from 'src/app/services/bugs.service';
 import { LegendPosition, ScaleType } from '@swimlane/ngx-charts';

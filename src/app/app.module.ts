@@ -10,11 +10,11 @@ import en from '@angular/common/locales/en';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { IconsProviderModule } from '../../libs/ngZorro/nzIcons';
+import { IconsProviderModule } from 'src/app/libs/nzIcons';
 
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
-import { nzModules } from 'libs/ngZorro/nzModules';
+import { nzModules } from 'src/app/libs/nzModules';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { SidebarComponent } from './components/layout/sidebar/sidebar.component';
 import { FooterComponent } from './components/layout/footer/footer.component';

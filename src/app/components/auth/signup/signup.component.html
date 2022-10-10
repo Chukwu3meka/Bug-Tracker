@@ -14,7 +14,6 @@
         ></nz-avatar>
       </div>
 
-      <!-- <img src="/assets/images/signin.jfif" alt="sigin logo" /> -->
       <h2>Bug Tracker!!!</h2>
       <p>
         Welcome to Zenith Bug Tracker, a community of developers and friendly
@@ -22,11 +21,30 @@
       </p>
 
       <nz-input-group nzAddOnAfterIcon="user" nzSize="large">
-        <input type="text" nz-input [(ngModel)]="email" />
+        <input
+          type="text"
+          nz-input
+          [(ngModel)]="user.firstName"
+          placeholder="First Name"
+        />
       </nz-input-group>
 
-      <nz-input-group nzAddOnAfterIcon="user" nzSize="large">
-        <input type="text" nz-input [(ngModel)]="email" />
+      <nz-input-group nzAddOnAfterIcon="user-switch" nzSize="large">
+        <input
+          type="text"
+          nz-input
+          [(ngModel)]="user.lastName"
+          placeholder="Last Name"
+        />
+      </nz-input-group>
+
+      <nz-input-group nzAddOnAfterIcon="mail" nzSize="large">
+        <input
+          type="text"
+          nz-input
+          [(ngModel)]="user.email"
+          placeholder="eMail Address"
+        />
       </nz-input-group>
 
       <nz-input-group [nzSuffix]="suffixTemplate" nzSize="large">
@@ -34,8 +52,8 @@
           size="large"
           [type]="passwordVisible ? 'text' : 'password'"
           nz-input
-          placeholder="input password"
-          [(ngModel)]="password"
+          placeholder="Password"
+          [(ngModel)]="user.password"
         />
       </nz-input-group>
       <ng-template #suffixTemplate>
@@ -45,11 +63,47 @@
           (click)="passwordVisible = !passwordVisible"
         ></span>
       </ng-template>
-      <div routerLink="reset">
-        <span> Recover Password </span>
-      </div>
 
-      <button [nzBlock]="true" nzSize="large" nz-button nzType="primary">
+      <nz-select
+        [nzAllowClear]="false"
+        nzSize="large"
+        id="department"
+        ngModel="departmentOptions"
+        [(ngModel)]="user.department"
+        nzPlaceHolder="Select Department"
+      >
+        <nz-option
+          *ngFor="let department of departmentOptions"
+          [nzValue]="department.id"
+          [nzLabel]="department.title"
+        ></nz-option>
+      </nz-select>
+
+      <nz-select
+        *ngIf="user.department"
+        [nzAllowClear]="false"
+        nzSize="large"
+        id="department"
+        ngModel="teamsOptions"
+        [(ngModel)]="user.team"
+        nzPlaceHolder="Select Teams"
+      >
+        <nz-option
+          *ngFor="let team of teamOptions"
+          [nzValue]="team.id"
+          [nzLabel]="team.title"
+        ></nz-option>
+      </nz-select>
+
+      <div routerLink="reset"></div>
+
+      <button
+        (click)="signupHandler()"
+        [nzBlock]="true"
+        nzSize="large"
+        nz-button
+        nzType="primary"
+      >
         REGISTER
       </button>
 

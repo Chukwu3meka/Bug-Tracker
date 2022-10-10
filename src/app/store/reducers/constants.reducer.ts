@@ -2,7 +2,10 @@ import { Action, createReducer, on } from '@ngrx/store';
 import { ConstantsModel } from '../models/index';
 import * as ConstantActions from '../actions/constants.actions';
 
-const initialState: ConstantsModel = {};
+const initialState: ConstantsModel = {
+  teams: [],
+  platforms: [],
+};
 
 const reducer = createReducer(
   initialState,

@@ -1,4 +1,11 @@
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
+
+import { AppState } from 'src/app/store/app.state';
+import { removeLocalStorage } from 'src/app/libs/commonFunction';
+import { RemoveProfileAction } from 'src/app/store/actions/profile.actions';
+import { ConstantsModel, ProfileModel } from 'src/app/store/models/index';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-signup',
@@ -6,23 +13,39 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signup.component.less'],
 })
 export class SignupComponent implements OnInit {
-  constructor() {}
+  constants: Observable<ConstantsModel>;
 
-  ngOnInit(): void {}
+  constructor(private store: Store<AppState>) {
+    this.constants = this.store.select('constants');
+  }
+
+  ngOnInit(): void {
+    this.constants.subscribe((constants) => {
+      this.teamOptions = constants.teams.filter((x) => x.id !== 0);
+    });
+  }
+
+  public teamOptions;
+  public departmentOptions = [
+    { id: 0, title: 'Non Infotech' },
+    { id: 1, title: 'Infotech' },
+  ];
+
+  public user: {
+    email?: string;
+    team: number;
+    lastName?: string;
+    password?: string;
+    firstName?: string;
+    department?: string;
+  } = {
+    team: 0,
+  };
 
   passwordVisible = false;
-  password?: string;
-  email?: string;
-
-  // {
-  //   "id": 20220001,
   //   "img": "https://placeimg.com/100/100/people",
-  //   "name": "Roxanne Nicolas",
-  //   "dateCreated": "Thu Dec 16 2021 12:50:30 GMT+0100 (West Africa Standard Time)",
-  //   "department": 1,
-  //   "team": 1,
-  //   "password": "7777",
-  // "role": "admin",
-  //   "email": "admin@alienforest.com"
-  // },
+
+  public signupHandler = () => {
+    console.log('this.user', this.user);
+  };
 }

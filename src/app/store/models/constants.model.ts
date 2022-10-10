@@ -1,6 +1,6 @@
 export interface ConstantsModel {
-  platforms?: PlatformsModel;
-  teams?: TeamsModel;
+  platforms: PlatformsModel[];
+  teams: TeamsModel[];
 }
 
 export interface PlatformsModel {

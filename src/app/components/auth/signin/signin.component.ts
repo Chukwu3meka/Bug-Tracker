@@ -35,7 +35,6 @@ export class SigninComponent implements OnInit {
         // save profile detail to local storage
         setLocalStorage({ auth: true, ...profile });
       }
-
       this.loginLoading = false;
     });
   };

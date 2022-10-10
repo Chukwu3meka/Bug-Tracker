@@ -4,7 +4,8 @@ export const setLocalStorage = (value: any): void => {
 
 export const getLocalStorage = () => {
   const data = localStorage.getItem('profile');
-  return JSON.parse(data || '');
+
+  return data ? JSON.parse(data || '') : null;
 };
 
 export const removeLocalStorage = () => {

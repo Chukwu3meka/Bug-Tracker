@@ -20,9 +20,11 @@ export class SigninComponent implements OnInit {
   ngOnInit(): void {}
 
   public passwordVisible = false;
+  public loginLoading = false;
   public auth = { email: '', password: '' };
 
   public loginHandler = (): void => {
+    this.loginLoading = true;
     this.usersService.login(this.auth).subscribe((res) => {
       const profile = res[0];
       if (profile?.id) {
@@ -33,6 +35,8 @@ export class SigninComponent implements OnInit {
         // save profile detail to local storage
         setLocalStorage({ auth: true, ...profile });
       }
+
+      this.loginLoading = false;
     });
   };
 }

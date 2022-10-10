@@ -46,10 +46,11 @@
       </div>
 
       <button
-        [nzBlock]="true"
-        nzSize="large"
         nz-button
+        nzSize="large"
+        [nzBlock]="true"
         nzType="primary"
+        [nzLoading]="loginLoading"
         (click)="loginHandler()"
       >
         LOGIN

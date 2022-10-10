@@ -80,7 +80,7 @@ export class AppComponent implements OnInit {
 
     const profile = getLocalStorage();
     // check if user auth was saved to local storage
-    if (profile && profile.auth) {
+    if (profile?.auth) {
       this.store.dispatch(
         SetProfileAction({ payload: { auth: true, ...profile } })
       );

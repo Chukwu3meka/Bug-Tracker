@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { catchError } from 'rxjs/operators';
+import { catchError, delay } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 
 import { handleHttpError } from '../libs/commonFunction';
@@ -15,6 +15,7 @@ export class UsersService {
   login({ email, password }): Observable<any> {
     return this.http
       .get(`${apiUrl}/users?email=${email}&password=${password}`)
-      .pipe(catchError((err) => handleHttpError(err)));
+      .pipe(catchError((err) => handleHttpError(err)))
+      .pipe(delay(2000));
   }
 }

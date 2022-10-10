@@ -4,25 +4,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-> [Live site](bug-tracker-with-angular.vercel.app)
+> [Live site](https://test-bug-tracker.vercel.app/)
 
-> Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1.  Run `npm run dev-local` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+2.  Endavour to run `npm run local-server` for a fake Rest API
 
 ## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Run `ng generate component component-name` to generate a new component.
+`ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Further help
 
@@ -33,11 +23,4 @@ for our loading page <!-- https://css-tricks.com/lets-make-a-fancy-but-uncomplic
 
 ### Todo
 
-1. fix open bug color in bug stat
-2. delete mock db
-3. All developers must belong to a team, such that only developers working on specific platform can be assigned
-4. disable future date in add-bugs
-
-### Findings
-
-1. Overflow: hidden on parent div also affects child sticky
+1. All developers must belong to a team, such that only developers working on specific platform can be assigned

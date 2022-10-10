@@ -8,8 +8,8 @@ import { AppState } from 'src/app/store/app.state';
 import { ProfileModel } from 'src/app/store/models/index';
 import { getLocalStorage } from './libs/commonFunction';
 import { SetProfileAction } from './store/actions/profile.actions';
-import { PlatformsService } from './services/platforms.service';
-import { SetPlatformsAction } from './store/actions/constants.actions';
+import { SetTeamsAction } from './store/actions/constants.actions';
+import { TeamsService } from './services/index';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
     private store: Store<AppState>,
     private router: Router,
     private viewPortscroller: ViewportScroller,
-    private platformsService: PlatformsService
+    private teamsService: TeamsService
   ) {
     //   this.store.select(fromStore.getAllChannels).pipe(
     //    filter(channels => channels.length),
@@ -72,11 +72,10 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.platformsService.getPlatforms().subscribe((res) => {
-      console.log(res);
-
+    this.teamsService.getTeams().subscribe((res) => {
+      // console.log(res);
       // getPlatforms
-      this.store.dispatch(SetPlatformsAction({ payload: res }));
+      this.store.dispatch(SetTeamsAction({ payload: res }));
     });
 
     const profile = getLocalStorage();

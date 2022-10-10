@@ -764,6 +764,7 @@
   ],
 
   "platforms": [
+    { "id": 0, "title": "Form M" },
     { "id": 1, "title": "Mobile App" },
     { "id": 2, "title": "Internet Banking" },
     { "id": 3, "title": "USSD" },
@@ -776,8 +777,9 @@
   ],
 
   "teams": [
+    { "id": 0, "title": "Regular Banking", "platforms": [] },
     { "id": 1, "title": "Trade Service", "platforms": [1, 2, 3] },
     { "id": 2, "title": "E-Channel", "platforms": [4, 5, 6] },
-    { "id": 3, "title": "Internal-Banking", "platforms": [7, 8, 9] }
+    { "id": 3, "title": "Mobile App", "platforms": [7, 8, 9] }
   ]
 }

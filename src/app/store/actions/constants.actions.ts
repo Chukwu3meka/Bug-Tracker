@@ -16,8 +16,3 @@ export const SetTeamsAction = createAction(
   '[Teams] Set',
   props<{ payload: ConstantsModel['teams'] }>()
 );
-
-export const SetDepartmentAction = createAction(
-  '[Department] Set',
-  props<{ payload: ConstantsModel['department'] }>()
-);

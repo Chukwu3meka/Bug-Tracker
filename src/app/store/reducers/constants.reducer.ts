@@ -10,10 +10,6 @@ const reducer = createReducer(
     ...state,
     platforms: action.payload,
   })),
-  on(ConstantActions.SetPlatformsAction, (state, action) => ({
-    ...state,
-    department: action.payload,
-  })),
   on(ConstantActions.SetTeamsAction, (state, action) => ({
     ...state,
     teams: action.payload,

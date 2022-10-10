@@ -23,12 +23,15 @@ export class ProfileComponent implements OnInit {
     this.constants = store.select('constants');
   }
   ngOnInit(): void {
+    let teams;
+
     this.constants.subscribe((constants) => {
-      console.log(constants, 'constants');
+      console.log(constants.teams);
+      teams = constants.teams;
     });
 
     this.profile.subscribe((profile) => {
-      console.log(profile);
+      console.log(profile.team);
 
       this.profileData = {
         img: profile.img,
@@ -45,8 +48,16 @@ export class ProfileComponent implements OnInit {
             title: 'Contributions',
             data: `Reported and resolved ${profile.contributions} Bugs`,
           },
-          { title: 'Department', data: profile.department },
-          { title: 'Team', data: profile.team ? 'd' : 'Regular Banking' },
+          {
+            title: 'Department',
+            data: profile.department ? 'Info Tech' : 'Non InfoTech',
+          },
+          {
+            title: 'Team',
+            data: profile.department
+              ? teams[`${profile.team}`].title
+              : 'Regular Banking',
+          },
         ],
       };
     });
@@ -58,8 +69,6 @@ export class ProfileComponent implements OnInit {
     team: undefined,
     role: undefined,
   };
-
-  public platforms;
 
   // public profileData;
   // public profileImg?: string;

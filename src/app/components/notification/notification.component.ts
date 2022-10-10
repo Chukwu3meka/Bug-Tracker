@@ -19,7 +19,7 @@ export class NotificationComponent implements OnInit {
     private store: Store<AppState>,
     private notificationService: NotificationService
   ) {
-    this.profile = store.select('profile');
+    this.profile = this.store.select('profile');
   }
 
   ngOnInit(): void {

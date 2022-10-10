@@ -21,14 +21,12 @@ export class SidebarComponent implements OnInit {
     private store: Store<AppState>,
     private notificationService: NotificationService
   ) {
-    this.profile = store.select('profile');
+    this.profile = this.store.select('profile');
   }
 
   ngOnInit(): void {
     this.profile.subscribe((profile) => {
       const id = profile.id;
-
-      console.log(id);
 
       this.notificationService.getNotification(id).subscribe((res) => {
         this.notifications = res

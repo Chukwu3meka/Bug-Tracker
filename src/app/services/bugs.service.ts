@@ -19,23 +19,20 @@ export class BugsService {
 
   getBug(id): Observable<any> {
     return this.http
-      .get(`${apiUrl}/bug/${id}`, httpOptions({ HttpHeaders }))
+      .get(`${apiUrl}/bugs?id=${id}`)
       .pipe(catchError((err) => handleHttpError(err)));
   }
 
   getAllBugs(): Observable<any> {
     return this.http
-      .get(`${apiUrl}/bugs`, httpOptions({ HttpHeaders }))
+      .get(`${apiUrl}/bugs`)
       .pipe(catchError((err) => handleHttpError(err)));
   }
 
   //       bug/pages?page=${}`,
   getBugs(page: number = 1): Observable<any> {
     return this.http
-      .get(
-        `${apiUrl}/bugs?_page=${page}&_limit=20`,
-        httpOptions({ HttpHeaders })
-      )
+      .get(`${apiUrl}/bugs?_page=${page}&_limit=20`)
       .pipe(catchError((err) => handleHttpError(err)));
   }
 

@@ -52,12 +52,12 @@ export class BugListsComponent implements OnInit {
   };
 
   private getBugs = (page: number = 0) => {
-    this.bugService.getBugs(page).subscribe((res) => {
-      const totalBugs = res.totalElements | 20;
-      this.totalPages = res.totalPages | 1;
+    this.bugService.getBugs(page).subscribe((bug) => {
+      const totalBugs = bug.totalElements | 20;
+      this.totalPages = bug.totalPages | 1;
 
-      // const bugs = res.content.map((bug) => ({
-      const bugs = res.map((bug) => ({
+      // const bugs = bug.content.map((bug) => ({
+      const bugs = bug.map((bug) => ({
         // ...bug,
         // id: bug.bugId,
         // description: bug.bugReview,
@@ -106,10 +106,10 @@ export class BugListsComponent implements OnInit {
         //   img: '' || 'https://placeimg.com/100/100/people',
         // },
         developer: {
-          id: bug.developer.id,
+          id: bug.developer?.id,
           // ...bug.developer,
           assigned: bug.developer?.id
-            ? `Assigned to '${bug?.developer.name}'`
+            ? `Assigned to '${bug?.developer?.name}'`
             : `Not yet assigned`,
         },
       }));
@@ -117,9 +117,11 @@ export class BugListsComponent implements OnInit {
   };
 
   public displayBugHandler = (id?: string): void => {
+    // return;
+
     this.bugService.getBug(id).subscribe((res) => {
-      // const totalBugs = res.totalElements;
-      // this.totalPages = res.totalPages;
+      const bug = res[0];
+      console.log(id, bug.title);
 
       this.bugData = {
         platformDevelopers: [
@@ -129,10 +131,10 @@ export class BugListsComponent implements OnInit {
           { id: '4', name: 'Deanna Bednar' },
           { id: '5', name: 'Lloyd Muller`' },
         ],
-        developer: { id: res.id, name: `${res.lastName} ${res.firstName}` },
-        title: res.label,
-        platform: res.platformses.platformName,
-        description: res.bugReview,
+        developer: bug.developer,
+        title: bug.title,
+        platform: bug.platform,
+        description: bug.description,
         screenshots: [
           'https://placeimg.com/200/200/people',
           '/assets/images/zenith-logo.png',
@@ -148,11 +150,11 @@ export class BugListsComponent implements OnInit {
         ],
       };
 
-      // this.currentDeveloper = res.id;
+      // this.currentDeveloper = bug.id;
 
       // }
 
-      // console.log(id, res);
+      // console.log(id, bug);
     });
 
     // if (!id) this.bugData = undefined;

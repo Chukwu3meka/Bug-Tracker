@@ -13,7 +13,7 @@ export const removeLocalStorage = () => {
 };
 
 export const handleHttpError = (err) => {
-  console.log(err);
+  // console.log(err);
 
   return 'error occur';
 };
@@ -25,13 +25,3 @@ export const httpOptions = ({ HttpHeaders }) => ({
     //   'Basic ' + btoa('donaldwisdomnengi@gmail.com:Cassillas1nengi!'),
   }),
 });
-
-// export const getLocalStorage = (key: string, localStorage: Storage) => {
-//   const data = localStorage.getItem(key);
-
-//   return JSON.parse(data || '');
-// };
-
-// JSON.parse(localStorage.getItem('profile') || '');
-
-// export const setLocalStorage = (key: string, value: any): void => {};

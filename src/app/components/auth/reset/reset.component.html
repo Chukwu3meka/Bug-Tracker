@@ -14,7 +14,6 @@
         ></nz-avatar>
       </div>
 
-      <!-- <img src="/assets/images/signin.jfif" alt="sigin logo" /> -->
       <h2>Bug Tracker!!!</h2>
       <p>
         Welcome to Zenith Bug Tracker, a community of developers and friendly
@@ -34,11 +33,14 @@
         />
       </nz-input-group>
 
-      <span *ngIf="resetStage"
-        >Kindly check your inbox for a reset mail from us
+      <span *ngIf="resetStage" style="text-align: 'center'">
+        <a routerLink="sigin" style="text-align: 'center'">
+          Kindly check your inbox for a reset mail from us. Return to SIGNIN
+          page
+        </a>
       </span>
 
-      <div routerLink="signin">Cancel Reset</div>
+      <div routerLink="reset"></div>
 
       <button
         [nzLoading]="resetLoading"

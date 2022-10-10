@@ -24,8 +24,6 @@ export class ResetComponent implements OnInit {
 
       this.usersService.reset(this.email).subscribe((res) => {});
 
-      //
-
       this.resetLoading = false;
     }
     console.log('reset resetPassword 1');

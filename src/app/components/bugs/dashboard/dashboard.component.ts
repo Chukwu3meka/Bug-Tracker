@@ -1,6 +1,6 @@
 import { colors } from 'src/app/libs/appConstants';
 import { Component, OnInit } from '@angular/core';
-import { BugsService } from 'src/app/services/bugs.service';
+import { BugsService } from 'src/app/services/index';
 import { LegendPosition, ScaleType } from '@swimlane/ngx-charts';
 
 import {
@@ -56,10 +56,12 @@ export class DashboardComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    this.bugService
-      .getDailyBugReport()
-      .subscribe((bugReportData) => (this.bugReportData = bugReportData));
-    this.bugService.getBugs().subscribe((bugs) => {
+    this.bugService.getDailyBugReport().subscribe((bugReportData) => {
+      // console.log(bugReportData);
+      this.bugReportData = bugReportData;
+    });
+
+    this.bugService.getAllBugs().subscribe((bugs) => {
       this.statusData = [
         {
           name: 'Closed Bugs',

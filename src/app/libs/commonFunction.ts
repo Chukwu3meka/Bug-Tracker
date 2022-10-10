@@ -18,6 +18,14 @@ export const handleHttpError = (err) => {
   return 'error occur';
 };
 
+export const httpOptions = ({ HttpHeaders }) => ({
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+    // Authorization:
+    //   'Basic ' + btoa('donaldwisdomnengi@gmail.com:Cassillas1nengi!'),
+  }),
+});
+
 // export const getLocalStorage = (key: string, localStorage: Storage) => {
 //   const data = localStorage.getItem(key);
 

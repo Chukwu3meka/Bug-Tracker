@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersService } from 'src/app/services';
 
 @Component({
   selector: 'app-reset',
@@ -6,11 +7,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reset.component.less'],
 })
 export class ResetComponent implements OnInit {
-  constructor() {}
+  constructor(private usersService: UsersService) {}
 
   ngOnInit(): void {}
 
+  public resetStage = false;
+
   passwordVisible = false;
-  password?: string;
-  email?: string;
+  resetLoading: boolean = false;
+  email: string = '';
+
+  public resetPassword = () => {
+    if (this.email.includes('@')) {
+      this.resetLoading = true;
+      this.resetStage = true;
+
+      this.usersService.reset(this.email).subscribe((res) => {});
+
+      //
+
+      this.resetLoading = false;
+    }
+    console.log('reset resetPassword 1');
+  };
 }

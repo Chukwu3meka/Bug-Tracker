@@ -590,7 +590,6 @@
       "description": "Lorem in commodo nostrud deserunt est Lorem dolor minim irure reprehenderit. Exercitation commodo enim aute incididunt amet consectetur officia sit cupidatat magna consequat proident enim. Ex nulla adipisicing dolor sint veniam. Reprehenderit ea non ea culpa. Laboris velit occaecat enim nisi laborum occaecat cupidatat cillum sunt aliqua."
     }
   ],
-
   "users": [
     {
       "id": 20220001,
@@ -600,9 +599,13 @@
       "contributions": 211,
       "department": 1,
       "team": 1,
-      "password": "7777",
+      "password": 7777,
       "role": "admin",
-      "email": "admin@alienforest.com"
+      "email": "admin@alienforest.com",
+      "headers": {
+        "normalizedNames": {},
+        "lazyUpdate": null
+      }
     },
     {
       "id": 20220002,
@@ -737,49 +740,170 @@
       "email": "Shawna@alienforest.com"
     }
   ],
-
   "dailyBugReport": [
-    { "name": "Day 22", "value": 72 },
-    { "name": "Day 21", "value": 72 },
-    { "name": "Day 20", "value": 72 },
-    { "name": "Day 19", "value": 72 },
-    { "name": "Day 18", "value": 50 },
-    { "name": "Day 17", "value": 89 },
-    { "name": "Day 16", "value": 72 },
-    { "name": "Day 15", "value": 50 },
-    { "name": "Day 14", "value": 89 },
-    { "name": "Day 13", "value": 72 },
-    { "name": "Day 12", "value": 51 },
-    { "name": "Day 11", "value": 19 },
-    { "name": "Day 10", "value": 53 },
-    { "name": "Day 9", "value": 70 },
-    { "name": "Day 8", "value": 37 },
-    { "name": "Day 7", "value": 9 },
-    { "name": "Day 6", "value": 57 },
-    { "name": "Day 5", "value": 5 },
-    { "name": "Day 4", "value": 8 },
-    { "name": "Day 3", "value": 72 },
-    { "name": "Day 2", "value": 50 },
-    { "name": "Day 1", "value": 89 }
+    {
+      "name": "Day 22",
+      "value": 72
+    },
+    {
+      "name": "Day 21",
+      "value": 72
+    },
+    {
+      "name": "Day 20",
+      "value": 72
+    },
+    {
+      "name": "Day 19",
+      "value": 72
+    },
+    {
+      "name": "Day 18",
+      "value": 50
+    },
+    {
+      "name": "Day 17",
+      "value": 89
+    },
+    {
+      "name": "Day 16",
+      "value": 72
+    },
+    {
+      "name": "Day 15",
+      "value": 50
+    },
+    {
+      "name": "Day 14",
+      "value": 89
+    },
+    {
+      "name": "Day 13",
+      "value": 72
+    },
+    {
+      "name": "Day 12",
+      "value": 51
+    },
+    {
+      "name": "Day 11",
+      "value": 19
+    },
+    {
+      "name": "Day 10",
+      "value": 53
+    },
+    {
+      "name": "Day 9",
+      "value": 70
+    },
+    {
+      "name": "Day 8",
+      "value": 37
+    },
+    {
+      "name": "Day 7",
+      "value": 9
+    },
+    {
+      "name": "Day 6",
+      "value": 57
+    },
+    {
+      "name": "Day 5",
+      "value": 5
+    },
+    {
+      "name": "Day 4",
+      "value": 8
+    },
+    {
+      "name": "Day 3",
+      "value": 72
+    },
+    {
+      "name": "Day 2",
+      "value": 50
+    },
+    {
+      "name": "Day 1",
+      "value": 89
+    }
   ],
-
   "platforms": [
-    { "id": 0, "title": "Form M" },
-    { "id": 1, "title": "Mobile App" },
-    { "id": 2, "title": "Internet Banking" },
-    { "id": 3, "title": "USSD" },
-    { "id": 4, "title": "FORM A" },
-    { "id": 5, "title": "XPath" },
-    { "id": 6, "title": "CIP" },
-    { "id": 7, "title": "Workflow" },
-    { "id": 8, "title": "Appraisal" },
-    { "id": 9, "title": "Bug Tracker" }
+    {
+      "id": 0,
+      "title": "Form M"
+    },
+    {
+      "id": 1,
+      "title": "Mobile App"
+    },
+    {
+      "id": 2,
+      "title": "Internet Banking"
+    },
+    {
+      "id": 3,
+      "title": "USSD"
+    },
+    {
+      "id": 4,
+      "title": "FORM A"
+    },
+    {
+      "id": 5,
+      "title": "XPath"
+    },
+    {
+      "id": 6,
+      "title": "CIP"
+    },
+    {
+      "id": 7,
+      "title": "Workflow"
+    },
+    {
+      "id": 8,
+      "title": "Appraisal"
+    },
+    {
+      "id": 9,
+      "title": "Bug Tracker"
+    }
   ],
-
   "teams": [
-    { "id": 0, "title": "Regular Banking", "platforms": [] },
-    { "id": 1, "title": "Trade Service", "platforms": [1, 2, 3] },
-    { "id": 2, "title": "E-Channel", "platforms": [4, 5, 6] },
-    { "id": 3, "title": "Mobile App", "platforms": [7, 8, 9] }
+    {
+      "id": 0,
+      "title": "Regular Banking",
+      "platforms": []
+    },
+    {
+      "id": 1,
+      "title": "Trade Service",
+      "platforms": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": 2,
+      "title": "E-Channel",
+      "platforms": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Mobile App",
+      "platforms": [
+        7,
+        8,
+        9
+      ]
+    }
   ]
 }

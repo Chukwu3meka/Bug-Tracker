@@ -21,18 +21,39 @@
         folks fixing
       </p>
 
-      <nz-input-group nzAddOnAfterIcon="user" nzSize="large">
-        <input type="text" nz-input [(ngModel)]="email" />
+      <nz-input-group
+        nzAddOnAfterIcon="user"
+        nzSize="large"
+        *ngIf="!resetStage"
+      >
+        <input
+          type="text"
+          nz-input
+          [(ngModel)]="email"
+          placeholder="Enter email to reset password"
+        />
       </nz-input-group>
 
-      <div routerLink="reset"></div>
+      <span *ngIf="resetStage"
+        >Kindly check your inbox for a reset mail from us
+      </span>
 
-      <button [nzBlock]="true" nzSize="large" nz-button nzType="primary">
+      <div routerLink="signin">Cancel Reset</div>
+
+      <button
+        [nzLoading]="resetLoading"
+        (click)="resetPassword()"
+        [nzBlock]="true"
+        nzSize="large"
+        nz-button
+        nzType="primary"
+        *ngIf="!resetStage"
+      >
         Reset Password
       </button>
 
       <div>
-        <span> Already a user? </span>
+        <span> Not yet a user? </span>
         <button routerLink="signup" [nzBlock]="true" nz-button nzType="primary">
           Signup
         </button>

@@ -1,12 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { removeLocalStorage } from 'src/app/libs/commonFunction';
-import {
-  RemoveProfileAction,
-  SetProfileAction,
-} from 'src/app/store/actions/profile.actions';
+import { Store } from '@ngrx/store';
+import { Component, OnInit } from '@angular/core';
+
 import { AppState } from 'src/app/store/app.state';
+import { removeLocalStorage } from 'src/app/libs/commonFunction';
+import { RemoveProfileAction } from 'src/app/store/actions/profile.actions';
 import { ConstantsModel, ProfileModel } from 'src/app/store/models/index';
 
 @Component({
@@ -24,19 +22,12 @@ export class ProfileComponent implements OnInit {
   }
   ngOnInit(): void {
     let teams;
-
-    this.constants.subscribe((constants) => {
-      console.log(constants.teams);
-      teams = constants.teams;
-    });
+    this.constants.subscribe((constants) => (teams = constants.teams));
 
     this.profile.subscribe((profile) => {
-      console.log(profile.team);
-
       this.profileData = {
         img: profile.img,
         role: profile.role,
-        // team: profile.team,
 
         list: [
           { title: 'Fullname', data: profile.name },
@@ -69,24 +60,6 @@ export class ProfileComponent implements OnInit {
     team: undefined,
     role: undefined,
   };
-
-  // public profileData;
-  // public profileImg?: string;
-
-  // public profileImg?: string = '/assets/images/profilePic.png';
-
-  // public profileData = [
-  //   { title: 'Fullname', data: 'Troy Cormier Glover' },
-  //   {
-  //     title: 'First Signin',
-  //     data: new Date(
-  //       'Tue Jul 19 2022 03:35:22 GMT+0100 (West Africa Standard Time)'
-  //     ).toDateString(),
-  //   },
-  //   { title: 'Contributions', data: 'Reported and resolved 36 Bugs' },
-  //   { title: 'Branch', data: 'Head Office' },
-  //   { title: 'Department', data: 'Cash and Teller' },
-  // ];
 
   public logoutHandler = (): void => {
     // permanently delete profile from local store

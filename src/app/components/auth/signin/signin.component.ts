@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/store/app.state';
-import { SetProfileAction } from 'src/app/store/actions/profile.actions';
-import { UsersService } from 'src/app/services/users.service';
+import { UsersService } from 'src/app/services/index';
 import { setLocalStorage } from 'src/app/libs/commonFunction';
+import { SetProfileAction } from 'src/app/store/actions/profile.actions';
 
 @Component({
   selector: 'app-signin',
@@ -26,17 +26,13 @@ export class SigninComponent implements OnInit {
     this.usersService.login(this.auth).subscribe((res) => {
       const profile = res[0];
       if (profile?.id) {
-        // console.log(profile);
+        // save profile to app
         this.store.dispatch(
           SetProfileAction({ payload: { auth: true, ...profile } })
         );
+        // save profile detail to local storage
         setLocalStorage({ auth: true, ...profile });
       }
     });
-
-    // usersService
-
-    // UsersService
-    // console.log(this.auth, 'Sdasdsa das ');
   };
 }

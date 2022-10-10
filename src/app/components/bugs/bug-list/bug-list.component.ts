@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { colors } from 'src/app/libs/appConstants';
-import { Bug, BugsStat, DashboardBug } from 'src/app/interface/Old-Bug';
+// import { Bug, BugsStat, DashboardBug } from 'src/app/interface/Old-Bug';
 // import { Bugs } from 'src/app/mock-database';
 
 import { BugsService } from '../../../services/bugs.service';
@@ -12,7 +12,8 @@ import { BugsService } from '../../../services/bugs.service';
   styleUrls: ['./bug-list.component.less'],
 })
 export class BugListsComponent implements OnInit {
-  public bugs: Bug[] = [];
+  // public bugs: Bug[] = [];
+  public bugs: any = [];
 
   // public bugsStat?: BugsStat[];
   public bugsStat?: any;
@@ -52,22 +53,35 @@ export class BugListsComponent implements OnInit {
 
   private getBugs = (page: number = 0) => {
     this.bugService.getBugs(page).subscribe((res) => {
-      const totalBugs = res.totalElements;
-      this.totalPages = res.totalPages;
+      const totalBugs = res.totalElements | 20;
+      this.totalPages = res.totalPages | 1;
 
-      const bugs = res.content.map((bug) => ({
+      // const bugs = res.content.map((bug) => ({
+      const bugs = res.map((bug) => ({
+        // ...bug,
+        // id: bug.bugId,
+        // description: bug.bugReview,
+        // status: bug.bugTreatmentStage?.toLowerCase(),
+        // severity: bug.severity?.toLowerCase(),
+        // created: bug.reportDate,
+        // platform: bug.platformses?.platformName,
+        // developer: {
+        //   id: bug.userAssignedToBug?.id,
+        //   name: `${bug.userAssignedToBug?.lastName} ${bug.userAssignedToBug?.firstName}`,
+        // },
+
         ...bug,
-        id: bug.bugId,
-        description: bug.bugReview,
-        status: bug.bugTreatmentStage?.toLowerCase(),
-        severity: bug.severity?.toLowerCase(),
-        created: bug.reportDate,
-        platform: bug.platformses?.platformName,
         developer: {
-          id: bug.userAssignedToBug?.id,
-          name: `${bug.userAssignedToBug?.lastName} ${bug.userAssignedToBug?.firstName}`,
+          id: bug.developer?.id,
+          name: bug.developer?.name,
+        },
+        reporter: {
+          id: bug.reporter?.id,
+          name: bug.reporter?.name,
         },
       }));
+
+      // console.log(bugs);
 
       this.bugsStat = {
         allBugs: totalBugs,
@@ -85,11 +99,12 @@ export class BugListsComponent implements OnInit {
         info: `Reported on ${new Date(bug.created).toDateString()}`,
         platform: `Platform: ${bug?.platform}`,
         severity: `Severity Status: ${bug?.severity}`,
-        reporter: {
-          name: '' || 'Unknown User',
-          id: '' || null,
-          img: '' || 'https://placeimg.com/100/100/people',
-        },
+        reporter: bug.reporter,
+        // {
+        //   name: '' || 'Unknown User',
+        //   id: '' || null,
+        //   img: '' || 'https://placeimg.com/100/100/people',
+        // },
         developer: {
           id: bug.developer.id,
           // ...bug.developer,

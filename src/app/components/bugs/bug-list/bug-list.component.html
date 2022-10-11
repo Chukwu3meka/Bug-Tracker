@@ -75,7 +75,7 @@
         <nz-divider
           (click)="displayBugHandler(bug.id)"
           nzPlain
-          [nzText]="bug.label"
+          [nzText]="bug.title"
           nzOrientation="left"
         ></nz-divider>
         <p (click)="displayBugHandler(bug.id)">{{ bug.description }}</p>
@@ -139,12 +139,11 @@
   </div>
 </div>
 
-<div *ngIf="bugData" class="drawer">
-  <!-- (click)="displayBugHandler()" -->
+<div *ngIf="!!bugId" class="drawer">
   <div>
     <main>
       <app-bug-details
-        [bugData]="bugData"
+        [bugId]="bugId"
         (closeDrawerHandler)="closeDrawerHandler()"
       ></app-bug-details>
     </main>

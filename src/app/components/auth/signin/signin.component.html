@@ -21,7 +21,12 @@
       </p>
 
       <nz-input-group nzAddOnAfterIcon="user" nzSize="large">
-        <input type="text" nz-input [(ngModel)]="auth.email" />
+        <input
+          type="text"
+          nz-input
+          [(ngModel)]="auth.email"
+          placeholder="Enter your email"
+        />
       </nz-input-group>
 
       <nz-input-group [nzSuffix]="suffixTemplate" nzSize="large">
@@ -29,7 +34,7 @@
           size="large"
           [type]="passwordVisible ? 'text' : 'password'"
           nz-input
-          placeholder="input password"
+          placeholder="Enter your password"
           [(ngModel)]="auth.password"
         />
       </nz-input-group>

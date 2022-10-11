@@ -17,4 +17,12 @@ export class PlatformsService {
       .get(`${apiUrl}/platforms`)
       .pipe(catchError((err) => handleHttpError(err)));
   }
+
+  getDevelopers({}): Observable<any> {
+    const a = this.http.get(`${apiUrl}/platforms`).subscribe((x) => {});
+
+    return this.http
+      .get(`${apiUrl}/platforms`)
+      .pipe(catchError((err) => handleHttpError(err)));
+  }
 }

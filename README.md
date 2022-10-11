@@ -24,3 +24,9 @@ for our loading page <!-- https://css-tricks.com/lets-make-a-fancy-but-uncomplic
 ### Todo
 
 1. All developers must belong to a team, such that only developers working on specific platform can be assigned
+
+<!-- test accounts -->
+<!-- admin@alienforest.com -->
+<!-- dev@alienforest.com -->
+<!-- user@alienforest.com -->
+<!-- all pass: 7777 -->

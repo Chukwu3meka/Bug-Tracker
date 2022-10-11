@@ -4,7 +4,7 @@
       "id": "4d75p7684z05-owf8",
       "severity": "high",
       "created": "Thu Aug 11 2022 11:16:00 GMT+0100 (West Africa Standard Time)",
-      "platform": "XPath",
+      "platform": 5,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -12,13 +12,15 @@
       },
       "title": "Velit voluptas harum.",
       "status": "open",
-      "description": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design. The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design. The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design. The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design."
+      "description": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design. The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design. The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design. The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design.",
+      "reo": 333,
+      "de vr": 3334
     },
     {
       "id": "4d75d7684f05-bbf8",
       "severity": "normal",
       "created": "Tue Jul 26 2022 10:22:48 GMT+0100 (West Africa Standard Time)",
-      "platform": "Mobile App",
+      "platform": 1,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -27,7 +29,7 @@
       "title": "Velit voluptas harum.",
       "status": "closed",
       "developer": {
-        "id": 20220010,
+        "id": 2,
         "img": "//joeschmoe.io/api/v1/random",
         "name": "Eugene Turcotte"
       },
@@ -37,7 +39,7 @@
       "id": "9809eb8c910e-86fc",
       "severity": "low",
       "created": "Thu Jun 02 2022 19:23:50 GMT+0100 (West Africa Standard Time)",
-      "platform": "Internet Banking",
+      "platform": 2,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -46,7 +48,7 @@
       "title": "Vel ut laudantium necessitatibus iusto earum.",
       "status": "closed",
       "developer": {
-        "id": 20220010,
+        "id": 4,
         "img": "//joeschmoe.io/api/v1/random",
         "name": "Rodolfo Bins"
       },
@@ -56,7 +58,7 @@
       "id": "b2b080ddb297-a8de",
       "severity": "high",
       "created": "Wed Jul 20 2022 13:07:58 GMT+0100 (West Africa Standard Time)",
-      "platform": "Form A",
+      "platform": 4,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -70,7 +72,7 @@
       "id": "cc60318c5a56-a802",
       "severity": "low",
       "created": "Thu Sep 23 2021 13:14:49 GMT+0100 (West Africa Standard Time)",
-      "platform": "Workflow",
+      "platform": 7,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -84,7 +86,7 @@
       "id": "13ae8ec4c695-8370",
       "severity": "low",
       "created": "Sun May 01 2022 11:48:28 GMT+0100 (West Africa Standard Time)",
-      "platform": "Form A",
+      "platform": 4,
       "reporter": {
         "id": 20220011,
         "img": "",
@@ -93,7 +95,7 @@
       "title": "Veritatis eius omnis et veritatis officiis qui unde.",
       "status": "pending",
       "developer": {
-        "id": 20220010,
+        "id": 4,
         "img": "//joeschmoe.io/api/v1/random",
         "name": "Spencer Kuvalis"
       },
@@ -103,7 +105,7 @@
       "id": "99bae23a27e8-b656",
       "severity": "low",
       "created": "Sat Oct 30 2021 02:50:42 GMT+0100 (West Africa Standard Time)",
-      "platform": "Workflow",
+      "platform": 7,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -117,7 +119,7 @@
       "id": "c2c9819464d1-8f1d",
       "severity": "normal",
       "created": "Wed Nov 24 2021 21:32:24 GMT+0100 (West Africa Standard Time)",
-      "platform": "Workflow",
+      "platform": 7,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -126,7 +128,7 @@
       "title": "Dolorem laboriosam velit sunt necessitatibus vel odit quidem saepe.",
       "status": "pending",
       "developer": {
-        "id": 20220010,
+        "id": 4,
         "img": "//joeschmoe.io/api/v1/random",
         "name": "Tara MacGyver"
       },
@@ -136,7 +138,7 @@
       "id": "1f59cda74dcb-9771",
       "severity": "normal",
       "created": "Fri Aug 27 2021 00:02:24 GMT+0100 (West Africa Standard Time)",
-      "platform": "Mobile App",
+      "platform": 1,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -145,7 +147,7 @@
       "title": "Est dicta modi quod in ad ab est sed.",
       "status": "pending",
       "developer": {
-        "id": 20220010,
+        "id": 2,
         "img": "//joeschmoe.io/api/v1/random",
         "name": "Hattie Graham"
       },
@@ -155,7 +157,7 @@
       "id": "300fce9032b0-8ad4",
       "severity": "high",
       "created": "Fri Sep 03 2021 02:39:20 GMT+0100 (West Africa Standard Time)",
-      "platform": "Mobile App",
+      "platform": 1,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -164,7 +166,7 @@
       "title": "Et laborum aut.",
       "status": "pending",
       "developer": {
-        "id": 20220010,
+        "id": 5,
         "img": "//joeschmoe.io/api/v1/random",
         "name": "Rex Gutmann"
       },
@@ -174,7 +176,7 @@
       "id": "e11ebbff95cf-8a56",
       "severity": "high",
       "created": "Mon Sep 20 2021 00:41:49 GMT+0100 (West Africa Standard Time)",
-      "platform": "Mobile App",
+      "platform": 1,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -183,7 +185,7 @@
       "title": "At molestiae corporis.",
       "status": "closed",
       "developer": {
-        "id": 20220010,
+        "id": 5,
         "img": "//joeschmoe.io/api/v1/random",
         "name": "Cynthia Collins"
       },
@@ -193,7 +195,7 @@
       "id": "dec5f25a6ae5-a124",
       "severity": "high",
       "created": "Tue Jul 12 2022 02:59:07 GMT+0100 (West Africa Standard Time)",
-      "platform": "Mobile App",
+      "platform": 1,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -202,7 +204,7 @@
       "title": "Veniam accusamus occaecati.",
       "status": "closed",
       "developer": {
-        "id": 20220010,
+        "id": 2,
         "img": "//joeschmoe.io/api/v1/random",
         "name": "Kari Bartell"
       },
@@ -211,7 +213,7 @@
     {
       "id": "820c48c17093-a842",
       "title": "Labore omnis fugit officiis temporibus delectus.",
-      "platform": "USSD",
+      "platform": 3,
       "severity": "high",
       "created": "Sun Feb 27 2022 03:04:24 GMT+0100 (West Africa Standard Time)",
       "reporter": {
@@ -226,7 +228,7 @@
       "id": "5d809a0e4cf8-96d1",
       "severity": "normal",
       "created": "Thu Apr 14 2022 03:12:01 GMT+0100 (West Africa Standard Time)",
-      "platform": "Appraisal",
+      "platform": 8,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -235,7 +237,7 @@
       "title": "Velit quia quam quasi qui tempore.",
       "status": "pending",
       "developer": {
-        "id": 20220010,
+        "id": 2,
         "img": "//joeschmoe.io/api/v1/random",
         "name": "Javier Torp"
       },
@@ -245,7 +247,7 @@
       "id": "531c037f9ba5-85e3",
       "severity": "normal",
       "created": "Mon Dec 20 2021 21:16:52 GMT+0100 (West Africa Standard Time)",
-      "platform": "Workflow",
+      "platform": 7,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -254,7 +256,7 @@
       "title": "Officiis est et commodi libero quidem repellat in non iusto.",
       "status": "pending",
       "developer": {
-        "id": 20220010,
+        "id": 2,
         "img": "//joeschmoe.io/api/v1/random",
         "name": "Brian Rogahn V"
       },
@@ -264,7 +266,7 @@
       "id": "dd5f7544e10c-b9eb",
       "severity": "normal",
       "created": "Tue Jun 14 2022 22:05:03 GMT+0100 (West Africa Standard Time)",
-      "platform": "Mobile App",
+      "platform": 1,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -278,7 +280,7 @@
       "id": "4c10f0c1ac98-a9ea",
       "severity": "normal",
       "created": "Mon Mar 14 2022 02:55:37 GMT+0100 (West Africa Standard Time)",
-      "platform": "Mobile App",
+      "platform": 1,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -292,7 +294,7 @@
       "id": "dbbc66a237f5-b780",
       "severity": "low",
       "created": "Sat Jul 23 2022 23:43:20 GMT+0100 (West Africa Standard Time)",
-      "platform": "Mobile App",
+      "platform": 1,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -306,7 +308,7 @@
       "id": "fd9cf2321659-a19f",
       "severity": "low",
       "created": "Wed Jul 20 2022 02:49:12 GMT+0100 (West Africa Standard Time)",
-      "platform": "Mobile App",
+      "platform": 1,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -320,7 +322,7 @@
       "id": "caa57cb83377-be58",
       "severity": "normal",
       "created": "Tue Aug 24 2021 12:15:57 GMT+0100 (West Africa Standard Time)",
-      "platform": "Workflow",
+      "platform": 7,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -334,7 +336,7 @@
       "id": "10034d5d8bee-b04d",
       "severity": "normal",
       "created": "Mon Oct 18 2021 08:49:25 GMT+0100 (West Africa Standard Time)",
-      "platform": "Mobile App",
+      "platform": 1,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -348,7 +350,7 @@
       "id": "c6a6e1d8d1a7-818f",
       "severity": "normal",
       "created": "Wed Jun 22 2022 16:21:46 GMT+0100 (West Africa Standard Time)",
-      "platform": "Form A",
+      "platform": 4,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -362,7 +364,7 @@
       "id": "7be33ace9761-8055",
       "severity": "normal",
       "created": "Thu Aug 12 2021 04:29:31 GMT+0100 (West Africa Standard Time)",
-      "platform": "Form A",
+      "platform": 4,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -376,7 +378,7 @@
       "id": "b79a3456f869-ae1c",
       "severity": "normal",
       "created": "Wed Dec 29 2021 08:10:12 GMT+0100 (West Africa Standard Time)",
-      "platform": "Form A",
+      "platform": 4,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -390,7 +392,7 @@
       "id": "86936eb68384-be4e",
       "severity": "normal",
       "created": "Thu Dec 23 2021 20:37:35 GMT+0100 (West Africa Standard Time)",
-      "platform": "Form A",
+      "platform": 4,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -399,7 +401,7 @@
       "title": "Quia quas unde amet.",
       "status": "pending",
       "developer": {
-        "id": 20220010,
+        "id": 2,
         "img": "//joeschmoe.io/api/v1/random",
         "name": "Damon Dicki"
       },
@@ -409,7 +411,7 @@
       "id": "08aa9a2e178c-9430",
       "severity": "normal",
       "created": "Mon Aug 01 2022 20:00:16 GMT+0100 (West Africa Standard Time)",
-      "platform": "Mobile App",
+      "platform": 1,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -418,7 +420,7 @@
       "title": "Corrupti deserunt aut ipsam ut sapiente non.",
       "status": "pending",
       "developer": {
-        "id": 20220010,
+        "id": 2,
         "img": "//joeschmoe.io/api/v1/random",
         "name": "Mrs. Dora Langosh"
       },
@@ -428,7 +430,7 @@
       "id": "f92a412bb86d-a7ce",
       "severity": "normal",
       "created": "Thu Apr 14 2022 09:40:29 GMT+0100 (West Africa Standard Time)",
-      "platform": "USSD",
+      "platform": 3,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -437,7 +439,7 @@
       "title": "In sit expedita.",
       "status": "pending",
       "developer": {
-        "id": 20220010,
+        "id": 2,
         "img": "//joeschmoe.io/api/v1/random",
         "name": "Juana Cassin"
       },
@@ -447,7 +449,7 @@
       "id": "caa3b6c10ff0-a7dc",
       "severity": "normal",
       "created": "Fri Dec 03 2021 20:14:46 GMT+0100 (West Africa Standard Time)",
-      "platform": "Mobile App",
+      "platform": 1,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -456,7 +458,7 @@
       "title": "Ea consectetur sint a illum quo quam.",
       "status": "pending",
       "developer": {
-        "id": 20220010,
+        "id": 2,
         "img": "//joeschmoe.io/api/v1/random",
         "name": "Laura O'Hara"
       },
@@ -466,7 +468,7 @@
       "id": "be8d8cdc1ab0-94a8",
       "severity": "normal",
       "created": "Wed Jul 13 2022 16:23:21 GMT+0100 (West Africa Standard Time)",
-      "platform": "Appraisal",
+      "platform": 8,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -480,7 +482,7 @@
       "id": "b75233bb3973-9018",
       "severity": "normal",
       "created": "Fri Jul 15 2022 08:06:08 GMT+0100 (West Africa Standard Time)",
-      "platform": "USSD",
+      "platform": 3,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -494,7 +496,7 @@
       "id": "6a4568d87d0e-be26",
       "severity": "low",
       "created": "Wed Jun 15 2022 08:28:01 GMT+0100 (West Africa Standard Time)",
-      "platform": "USSD",
+      "platform": 3,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -508,7 +510,7 @@
       "id": "7135dc270c78-9065",
       "severity": "low",
       "created": "Fri Jun 17 2022 10:18:05 GMT+0100 (West Africa Standard Time)",
-      "platform": "USSD",
+      "platform": 3,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -522,7 +524,7 @@
       "id": "4fe79af8d9e1-bf63",
       "severity": "normal",
       "created": "Thu Sep 23 2021 16:02:21 GMT+0100 (West Africa Standard Time)",
-      "platform": "USSD",
+      "platform": 3,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -536,7 +538,7 @@
       "id": "2f60dbd456e8-bf8e",
       "severity": "high",
       "created": "Thu Sep 16 2021 06:24:59 GMT+0100 (West Africa Standard Time)",
-      "platform": "Mobile App",
+      "platform": 1,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -545,7 +547,7 @@
       "title": "Nam veritatis molestiae et praesentium consequatur id maiores temporibus.",
       "status": "pending",
       "developer": {
-        "id": 20220010,
+        "id": 2,
         "img": "//joeschmoe.io/api/v1/random",
         "name": "Mrs. Sheila Marks"
       },
@@ -555,7 +557,7 @@
       "id": "7f92bb44698a-a214",
       "severity": "high",
       "created": "Sun May 29 2022 15:52:53 GMT+0100 (West Africa Standard Time)",
-      "platform": "Appraisal",
+      "platform": 8,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -564,7 +566,7 @@
       "title": "Et maxime quidem in blanditiis maiores.",
       "status": "pending",
       "developer": {
-        "id": 20220010,
+        "id": 2,
         "img": "//joeschmoe.io/api/v1/random",
         "name": "Leona Crooks"
       },
@@ -574,7 +576,7 @@
       "id": "95bc71427b96-aa95",
       "severity": "low",
       "created": "Sun Jul 10 2022 09:28:20 GMT+0100 (West Africa Standard Time)",
-      "platform": "Mobile App",
+      "platform": 1,
       "reporter": {
         "id": 20220011,
         "img": "https://placeimg.com/100/100/people",
@@ -583,7 +585,7 @@
       "title": "Voluptatem repellat odit.",
       "status": "closed",
       "developer": {
-        "id": 20220010,
+        "id": 2,
         "img": "//joeschmoe.io/api/v1/random",
         "name": "Camille Cronin"
       },
@@ -829,49 +831,59 @@
   "platforms": [
     {
       "id": 0,
-      "title": "Form M"
+      "title": "Form M",
+      "disabled": false
     },
     {
       "id": 1,
-      "title": "Mobile App"
+      "title": "Mobile App",
+      "disabled": false
     },
     {
       "id": 2,
-      "title": "Internet Banking"
+      "title": "Internet Banking",
+      "disabled": false
     },
     {
       "id": 3,
-      "title": "USSD"
+      "title": "USSD",
+      "disabled": false
     },
     {
       "id": 4,
-      "title": "FORM A"
+      "title": "FORM A",
+      "disabled": false
     },
     {
       "id": 5,
-      "title": "XPath"
+      "title": "x-Path",
+      "disabled": false
     },
     {
       "id": 6,
-      "title": "CIP"
+      "title": "CIP",
+      "disabled": false
     },
     {
       "id": 7,
-      "title": "Workflow"
+      "title": "Workflow",
+      "disabled": false
     },
     {
       "id": 8,
-      "title": "Appraisal"
+      "title": "Appraisal",
+      "disabled": false
     },
     {
       "id": 9,
-      "title": "Bug Tracker"
+      "title": "Bug Tracker",
+      "disabled": false
     }
   ],
   "teams": [
     {
       "id": 0,
-      "title": "Regular Banking",
+      "title": "Regular-Banking",
       "platforms": []
     },
     {
@@ -888,6 +900,11 @@
       "id": 3,
       "title": "Mobile App",
       "platforms": [7, 8, 9]
+    },
+    {
+      "id": 4,
+      "title": "Backend APIs",
+      "platforms": []
     }
   ],
   "notifications": [
@@ -1005,5 +1022,6 @@
       "date": "Mon Apr 25 2022 08:47:13 GMT+0100 (West Africa Standard Time)",
       "user": "6"
     }
-  ]
+  ],
+  "activities": []
 }

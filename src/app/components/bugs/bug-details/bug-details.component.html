@@ -1,4 +1,4 @@
-<div class="bug-details" *ngIf="!!bugData">
+<div class="bug-details" *ngIf="!!details">
   <div>
     <span
       nz-icon
@@ -29,7 +29,7 @@
   <nz-table
     #smallTable
     nzSize="small"
-    [nzData]="activities"
+    [nzData]="details.activities"
     [nzFrontPagination]="false"
   >
     <thead>
@@ -39,7 +39,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let data of activities">
+      <tr *ngFor="let data of details.activities">
         <td [width]="'200px'">{{ data.date }}</td>
         <td>{{ data.description }}</td>
       </tr>
@@ -47,24 +47,18 @@
   </nz-table>
 
   <!-- display this only if user is admin -->
+  <!-- <div *ngIf="!!details"> -->
   <div>
-    <!-- "severity": [
-      { "name": "Low", "id": "low" },
-      { "name": "Normal", "id": "normal" },
-      { "name": "High", "id": "high" }
-    ],
-     -->
-    <!-- nzSize="small" -->
     <nz-select
       [nzAllowClear]="false"
       id="developer"
       ngModel="developer"
-      [(ngModel)]="details.developer.id"
-      nzPlaceHolder="Assign Dveloper"
+      [(ngModel)]="details.developer"
+      nzPlaceHolder="Assign Developer"
     >
       <nz-option
         *ngFor="let developer of details.platformDevelopers"
-        [nzDisabled]="details.developer.id === developer.id"
+        [nzDisabled]="developer.id === details.developer.id"
         [nzValue]="developer.id"
         [nzLabel]="developer.name"
       ></nz-option>
@@ -73,10 +67,9 @@
     <button
       nz-button
       nzType="primary"
-      [disabled]="details.developer.id === currentDeveloper"
       (click)="assignDeveloper()"
+      [disabled]="details.developer === details.currentDeveloper"
     >
-      <!-- [nzLoading]="isLoadingOne" -->
       Assign developer & Update severity
     </button>
   </div>
@@ -97,4 +90,6 @@
   </div>
 </div>
 
-<div *ngIf="!bugData">loading...</div>
+<div class="loading" *ngIf="!details">
+  <app-loading></app-loading>
+</div>

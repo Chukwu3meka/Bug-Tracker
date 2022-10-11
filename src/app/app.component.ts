@@ -8,8 +8,11 @@ import { AppState } from 'src/app/store/app.state';
 import { ProfileModel } from 'src/app/store/models/index';
 import { getLocalStorage } from './libs/commonFunction';
 import { SetProfileAction } from './store/actions/profile.actions';
-import { SetTeamsAction } from './store/actions/constants.actions';
-import { TeamsService } from './services/index';
+import {
+  SetTeamsAction,
+  SetPlatformsAction,
+} from './store/actions/constants.actions';
+import { PlatformsService, TeamsService } from './services/index';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +26,8 @@ export class AppComponent implements OnInit {
     private store: Store<AppState>,
     private router: Router,
     private viewPortscroller: ViewportScroller,
-    private teamsService: TeamsService
+    private teamsService: TeamsService,
+    private platformsService: PlatformsService
   ) {
     //   this.store.select(fromStore.getAllChannels).pipe(
     //    filter(channels => channels.length),
@@ -73,9 +77,11 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.teamsService.getTeams().subscribe((res) => {
-      // console.log(res);
-      // getPlatforms
       this.store.dispatch(SetTeamsAction({ payload: res }));
+    });
+
+    this.platformsService.getPlatforms().subscribe((res) => {
+      this.store.dispatch(SetPlatformsAction({ payload: res }));
     });
 
     const profile = getLocalStorage();
@@ -93,7 +99,7 @@ export class AppComponent implements OnInit {
 
   public pageLoading: boolean = true;
   public appNotCompatible: string = '';
-  private wideScreenWidth: number = 1200;
+  private wideScreenWidth: number = 1220;
   private wideScreenHeight: number = 600;
 
   private pageLoadingHandler(): void {

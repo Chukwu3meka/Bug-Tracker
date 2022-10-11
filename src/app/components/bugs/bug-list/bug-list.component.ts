@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
 import { colors } from 'src/app/libs/appConstants';
-// import { Bug, BugsStat, DashboardBug } from 'src/app/interface/Old-Bug';
-// import { Bugs } from 'src/app/mock-database';
-
+import { AppState } from 'src/app/store/app.state';
+import { ConstantsModel } from 'src/app/store/models';
 import { BugsService } from '../../../services/bugs.service';
 
 @Component({
@@ -12,22 +13,27 @@ import { BugsService } from '../../../services/bugs.service';
   styleUrls: ['./bug-list.component.less'],
 })
 export class BugListsComponent implements OnInit {
-  // public bugs: Bug[] = [];
   public bugs: any = [];
-
-  // public bugsStat?: BugsStat[];
   public bugsStat?: any;
-
   public currentPage: number = 1;
   public totalPages: number = 2;
-
-  // public profileData: ProfileData = {};
   public profileData?: any;
-  // public bugData: BugData = {};
   public bugData?: any;
-
-  // public dashboardBugs: DashboardBug[] | undefined;
+  public bugId?: string;
   public dashboardBugs: any[] | undefined;
+  public constants: Observable<ConstantsModel>;
+  public platforms;
+
+  constructor(private store: Store<AppState>, private bugService: BugsService) {
+    this.constants = this.store.select('constants');
+  }
+
+  ngOnInit(): void {
+    this.getBugs();
+    this.constants.subscribe((constants) => {
+      this.platforms = constants.platforms;
+    });
+  }
 
   public nextPage = (page: string) => {
     if (page === '-' && this.currentPage > 1) {
@@ -39,11 +45,7 @@ export class BugListsComponent implements OnInit {
     }
   };
 
-  public closeDrawerHandler = () => {
-    this.profileData = undefined;
-    this.bugData = undefined;
-  };
-
+  public closeDrawerHandler = () => (this.bugId = undefined);
   public displayProfileHandler = (id?: number): void => {
     // console.log(id);
 
@@ -77,6 +79,7 @@ export class BugListsComponent implements OnInit {
         },
         reporter: {
           id: bug.reporter?.id,
+          img: bug.reporter?.img,
           name: bug.reporter?.name,
         },
       }));
@@ -92,14 +95,17 @@ export class BugListsComponent implements OnInit {
 
       this.dashboardBugs = bugs.map((bug) => ({
         id: bug.id,
-        label: bug.label,
-        description: bug.description,
-        color: colors[bug.status],
-        ticket: `Ticket ID #${null}`,
-        info: `Reported on ${new Date(bug.created).toDateString()}`,
-        platform: `Platform: ${bug?.platform}`,
-        severity: `Severity Status: ${bug?.severity}`,
+        title: bug.title,
         reporter: bug.reporter,
+        color: colors[bug.status],
+        ticket: `Ticket ID #${bug.id}`,
+        description: bug.description,
+
+        platform: `Platform: ${
+          this.platforms.find((x) => x.id === bug.platform).title
+        }`,
+        severity: `Severity Status: ${bug?.severity}`,
+        info: `Reported on ${new Date(bug.created).toDateString()}`,
         // {
         //   name: '' || 'Unknown User',
         //   id: '' || null,
@@ -117,53 +123,48 @@ export class BugListsComponent implements OnInit {
   };
 
   public displayBugHandler = (id?: string): void => {
-    // return;
+    this.bugId = id;
+    // console.log('DSfsfsd', id);
+    // this.bugService.getBug(id).subscribe((res) => {
+    //   const bug = res[0];
 
-    this.bugService.getBug(id).subscribe((res) => {
-      const bug = res[0];
-      console.log(id, bug.title);
+    //   if (!bug) return;
 
-      this.bugData = {
-        platformDevelopers: [
-          { id: '1', name: 'Clay Robel' },
-          { id: '2', name: 'Cathy Shanahan' },
-          { id: '3', name: 'Jill Jacobs' },
-          { id: '4', name: 'Deanna Bednar' },
-          { id: '5', name: 'Lloyd Muller`' },
-        ],
-        developer: bug.developer,
-        title: bug.title,
-        platform: bug.platform,
-        description: bug.description,
-        screenshots: [
-          'https://placeimg.com/200/200/people',
-          '/assets/images/zenith-logo.png',
-          '/assets/images/add-bug.png',
-          '/assets/images/profilePic.png',
-          'https://placeimg.com/200/200/people',
-          'https://placeimg.com/200/200/people',
-          'https://placeimg.com/200/200/people',
-          'https://placeimg.com/200/200/people',
-          'https://placeimg.com/200/200/people',
-          'https://placeimg.com/200/200/people',
-          '/assets/images/zenith-logo.png',
-        ],
-      };
+    //   this.bugData = {
+    //     platformDevelopers: [
+    //       { id: '1', name: 'Clay Robel' },
+    //       { id: '2', name: 'Cathy Shanahan' },
+    //       { id: '3', name: 'Jill Jacobs' },
+    //       { id: '4', name: 'Deanna Bednar' },
+    //       { id: '5', name: 'Lloyd Muller`' },
+    //     ],
+    //     developer: bug.developer,
+    //     title: bug.title,
+    //     platform: bug.platform,
+    //     description: bug.description,
+    //     screenshots: [
+    //       'https://placeimg.com/200/200/people',
+    //       '/assets/images/zenith-logo.png',
+    //       '/assets/images/add-bug.png',
+    //       '/assets/images/profilePic.png',
+    //       'https://placeimg.com/200/200/people',
+    //       'https://placeimg.com/200/200/people',
+    //       'https://placeimg.com/200/200/people',
+    //       'https://placeimg.com/200/200/people',
+    //       'https://placeimg.com/200/200/people',
+    //       'https://placeimg.com/200/200/people',
+    //       '/assets/images/zenith-logo.png',
+    //     ],
+    //   };
 
-      // this.currentDeveloper = bug.id;
+    //   // this.currentDeveloper = bug.id;
 
-      // }
+    //   // }
 
-      // console.log(id, bug);
-    });
+    //   // console.log(id, bug);
+    // });
 
     // if (!id) this.bugData = undefined;
     // if (id) this.bugData = {};
   };
-
-  constructor(private bugService: BugsService) {}
-
-  ngOnInit(): void {
-    setTimeout(() => this.getBugs(), 1500);
-  }
 }

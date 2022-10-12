@@ -9,7 +9,12 @@ import {
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { DateAgoPipe } from 'src/app/pipes/dateago.pipe';
-import { BugsService } from 'src/app/services';
+import {
+  BugsService,
+  PlatformsService,
+  TeamsService,
+  UsersService,
+} from 'src/app/services';
 import { AppState } from 'src/app/store/app.state';
 import { ConstantsModel } from 'src/app/store/models';
 
@@ -25,7 +30,12 @@ export class BugDetailsComponent implements OnInit {
   public platforms;
   public constants: Observable<ConstantsModel>;
 
-  constructor(private store: Store<AppState>, private bugService: BugsService) {
+  constructor(
+    private store: Store<AppState>,
+    private bugService: BugsService,
+    private usersService: UsersService,
+    private teamsService: TeamsService
+  ) {
     this.constants = this.store.select('constants');
   }
 
@@ -39,47 +49,51 @@ export class BugDetailsComponent implements OnInit {
     if (typeof this.bugId !== 'undefined') {
       this.bugService.getBug(this.bugId).subscribe((res) => {
         const bug = res[0];
-
         if (!bug) return;
 
-        console.log(bug.developer);
+        // get teams incharge of bugs
+        this.teamsService.getTeams().subscribe((teams) => {
+          const { id: teamId } = teams?.find((x) =>
+            x.platforms.includes(bug.platform)
+          );
 
-        this.details = {
-          platformDevelopers: [
-            { id: '1', name: 'Clay Robel' },
-            { id: '2', name: 'Cathy Shanahan' },
-            { id: '3', name: 'Jill Jacobs' },
-            { id: '4', name: 'Deanna Bednar' },
-            { id: '5', name: 'Lloyd Muller`' },
-          ],
-          developer: bug.developer?.id || 0,
-          title: bug.title,
-          platform: this.platforms.find((x) => x.id === bug.platform).title,
-          description: bug.description,
-          screenshots: [
-            'https://placeimg.com/200/200/people',
-            '/assets/images/add-bug.png',
-            'https://placeimg.com/200/200/people',
-            '/assets/images/zenith-logo.png',
-            'https://placeimg.com/200/200/people',
-            'https://placeimg.com/200/200/people',
-            '/assets/images/profilePic.png',
-            'https://placeimg.com/200/200/people',
-            'https://placeimg.com/200/200/people',
-            '/assets/images/zenith-logo.png',
-            'https://placeimg.com/200/200/people',
-          ],
-          activities: [...data]
-            .sort(
-              (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-            )
-            .map(({ date, description }) => ({
-              date: new DateAgoPipe().transform(date),
-              description,
-            })),
+          this.usersService.getTeamDeveloper(teamId).subscribe((developers) => {
+            // console.log({ a: bug.platform, teamId, developers });
 
-          currentDeveloper: bug.developer?.id || 0,
-        };
+            this.details = {
+              id: bug.id,
+              developers,
+              developer: bug.developer?.id || 0,
+              title: bug.title,
+              platform: this.platforms.find((x) => x.id === bug.platform).title,
+              description: bug.description,
+              screenshots: [
+                'https://placeimg.com/200/200/people',
+                '/assets/images/add-bug.png',
+                'https://placeimg.com/200/200/people',
+                '/assets/images/zenith-logo.png',
+                'https://placeimg.com/200/200/people',
+                'https://placeimg.com/200/200/people',
+                '/assets/images/profilePic.png',
+                'https://placeimg.com/200/200/people',
+                'https://placeimg.com/200/200/people',
+                '/assets/images/zenith-logo.png',
+                'https://placeimg.com/200/200/people',
+              ],
+              activities: [...data]
+                .sort(
+                  (a, b) =>
+                    new Date(b.date).getTime() - new Date(a.date).getTime()
+                )
+                .map(({ date, description }) => ({
+                  date: new DateAgoPipe().transform(date),
+                  description,
+                })),
+
+              pendingDeveloper: bug.developer?.id || 0,
+            };
+          });
+        });
       });
     }
   }
@@ -87,16 +101,36 @@ export class BugDetailsComponent implements OnInit {
   // public currentDeveloper = 3;
 
   public assignDeveloper = () => {
-    console.log({
-      'new dev': this.details.developer,
-      'current dev': this.details.currentDeveloper,
-    });
+    // developer::: stand for previously assigned developer which can be new for new bugs
+    // pendingDeveloper::: stands for recently selected developer, who's expected to accept assignment
 
-    // console.log('public assignDeveloper = () => {');
-    // this.details.currentDeveloper = this.details.developer;
-    // save to database here
-    // this.currentDeveloper = this.details.developer.id;
-    // this.currentDeveloper = this.details.developer.id;
+    this.details.developer = this.details.pendingDeveloper;
+
+    this.usersService
+      .getDeveloper(this.details.pendingDeveloper)
+      .subscribe((res) => {
+        const developer = res[0];
+
+        // console.log({
+        //   developer: {
+        //     id: this.details.pendingDeveloper,
+        //     img: developer.img,
+        //     name: developer.name,
+        //   },
+        //   bug: this.details.id,
+        // });
+
+        this.bugService.assignDeveloperToBug({
+          developer: {
+            id: this.details.pendingDeveloper,
+            img: developer.img,
+            name: developer.name,
+          },
+          bug: this.details.id,
+        });
+      }); // assignDeveloperToBug
+
+    // this.details.pendingDeveloper
   };
 
   public zoomImage;

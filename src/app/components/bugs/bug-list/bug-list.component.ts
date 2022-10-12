@@ -13,16 +13,16 @@ import { BugsService } from '../../../services/bugs.service';
   styleUrls: ['./bug-list.component.less'],
 })
 export class BugListsComponent implements OnInit {
-  public bugs: any = [];
-  public bugsStat?: any;
-  public currentPage: number = 1;
-  public totalPages: number = 2;
-  public profileData?: any;
+  public platforms;
   public bugData?: any;
   public bugId?: string;
+  public bugs: any = [];
+  public bugsStat?: any;
+  public profileData?: any;
+  public totalPages: number = 2;
+  public currentPage: number = 1;
   public dashboardBugs: any[] | undefined;
   public constants: Observable<ConstantsModel>;
-  public platforms;
 
   constructor(private store: Store<AppState>, private bugService: BugsService) {
     this.constants = this.store.select('constants');
@@ -46,6 +46,7 @@ export class BugListsComponent implements OnInit {
   };
 
   public closeDrawerHandler = () => (this.bugId = undefined);
+
   public displayProfileHandler = (id?: number): void => {
     // console.log(id);
 

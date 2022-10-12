@@ -40,7 +40,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let data of details.activities">
-        <td [width]="'200px'">{{ data.date }}</td>
+        <td [width]="'120px'">{{ data.date }}</td>
         <td>{{ data.description }}</td>
       </tr>
     </tbody>
@@ -49,15 +49,21 @@
   <!-- display this only if user is admin -->
   <!-- <div *ngIf="!!details"> -->
   <div>
-    <nz-select
+    <!-- [(ngModel)]="details.developer" -->
+    <!-- <nz-select
       [nzAllowClear]="false"
       id="developer"
-      ngModel="developer"
-      [(ngModel)]="details.developer"
+      [ngModel]="details.pendingDeveloper"
       nzPlaceHolder="Assign Developer"
+    > -->
+    <nz-select
+      nzShowSearch
+      [nzAllowClear]="false"
+      nzPlaceHolder="Select a new developer"
+      [(ngModel)]="details.pendingDeveloper"
     >
       <nz-option
-        *ngFor="let developer of details.platformDevelopers"
+        *ngFor="let developer of details.developers"
         [nzDisabled]="developer.id === details.developer.id"
         [nzValue]="developer.id"
         [nzLabel]="developer.name"
@@ -68,7 +74,7 @@
       nz-button
       nzType="primary"
       (click)="assignDeveloper()"
-      [disabled]="details.developer === details.currentDeveloper"
+      [disabled]="details.developer === details.pendingDeveloper"
     >
       Assign developer & Update severity
     </button>

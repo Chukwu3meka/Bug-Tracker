@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { catchError } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
@@ -18,11 +18,22 @@ export class PlatformsService {
       .pipe(catchError((err) => handleHttpError(err)));
   }
 
-  getDevelopers({}): Observable<any> {
-    const a = this.http.get(`${apiUrl}/platforms`).subscribe((x) => {});
+  // // getDevelopers(platform): Observable<any> {
+  // getDevelopers(platform): Observable<any> {
+  //   const a = of(
+  //     // return this.http
+  //     this.http.get(`${apiUrl}/teams`).subscribe((teams: any) => {
+  //       const { id: teamId } = teams?.find((x) =>
+  //         x.platforms.includes(platform)
+  //       );
 
-    return this.http
-      .get(`${apiUrl}/platforms`)
-      .pipe(catchError((err) => handleHttpError(err)));
-  }
+  //       return this.http
+  //         .get(`${apiUrl}/users?team=${teamId}`)
+  //         .pipe(catchError((err) => handleHttpError(err)))
+  //         .subscribe((developers) => of(developers));
+  //     })
+  //   );
+
+  //   return a;
+  // }
 }

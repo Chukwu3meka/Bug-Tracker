@@ -12,3 +12,4 @@ export const colors = {
 };
 
 export const apiUrl = 'http://localhost:5000';
+export const apiDelay: number = 1000;

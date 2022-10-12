@@ -4,7 +4,7 @@ import { catchError, delay } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { handleHttpError, httpOptions } from '../libs/commonFunction';
-import { apiUrl } from '../libs/appConstants';
+import { apiDelay, apiUrl } from '../libs/appConstants';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +16,7 @@ export class UsersService {
     return this.http
       .get(`${apiUrl}/users?email=${email}&password=${password}`)
       .pipe(catchError((err) => handleHttpError(err)))
-      .pipe(delay(2000));
+      .pipe(delay(apiDelay));
   }
 
   reset(email): Observable<any> {
@@ -30,6 +30,22 @@ export class UsersService {
       }
     });
 
-    return of('success').pipe(delay(2000));
+    return of('success').pipe(delay(apiDelay));
+  }
+
+  // get developers belonging to a particular team
+  getTeamDeveloper(teamId): Observable<any> {
+    return this.http
+      .get(`${apiUrl}/users?team=${teamId}`)
+      .pipe(delay(apiDelay))
+      .pipe(catchError((err) => handleHttpError(err)));
+  }
+
+  // get developers belonging to a particular team
+  getDeveloper(developer): Observable<any> {
+    return this.http
+      .get(`${apiUrl}/users?id=${developer}`)
+      .pipe(delay(apiDelay))
+      .pipe(catchError((err) => handleHttpError(err)));
   }
 }

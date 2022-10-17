@@ -22,12 +22,20 @@ import { PlatformsService, TeamsService } from './services/index';
 export class AppComponent implements OnInit {
   profile: Observable<ProfileModel>;
 
+  public authorised: boolean = !true;
+  public authPage: string = 'signin';
+
+  public pageLoading: boolean = true;
+  public appNotCompatible: string = '';
+  private wideScreenWidth: number = 1200;
+  private wideScreenHeight: number = 560;
+
   constructor(
-    private store: Store<AppState>,
     private router: Router,
-    private viewPortscroller: ViewportScroller,
+    private store: Store<AppState>,
     private teamsService: TeamsService,
-    private platformsService: PlatformsService
+    private platformsService: PlatformsService,
+    private viewPortscroller: ViewportScroller
   ) {
     //   this.store.select(fromStore.getAllChannels).pipe(
     //    filter(channels => channels.length),
@@ -36,8 +44,6 @@ export class AppComponent implements OnInit {
     //  );
 
     this.profile = store.select('profile');
-
-    // .pipe((_ => _.newField !== undefined))
 
     this.profile.subscribe(({ auth }) => {
       this.authorised = auth;
@@ -94,15 +100,6 @@ export class AppComponent implements OnInit {
     }
     this.pageLoadingHandler();
   }
-
-  public authorised: boolean = !true;
-  public authPage: string = 'signin';
-
-  public pageLoading: boolean = true;
-  public appNotCompatible: string = '';
-  private wideScreenWidth: number = 1220;
-  private wideScreenHeight: number = 560;
-
   private pageLoadingHandler(): void {
     setTimeout(() => {
       this.pageLoading = false;

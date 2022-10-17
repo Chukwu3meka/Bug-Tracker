@@ -1,6 +1,26 @@
 @import "/src/app/libs/less/mixinFunctions.less";
 @import "/src/app/libs/less/variables.less";
 
+.bugsStat {
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 15px 10px;
+  .flex( @justify:space-between;  @align:stretch);
+  gap: 15px;
+  & > div:nth-of-type(1) {
+    .bugStatStyle(@allBugs);
+  }
+  & > div:nth-of-type(2) {
+    .bugStatStyle(@openBugs);
+  }
+  & > div:nth-of-type(3) {
+    .bugStatStyle(@closedBugs);
+  }
+  & > div:nth-of-type(4) {
+    .bugStatStyle(@pendingBugs);
+  }
+}
+
 .bugStatStyle(@color) {
   border-top: 8px solid @color;
   max-width: 300px;
@@ -28,26 +48,5 @@
     color: darken(@secondary, 10%);
     font-weight: 600;
     margin: 5px 0 -5px;
-  }
-}
-
-.bugsStat {
-  border-radius: 10px;
-  background-color: #fff;
-  padding: 20px;
-  .flex( @justify:space-between;  @align:stretch);
-  gap: 20px;
-
-  & > div:nth-of-type(1) {
-    .bugStatStyle(@allBugs);
-  }
-  & > div:nth-of-type(2) {
-    .bugStatStyle(@openBugs);
-  }
-  & > div:nth-of-type(3) {
-    .bugStatStyle(@closedBugs);
-  }
-  & > div:nth-of-type(4) {
-    .bugStatStyle(@pendingBugs);
   }
 }

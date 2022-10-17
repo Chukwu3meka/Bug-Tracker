@@ -4,7 +4,7 @@ import { catchError } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 
 import { handleHttpError } from '../libs/commonFunction';
-import { apiUrl } from '../libs/appConstants';
+import { localApiUrl } from '../libs/appConstants';
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +14,7 @@ export class NotificationService {
 
   getNotification(id): Observable<any> {
     return this.http
-      .get(`${apiUrl}/notifications?user=${id}`)
+      .get(`${localApiUrl}/notifications?user=${id}`)
       .pipe(catchError((err) => handleHttpError(err)));
   }
 }

@@ -77,6 +77,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.teamsService.getTeams().subscribe((res) => {
+      // console.log(res);
       this.store.dispatch(SetTeamsAction({ payload: res }));
     });
 
@@ -100,7 +101,7 @@ export class AppComponent implements OnInit {
   public pageLoading: boolean = true;
   public appNotCompatible: string = '';
   private wideScreenWidth: number = 1220;
-  private wideScreenHeight: number = 600;
+  private wideScreenHeight: number = 560;
 
   private pageLoadingHandler(): void {
     setTimeout(() => {

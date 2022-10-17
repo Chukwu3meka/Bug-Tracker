@@ -15,3 +15,6 @@ private lastScrollTop: number = 0;
   this.headerHidden = !(verticalOffset < this.lastScrollTop);
   this.lastScrollTop = verticalOffset;
 }
+
+
+

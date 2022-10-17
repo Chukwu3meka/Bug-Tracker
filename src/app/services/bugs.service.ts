@@ -8,7 +8,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 // import { colors } from 'libs/constants';
 import { Observable, throwError, of } from 'rxjs';
 import { catchError, delay } from 'rxjs/operators';
-import { apiDelay, apiUrl } from '../libs/appConstants';
+import { apiDelay, localApiUrl } from '../libs/appConstants';
 import { handleHttpError, httpOptions } from '../libs/commonFunction';
 
 @Injectable({
@@ -19,35 +19,35 @@ export class BugsService {
 
   getBug(id): Observable<any> {
     return this.http
-      .get(`${apiUrl}/bugs?id=${id}`)
+      .get(`${localApiUrl}/bugs?id=${id}`)
       .pipe(delay(apiDelay))
       .pipe(catchError((err) => handleHttpError(err)));
   }
 
   getAllBugs(): Observable<any> {
     return this.http
-      .get(`${apiUrl}/bugs`)
+      .get(`${localApiUrl}/bugs`)
       .pipe(catchError((err) => handleHttpError(err)));
   }
 
   //       bug/pages?page=${}`,
   getBugs(page: number = 1): Observable<any> {
     return this.http
-      .get(`${apiUrl}/bugs?_page=${page}&_limit=20`)
+      .get(`${localApiUrl}/bugs?_page=${page}&_limit=20`)
       .pipe(delay(apiDelay))
       .pipe(catchError((err) => handleHttpError(err)));
   }
 
   getDailyBugReport(): Observable<any> {
     return this.http
-      .get(`${apiUrl}/dailyBugReport`)
+      .get(`${localApiUrl}/dailyBugReport`)
       .pipe(catchError((err) => handleHttpError(err)));
   }
 
   assignDeveloperToBug({ developer, bug }): Observable<any> {
     console.log({ developer, bug });
     this.http.patch(
-      `${apiUrl}/bugs/${bug}`,
+      `${localApiUrl}/bugs/${bug}`,
       {
         a: 'ddd',
         //

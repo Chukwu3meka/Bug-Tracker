@@ -882,27 +882,32 @@
     {
       "id": 0,
       "title": "Regular-Banking",
-      "platforms": []
+      "platforms": [],
+      "disabled": false
     },
     {
       "id": 1,
       "title": "Trade Service",
-      "platforms": [1, 2, 3]
+      "platforms": [1, 2, 3],
+      "disabled": false
     },
     {
       "id": 2,
       "title": "E-Channel",
-      "platforms": [4, 5, 6]
+      "platforms": [4, 5, 6],
+      "disabled": false
     },
     {
       "id": 3,
       "title": "Mobile App",
-      "platforms": [7]
+      "platforms": [7],
+      "disabled": false
     },
     {
       "id": 4,
       "title": "Backend APIs",
-      "platforms": [8, 9]
+      "platforms": [8, 9],
+      "disabled": false
     }
   ],
   "notifications": [

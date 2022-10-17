@@ -25,7 +25,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { BugListsComponent } from './components/bugs/bug-list/bug-list.component';
 import { BugStatComponent } from './components/bugs/bug-stat/bug-stat.component';
 import { DateAgoPipe } from './pipes/dateago.pipe';
-import { SelectOptionsComponent } from './components/bugs/select-options/select-options.component';
+// import { AdminPanel } from './components/bugs/select-options/select-options.component';
 import { LoadingComponent } from './components/layout/loading/loading.component';
 import { BugDetailsComponent } from './components/bugs/bug-details/bug-details.component';
 import { SigninComponent } from './components/auth/signin/signin.component';
@@ -37,6 +37,14 @@ import { StoreModule } from '@ngrx/store';
 // import { ProfileReducer } from './store/reducers/profile.reducer';
 // import { TeamsReducer } from './store/reducers/teams.reducer';
 import { ConstantsReducer, ProfileReducer } from './store/reducers/index';
+import { PlatformsComponent } from './components/admin/platforms/platforms.component';
+import { TeamsComponent } from './components/admin/teams/teams.component';
+// import { ContainerComponent } from './components/admin/container/container.component';
+// import { PanelComponent } from './components/admin/panel/panel.component';
+import { PortalComponent } from './components/admin/portal/portal.component';
+import { AdminsComponent } from './components/admin/admins/admins.component';
+import { UsersComponent } from './components/admin/users/users.component';
+import { DevelopersComponent } from './components/admin/developers/developers.component';
 // import { ProfileReducer } from './store/reducers/profile.reducer';
 // import { FileuploadComponent } from './components/fileupload/fileupload.component';
 
@@ -55,12 +63,20 @@ registerLocaleData(en);
     BugListsComponent,
     BugStatComponent,
     DateAgoPipe,
-    SelectOptionsComponent,
+    // AdminPanel,
     LoadingComponent,
     BugDetailsComponent,
     SigninComponent,
     SignupComponent,
     ResetComponent,
+    PlatformsComponent,
+    TeamsComponent,
+    // ContainerComponent,
+    // PanelComponent,
+    PortalComponent,
+    AdminsComponent,
+    UsersComponent,
+    DevelopersComponent,
   ],
   imports: [
     StoreModule,

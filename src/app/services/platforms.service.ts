@@ -4,7 +4,7 @@ import { catchError } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 
 import { handleHttpError } from '../libs/commonFunction';
-import { apiUrl } from '../libs/appConstants';
+import { localApiUrl } from '../libs/appConstants';
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +14,7 @@ export class PlatformsService {
 
   getPlatforms(): Observable<any> {
     return this.http
-      .get(`${apiUrl}/platforms`)
+      .get(`${localApiUrl}/platforms`)
       .pipe(catchError((err) => handleHttpError(err)));
   }
 
@@ -22,13 +22,13 @@ export class PlatformsService {
   // getDevelopers(platform): Observable<any> {
   //   const a = of(
   //     // return this.http
-  //     this.http.get(`${apiUrl}/teams`).subscribe((teams: any) => {
+  //     this.http.get(`${localApiUrl}/teams`).subscribe((teams: any) => {
   //       const { id: teamId } = teams?.find((x) =>
   //         x.platforms.includes(platform)
   //       );
 
   //       return this.http
-  //         .get(`${apiUrl}/users?team=${teamId}`)
+  //         .get(`${localApiUrl}/users?team=${teamId}`)
   //         .pipe(catchError((err) => handleHttpError(err)))
   //         .subscribe((developers) => of(developers));
   //     })

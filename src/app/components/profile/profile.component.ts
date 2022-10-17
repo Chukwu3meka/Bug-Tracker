@@ -24,29 +24,29 @@ export class ProfileComponent implements OnInit {
     let teams;
     this.constants.subscribe((constants) => (teams = constants.teams));
 
-    this.profile.subscribe((profile) => {
+    this.profile.subscribe((auth) => {
       this.profileData = {
-        img: profile.img,
-        role: profile.role,
+        img: auth.img,
+        role: auth.role,
 
         list: [
-          { title: 'Fullname', data: profile.name },
+          { title: 'Fullname', data: auth.name },
           {
             title: 'First Signin',
-            data: new Date(`${profile.dateCreated}`).toDateString(),
+            data: new Date(`${auth.dateCreated}`).toDateString(),
           },
           {
             title: 'Contributions',
-            data: `Reported and resolved ${profile.contributions} Bugs`,
+            data: `Reported and resolved ${auth.contributions} Bugs`,
           },
           {
             title: 'Department',
-            data: profile.department ? 'Info Tech' : 'Non InfoTech',
+            data: auth.department ? 'Info Tech' : 'Non InfoTech',
           },
           {
             title: 'Team',
-            data: profile.department
-              ? teams[`${profile.team}`].title
+            data: auth.department
+              ? teams[`${auth.team}`].title
               : 'Regular Banking',
           },
         ],

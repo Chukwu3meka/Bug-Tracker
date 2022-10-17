@@ -1,4 +1,4 @@
-import { ViewportScroller } from '@angular/common';
+import { ViewportScroller, Location } from '@angular/common';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 
@@ -24,6 +24,10 @@ export class AppComponent implements OnInit {
 
   public authorised: boolean = !true;
   public authPage: string = 'signin';
+  public authData = {
+    role: 'user',
+    authorised: false,
+  };
 
   public pageLoading: boolean = true;
   public appNotCompatible: string = '';
@@ -32,21 +36,34 @@ export class AppComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private _location: Location,
     private store: Store<AppState>,
     private teamsService: TeamsService,
     private platformsService: PlatformsService,
     private viewPortscroller: ViewportScroller
   ) {
-    //   this.store.select(fromStore.getAllChannels).pipe(
-    //    filter(channels => channels.length),
-    //    // channels.length should always be truthy at this point
-    //    tap(channels => console.log('channels', !!channels.length, channels),
-    //  );
+    this.teamsService.getTeams().subscribe((res) => {
+      this.store.dispatch(SetTeamsAction({ payload: res }));
+    });
+
+    this.platformsService.getPlatforms().subscribe((res) => {
+      this.store.dispatch(SetPlatformsAction({ payload: res }));
+    });
+
+    const profile = getLocalStorage();
+    // check if user auth was saved to local storage
+    if (profile?.auth) {
+      this.store.dispatch(
+        SetProfileAction({ payload: { auth: true, ...profile } })
+      );
+    }
+    this.pageLoadingHandler();
 
     this.profile = store.select('profile');
 
-    this.profile.subscribe(({ auth }) => {
-      this.authorised = auth;
+    this.profile.subscribe(({ auth, role }) => {
+      this.authData.authorised = auth;
+      this.authData.role = role || 'user';
 
       if (['/signup', '/signin', '/reset'].includes(this.router.url))
         this.router.navigate(['/']);
@@ -55,17 +72,26 @@ export class AppComponent implements OnInit {
     this.router.events.forEach((event) => {
       if (event instanceof NavigationStart) {
         if (
-          this.authorised &&
+          this.authData.authorised &&
           ['/signup', '/signin', '/reset'].includes(event.url)
         ) {
           // If user is authenticated and trying to visit an auth route, Redirect him back to homepage
           this.router.navigate(['/']);
         }
 
+        // if non-admin is trying to access admin page, redirect
+        if (this.authData.role !== 'admin' && '/admin' === event.url)
+          this._location.back();
+
+        // this.authData.role
+
         if (['/signup', '/signin', '/reset'].includes(event.url))
           this.authPage = event.url.replace('/', '');
 
-        // console.log(this.authPage);
+        // if (['/signup', '/signin', '/reset'].includes(event.url))
+        // this.authPage = event.url.replace('/', '');
+
+        // console.log(this.profile);
 
         this.viewPortscroller.scrollToPosition([0, 0]); // <= scroll to op on route change
         this.pageLoadingHandler();
@@ -82,24 +108,24 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.teamsService.getTeams().subscribe((res) => {
-      // console.log(res);
-      this.store.dispatch(SetTeamsAction({ payload: res }));
-    });
-
-    this.platformsService.getPlatforms().subscribe((res) => {
-      this.store.dispatch(SetPlatformsAction({ payload: res }));
-    });
-
-    const profile = getLocalStorage();
-    // check if user auth was saved to local storage
-    if (profile?.auth) {
-      this.store.dispatch(
-        SetProfileAction({ payload: { auth: true, ...profile } })
-      );
-    }
-    this.pageLoadingHandler();
+    // this.teamsService.getTeams().subscribe((res) => {
+    //   // console.log(res);
+    //   console.log(res);
+    //   this.store.dispatch(SetTeamsAction({ payload: res }));
+    // });
+    // this.platformsService.getPlatforms().subscribe((res) => {
+    //   this.store.dispatch(SetPlatformsAction({ payload: res }));
+    // });
+    // const profile = getLocalStorage();
+    // // check if user auth was saved to local storage
+    // if (profile?.auth) {
+    //   this.store.dispatch(
+    //     SetProfileAction({ payload: { auth: true, ...profile } })
+    //   );
+    // }
+    // this.pageLoadingHandler();
   }
+
   private pageLoadingHandler(): void {
     setTimeout(() => {
       this.pageLoading = false;

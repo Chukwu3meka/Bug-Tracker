@@ -1,8 +1,8 @@
 <!-- check if viewport is wide enough and browser is compatible with app -->
 <div [ngSwitch]="appNotCompatible">
   <div *ngSwitchCase="''">
-    <!-- check if user is authorised to use app -->
-    <div class="app-layout" *ngIf="authorised">
+    <!-- check if user is authData.authorised to use app -->
+    <div class="app-layout" *ngIf="authData.authorised">
       <app-header></app-header>
       <div class="app-content">
         <app-sidebar></app-sidebar>
@@ -13,7 +13,7 @@
       </div>
     </div>
 
-    <div *ngIf="!authorised" [ngSwitch]="authPage">
+    <div *ngIf="!authData.authorised" [ngSwitch]="authPage">
       <app-signup *ngSwitchCase="'signup'"></app-signup>
       <app-reset *ngSwitchCase="'reset'"></app-reset>
       <app-signin *ngSwitchDefault></app-signin>

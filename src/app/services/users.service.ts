@@ -4,13 +4,32 @@ import { catchError, delay } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { handleHttpError, httpOptions } from '../libs/commonFunction';
-import { apiDelay, localApiUrl } from '../libs/appConstants';
+import { apiDelay, localApiUrl, publicApiUrl } from '../libs/appConstants';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UsersService {
   constructor(private http: HttpClient) {}
+
+  signup({ firstName, lastName, email, password }): Observable<any> {
+    return (
+      this.http
+        // .get(`${localApiUrl}/users?email=${email}&password=${password}`)
+        .post(
+          `${publicApiUrl}/usersignup/save`,
+          {
+            firstName,
+            lastName,
+            email,
+            password,
+          },
+          httpOptions({ HttpHeaders })
+        )
+        .pipe(catchError((err) => handleHttpError(err)))
+        .pipe(delay(apiDelay))
+    );
+  }
 
   login({ email, password }): Observable<any> {
     return this.http

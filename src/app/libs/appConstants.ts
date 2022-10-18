@@ -12,6 +12,7 @@ export const colors = {
 };
 
 // export const localApiUrl = 'http://localhost:5000';
-export const localApiUrl = 'http://10.128.32.201:5000';
-export const publicApiUrl = '10.128.32.247:8080/api/v1';
+export const localApiUrl = 'http://10.128.32.201:4201';
+export const publicApiUrl = 'http://10.128.32.212:8080/api/v1';
+
 export const apiDelay: number = 1000;

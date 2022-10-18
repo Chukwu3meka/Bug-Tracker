@@ -3,14 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "dev-local": "ng serve",
-    "dev-public": "ng serve --host=10.128.32.201 --disable-host-check",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "local-server": "json-server --watch ./src/app/libs/mockdb.json  --port 5000",
-    "public-server": "json-server --watch ./src/app/libs/mockdb.json --host=10.128.32.201   --port 5000",
+    "dev1": "ng serve",
+    "dev2": "json-server --watch ./src/app/libs/mockdb.json  --port 4201",
+    "dev3": "ng serve --host=10.128.32.201 --disable-host-check",
+    "dev4": "json-server --watch ./src/app/libs/mockdb.json --host=10.128.32.201   --port 4201",
     "n1": "ng serve --host=0.0.0.0 --port=5999 --disable-host-check",
     "n11": "$ ng serve --host 0.0.0.0 --public-host app.mypublicdomain.com"
   },

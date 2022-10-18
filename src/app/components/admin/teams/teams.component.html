@@ -1,4 +1,4 @@
-<nz-table #editRowTable nzBordered [nzData]="listOfData">
+<nz-table nzBordered [nzData]="listOfData">
   <thead>
     <tr>
       <!-- nzWidth="25%" -->
@@ -10,7 +10,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let data of editRowTable.data">
+    <!-- <tr *ngFor="let data of editRowTable.data"> -->
+    <tr *ngFor="let data of listOfData">
       <ng-container *ngIf="editCache.id !== data.id; else editTemplate">
         <td>{{ data.id }}</td>
         <td>{{ data.title }}</td>
@@ -28,7 +29,7 @@
           <!-- disable edit for professional bankers -->
           <!-- ngModel="editCache" -->
           <nz-select
-            [disabled]="editCache.id === 0"
+            [disabled]="data.id === 0"
             [nzAllowClear]="false"
             [(ngModel)]="editCache.disabled"
             nzPlaceHolder="Select Platform"
@@ -43,7 +44,7 @@
           <!-- disable edit for professional bankers -->
           <input
             type="text"
-            [disabled]="editCache.id === 0"
+            [disabled]="data.id === 0"
             nz-input
             [(ngModel)]="editCache.platforms"
           />

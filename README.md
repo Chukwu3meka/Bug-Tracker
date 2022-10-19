@@ -1,25 +1,32 @@
-# NewBugTracker
+# Bug Tracker
 
+A bug tracking system is a software application that keeps track of reported software bugs in software development projects. This Project was built using Angular and JSON Server
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.0.
+
+> [Live site](https://zb-bug-tracker.vercel.app/)
 
 ## Development server
 
-> [Live site](https://test-bug-tracker.vercel.app/)
+1. To view project locally run `npm run dev1` for a dev server. Navigate to `http://localhost:4200/` . The application will automatically reload if you change any of the source files.\
+   Endavour to run `npm run dev2` for a fake Rest API
+   > To access dev server on the network run `npm run dev3` and `npm run dev4` for a fake Rest API
 
-1.  Run `npm run dev-local` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-2.  Endavour to run `npm run local-server` for a fake Rest API
+### Screenshots
 
-## Code scaffolding
+![Screenshot 1](/src/assets/images/readme/1.png?raw=true "Screenshot 1")
+![Screenshot 2](/src/assets/images/readme/2.png?raw=true "Screenshot 2")
+![Screenshot 3](/src/assets/images/readme/3.png?raw=true "Screenshot 3")
+![Screenshot 4](/src/assets/images/readme/4.png?raw=true "Screenshot 4")
+![Screenshot 5](/src/assets/images/readme/5.png?raw=true "Screenshot 5")
+![Screenshot 6](/src/assets/images/readme/6.png?raw=true "Screenshot 6")
+![Screenshot 7](/src/assets/images/readme/7.png?raw=true "Screenshot 7")
 
-Run `ng generate component component-name` to generate a new component.
-`ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
-for charts <!-- https://swimlane.gitbook.io/ngx-charts/examples/bar-charts/stacked-vertical-bar-chart -->
-for our loading page <!-- https://css-tricks.com/lets-make-a-fancy-but-uncomplicated-page-loader/ -->
+![](/src/assets/images/readme/2.png?raw=true)
+![](/src/assets/images/readme/3.png?raw=true)
+![](/src/assets/images/readme/4.png?raw=true)
+![](/src/assets/images/readme/5.png?raw=true)
+![](/src/assets/images/readme/6.png?raw=true)
+![](/src/assets/images/readme/7.png?raw=true)
 
 ### Todo
 

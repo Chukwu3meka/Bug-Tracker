@@ -51,19 +51,24 @@ export class SignupComponent implements OnInit {
   //   "img": "https://placeimg.com/100/100/people",
 
   public signupHandler = () => {
-    this.usersService
-      .signup({
-        email: this.user.email,
-        lastName: this.user.lastName,
-        password: this.user.password,
-        firstName: this.user.firstName,
-      })
-      .subscribe((res) => {
-        console.log(res);
-      });
-    // console.log('this.user', this.user);
-    // const { id: teamId } = teams?.find((x) =>
-    //   x.platforms.includes(bug.platform)
-    // );
+    if (
+      this.user.email &&
+      this.user.lastName &&
+      this.user.password &&
+      this.user.firstName
+    ) {
+      this.usersService
+        .signup({
+          email: this.user.email,
+          lastName: this.user.lastName,
+          password: this.user.password,
+          firstName: this.user.firstName,
+        })
+        .subscribe((res) => {
+          console.log(res);
+        });
+    } else {
+      console.log('All fields are required');
+    }
   };
 }

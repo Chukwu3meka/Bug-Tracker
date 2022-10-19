@@ -7,9 +7,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-1. To view project locally run `npm run dev1` for a dev server. Navigate to `http://localhost:4200/` . The application will automatically reload if you change any of the source files.\
-   Endavour to run `npm run dev2` for a fake Rest API
-   > To access dev server on the network run `npm run dev3` and `npm run dev4` for a fake Rest API
+To view project locally run `npm run dev1` for a dev server. Navigate to `http://localhost:4200/` . The application will automatically reload if you change any of the source files.\
+ Endavour to run `npm run dev2` for a fake Rest API
+
+> To access dev server on the network run `npm run dev3` and `npm run dev4` for a fake Rest API
 
 ### Screenshots
 
@@ -20,13 +21,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ![Screenshot 5](/src/assets/images/readme/5.png?raw=true "Screenshot 5")
 ![Screenshot 6](/src/assets/images/readme/6.png?raw=true "Screenshot 6")
 ![Screenshot 7](/src/assets/images/readme/7.png?raw=true "Screenshot 7")
-
-![](/src/assets/images/readme/2.png?raw=true)
-![](/src/assets/images/readme/3.png?raw=true)
-![](/src/assets/images/readme/4.png?raw=true)
-![](/src/assets/images/readme/5.png?raw=true)
-![](/src/assets/images/readme/6.png?raw=true)
-![](/src/assets/images/readme/7.png?raw=true)
 
 ### Todo
 

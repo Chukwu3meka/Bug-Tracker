@@ -47,12 +47,26 @@
   }
 
   & > ul:nth-of-type(1) {
+    //
+
     margin: 50px auto;
-    padding: 0;
-    border: 3px solid red;
+    padding: 10px;
     white-space: nowrap;
-    overflow-x: auto;
+    // // overflow-x: auto;
+
+    // // max-width: 600px;
+    // // width: 50%;
+
+    // // height: 110%;
+    // // margin-bottom: 0.01em;
+    // // overflow-x: scroll;
+    overflow-x: scroll;
+    // display: block;
+    // scrollbar-color: red;
+    scrollbar-color: red;
+
     & > li {
+      // border: 3px solid red;
       display: inline;
       & > img {
         height: 100px;
@@ -72,8 +86,17 @@
     }
   }
 
+  // & > ul:nth-of-type(1)::-webkit-scrollbar {
+  //   // display: none;
+  // }
+
   & > ul:nth-of-type(1)::-webkit-scrollbar {
-    display: none;
+    // width: 1px;
+    height: 10px;
+  }
+  & > ul:nth-of-type(1)::-webkit-scrollbar-thumb {
+    background-color: @primary;
+    border-radius: 6px;
   }
 
   .zoomImage {

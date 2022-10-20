@@ -40,7 +40,7 @@ export class TeamsComponent implements OnInit {
   startEdit(data): void {
     this.editCache.id = data.id;
     this.editCache.title = data.title;
-    this.editCache.platforms = data.platforms;
+    this.editCache.disabled = data.disabled;
     this.editCache.platforms = data.platforms;
   }
 

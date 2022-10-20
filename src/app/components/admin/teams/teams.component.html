@@ -1,7 +1,6 @@
 <nz-table nzBordered [nzData]="listOfData">
   <thead>
     <tr>
-      <!-- nzWidth="25%" -->
       <th nzWidth="15px">ID</th>
       <th>Label</th>
       <th nzWidth="20px">Disabled</th>
@@ -10,7 +9,6 @@
     </tr>
   </thead>
   <tbody>
-    <!-- <tr *ngFor="let data of editRowTable.data"> -->
     <tr *ngFor="let data of listOfData">
       <ng-container *ngIf="editCache.id !== data.id; else editTemplate">
         <td>{{ data.id }}</td>
@@ -25,9 +23,7 @@
           <input type="text" nz-input [(ngModel)]="editCache.title" />
         </td>
         <td>
-          <!-- nzSize="large" -->
-          <!-- disable edit for professional bankers -->
-          <!-- ngModel="editCache" -->
+          <!-- ! disable edit for professional bankers -->
           <nz-select
             [disabled]="data.id === 0"
             [nzAllowClear]="false"
@@ -37,11 +33,9 @@
             <nz-option [nzValue]="true" nzLabel="True"></nz-option>
             <nz-option [nzValue]="false" nzLabel="False"></nz-option>
           </nz-select>
-
-          <!-- <input type="text" nz-input [(ngModel)]="editCache.disabled" /> -->
         </td>
         <td>
-          <!-- disable edit for professional bankers -->
+          <!-- ! disable edit for professional bankers -->
           <input
             type="text"
             [disabled]="data.id === 0"
@@ -50,43 +44,10 @@
           />
         </td>
         <td>
-          <a (click)="saveEdit(data.id)" class="save">Save</a>
+          <a (click)="saveEdit(data.id)" class="save">Save</a>&nbsp;
           <a (click)="cancelEdit()">Cancel</a>
         </td>
       </ng-template>
     </tr>
   </tbody>
 </nz-table>
-
-<!-- <nz-table #basicTable [nzData]="listOfData">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Label</th>
-      <th>Disabled</th>
-      <th>Platforms</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let data of basicTable.data">
-      <td>{{ data.id }}</td>
-
-      initial entry
-      <td *ngIf="entrydata.id !== data.id">{{ data.title }}</td>
-      <td *ngIf="entrydata.id !== data.id">{{ data.disabled }}</td>
-      <td *ngIf="entrydata.id !== data.id">{{ data.platforms }}</td>
-
-      edit entry
-      <td *ngIf="entrydata.id === data.id">{{ data.title }}</td>
-      <td *ngIf="entrydata.id === data.id">{{ data.disabled }}</td>
-      <td *ngIf="entrydata.id === data.id">{{ data.platforms }}</td>
-
-      <td>
-        <a (click)="editEntryHandler(data.id)">
-          {{ data.action }}
-        </a>
-      </td>
-    </tr>
-  </tbody>
-</nz-table> -->

@@ -6,9 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { handleHttpError, httpOptions } from '../libs/commonFunction';
 import { apiDelay, localApiUrl, publicApiUrl } from '../libs/appConstants';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable({ providedIn: 'root' })
 export class UsersService {
   constructor(private http: HttpClient) {}
 
@@ -33,9 +31,18 @@ export class UsersService {
 
   login({ email, password }): Observable<any> {
     return this.http
-      .get(`${localApiUrl}/users?email=${email}&password=${password}`)
+      .post(`${publicApiUrl}/usersignin/checkifuserexists`, {
+        email,
+        password,
+      })
+
       .pipe(catchError((err) => handleHttpError(err)))
       .pipe(delay(apiDelay));
+
+    // .catch((err: HttpErrorResponse) => {
+    //   // simple logging, but you can do a lot more, see below
+    //   console.error('An error occurred:', err.error);
+    // })
   }
 
   reset(email): Observable<any> {

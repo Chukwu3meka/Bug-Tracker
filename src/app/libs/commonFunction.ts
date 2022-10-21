@@ -13,7 +13,7 @@ export const removeLocalStorage = () => {
 };
 
 export const handleHttpError = (err) => {
-  // console.log(err);
+  console.log(err);
 
   return 'error occur';
 };

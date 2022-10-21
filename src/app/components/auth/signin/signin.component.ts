@@ -25,17 +25,37 @@ export class SigninComponent implements OnInit {
 
   public loginHandler = (): void => {
     this.loginLoading = true;
-    this.usersService.login(this.auth).subscribe((res) => {
-      const profile = res[0];
-      if (profile?.id) {
-        // save profile to app
-        this.store.dispatch(
-          SetProfileAction({ payload: { auth: true, ...profile } })
-        );
-        // save profile detail to local storage
-        setLocalStorage({ auth: true, ...profile });
+    this.usersService.login(this.auth).subscribe(
+      (res) => {
+        // chukwuemeka@alienforest.com
+
+        // console.log(res);
+
+        //   const profile = res[0];
+        if (res?.id) {
+          // save profile to app
+          this.store.dispatch(
+            SetProfileAction({ payload: { auth: true, ...res } })
+          );
+          // save profile detail to local storage
+          setLocalStorage({ auth: true, ...res });
+        }
+        // if (profile?.id) {
+        //   // save profile to app
+        //   this.store.dispatch(
+        //     SetProfileAction({ payload: { auth: true, ...profile } })
+        //   );
+        //   // save profile detail to local storage
+        //   setLocalStorage({ auth: true, ...profile });
+        // }
       }
-      this.loginLoading = false;
-    });
+      // (err) => {
+      //   console.log({ err }, 'dsfd');
+      // },
+      // () => {
+      //   console.log('done dsfd');
+      // }
+    );
+    this.loginLoading = false;
   };
 }

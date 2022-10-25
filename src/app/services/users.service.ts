@@ -5,10 +5,18 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { handleHttpError, httpOptions } from '../libs/commonFunction';
 import { apiDelay, localApiUrl, publicApiUrl } from '../libs/appConstants';
+import { Store } from '@ngrx/store';
+import { AppState } from '../store/app.state';
+import { SetAlertAction } from '../store/actions/alert.actions';
 
 @Injectable({ providedIn: 'root' })
 export class UsersService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private store: Store<AppState>) {}
+
+  private appAlert = ({ message, status }) =>
+    this.store.dispatch(
+      SetAlertAction({ payload: { message, status, hidden: false } })
+    );
 
   signup({ firstName, lastName, email, password }): Observable<any> {
     return (
@@ -35,8 +43,16 @@ export class UsersService {
         email,
         password,
       })
+      .pipe(
+        catchError((err) =>
+          handleHttpError({
+            appAlert: this.appAlert,
+            message: 'Email/Password is incorrect',
+            err,
+          })
+        )
+      )
 
-      .pipe(catchError((err) => handleHttpError(err)))
       .pipe(delay(apiDelay));
 
     // .catch((err: HttpErrorResponse) => {

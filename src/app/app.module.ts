@@ -45,6 +45,7 @@ import { PortalComponent } from './components/admin/portal/portal.component';
 import { AdminsComponent } from './components/admin/admins/admins.component';
 import { UsersComponent } from './components/admin/users/users.component';
 import { DevelopersComponent } from './components/admin/developers/developers.component';
+import { AlertReducer } from './store/reducers/alert.reducer';
 // import { ProfileReducer } from './store/reducers/profile.reducer';
 // import { FileuploadComponent } from './components/fileupload/fileupload.component';
 
@@ -89,6 +90,7 @@ registerLocaleData(en);
     nzModules,
     NgxChartsModule,
     StoreModule.forRoot({
+      alert: AlertReducer,
       profile: ProfileReducer,
       constants: ConstantsReducer,
     }),

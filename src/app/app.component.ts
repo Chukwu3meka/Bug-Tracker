@@ -5,7 +5,7 @@ import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/store/app.state';
-import { ProfileModel } from 'src/app/store/models/index';
+import { AlertModel, ProfileModel } from 'src/app/store/models/index';
 import { getLocalStorage } from './libs/commonFunction';
 import { SetProfileAction } from './store/actions/profile.actions';
 import {
@@ -22,12 +22,14 @@ import { PlatformsService, TeamsService } from './services/index';
 export class AppComponent implements OnInit {
   profile: Observable<ProfileModel>;
 
+  public appAlert: AlertModel = {
+    message: '',
+    status: 'error',
+    hidden: true,
+  };
   public authorised: boolean = !true;
   public authPage: string = 'signin';
-  public authData = {
-    role: 'user',
-    authorised: false,
-  };
+  public authData = { role: 'user', authorised: false };
 
   public pageLoading: boolean = true;
   public appNotCompatible: string = '';
@@ -59,7 +61,31 @@ export class AppComponent implements OnInit {
     }
     this.pageLoadingHandler();
 
+    const alert = store.select('alert');
     this.profile = store.select('profile');
+
+    alert.subscribe(({ message, status }) => {
+      if (message) {
+        this.appAlert = { message, status, hidden: false };
+
+        // hide universal app alert after some time
+        setTimeout(() => (this.appAlert.hidden = true), 2500);
+
+        // public appAlert: AlertModel = {
+        //   message: '',
+        //   status: 'error',
+        //   hidden: false,
+        // };
+
+        // chukwuemeka@alienforest.com
+        console.log({ message, status });
+        // this.authData.authorised = auth;
+        // this.authData.role = role || 'user';
+
+        // if (['/signup', '/signin', '/reset'].includes(this.router.url))
+        //   this.router.navigate(['/']);
+      }
+    });
 
     this.profile.subscribe(({ auth, role }) => {
       this.authData.authorised = auth;

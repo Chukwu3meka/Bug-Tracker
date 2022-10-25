@@ -12,8 +12,11 @@ export const removeLocalStorage = () => {
   localStorage.removeItem('profile');
 };
 
-export const handleHttpError = (err) => {
-  console.log(err);
+export const handleHttpError = ({ appAlert, err, message }) => {
+  // console.log(err);
+
+  // appAlert({ message: 'dfdsfdsf', status: 'error' });
+  appAlert({ message: message || err.message, status: 'error' });
 
   return 'error occur';
 };

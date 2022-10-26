@@ -5,6 +5,7 @@ import { AppState } from 'src/app/store/app.state';
 import { UsersService } from 'src/app/services/index';
 import { setLocalStorage } from 'src/app/libs/commonFunction';
 import { SetProfileAction } from 'src/app/store/actions/profile.actions';
+import { SetAlertAction } from 'src/app/store/actions/alert.actions';
 
 @Component({
   selector: 'app-signin',
@@ -34,6 +35,16 @@ export class SigninComponent implements OnInit {
         //   const profile = res[0];
         if (res?.id) {
           // save profile to app
+          this.store.dispatch(
+            SetAlertAction({
+              payload: {
+                message: 'Signin Successfull',
+                status: 'success',
+                hidden: false,
+              },
+            })
+          );
+
           this.store.dispatch(
             SetProfileAction({ payload: { auth: true, ...res } })
           );

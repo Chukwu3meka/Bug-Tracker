@@ -69,7 +69,7 @@ export class AppComponent implements OnInit {
         this.appAlert = { message, status, hidden: false };
 
         // hide universal app alert after some time
-        setTimeout(() => (this.appAlert.hidden = true), 2500);
+        // setTimeout(() => (this.appAlert.hidden = true), 3000);
 
         // public appAlert: AlertModel = {
         //   message: '',
@@ -78,7 +78,7 @@ export class AppComponent implements OnInit {
         // };
 
         // chukwuemeka@alienforest.com
-        console.log({ message, status });
+        // console.log({ message, status });
         // this.authData.authorised = auth;
         // this.authData.role = role || 'user';
 

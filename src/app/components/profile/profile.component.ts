@@ -6,6 +6,7 @@ import { AppState } from 'src/app/store/app.state';
 import { removeLocalStorage } from 'src/app/libs/commonFunction';
 import { RemoveProfileAction } from 'src/app/store/actions/profile.actions';
 import { ConstantsModel, ProfileModel } from 'src/app/store/models/index';
+import { SetAlertAction } from 'src/app/store/actions/alert.actions';
 
 @Component({
   selector: 'app-profile',
@@ -20,6 +21,7 @@ export class ProfileComponent implements OnInit {
     this.profile = store.select('profile');
     this.constants = store.select('constants');
   }
+
   ngOnInit(): void {
     let teams;
     this.constants.subscribe((constants) => (teams = constants.teams));
@@ -65,6 +67,12 @@ export class ProfileComponent implements OnInit {
     // permanently delete profile from local store
     removeLocalStorage();
     this.store.dispatch(RemoveProfileAction({ payload: { auth: false } }));
+
+    this.store.dispatch(
+      SetAlertAction({
+        payload: { message: 'Signed Out', status: 'success', hidden: false },
+      })
+    );
   };
 }
 

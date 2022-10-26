@@ -52,8 +52,14 @@ export class UsersService {
           })
         )
       )
+      .pipe(delay(500));
 
-      .pipe(delay(apiDelay));
+    // .pipe(
+    //   // of(
+
+    //     this.appAlert ({ message:"", status:"dsfdsfdfdsf" })
+    //     )
+    // )
 
     // .catch((err: HttpErrorResponse) => {
     //   // simple logging, but you can do a lot more, see below

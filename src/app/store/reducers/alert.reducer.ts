@@ -5,7 +5,7 @@ import * as AlertActions from '../actions/alert.actions';
 
 const initialState: AlertModel = {
   message: '',
-  status: 'normal',
+  status: 'info',
   hidden: true,
 };
 

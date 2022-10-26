@@ -15,4 +15,4 @@ export const colors = {
 export const localApiUrl = 'http://10.128.32.201:4201';
 export const publicApiUrl = 'http://10.128.32.14:8080/api/v1';
 
-export const apiDelay: number = 1000;
+export const apiDelay: number = 200;

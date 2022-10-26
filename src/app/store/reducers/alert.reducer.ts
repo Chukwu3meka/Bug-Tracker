@@ -12,6 +12,7 @@ const initialState: AlertModel = {
 const reducer = createReducer(
   initialState,
   on(AlertActions.SetAlertAction, (state, action) => {
+    // return { ...action.payload, status: state.payload || false };
     return action.payload;
   }),
   on(AlertActions.RemoveAlertAction, (state, action) => action.payload)

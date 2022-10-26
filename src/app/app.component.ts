@@ -69,7 +69,7 @@ export class AppComponent implements OnInit {
         this.appAlert = { message, status, hidden: false };
 
         // hide universal app alert after some time
-        // setTimeout(() => (this.appAlert.hidden = true), 3000);
+        setTimeout(() => (this.appAlert.hidden = true), 2500);
 
         // public appAlert: AlertModel = {
         //   message: '',

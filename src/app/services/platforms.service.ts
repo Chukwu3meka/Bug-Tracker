@@ -1,10 +1,10 @@
 import { Observable, of } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { catchError } from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { handleHttpError } from '../libs/commonFunction';
-import { localApiUrl } from '../libs/appConstants';
+import { handleHttpError, httpOptions } from '../libs/commonFunction';
+import { localApiUrl, publicApiUrl } from '../libs/appConstants';
 
 @Injectable({
   providedIn: 'root',
@@ -14,8 +14,14 @@ export class PlatformsService {
 
   getPlatforms(): Observable<any> {
     return this.http
-      .get(`${localApiUrl}/platforms`)
+      .get(
+        // .get(`${localApiUrl}/platforms`)
+        `${publicApiUrl}/platforms/activeplatforms`,
+        httpOptions({ HttpHeaders })
+      )
       .pipe(catchError((err) => handleHttpError(err)));
+
+    // return this.http.get(url, httpOptions);
   }
 
   // // getDevelopers(platform): Observable<any> {

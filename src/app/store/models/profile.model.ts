@@ -9,4 +9,5 @@ export interface ProfileModel {
   team?: string;
   email?: string;
   role?: string;
+  basicAuth?: string;
 }

@@ -1,3 +1,5 @@
+import { authenticationHeader, basicAuth } from './appConstants';
+
 export const setLocalStorage = (value: any): void => {
   localStorage.setItem('profile', JSON.stringify(value));
 };
@@ -24,7 +26,10 @@ export const handleHttpError = ({ appAlert, err, message }) => {
 export const httpOptions = ({ HttpHeaders }) => ({
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
-    // Authorization:
-    //   'Basic ' + btoa('donaldwisdomnengi@gmail.com:Cassillas1nengi!'),
+    // Authorization: 'Basic ' + btoa(basicAuth.data),
+    Authorization: 'Basic ' + basicAuth.data,
+    // btoa(`${authenticationHeader.email}:${authenticationHeader.password}`),
   }),
 });
+
+// 'donaldwisdomnengi@gmail.com:Cassillas1nengi!'),

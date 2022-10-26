@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { NzUploadFile } from 'ng-zorro-antd/upload';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { HttpClient, HttpRequest, HttpResponse } from '@angular/common/http';
+import { authenticationHeader } from 'src/app/libs/appConstants';
+import { PlatformsService } from 'src/app/services';
 // import { getLocalProfile } from 'src/app/libs/commonFunction';
 
 // import { platforms } from 'libs/constants';
@@ -32,7 +34,11 @@ export class AddBugComponent implements OnInit {
   uploading = false;
   fileList: NzUploadFile[] = [];
 
-  constructor(private http: HttpClient, private msg: NzMessageService) {}
+  constructor(
+    private http: HttpClient,
+    private msg: NzMessageService,
+    private platformsServices: PlatformsService
+  ) {}
 
   beforeUpload = (file: NzUploadFile): boolean => {
     // ! Enforce maximum limit of files
@@ -43,6 +49,8 @@ export class AddBugComponent implements OnInit {
   };
 
   submitBug = (): void => {
+    console.log(this.formData);
+
     this.isLoadingOne = true;
 
     // console.log(this.formData);
@@ -86,6 +94,18 @@ export class AddBugComponent implements OnInit {
   ngOnInit(): void {
     // const { role } = getLocalProfile('profile', localStorage);
     // const platforms = getLocalProfile('platforms', localStorage);
+
+    // console.log();
+
+    this.platformsServices.getPlatforms().subscribe((res) => {
+      console.log(res);
+
+      //   {
+      //     "platformId": 1,
+      //     "platformName": "Mobile App",
+      //     "platformStatus": "ACTIVE"
+      // },
+    });
 
     this.platformOptions = [
       { id: 'mobile-app', name: 'Mobile App' },

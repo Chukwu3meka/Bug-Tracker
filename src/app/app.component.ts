@@ -13,6 +13,7 @@ import {
   SetPlatformsAction,
 } from './store/actions/constants.actions';
 import { PlatformsService, TeamsService } from './services/index';
+import { authenticationHeader, basicAuth } from './libs/appConstants';
 
 @Component({
   selector: 'app-root',
@@ -46,10 +47,6 @@ export class AppComponent implements OnInit {
   ) {
     this.teamsService.getTeams().subscribe((res) => {
       this.store.dispatch(SetTeamsAction({ payload: res }));
-    });
-
-    this.platformsService.getPlatforms().subscribe((res) => {
-      this.store.dispatch(SetPlatformsAction({ payload: res }));
     });
 
     const profile = getLocalStorage();
@@ -87,12 +84,29 @@ export class AppComponent implements OnInit {
       }
     });
 
-    this.profile.subscribe(({ auth, role }) => {
+    this.profile.subscribe(({ auth, role, basicAuth: headerAuth }) => {
       this.authData.authorised = auth;
-      this.authData.role = role || 'user';
 
-      if (['/signup', '/signin', '/reset'].includes(this.router.url))
-        this.router.navigate(['/']);
+      if (auth) {
+        this.authData.role = role || 'user';
+
+        if (['/signup', '/signin', '/reset'].includes(this.router.url))
+          this.router.navigate(['/']);
+
+        // console.log({ basicAuth });
+
+        basicAuth.data = `${headerAuth}`;
+
+        // console.log(basicAuth.data);
+
+        this.platformsService.getPlatforms().subscribe((res) => {
+          // console.log(res, basicAuth.data);
+          this.store.dispatch(SetPlatformsAction({ payload: res }));
+        });
+
+        // authenticationHeader.email = this.auth.email;
+        // authenticationHeader.password = this.auth.password;
+      }
     });
 
     this.router.events.forEach((event) => {
@@ -150,7 +164,19 @@ export class AppComponent implements OnInit {
     //   );
     // }
     // this.pageLoadingHandler();
+    // console.log('here');
+    // if (!this.pageLoading) {
+    // }
+    // console.log(res);
   }
+
+  // ngAfterContentInit(): void {
+  //   console.log('here last', authenticationHeader);
+  // }
+
+  // ngAfterViewInit(): void {
+  //   console.log('here last 1', authenticationHeader);
+  // }
 
   private pageLoadingHandler(): void {
     setTimeout(() => {

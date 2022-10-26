@@ -6,6 +6,7 @@ import { UsersService } from 'src/app/services/index';
 import { setLocalStorage } from 'src/app/libs/commonFunction';
 import { SetProfileAction } from 'src/app/store/actions/profile.actions';
 import { SetAlertAction } from 'src/app/store/actions/alert.actions';
+// import { authenticationHeader } from 'src/app/libs/appConstants';
 
 @Component({
   selector: 'app-signin',
@@ -45,11 +46,20 @@ export class SigninComponent implements OnInit {
             })
           );
 
-          this.store.dispatch(
-            SetProfileAction({ payload: { auth: true, ...res } })
-          );
-          // save profile detail to local storage
-          setLocalStorage({ auth: true, ...res });
+          const authDetails = {
+            ...res,
+            auth: true,
+            basicAuth: btoa(`${this.auth.email}:${this.auth.password}`),
+          };
+
+          this.store.dispatch(SetProfileAction({ payload: authDetails }));
+
+          setLocalStorage(authDetails); // <= save profile detail to local storage
+
+          // btoa(`${this.auth.email}:${authenticationHeader.password}`),
+
+          // authenticationHeader.email = this.auth.email;
+          // authenticationHeader.password = this.auth.password;
         }
         // if (profile?.id) {
         //   // save profile to app

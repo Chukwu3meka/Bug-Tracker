@@ -15,7 +15,7 @@ export const removeLocalStorage = () => {
 };
 
 export const handleHttpError = ({ appAlert, err, message }) => {
-  // console.log(err);
+  console.log(err);
 
   // appAlert({ message: 'dfdsfdsf', status: 'error' });
   appAlert({ message: message || err.message, status: 'error' });

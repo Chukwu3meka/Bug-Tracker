@@ -23,9 +23,9 @@
       nzPlaceHolder="Select Platform"
     >
       <nz-option
-        *ngFor="let platform of platformOptions"
+        *ngFor="let platform of bugPlatforms"
         [nzValue]="platform.id"
-        [nzLabel]="platform.name"
+        [nzLabel]="platform.title"
       ></nz-option>
     </nz-select>
 

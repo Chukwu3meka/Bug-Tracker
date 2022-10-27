@@ -4,7 +4,11 @@ import { NzUploadFile } from 'ng-zorro-antd/upload';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { HttpClient, HttpRequest, HttpResponse } from '@angular/common/http';
 import { authenticationHeader } from 'src/app/libs/appConstants';
-import { PlatformsService } from 'src/app/services';
+import { BugsService, PlatformsService } from 'src/app/services';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/store/app.state';
+import { Observable } from 'rxjs';
+import { ConstantsModel } from 'src/app/store/models';
 // import { getLocalProfile } from 'src/app/libs/commonFunction';
 
 // import { platforms } from 'libs/constants';
@@ -17,6 +21,7 @@ import { PlatformsService } from 'src/app/services';
 export class AddBugComponent implements OnInit {
   inputValue: string | null = null;
   textValue: string | null = null;
+  private serverPlatforms;
 
   public formData = {
     bugTitle: '',
@@ -25,20 +30,25 @@ export class AddBugComponent implements OnInit {
     description: '',
   };
 
-  public platformOptions;
+  // public platformOptions;
   public maxFileSize: number = 5120;
 
   isLoadingOne = false;
   isLoadingTwo = false;
 
+  public bugPlatforms;
+
   uploading = false;
   fileList: NzUploadFile[] = [];
 
+  private constants: Observable<ConstantsModel>;
+
   constructor(
-    private http: HttpClient,
-    private msg: NzMessageService,
-    private platformsServices: PlatformsService
-  ) {}
+    private store: Store<AppState>,
+    private bugsServices: BugsService
+  ) {
+    this.constants = this.store.select('constants');
+  }
 
   beforeUpload = (file: NzUploadFile): boolean => {
     // ! Enforce maximum limit of files
@@ -49,7 +59,28 @@ export class AddBugComponent implements OnInit {
   };
 
   submitBug = (): void => {
-    console.log(this.formData);
+    // ! unnecessary code, to be sent
+    const { platformId, platformName, platformStatus } =
+      this.serverPlatforms.find((x) => x.platformId == this.formData.platform);
+
+    this.bugsServices
+      .addBug({
+        ...this.formData,
+        label: this.formData.bugTitle,
+        bugReview: this.formData.description || 'No data',
+        platformses: { platformId, platformName, platformStatus },
+      })
+      .subscribe();
+
+    // // console.log(this.formData);
+    // console.log({
+    //   // ...this.formData,
+    //   platformses: { platformId, platformName, platformStatus },
+    //   label: this.formData.bugTitle,
+    //   bugReview: this.formData.description || 'No data',
+    // });
+
+    // console.log(platform);
 
     this.isLoadingOne = true;
 
@@ -62,7 +93,7 @@ export class AddBugComponent implements OnInit {
       formData.append('files[]', file);
     });
 
-    console.log(formData);
+    // console.log(formData);
 
     // return null;
     // this.uploading = true;
@@ -92,34 +123,19 @@ export class AddBugComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    // const { role } = getLocalProfile('profile', localStorage);
-    // const platforms = getLocalProfile('platforms', localStorage);
+    this.constants.subscribe(({ platforms }) => {
+      // Setting res to type of any, disables enforced types that have been set for platforms ///
+      const res: any = platforms;
+      this.serverPlatforms = res;
 
-    // console.log();
+      this.bugPlatforms = this.serverPlatforms
+        .filter((x) => x.platformStatus === 'ACTIVE')
+        .map(({ platformId, platformName }) => ({
+          id: platformId,
+          title: platformName,
+        }));
 
-    this.platformsServices.getPlatforms().subscribe((res) => {
-      console.log(res);
-
-      //   {
-      //     "platformId": 1,
-      //     "platformName": "Mobile App",
-      //     "platformStatus": "ACTIVE"
-      // },
+      this.formData.platform = this.bugPlatforms[0].id; // <=  set default bugPlatform
     });
-
-    this.platformOptions = [
-      { id: 'mobile-app', name: 'Mobile App' },
-      { id: 'internet-banking', name: 'Internet Banking' },
-      { id: 'ussd', name: 'USSD' },
-      { id: 'form-a', name: 'FORM A' },
-      { id: 'x-path', name: 'XPath' },
-      { id: 'cip', name: 'CIP' },
-      { id: 'workflow', name: 'Workflow' },
-      { id: 'appraisal', name: 'Appraisal' },
-    ];
-
-    // this.platforms = JSON.parse();
-
-    // console.log({ role, platforms });
   }
 }

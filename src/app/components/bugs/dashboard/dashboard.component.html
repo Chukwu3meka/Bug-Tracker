@@ -1,14 +1,12 @@
-<div
-  class="dashboard"
-  *ngIf="!!bugsStat && !!bugReportData && !!statusData && !!severityData"
->
+<div class="dashboard">
+  <!-- *ngIf="!!bugsStat && !!dailyBugReport && !!statusData && !!severityData" -->
   <app-bug-stat [bugsStat]="bugsStat"></app-bug-stat>
 
   <div class="miniStat">
     <div>
       <ngx-charts-bar-vertical
         [scheme]="chartOptions.bugReportColorScheme"
-        [results]="bugReportData"
+        [results]="dailyBugReport"
         [gradient]="true"
         [xAxis]="false"
         [yAxis]="true"

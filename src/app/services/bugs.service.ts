@@ -80,9 +80,12 @@ export class BugsService {
   }
 
   getAllBugs(): Observable<any> {
-    return this.http
-      .get(`${localApiUrl}/bugs`)
-      .pipe(catchError((err) => handleHttpError(err)));
+    return (
+      this.http
+        // .get(`${localApiUrl}/bugs`)
+        .get(`${publicApiUrl}/bug`)
+        .pipe(catchError((err) => handleHttpError(err)))
+    );
   }
 
   //       bug/pages?page=${}`,
@@ -93,11 +96,11 @@ export class BugsService {
       .pipe(catchError((err) => handleHttpError(err)));
   }
 
-  getDailyBugReport(): Observable<any> {
-    return this.http
-      .get(`${localApiUrl}/dailyBugReport`)
-      .pipe(catchError((err) => handleHttpError(err)));
-  }
+  // getDailyBugReport(): Observable<any> {
+  //   return this.http
+  //     .get(`${localApiUrl}/dailyBugReport`)
+  //     .pipe(catchError((err) => handleHttpError(err)));
+  // }
 
   assignDeveloperToBug({ developer, bug }): Observable<any> {
     console.log({ developer, bug });

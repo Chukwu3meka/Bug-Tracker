@@ -1,14 +1,13 @@
-import { colors } from 'src/app/libs/appConstants';
 import { Component, OnInit } from '@angular/core';
-import { BugsService } from 'src/app/services/index';
 import { LegendPosition, ScaleType } from '@swimlane/ngx-charts';
 
 import {
-  DailyBugReport,
-  BugsStat,
-  SeverityData,
   StatusData,
+  SeverityData,
+  DailyBugReport,
 } from 'src/app/interface/Old-Bug';
+import { colors } from 'src/app/libs/appConstants';
+import { BugsService } from 'src/app/services/index';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,20 +15,12 @@ import {
   styleUrls: ['./dashboard.component.less'],
 })
 export class DashboardComponent implements OnInit {
-  private role: string = 'user';
-  constructor(private bugService: BugsService) {
-    // Put the object into storage
-    // // Retrieve the object from storage
-    // var retrievedObject = JSON.parse(localStorage.getItem('testObject'));
-    // console.log('retrievedObject: ', JSON.parse(retrievedObject));
-    // this.role = initStore.profile.role;
-  }
+  constructor(private bugService: BugsService) {}
 
   public bugsStat?: any;
   public statusData?: StatusData[];
   public severityData?: SeverityData[];
-  public bugReportData?: DailyBugReport[];
-
+  public dailyBugReport?: DailyBugReport[];
   public chartOptions = {
     legendPosition: LegendPosition.Below,
 
@@ -56,12 +47,40 @@ export class DashboardComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    this.bugService.getDailyBugReport().subscribe((bugReportData) => {
-      // console.log(bugReportData);
-      this.bugReportData = bugReportData;
-    });
+    this.bugService.getAllBugs().subscribe((res) => {
+      const bugs = res.map((x) => ({
+        status:
+          x.bugTreatmentStage === 'OPEN'
+            ? 'open'
+            : x.bugTreatmentStage === 'CLOSED'
+            ? 'closed'
+            : 'pending',
+        severity:
+          x.enumSeverity === 'LOW'
+            ? 'low'
+            : x.enumSeverity === 'MEDIUM'
+            ? 'medium'
+            : 'high',
+        date: new Date(x.reportDate).toDateString(),
+      }));
 
-    this.bugService.getAllBugs().subscribe((bugs) => {
+      const noOfDays = 20;
+      const dailyReport: any = [];
+      for (let day = 0; day < noOfDays; day++) {
+        const dateOffset = 24 * 60 * 60 * 1000 * day; //5 days
+        const todaysDate = new Date();
+        todaysDate.setTime(todaysDate.getTime() - dateOffset);
+
+        const todaysDateString = new Date(todaysDate).toDateString();
+
+        dailyReport.push({
+          name: todaysDateString,
+          value: bugs.filter((x) => x.date === todaysDateString).length || 0.01,
+        });
+      }
+
+      this.dailyBugReport = dailyReport;
+
       this.statusData = [
         {
           name: 'Closed Bugs',

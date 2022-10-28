@@ -52,7 +52,7 @@ export class BugsService {
   // http://10.128.32.14:8080/api/v1/bug/pages?page=2
 
   getBugs(page: number = 0): Observable<any> {
-    console.log(page);
+    // console.log(page);
     return this.http.get(`${publicApiUrl}/bug/pages?page=${page}`).pipe(
       catchError((err) =>
         handleHttpError({

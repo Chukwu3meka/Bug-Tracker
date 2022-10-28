@@ -30,68 +30,43 @@ export class BugsService {
       SetAlertAction({ payload: { message, status, hidden: false } })
     );
 
-  // addBug(bug): Observable<any> {
-  //   console.log(basicAuth);
-  //   return this.http
-  //     .post(
-  //       // .get(`${localApiUrl}/platforms`)
-  //       `${publicApiUrl}/bug/addbug`,
-  //       bug,
-  //       httpOptions({ HttpHeaders })
-  //     )
-
-  //     .pipe(
-  //       catchError((err) =>
-  //         handleHttpError({
-  //           appAlert: this.appAlert,
-  //           message: 'Error adding bug',
-  //           err,
-  //         })
-  //       )
-  //     );
-  //   // "label":"this.formData.bugTitle",
-  //   // "bugReview":"this.formData.description",
-
-  //   // return this.http.get(url, httpOptions);
-  // }
-
   addBug(bug): Observable<any> {
-    console.log(bug);
-    return (
-      this.http
-        // .get(`${localApiUrl}/users?email=${email}&password=${password}`)
-        .post(
-          `${publicApiUrl}/bug/addbug`,
-          {
-            ...bug,
-          },
-          httpOptions({ HttpHeaders })
-        )
-        .pipe(catchError((err) => handleHttpError(err)))
-        .pipe(delay(apiDelay))
+    return this.http
+      .post(
+        `${publicApiUrl}/bug/addbug`,
+        { ...bug },
+        httpOptions({ HttpHeaders })
+      )
+      .pipe(catchError((err) => handleHttpError(err)))
+      .pipe(delay(apiDelay));
+  }
+
+  getAllBugs(): Observable<any> {
+    return this.http
+      .get(`${publicApiUrl}/bug`)
+      .pipe(catchError((err) => handleHttpError(err)));
+  }
+
+  //       bug/pages?page=${}`,
+
+  // http://10.128.32.14:8080/api/v1/bug/pages?page=2
+
+  getBugs(page: number = 0): Observable<any> {
+    console.log(page);
+    return this.http.get(`${publicApiUrl}/bug/pages?page=${page}`).pipe(
+      catchError((err) =>
+        handleHttpError({
+          appAlert: this.appAlert,
+          message: 'Unable to fetch bugs',
+          err,
+        })
+      )
     );
   }
 
   getBug(id): Observable<any> {
     return this.http
       .get(`${localApiUrl}/bugs?id=${id}`)
-      .pipe(delay(apiDelay))
-      .pipe(catchError((err) => handleHttpError(err)));
-  }
-
-  getAllBugs(): Observable<any> {
-    return (
-      this.http
-        // .get(`${localApiUrl}/bugs`)
-        .get(`${publicApiUrl}/bug`)
-        .pipe(catchError((err) => handleHttpError(err)))
-    );
-  }
-
-  //       bug/pages?page=${}`,
-  getBugs(page: number = 1): Observable<any> {
-    return this.http
-      .get(`${localApiUrl}/bugs?_page=${page}&_limit=20`)
       .pipe(delay(apiDelay))
       .pipe(catchError((err) => handleHttpError(err)));
   }

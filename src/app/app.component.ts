@@ -100,8 +100,18 @@ export class AppComponent implements OnInit {
         // console.log(basicAuth.data);
 
         this.platformsService.getPlatforms().subscribe((res) => {
-          // console.log(res, basicAuth.data);
-          this.store.dispatch(SetPlatformsAction({ payload: res }));
+          const platforms = res.map(
+            ({
+              platformId: id,
+              platformName: title,
+              platformStatus: disabled,
+            }) => ({
+              id,
+              title,
+              disabled: disabled === 'ACTIVE' ? false : true,
+            })
+          );
+          this.store.dispatch(SetPlatformsAction({ payload: platforms }));
         });
 
         // authenticationHeader.email = this.auth.email;

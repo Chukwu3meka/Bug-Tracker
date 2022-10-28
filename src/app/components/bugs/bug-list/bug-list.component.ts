@@ -29,10 +29,21 @@ export class BugListsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getBugs();
     this.constants.subscribe((constants) => {
       this.platforms = constants.platforms;
     });
+
+    this.bugService.getAllBugs().subscribe((res) => {
+      this.bugsStat = {
+        allBugs: res.length,
+        open: res.filter((bug) => bug.bugTreatmentStage === 'OPEN').length,
+        closed: res.filter((bug) => bug.bugTreatmentStage === 'CLOSED').length,
+        pending: res.filter((bug) => bug.bugTreatmentStage === 'PENDING')
+          .length,
+      };
+    });
+
+    this.getBugs();
   }
 
   public nextPage = (page: string) => {
@@ -59,40 +70,34 @@ export class BugListsComponent implements OnInit {
       const totalBugs = bug.totalElements | 20;
       this.totalPages = bug.totalPages | 1;
 
-      // const bugs = bug.content.map((bug) => ({
-      const bugs = bug.map((bug) => ({
-        // ...bug,
-        // id: bug.bugId,
-        // description: bug.bugReview,
-        // status: bug.bugTreatmentStage?.toLowerCase(),
-        // severity: bug.severity?.toLowerCase(),
-        // created: bug.reportDate,
-        // platform: bug.platformses?.platformName,
-        // developer: {
-        //   id: bug.userAssignedToBug?.id,
-        //   name: `${bug.userAssignedToBug?.lastName} ${bug.userAssignedToBug?.firstName}`,
-        // },
-
+      const bugs = bug.content.map((bug) => ({
+        // const bugs = bug.map((bug) => ({
         ...bug,
+        id: bug.bugId,
+        title: bug.label,
+        created: bug.reportDate,
+        description: bug.bugReview,
+        severity: bug.severity?.toLowerCase(),
+        status: bug.bugTreatmentStage?.toLowerCase(),
+        platform: bug.platformses?.platformName,
         developer: {
-          id: bug.developer?.id,
-          name: bug.developer?.name,
+          id: bug.userAssignedToBug?.id,
+          name: `${bug.userAssignedToBug?.lastName} ${bug.userAssignedToBug?.firstName}`,
         },
-        reporter: {
-          id: bug.reporter?.id,
-          img: bug.reporter?.img,
-          name: bug.reporter?.name,
-        },
+
+        // ...bug,
+        // developer: {
+        //   id: bug.developer?.id,
+        //   name: bug.developer?.name,
+        // },
+        // reporter: {
+        //   id: bug.reporter?.id,
+        //   img: bug.reporter?.img,
+        //   name: bug.reporter?.name,
+        // },
       }));
 
-      // console.log(bugs);
-
-      this.bugsStat = {
-        allBugs: totalBugs,
-        open: bugs.filter((bug) => bug.status === 'open').length,
-        closed: bugs.filter((bug) => bug.status === 'closed').length,
-        pending: bugs.filter((bug) => bug.status === 'pending').length,
-      };
+      console.log(this.platforms, bugs[0]);
 
       this.dashboardBugs = bugs.map((bug) => ({
         id: bug.id,

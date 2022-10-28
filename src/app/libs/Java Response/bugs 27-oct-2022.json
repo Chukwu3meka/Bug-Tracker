@@ -1,0 +1,562 @@
+{
+  "content": [
+      {
+          "reportDate": "2022-10-11",
+          "assignedTo": null,
+          "userAssignedToBug": {
+              "id": 3,
+              "email": "xavier@ymail.com",
+              "password": "charlesxavier",
+              "firstName": "Charles",
+              "lastName": "Xavier",
+              "photos": "",
+              "enabled": true,
+              "userTeam": {
+                  "teamId": 2,
+                  "teamName": "BPA",
+                  "teamPlatform": {
+                      "platformId": 2,
+                      "platformName": "Internet Banking",
+                      "platformStatus": "ACTIVE"
+                  }
+              },
+              "resetPasswordToken": null,
+              "roles": {
+                  "roleId": 2,
+                  "name": "Developer"
+              },
+              "photosImagePath": "/user-photos/3/"
+          },
+          "bugId": 1,
+          "label": "Can't remember my password",
+          "createdBy": "Wisdom Donald-Ase",
+          "severity": "LOW",
+          "enumSeverity": "LOW",
+          "assigned": true,
+          "ticketId": "ZB2022-10-11null",
+          "bugTreatmentStage": "OPEN",
+          "progressStatus": null,
+          "bugReview": "I'm unable to remember my password",
+          "platformses": {
+              "platformId": 2,
+              "platformName": "Internet Banking",
+              "platformStatus": "ACTIVE"
+          }
+      },
+      {
+          "reportDate": "2022-10-11",
+          "assignedTo": null,
+          "userAssignedToBug": {
+              "id": 6,
+              "email": "steverogers@hotmail.com",
+              "password": "rogerssteve",
+              "firstName": "Steve",
+              "lastName": "Rogers",
+              "photos": "",
+              "enabled": true,
+              "userTeam": null,
+              "resetPasswordToken": null,
+              "roles": {
+                  "roleId": 2,
+                  "name": "Developer"
+              },
+              "photosImagePath": "/user-photos/6/"
+          },
+          "bugId": 2,
+          "label": "Network Failure after sign in",
+          "createdBy": "Wisdom Donald-Ase",
+          "severity": "LOW",
+          "enumSeverity": "HIGH",
+          "assigned": true,
+          "ticketId": "ZB2022-10-11null",
+          "bugTreatmentStage": "OPEN",
+          "progressStatus": null,
+          "bugReview": "We have a mechanical problem",
+          "platformses": {
+              "platformId": 3,
+              "platformName": "Funds Transfer",
+              "platformStatus": "ACTIVE"
+          }
+      },
+      {
+          "reportDate": "2022-10-11",
+          "assignedTo": null,
+          "userAssignedToBug": {
+              "id": 6,
+              "email": "steverogers@hotmail.com",
+              "password": "rogerssteve",
+              "firstName": "Steve",
+              "lastName": "Rogers",
+              "photos": "",
+              "enabled": true,
+              "userTeam": null,
+              "resetPasswordToken": null,
+              "roles": {
+                  "roleId": 2,
+                  "name": "Developer"
+              },
+              "photosImagePath": "/user-photos/6/"
+          },
+          "bugId": 3,
+          "label": "Testing Rest Controller",
+          "createdBy": "Wisdom Donald-Ase",
+          "severity": "LOW",
+          "enumSeverity": "LOW",
+          "assigned": true,
+          "ticketId": "ZB2022-10-11null",
+          "bugTreatmentStage": "OPEN",
+          "progressStatus": null,
+          "bugReview": "Nothing to see here, just testing",
+          "platformses": null
+      },
+      {
+          "reportDate": "2022-10-12",
+          "assignedTo": null,
+          "userAssignedToBug": {
+              "id": 6,
+              "email": "steverogers@hotmail.com",
+              "password": "rogerssteve",
+              "firstName": "Steve",
+              "lastName": "Rogers",
+              "photos": "",
+              "enabled": true,
+              "userTeam": null,
+              "resetPasswordToken": null,
+              "roles": {
+                  "roleId": 2,
+                  "name": "Developer"
+              },
+              "photosImagePath": "/user-photos/6/"
+          },
+          "bugId": 4,
+          "label": "Issue with Login",
+          "createdBy": "Wisdom Donald-Ase",
+          "severity": "LOW",
+          "enumSeverity": "LOW",
+          "assigned": true,
+          "ticketId": "ZB2022-10-12null",
+          "bugTreatmentStage": "OPEN",
+          "progressStatus": null,
+          "bugReview": "Repair this thing",
+          "platformses": {
+              "platformId": 4,
+              "platformName": "XPath",
+              "platformStatus": "ACTIVE"
+          }
+      },
+      {
+          "reportDate": "2022-10-12",
+          "assignedTo": null,
+          "userAssignedToBug": {
+              "id": 3,
+              "email": "xavier@ymail.com",
+              "password": "charlesxavier",
+              "firstName": "Charles",
+              "lastName": "Xavier",
+              "photos": "",
+              "enabled": true,
+              "userTeam": {
+                  "teamId": 2,
+                  "teamName": "BPA",
+                  "teamPlatform": {
+                      "platformId": 2,
+                      "platformName": "Internet Banking",
+                      "platformStatus": "ACTIVE"
+                  }
+              },
+              "resetPasswordToken": null,
+              "roles": {
+                  "roleId": 2,
+                  "name": "Developer"
+              },
+              "photosImagePath": "/user-photos/3/"
+          },
+          "bugId": 5,
+          "label": "Refresh Error",
+          "createdBy": "Wisdom Donald-Ase",
+          "severity": "LOW",
+          "enumSeverity": "LOW",
+          "assigned": true,
+          "ticketId": "ZB2022-10-12null",
+          "bugTreatmentStage": "OPEN",
+          "progressStatus": null,
+          "bugReview": "Server error",
+          "platformses": {
+              "platformId": 4,
+              "platformName": "XPath",
+              "platformStatus": "ACTIVE"
+          }
+      },
+      {
+          "reportDate": "2022-10-12",
+          "assignedTo": null,
+          "userAssignedToBug": {
+              "id": 4,
+              "email": "tony.stark@gmail.com",
+              "password": "tonystark",
+              "firstName": "Tony",
+              "lastName": "Stark",
+              "photos": "",
+              "enabled": true,
+              "userTeam": {
+                  "teamId": 1,
+                  "teamName": "Digital Factory",
+                  "teamPlatform": {
+                      "platformId": 1,
+                      "platformName": "Mobile App",
+                      "platformStatus": "ACTIVE"
+                  }
+              },
+              "resetPasswordToken": null,
+              "roles": {
+                  "roleId": 2,
+                  "name": "Developer"
+              },
+              "photosImagePath": "/user-photos/4/"
+          },
+          "bugId": 6,
+          "label": "Network Failure after sign in",
+          "createdBy": "Wisdom Donald-Ase",
+          "severity": "LOW",
+          "enumSeverity": "LOW",
+          "assigned": true,
+          "ticketId": "ZB2022-10-12null",
+          "bugTreatmentStage": "OPEN",
+          "progressStatus": null,
+          "bugReview": "Everything is going haywire",
+          "platformses": {
+              "platformId": 1,
+              "platformName": "Mobile App",
+              "platformStatus": "ACTIVE"
+          }
+      },
+      {
+          "reportDate": "2022-10-12",
+          "assignedTo": null,
+          "userAssignedToBug": {
+              "id": 4,
+              "email": "tony.stark@gmail.com",
+              "password": "tonystark",
+              "firstName": "Tony",
+              "lastName": "Stark",
+              "photos": "",
+              "enabled": true,
+              "userTeam": {
+                  "teamId": 1,
+                  "teamName": "Digital Factory",
+                  "teamPlatform": {
+                      "platformId": 1,
+                      "platformName": "Mobile App",
+                      "platformStatus": "ACTIVE"
+                  }
+              },
+              "resetPasswordToken": null,
+              "roles": {
+                  "roleId": 2,
+                  "name": "Developer"
+              },
+              "photosImagePath": "/user-photos/4/"
+          },
+          "bugId": 7,
+          "label": "Raheem Sterling",
+          "createdBy": "Wisdom Donald-Ase",
+          "severity": "LOW",
+          "enumSeverity": "LOW",
+          "assigned": true,
+          "ticketId": "ZB2022-10-12null",
+          "bugTreatmentStage": "OPEN",
+          "progressStatus": null,
+          "bugReview": "Repair this thing",
+          "platformses": {
+              "platformId": 1,
+              "platformName": "Mobile App",
+              "platformStatus": "ACTIVE"
+          }
+      },
+      {
+          "reportDate": "2022-10-19",
+          "assignedTo": null,
+          "userAssignedToBug": null,
+          "bugId": 8,
+          "label": "Just testing",
+          "createdBy": "Wisdom Donald-Ase",
+          "severity": null,
+          "enumSeverity": "LOW",
+          "assigned": false,
+          "ticketId": "ZB2022-10-19null",
+          "bugTreatmentStage": "OPEN",
+          "progressStatus": "INITIATED",
+          "bugReview": "I keep getting these bad dreams",
+          "platformses": {
+              "platformId": 3,
+              "platformName": "Funds Transfer",
+              "platformStatus": "ACTIVE"
+          }
+      },
+      {
+          "reportDate": "2022-10-19",
+          "assignedTo": null,
+          "userAssignedToBug": null,
+          "bugId": 9,
+          "label": "Stand Strong",
+          "createdBy": "Wisdom Donald-Ase",
+          "severity": null,
+          "enumSeverity": "LOW",
+          "assigned": false,
+          "ticketId": "ZB2022-10-19null",
+          "bugTreatmentStage": "OPEN",
+          "progressStatus": "INITIATED",
+          "bugReview": "Dreadfullies",
+          "platformses": {
+              "platformId": 13,
+              "platformName": "Phoenix Portal",
+              "platformStatus": "ACTIVE"
+          }
+      },
+      {
+          "reportDate": "2022-10-21",
+          "assignedTo": null,
+          "userAssignedToBug": null,
+          "bugId": 10,
+          "label": "Stand Strong",
+          "createdBy": "Wisdom Donald-Ase",
+          "severity": null,
+          "enumSeverity": "LOW",
+          "assigned": false,
+          "ticketId": "ZB2022-10-21null",
+          "bugTreatmentStage": "OPEN",
+          "progressStatus": "INITIATED",
+          "bugReview": "Wahala Dey oh",
+          "platformses": {
+              "platformId": 3,
+              "platformName": "Funds Transfer",
+              "platformStatus": "ACTIVE"
+          }
+      },
+      {
+          "reportDate": "2022-10-26",
+          "assignedTo": null,
+          "userAssignedToBug": null,
+          "bugId": 14,
+          "label": "this.formData.bugTitle",
+          "createdBy": null,
+          "severity": null,
+          "enumSeverity": "LOW",
+          "assigned": false,
+          "ticketId": "ZB2022-10-26null",
+          "bugTreatmentStage": null,
+          "progressStatus": null,
+          "bugReview": "this.formData.description",
+          "platformses": {
+              "platformId": 4,
+              "platformName": "XPath",
+              "platformStatus": "ACTIVE"
+          }
+      },
+      {
+          "reportDate": "2022-10-26",
+          "assignedTo": null,
+          "userAssignedToBug": null,
+          "bugId": 15,
+          "label": "this.formData.bugTitle",
+          "createdBy": null,
+          "severity": null,
+          "enumSeverity": "LOW",
+          "assigned": false,
+          "ticketId": "ZB2022-10-26null",
+          "bugTreatmentStage": null,
+          "progressStatus": null,
+          "bugReview": "this.formData.description",
+          "platformses": {
+              "platformId": 4,
+              "platformName": "XPath",
+              "platformStatus": "ACTIVE"
+          }
+      },
+      {
+          "reportDate": "2022-10-26",
+          "assignedTo": null,
+          "userAssignedToBug": null,
+          "bugId": 16,
+          "label": "this.formData.bugTitle",
+          "createdBy": null,
+          "severity": null,
+          "enumSeverity": "LOW",
+          "assigned": false,
+          "ticketId": "ZB2022-10-26null",
+          "bugTreatmentStage": null,
+          "progressStatus": null,
+          "bugReview": "this.formData.description",
+          "platformses": {
+              "platformId": 4,
+              "platformName": "XPath",
+              "platformStatus": "ACTIVE"
+          }
+      },
+      {
+          "reportDate": "2022-10-26",
+          "assignedTo": null,
+          "userAssignedToBug": null,
+          "bugId": 17,
+          "label": "this.formData.bugTitle",
+          "createdBy": null,
+          "severity": null,
+          "enumSeverity": "LOW",
+          "assigned": false,
+          "ticketId": "ZB2022-10-26null",
+          "bugTreatmentStage": null,
+          "progressStatus": null,
+          "bugReview": "this.formData.description",
+          "platformses": {
+              "platformId": 4,
+              "platformName": "XPath",
+              "platformStatus": "ACTIVE"
+          }
+      },
+      {
+          "reportDate": "2022-10-26",
+          "assignedTo": null,
+          "userAssignedToBug": null,
+          "bugId": 18,
+          "label": "this.formData.bugTitle",
+          "createdBy": null,
+          "severity": null,
+          "enumSeverity": "LOW",
+          "assigned": false,
+          "ticketId": "ZB2022-10-26null",
+          "bugTreatmentStage": null,
+          "progressStatus": null,
+          "bugReview": "this.formData.description",
+          "platformses": {
+              "platformId": 4,
+              "platformName": "XPath",
+              "platformStatus": "ACTIVE"
+          }
+      },
+      {
+          "reportDate": "2022-10-26",
+          "assignedTo": null,
+          "userAssignedToBug": null,
+          "bugId": 19,
+          "label": "",
+          "createdBy": null,
+          "severity": null,
+          "enumSeverity": "LOW",
+          "assigned": false,
+          "ticketId": "ZB2022-10-26null",
+          "bugTreatmentStage": null,
+          "progressStatus": null,
+          "bugReview": "No data",
+          "platformses": {
+              "platformId": 1,
+              "platformName": "Mobile App",
+              "platformStatus": "ACTIVE"
+          }
+      },
+      {
+          "reportDate": "2022-10-26",
+          "assignedTo": null,
+          "userAssignedToBug": null,
+          "bugId": 20,
+          "label": "",
+          "createdBy": null,
+          "severity": null,
+          "enumSeverity": "LOW",
+          "assigned": false,
+          "ticketId": "ZB2022-10-26null",
+          "bugTreatmentStage": null,
+          "progressStatus": null,
+          "bugReview": "No data",
+          "platformses": {
+              "platformId": 1,
+              "platformName": "Mobile App",
+              "platformStatus": "ACTIVE"
+          }
+      },
+      {
+          "reportDate": "2022-10-26",
+          "assignedTo": null,
+          "userAssignedToBug": null,
+          "bugId": 21,
+          "label": "",
+          "createdBy": null,
+          "severity": null,
+          "enumSeverity": "LOW",
+          "assigned": false,
+          "ticketId": "ZB2022-10-26null",
+          "bugTreatmentStage": null,
+          "progressStatus": null,
+          "bugReview": "No data",
+          "platformses": {
+              "platformId": 1,
+              "platformName": "Mobile App",
+              "platformStatus": "ACTIVE"
+          }
+      },
+      {
+          "reportDate": "2022-10-26",
+          "assignedTo": null,
+          "userAssignedToBug": null,
+          "bugId": 22,
+          "label": "",
+          "createdBy": null,
+          "severity": null,
+          "enumSeverity": "LOW",
+          "assigned": false,
+          "ticketId": "ZB2022-10-26null",
+          "bugTreatmentStage": null,
+          "progressStatus": null,
+          "bugReview": "No data",
+          "platformses": {
+              "platformId": 1,
+              "platformName": "Mobile App",
+              "platformStatus": "ACTIVE"
+          }
+      },
+      {
+          "reportDate": "2022-10-26",
+          "assignedTo": null,
+          "userAssignedToBug": null,
+          "bugId": 23,
+          "label": "",
+          "createdBy": null,
+          "severity": null,
+          "enumSeverity": "LOW",
+          "assigned": false,
+          "ticketId": "ZB2022-10-26null",
+          "bugTreatmentStage": null,
+          "progressStatus": null,
+          "bugReview": "No data",
+          "platformses": {
+              "platformId": 1,
+              "platformName": "Mobile App",
+              "platformStatus": "ACTIVE"
+          }
+      }
+  ],
+  "pageable": {
+      "sort": {
+          "sorted": false,
+          "unsorted": true,
+          "empty": true
+      },
+      "pageNumber": 0,
+      "pageSize": 20,
+      "offset": 0,
+      "unpaged": false,
+      "paged": true
+  },
+  "last": false,
+  "totalElements": 26,
+  "totalPages": 2,
+  "first": true,
+  "numberOfElements": 20,
+  "size": 20,
+  "number": 0,
+  "sort": {
+      "sorted": false,
+      "unsorted": true,
+      "empty": true
+  },
+  "empty": false
+}

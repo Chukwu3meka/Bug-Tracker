@@ -61,7 +61,7 @@ export class AddBugComponent implements OnInit {
   submitBug = (): void => {
     // ! unnecessary code, to be sent
     const { platformId, platformName, platformStatus } =
-      this.serverPlatforms.find((x) => x.platformId == this.formData.platform);
+      this.serverPlatforms.find((x) => x.id == this.formData.platform);
 
     this.bugsServices
       .addBug({
@@ -124,17 +124,7 @@ export class AddBugComponent implements OnInit {
 
   ngOnInit(): void {
     this.constants.subscribe(({ platforms }) => {
-      // Setting res to type of any, disables enforced types that have been set for platforms ///
-      const res: any = platforms;
-      this.serverPlatforms = res;
-
-      this.bugPlatforms = this.serverPlatforms
-        .filter((x) => x.platformStatus === 'ACTIVE')
-        .map(({ platformId, platformName }) => ({
-          id: platformId,
-          title: platformName,
-        }));
-
+      this.bugPlatforms = platforms.filter((x) => x.disabled !== true);
       this.formData.platform = this.bugPlatforms[0].id; // <=  set default bugPlatform
     });
   }

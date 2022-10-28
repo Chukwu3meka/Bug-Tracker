@@ -6,6 +6,7 @@ export interface ConstantsModel {
 export interface PlatformsModel {
   id?: number;
   title?: string;
+  disabled?: boolean;
 }
 
 export interface TeamsModel {

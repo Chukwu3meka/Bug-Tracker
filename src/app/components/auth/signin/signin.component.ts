@@ -49,6 +49,12 @@ export class SigninComponent implements OnInit {
           const authDetails = {
             ...res,
             auth: true,
+            role:
+              res.roles.roleId === 1
+                ? 'admin'
+                : res.roles.roleId === 2
+                ? 'developer'
+                : 'user',
             basicAuth: btoa(`${this.auth.email}:${this.auth.password}`),
           };
 

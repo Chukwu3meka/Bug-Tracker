@@ -98,4 +98,12 @@ export class UsersService {
       .pipe(delay(apiDelay))
       .pipe(catchError((err) => handleHttpError(err)));
   }
+
+  // get all developers
+  getAllDeveloper(): Observable<any> {
+    return this.http
+      .get(`${publicApiUrl}/users/getdevelopers`)
+      .pipe(delay(apiDelay))
+      .pipe(catchError((err) => handleHttpError(err)));
+  }
 }

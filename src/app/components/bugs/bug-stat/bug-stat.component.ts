@@ -34,7 +34,7 @@ export class BugStatComponent implements OnInit {
       description: 'Bugs that has been Resolved or Closed ',
     },
     {
-      label: 'Pending',
+      label: 'Assigned',
       total: undefined,
       icon: 'tool',
       description: 'Bugs currently being fixed by developers',

@@ -47,12 +47,7 @@ export class BugsService {
       .pipe(catchError((err) => handleHttpError(err)));
   }
 
-  //       bug/pages?page=${}`,
-
-  // http://10.128.32.14:8080/api/v1/bug/pages?page=2
-
   getBugs(page: number = 0): Observable<any> {
-    // console.log(page);
     return this.http.get(`${publicApiUrl}/bug/pages?page=${page}`).pipe(
       catchError((err) =>
         handleHttpError({
@@ -65,9 +60,8 @@ export class BugsService {
   }
 
   getBug(id): Observable<any> {
-    return this.http
-      .get(`${localApiUrl}/bugs?id=${id}`)
-      .pipe(delay(apiDelay))
+    http: return this.http
+      .get(`${publicApiUrl}/bug/${id}`)
       .pipe(catchError((err) => handleHttpError(err)));
   }
 

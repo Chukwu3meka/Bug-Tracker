@@ -120,6 +120,13 @@ export class AddBugComponent implements OnInit {
     //       this.msg.error('upload failed.');
     //     }
     //   );
+
+    this.formData = {
+      bugTitle: '',
+      platform: 'mobile-app',
+      date: new Date(),
+      description: '',
+    };
   };
 
   ngOnInit(): void {

@@ -47,52 +47,59 @@ export class BugDetailsComponent implements OnInit {
 
   ngOnChanges(changes: SimpleChange) {
     if (typeof this.bugId !== 'undefined') {
-      this.bugService.getBug(this.bugId).subscribe((res) => {
-        const bug = res[0];
+      this.bugService.getBug(this.bugId).subscribe((bug) => {
         if (!bug) return;
 
-        // get teams incharge of bugs
-        this.teamsService.getTeams().subscribe((teams) => {
-          const { id: teamId } = teams?.find((x) =>
-            x.platforms.includes(bug.platform)
-          );
+        // // get teams incharge of bugs
+        // this.teamsService.getTeams().subscribe((teams) => {
+        //   const { id: teamId } = teams?.find((x) =>
+        //     x.platforms.includes(bug.platform)
+        //   );
 
-          this.usersService.getTeamDeveloper(teamId).subscribe((developers) => {
-            // console.log({ a: bug.platform, teamId, developers });
+        this.usersService.getAllDeveloper().subscribe((res) => {
+          const developers = res.map(({ id, firstName, lastName }) => ({
+            id,
+            name: `${lastName} ${firstName}`,
+          }));
 
-            this.details = {
-              id: bug.id,
-              developers,
-              developer: bug.developer?.id || 0,
-              title: bug.title,
-              platform: this.platforms.find((x) => x.id === bug.platform).title,
-              description: bug.description,
-              screenshots: [
-                'https://placeimg.com/200/200/people',
-                '/assets/images/add-bug.png',
-                'https://placeimg.com/200/200/people',
-                '/assets/images/zenith-logo.png',
-                'https://placeimg.com/200/200/people',
-                'https://placeimg.com/200/200/people',
-                '/assets/images/profilePic.png',
-                'https://placeimg.com/200/200/people',
-                'https://placeimg.com/200/200/people',
-                '/assets/images/zenith-logo.png',
-                'https://placeimg.com/200/200/people',
-              ],
-              activities: [...data]
-                .sort(
-                  (a, b) =>
-                    new Date(b.date).getTime() - new Date(a.date).getTime()
-                )
-                .map(({ date, description }) => ({
-                  date: new DateAgoPipe().transform(date),
-                  description,
-                })),
+          console.log({ developers, bug });
+          this.details = {
+            id: bug.bugId,
+            details: `Reported by '${'Unknown User'}' on ${new Date(
+              bug.reportDate
+            ).toDateString()}`,
+            developers,
+            developer: {
+              assigned: bug.userAssignedToBug.id || 0,
+              reassigned: bug.userAssignedToBug.id || 0,
+              selected: bug.userAssignedToBug.id || 0,
+            },
+            title: bug.label,
+            // platform: this.platforms.find((x) => x.id === bug.platform).title,
+            platform: bug.platformses.platformName,
+            description: bug.bugReview,
+            screenshots: [
+              'https://placeimg.com/200/200/people',
+              '/assets/images/add-bug.png',
+              'https://placeimg.com/200/200/people',
+              '/assets/images/zenith-logo.png',
+              '/assets/images/profilePic.png',
+              'https://placeimg.com/200/200/people',
+              'https://placeimg.com/200/200/people',
+              '/assets/images/zenith-logo.png',
+              'https://placeimg.com/200/200/people',
+            ],
 
-              pendingDeveloper: bug.developer?.id || 0,
-            };
-          });
+            // activities: [...data]
+            //   .sort(
+            //     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+            //   )
+            //   .map(({ date, description }) => ({
+            //     date: new DateAgoPipe().transform(date),
+            //     description,
+            //   })),
+          };
+          //   //   });
         });
       });
     }

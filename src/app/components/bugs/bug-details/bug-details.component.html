@@ -8,11 +8,12 @@
     ></span>
   </div>
 
-  <div>
-    <h1>{{ details.title }}</h1>
+  <h1>{{ details.title }}</h1>
+  <p>{{ details.details }}</p>
+  <!-- <div>
+    <h1>{{ details.developer }}</h1>
     <span>.</span>
-    <p>{{ details.platform }}</p>
-  </div>
+  </div> -->
 
   <p>{{ details.description }}</p>
 
@@ -60,11 +61,11 @@
       nzShowSearch
       [nzAllowClear]="false"
       nzPlaceHolder="Select a new developer"
-      [(ngModel)]="details.pendingDeveloper"
+      [(ngModel)]="details.developer.selected"
     >
       <nz-option
         *ngFor="let developer of details.developers"
-        [nzDisabled]="developer.id === details.developer.id"
+        [nzDisabled]="developer.id === details.developer.reassigned"
         [nzValue]="developer.id"
         [nzLabel]="developer.name"
       ></nz-option>
@@ -74,7 +75,7 @@
       nz-button
       nzType="primary"
       (click)="assignDeveloper()"
-      [disabled]="details.developer === details.pendingDeveloper"
+      [disabled]="details.developer === details.developer.reassignment"
     >
       Assign developer
     </button>

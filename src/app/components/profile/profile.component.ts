@@ -7,6 +7,7 @@ import { removeLocalStorage } from 'src/app/libs/commonFunction';
 import { RemoveProfileAction } from 'src/app/store/actions/profile.actions';
 import { ConstantsModel, ProfileModel } from 'src/app/store/models/index';
 import { SetAlertAction } from 'src/app/store/actions/alert.actions';
+import { publicApiUrl } from 'src/app/libs/appConstants';
 
 @Component({
   selector: 'app-profile',
@@ -27,30 +28,41 @@ export class ProfileComponent implements OnInit {
     this.constants.subscribe((constants) => (teams = constants.teams));
 
     this.profile.subscribe((auth) => {
+      const authDetails: any = auth;
+      console.log(auth);
+
       this.profileData = {
-        img: auth.img,
-        role: auth.role,
+        img: `assets/images/profile/${authDetails.role}.png`,
+        role: authDetails.role,
 
         list: [
-          { title: 'Fullname', data: auth.name },
           {
-            title: 'First Signin',
-            data: new Date(`${auth.dateCreated}`).toDateString(),
+            title: 'Fullname',
+            data: `${authDetails.firstName} ${authDetails.lastName}`,
           },
+          { title: 'eMail Address', data: authDetails.email },
           {
             title: 'Contributions',
-            data: `Reported and resolved ${auth.contributions} Bugs`,
+            data: `Reported and resolved ${
+              authDetails.contributions || 0
+            } Bugs`,
           },
           {
-            title: 'Department',
-            data: auth.department ? 'Info Tech' : 'Non InfoTech',
+            title: 'Profile Disabled',
+            data: `Profile is currently ${
+              authDetails.enabled ? 'active' : 'disabled'
+            }`,
           },
-          {
-            title: 'Team',
-            data: auth.department
-              ? teams[`${auth.team}`].title
-              : 'Regular Banking',
-          },
+          // {
+          //   title: 'Department',
+          //   data: auth.department ? 'Info Tech' : 'Non InfoTech',
+          // },
+          // {
+          //   title: 'Team',
+          //   data: auth.department
+          //     ? teams[`${auth.team}`].title
+          //     : 'Regular Banking',
+          // },
         ],
       };
     });

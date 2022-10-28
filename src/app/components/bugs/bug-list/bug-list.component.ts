@@ -15,7 +15,8 @@ import { BugsService } from '../../../services/bugs.service';
 export class BugListsComponent implements OnInit {
   public platforms;
   public bugData?: any;
-  public bugId?: string;
+  // public bugId?: string;
+  public bugId?: string = '1';
   public bugsStat?: any;
   public profileData?: any;
   public totalPages: number = 1;

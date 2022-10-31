@@ -1,0 +1,63 @@
+@import "/src/app/source/scss/variables.scss";
+
+.notification {
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+  color: secondary;
+  background-color: #fff;
+  // border: 3px solid red;
+
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 2px -2px,
+    rgba(0, 0, 0, 0.12) 0px 3px 6px 0px, rgba(0, 0, 0, 0.09) 0px 5px 12px 4px;
+
+  h1 {
+    text-align: center;
+    font: bold 2em Sans-Serif;
+    padding: 0;
+    letter-spacing: 1px;
+    color: darken($secondary, 20%);
+    text-shadow: 1px 0px 1px #ccc, 0px 1px 1px #eee, 2px 1px 1px #ccc,
+      1px 2px 1px #eee, 3px 2px 1px #ccc, 2px 3px 1px #eee, 2px 3px 1px #ccc,
+      3px 4px 1px #eee, 3px 2px 1px #ccc, 2px 3px 1px #eee, 3px 2px 1px #ccc,
+      3px 3px 1px #eee, 4px 3px 1px #ccc;
+  }
+
+  p {
+    font-size: 1.1em;
+    margin-top: 10px;
+  }
+
+  ul {
+    display: block;
+
+    margin: 0 0 0 10px;
+    text-align: left;
+    & li {
+      padding-left: 10px;
+      margin-left: -30px;
+      display: block;
+      position: relative;
+      font-size: 1em;
+      font-weight: 600;
+      color: darken($secondary, 15%);
+      &:not(:last-of-type) > p:last-of-type {
+        margin-bottom: 10px;
+      }
+    }
+
+    & li:before {
+      content: "";
+      position: absolute;
+      top: 0.7em;
+      left: -10px;
+      // margin-top: -0.9em;
+      background: #f69ec4;
+      height: 5px;
+      width: 5px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, $primary, $secondary);
+    }
+  }
+}

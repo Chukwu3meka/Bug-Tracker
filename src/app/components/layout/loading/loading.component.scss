@@ -1,0 +1,14 @@
+.preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% - 120px);
+  width: 100%;
+  z-index: 9999;
+  transition: opacity 0.3s linear;
+}
+
+.page-content {
+  max-width: 768px;
+  margin: 0 auto;
+}

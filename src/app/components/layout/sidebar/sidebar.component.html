@@ -1,0 +1,23 @@
+<div class="sidebar">
+  <nz-card nzHoverable style="width: 280px">
+    <h2 routerLink="/notification">Notifications</h2>
+    <p *ngIf="!notifications?.length" routerLink="/notification">
+      You’re all caught up! Check back later for new notifications
+    </p>
+
+    <ul
+      routerLink="/notification"
+      *ngIf="notifications?.length"
+      nzItemLayout="horizontal"
+      class="color-with-marker"
+    >
+      <li *ngFor="let description of notifications">
+        <p>
+          {{ description }}
+        </p>
+      </li>
+    </ul>
+
+    <app-footer></app-footer>
+  </nz-card>
+</div>

@@ -1,0 +1,46 @@
+<div class="profile">
+  <div>
+    <img [src]="profileData.img" *ngIf="profileData.img" />
+    <span>Logged in as {{ profileData.role }}</span>
+    <button nz-button nzType="primary" (click)="logoutHandler()">LOGOUT</button>
+  </div>
+
+  <main *ngIf="profileData.list">
+    <div *ngFor="let value of profileData.list">
+      <span>{{ value.title }}</span>
+      <span></span>
+      <p>{{ value.data }}</p>
+    </div>
+  </main>
+
+  <!-- display this only if user is admin -->
+  <!--
+    <div>
+      <nz-select
+      nzSize="small"
+      [nzAllowClear]="false"
+      id="developer"
+      ngModel="developer"
+      [(ngModel)]="details.developer.id"
+      nzPlaceHolder="Assign Dveloper"
+    >
+      <nz-option
+        *ngFor="let developer of details.platformDevelopers"
+        [nzDisabled]="details.developer.id === developer.id"
+        [nzValue]="developer.id"
+        [nzLabel]="developer.name"
+      ></nz-option>
+    </nz-select>
+
+    <button
+      nz-button
+      nzType="primary"
+      [disabled]="details.developer.id === currentDeveloper"
+      (click)="assignDeveloper()"
+      [nzLoading]="isLoadingOne"
+    >
+      Assign developer
+    </button>
+  </div>
+  -->
+</div>

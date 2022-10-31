@@ -1,0 +1,65 @@
+<div class="auth">
+  <div>
+    <img src="/assets/images/reset.jpg" alt="Zenith Bug Tracker Reset" />
+  </div>
+
+  <div>
+    <main>
+      <div>
+        <nz-avatar
+          [nzShape]="'square'"
+          [nzSize]="50"
+          nzIcon="user"
+          nzSrc="/assets/images/zenith-logo.png"
+        ></nz-avatar>
+      </div>
+
+      <!-- <h2>Bug Tracker!!!</h2> -->
+      <p>
+        Welcome to Zenith Bug Tracker, a community of developers and friendly
+        folks fixing
+      </p>
+
+      <nz-input-group
+        nzAddOnAfterIcon="user"
+        nzSize="large"
+        *ngIf="!resetStage"
+      >
+        <input
+          type="text"
+          nz-input
+          [(ngModel)]="email"
+          placeholder="Enter email to reset password"
+        />
+      </nz-input-group>
+
+      <span *ngIf="resetStage" style="text-align: 'center'">
+        <a routerLink="sigin" style="text-align: 'center'">
+          Kindly check your inbox for a reset mail from us. Return to SIGNIN
+          page
+        </a>
+      </span>
+
+      <div routerLink="reset"></div>
+
+      <button
+        [nzLoading]="resetLoading"
+        (click)="resetPassword()"
+        [nzBlock]="true"
+        nzSize="large"
+        nz-button
+        nzType="primary"
+        *ngIf="!resetStage"
+      >
+        Reset Password
+      </button>
+
+      <div>
+        <span> Not yet a user? </span>
+        <button routerLink="signup" [nzBlock]="true" nz-button nzType="primary">
+          Signup
+        </button>
+      </div>
+    </main>
+  </div>
+</div>

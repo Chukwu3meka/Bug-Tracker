@@ -1,0 +1,115 @@
+@import "/src/app/source/scss/mixin.scss";
+@import "/src/app/source/scss/variables.scss";
+
+.bug-details {
+  padding: 10px 20px;
+  & > div:first-of-type {
+    position: sticky;
+    top: 0px;
+    padding: 5px 0;
+    text-align: right;
+    & > span {
+      border-radius: 50%;
+      font-size: 20px;
+      z-index: 1;
+      color: $primary;
+      background-color: #fff;
+      cursor: pointer;
+    }
+  }
+
+  // & > div:nth-of-type(2) {
+  //   @include quickFlex(@width:max-content;@align:flex-end);
+  //   margin-top: -30px;
+  //   gap: 5px;
+  //   * {
+  //     display: block;
+  //     padding: 0;
+  //     margin: 0;
+  //   }
+
+  & > h1 {
+    margin: -30px 0 -5px;
+    font-size: 1.5em;
+  }
+
+  & > p:first-of-type {
+    // font-size: 1.4em;
+    // text-align: justify;
+    // margin-top: 10px;
+    // color: darken($secondary;10%);
+    // // flex-wrap: nowrap;
+    font-weight: 600;
+    color: darken($secondary;10);
+    font-size: 0.8em;
+    // border: 3px solid red;
+  }
+
+  & > p:last-of-type {
+    text-align: justify;
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: darken($secondary;50);
+    // flex-wrap: nowrap;
+  }
+
+  & > ul:nth-of-type(1) {
+    margin: 50px auto;
+    padding: 10px;
+    white-space: nowrap;
+    overflow-x: scroll;
+    scrollbar-color: red;
+    & > li {
+      display: inline;
+      & > img {
+        height: 150px;
+        width: 150px;
+        border: 1px solid lighten($primary; 53%);
+        border-radius: 10px;
+        cursor: pointer;
+        padding: 5px;
+      }
+    }
+    & > li:not(:last-of-type) {
+      margin-right: 20px;
+    }
+  }
+
+  & > ul:nth-of-type(1)::-webkit-scrollbar {
+    height: 10px;
+  }
+  & > ul:nth-of-type(1)::-webkit-scrollbar-thumb {
+    background-color: $primary;
+    border-radius: 6px;
+  }
+
+  .zoomImage {
+    position: fixed;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    @include quickFlex(@dir:column);
+    background-color: #fff;
+
+    span {
+      border-radius: 50%;
+      font-size: 20px;
+      z-index: 1;
+      color: $primary;
+      background-color: #fff;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    img {
+      width: 500px;
+      height: 500px;
+    }
+  }
+}
+
+.loading {
+  padding: 100px 150px;
+}

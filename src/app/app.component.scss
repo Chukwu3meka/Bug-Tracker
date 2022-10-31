@@ -1,0 +1,67 @@
+@import "/src/app/source/scss/mixin.scss";
+@import "/src/app/source/scss/variables.scss";
+
+// and for smoothly scroll you can do that
+
+.app-layout {
+  margin: auto;
+  -ms-overflow-style: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background-color: lighten($secondary, 25%);
+  color: ffff;
+}
+
+.app-content {
+  max-width: 1200px;
+  padding: 0 20px;
+  position: relative;
+  margin: 55px auto 0;
+  display: grid;
+  grid-template-columns: 300px auto;
+  // grid-template-columns: auto;
+
+  & > main {
+    min-height: 100vh;
+    width: 100%;
+    padding: 25px 20px 10px;
+  }
+}
+
+.appNotCompatible {
+  width: 100vh;
+  height: 100vh;
+  @include quickFlex();
+  & > p {
+    font-weight: 600;
+    font-size: 1.4em;
+    color: $primary;
+  }
+}
+
+.appAlert {
+  position: fixed;
+  bottom: 15px;
+  font-weight: 600;
+  z-index: 10;
+  // position: relative;
+  left: 15px;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+
+  @include quickFlex($align: flex-start);
+}
+
+.success {
+  background-color: #5cb85c;
+}
+.info {
+  background-color: #5bc0de;
+}
+.warning {
+  background-color: #f0ad4e;
+}
+.error {
+  background-color: #d9534f;
+}

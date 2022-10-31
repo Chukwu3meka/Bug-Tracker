@@ -1,0 +1,20 @@
+@import "/src/app/source/scss/variables.scss";
+
+footer {
+  // border: 3px solid red;
+  background-color: lighten($secondary, 30%);
+  border-top: 1px solid lighten($secondary, 20%);
+  width: calc(100% + 50px);
+  margin-left: -25px;
+  margin-bottom: -25px;
+  padding: 10px 5px;
+  a {
+    display: block;
+  }
+
+  span {
+    padding: 5px 10px;
+    display: inline-block;
+    font-size: 0.7em;
+  }
+}

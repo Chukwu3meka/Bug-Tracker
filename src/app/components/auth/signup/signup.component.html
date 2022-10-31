@@ -1,0 +1,118 @@
+<div class="auth">
+  <div>
+    <img src="/assets/images/signup.jpg" alt="Zenith Bug Tracker Signup" />
+  </div>
+
+  <div>
+    <main>
+      <div>
+        <nz-avatar
+          [nzShape]="'square'"
+          [nzSize]="50"
+          nzIcon="user"
+          nzSrc="/assets/images/zenith-logo.png"
+        ></nz-avatar>
+      </div>
+
+      <!-- <h2>Bug Tracker!!!</h2> -->
+      <p>
+        Welcome to Zenith Bug Tracker, a community of developers and friendly
+        folks fixing
+      </p>
+
+      <nz-input-group nzAddOnAfterIcon="user" nzSize="large">
+        <input
+          type="text"
+          nz-input
+          [(ngModel)]="user.firstName"
+          placeholder="First Name"
+        />
+      </nz-input-group>
+
+      <nz-input-group nzAddOnAfterIcon="user-switch" nzSize="large">
+        <input
+          type="text"
+          nz-input
+          [(ngModel)]="user.lastName"
+          placeholder="Last Name"
+        />
+      </nz-input-group>
+
+      <nz-input-group nzAddOnAfterIcon="mail" nzSize="large">
+        <input
+          type="text"
+          nz-input
+          [(ngModel)]="user.email"
+          placeholder="eMail Address"
+        />
+      </nz-input-group>
+
+      <nz-input-group [nzSuffix]="suffixTemplate" nzSize="large">
+        <input
+          size="large"
+          [type]="passwordVisible ? 'text' : 'password'"
+          nz-input
+          placeholder="Password"
+          [(ngModel)]="user.password"
+        />
+      </nz-input-group>
+      <ng-template #suffixTemplate>
+        <span
+          nz-icon
+          [nzType]="passwordVisible ? 'eye-invisible' : 'eye'"
+          (click)="passwordVisible = !passwordVisible"
+        ></span>
+      </ng-template>
+
+      <nz-select
+        [nzAllowClear]="false"
+        nzSize="large"
+        id="department"
+        ngModel="departmentOptions"
+        [(ngModel)]="user.department"
+        nzPlaceHolder="Select Department"
+      >
+        <nz-option
+          *ngFor="let department of departmentOptions"
+          [nzValue]="department.id"
+          [nzLabel]="department.title"
+        ></nz-option>
+      </nz-select>
+
+      <nz-select
+        *ngIf="user.department"
+        [nzAllowClear]="false"
+        nzSize="large"
+        id="department"
+        ngModel="teamsOptions"
+        [(ngModel)]="user.team"
+        nzPlaceHolder="Select Teams"
+      >
+        <nz-option
+          *ngFor="let team of teamOptions"
+          [nzValue]="team.id"
+          [nzLabel]="team.title"
+        ></nz-option>
+      </nz-select>
+
+      <div routerLink="reset"></div>
+
+      <button
+        (click)="signupHandler()"
+        [nzBlock]="true"
+        nzSize="large"
+        nz-button
+        nzType="primary"
+      >
+        REGISTER
+      </button>
+
+      <div>
+        <span> Already a user? </span>
+        <button routerLink="signin" [nzBlock]="true" nz-button nzType="primary">
+          LOGIN
+        </button>
+      </div>
+    </main>
+  </div>
+</div>

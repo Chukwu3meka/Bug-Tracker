@@ -1,0 +1,1030 @@
+{
+  "bugs": [
+    {
+      "id": "4d75p7684z05-owf8",
+      "severity": "high",
+      "created": "Thu Aug 11 2022 11:16:00 GMT+0100 (West Africa Standard Time)",
+      "platform": 5,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Amelia Feil"
+      },
+      "title": "Velit voluptas harum.",
+      "status": "open",
+      "description": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design. The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design. The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design. The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design."
+    },
+    {
+      "id": "4d75d7684f05-bbf8",
+      "severity": "normal",
+      "created": "Tue Jul 26 2022 10:22:48 GMT+0100 (West Africa Standard Time)",
+      "platform": 1,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Amelia Feil"
+      },
+      "title": "Velit voluptas harum.",
+      "status": "closed",
+      "developer": {
+        "id": 2,
+        "img": "//joeschmoe.io/api/v1/random",
+        "name": "Eugene Turcotte"
+      },
+      "description": "Ea magni nesciunt enim et deleniti."
+    },
+    {
+      "id": "9809eb8c910e-86fc",
+      "severity": "low",
+      "created": "Thu Jun 02 2022 19:23:50 GMT+0100 (West Africa Standard Time)",
+      "platform": 2,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Moses Brekke"
+      },
+      "title": "Vel ut laudantium necessitatibus iusto earum.",
+      "status": "closed",
+      "developer": {
+        "id": 4,
+        "img": "//joeschmoe.io/api/v1/random",
+        "name": "Rodolfo Bins"
+      },
+      "description": "Libero pariatur facilis vel officiis labore consequatur cupiditate. Tempora officiis blanditiis. Tenetur architecto nostrum repellat soluta possimus eaque. Atque quibusdam ex. Sint dicta maiores et qui temporibus omnis."
+    },
+    {
+      "id": "b2b080ddb297-a8de",
+      "severity": "high",
+      "created": "Wed Jul 20 2022 13:07:58 GMT+0100 (West Africa Standard Time)",
+      "platform": 4,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Dr. Brittany DuBuque"
+      },
+      "title": "Excepturi placeat unde et.",
+      "status": "open",
+      "description": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016. The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design.. The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design."
+    },
+    {
+      "id": "cc60318c5a56-a802",
+      "severity": "low",
+      "created": "Thu Sep 23 2021 13:14:49 GMT+0100 (West Africa Standard Time)",
+      "platform": 7,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Terry Turcotte"
+      },
+      "title": "Qui consequatur optio qui sint suscipit temporibus sunt.",
+      "status": "open",
+      "description": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J"
+    },
+    {
+      "id": "13ae8ec4c695-8370",
+      "severity": "low",
+      "created": "Sun May 01 2022 11:48:28 GMT+0100 (West Africa Standard Time)",
+      "platform": 4,
+      "reporter": {
+        "id": 20220011,
+        "img": "",
+        "name": "Jana Welch"
+      },
+      "title": "Veritatis eius omnis et veritatis officiis qui unde.",
+      "status": "pending",
+      "developer": {
+        "id": 4,
+        "img": "//joeschmoe.io/api/v1/random",
+        "name": "Spencer Kuvalis"
+      },
+      "description": "Bostons most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles"
+    },
+    {
+      "id": "99bae23a27e8-b656",
+      "severity": "low",
+      "created": "Sat Oct 30 2021 02:50:42 GMT+0100 (West Africa Standard Time)",
+      "platform": 7,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Darrel Jast"
+      },
+      "title": "In sunt non sunt voluptas.",
+      "status": "open",
+      "description": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals"
+    },
+    {
+      "id": "c2c9819464d1-8f1d",
+      "severity": "normal",
+      "created": "Wed Nov 24 2021 21:32:24 GMT+0100 (West Africa Standard Time)",
+      "platform": 7,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Glen Blanda"
+      },
+      "title": "Dolorem laboriosam velit sunt necessitatibus vel odit quidem saepe.",
+      "status": "pending",
+      "developer": {
+        "id": 4,
+        "img": "//joeschmoe.io/api/v1/random",
+        "name": "Tara MacGyver"
+      },
+      "description": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J"
+    },
+    {
+      "id": "1f59cda74dcb-9771",
+      "severity": "normal",
+      "created": "Fri Aug 27 2021 00:02:24 GMT+0100 (West Africa Standard Time)",
+      "platform": 1,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Mattie Medhurst"
+      },
+      "title": "Est dicta modi quod in ad ab est sed.",
+      "status": "pending",
+      "developer": {
+        "id": 2,
+        "img": "//joeschmoe.io/api/v1/random",
+        "name": "Hattie Graham"
+      },
+      "description": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients"
+    },
+    {
+      "id": "300fce9032b0-8ad4",
+      "severity": "high",
+      "created": "Fri Sep 03 2021 02:39:20 GMT+0100 (West Africa Standard Time)",
+      "platform": 1,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Mr. Dustin Kunze"
+      },
+      "title": "Et laborum aut.",
+      "status": "pending",
+      "developer": {
+        "id": 5,
+        "img": "//joeschmoe.io/api/v1/random",
+        "name": "Rex Gutmann"
+      },
+      "description": "The Football Is Good For Training And Recreational Purposes"
+    },
+    {
+      "id": "e11ebbff95cf-8a56",
+      "severity": "high",
+      "created": "Mon Sep 20 2021 00:41:49 GMT+0100 (West Africa Standard Time)",
+      "platform": 1,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Cedric Yost"
+      },
+      "title": "At molestiae corporis.",
+      "status": "closed",
+      "developer": {
+        "id": 5,
+        "img": "//joeschmoe.io/api/v1/random",
+        "name": "Cynthia Collins"
+      },
+      "description": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart"
+    },
+    {
+      "id": "dec5f25a6ae5-a124",
+      "severity": "high",
+      "created": "Tue Jul 12 2022 02:59:07 GMT+0100 (West Africa Standard Time)",
+      "platform": 1,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Beatrice Reinger"
+      },
+      "title": "Veniam accusamus occaecati.",
+      "status": "closed",
+      "developer": {
+        "id": 2,
+        "img": "//joeschmoe.io/api/v1/random",
+        "name": "Kari Bartell"
+      },
+      "description": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design"
+    },
+    {
+      "id": "820c48c17093-a842",
+      "title": "Labore omnis fugit officiis temporibus delectus.",
+      "platform": 3,
+      "severity": "high",
+      "created": "Sun Feb 27 2022 03:04:24 GMT+0100 (West Africa Standard Time)",
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Edgar Jerde"
+      },
+      "status": "open",
+      "description": "The Football Is Good For Training And Recreational Purposes"
+    },
+    {
+      "id": "5d809a0e4cf8-96d1",
+      "severity": "normal",
+      "created": "Thu Apr 14 2022 03:12:01 GMT+0100 (West Africa Standard Time)",
+      "platform": 8,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Steve Rath"
+      },
+      "title": "Velit quia quam quasi qui tempore.",
+      "status": "pending",
+      "developer": {
+        "id": 2,
+        "img": "//joeschmoe.io/api/v1/random",
+        "name": "Javier Torp"
+      },
+      "description": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles"
+    },
+    {
+      "id": "531c037f9ba5-85e3",
+      "severity": "normal",
+      "created": "Mon Dec 20 2021 21:16:52 GMT+0100 (West Africa Standard Time)",
+      "platform": 7,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Traci Will"
+      },
+      "title": "Officiis est et commodi libero quidem repellat in non iusto.",
+      "status": "pending",
+      "developer": {
+        "id": 2,
+        "img": "//joeschmoe.io/api/v1/random",
+        "name": "Brian Rogahn V"
+      },
+      "description": "The Football Is Good For Training And Recreational Purposes"
+    },
+    {
+      "id": "dd5f7544e10c-b9eb",
+      "severity": "normal",
+      "created": "Tue Jun 14 2022 22:05:03 GMT+0100 (West Africa Standard Time)",
+      "platform": 1,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Mrs. Phil Botsford"
+      },
+      "title": "Iste voluptatem maxime maiores earum est non earum.",
+      "status": "open",
+      "description": "The Football Is Good For Training And Recreational Purposes"
+    },
+    {
+      "id": "4c10f0c1ac98-a9ea",
+      "severity": "normal",
+      "created": "Mon Mar 14 2022 02:55:37 GMT+0100 (West Africa Standard Time)",
+      "platform": 1,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Julius Schroeder"
+      },
+      "title": "Ea accusantium modi consequatur labore.",
+      "status": "open",
+      "description": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J"
+    },
+    {
+      "id": "dbbc66a237f5-b780",
+      "severity": "low",
+      "created": "Sat Jul 23 2022 23:43:20 GMT+0100 (West Africa Standard Time)",
+      "platform": 1,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Traci Willms PhD"
+      },
+      "title": "Iure explicabo voluptatem nobis est.",
+      "status": "open",
+      "description": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients"
+    },
+    {
+      "id": "fd9cf2321659-a19f",
+      "severity": "low",
+      "created": "Wed Jul 20 2022 02:49:12 GMT+0100 (West Africa Standard Time)",
+      "platform": 1,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Miss Rudy Schaden"
+      },
+      "title": "Nobis rerum ipsam.",
+      "status": "open",
+      "description": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive"
+    },
+    {
+      "id": "caa57cb83377-be58",
+      "severity": "normal",
+      "created": "Tue Aug 24 2021 12:15:57 GMT+0100 (West Africa Standard Time)",
+      "platform": 7,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Lola Boyer"
+      },
+      "title": "Id blanditiis est voluptatibus corporis aliquid ratione est.",
+      "status": "open",
+      "description": "Carbonite web goalkeeper gls are ergonomically designed to give easy fit"
+    },
+    {
+      "id": "10034d5d8bee-b04d",
+      "severity": "normal",
+      "created": "Mon Oct 18 2021 08:49:25 GMT+0100 (West Africa Standard Time)",
+      "platform": 1,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Luther Schowalter"
+      },
+      "title": "Cupiditate ut ullam harum deserunt omnis consequatur.",
+      "status": "open",
+      "description": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit"
+    },
+    {
+      "id": "c6a6e1d8d1a7-818f",
+      "severity": "normal",
+      "created": "Wed Jun 22 2022 16:21:46 GMT+0100 (West Africa Standard Time)",
+      "platform": 4,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Saul Kassulke"
+      },
+      "title": "Animi ut deleniti deserunt neque optio quia eaque cumque.",
+      "status": "open",
+      "description": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit"
+    },
+    {
+      "id": "7be33ace9761-8055",
+      "severity": "normal",
+      "created": "Thu Aug 12 2021 04:29:31 GMT+0100 (West Africa Standard Time)",
+      "platform": 4,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Debbie Grant"
+      },
+      "title": "Fugit quidem ipsa repellat praesentium.",
+      "status": "open",
+      "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support"
+    },
+    {
+      "id": "b79a3456f869-ae1c",
+      "severity": "normal",
+      "created": "Wed Dec 29 2021 08:10:12 GMT+0100 (West Africa Standard Time)",
+      "platform": 4,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Forrest Hoeger II"
+      },
+      "title": "Ad mollitia quo suscipit ut suscipit iure quos est et.",
+      "status": "open",
+      "description": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients"
+    },
+    {
+      "id": "86936eb68384-be4e",
+      "severity": "normal",
+      "created": "Thu Dec 23 2021 20:37:35 GMT+0100 (West Africa Standard Time)",
+      "platform": 4,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Phil Senger MD"
+      },
+      "title": "Quia quas unde amet.",
+      "status": "pending",
+      "developer": {
+        "id": 2,
+        "img": "//joeschmoe.io/api/v1/random",
+        "name": "Damon Dicki"
+      },
+      "description": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality"
+    },
+    {
+      "id": "08aa9a2e178c-9430",
+      "severity": "normal",
+      "created": "Mon Aug 01 2022 20:00:16 GMT+0100 (West Africa Standard Time)",
+      "platform": 1,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Lynne Carroll"
+      },
+      "title": "Corrupti deserunt aut ipsam ut sapiente non.",
+      "status": "pending",
+      "developer": {
+        "id": 2,
+        "img": "//joeschmoe.io/api/v1/random",
+        "name": "Mrs. Dora Langosh"
+      },
+      "description": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J"
+    },
+    {
+      "id": "f92a412bb86d-a7ce",
+      "severity": "normal",
+      "created": "Thu Apr 14 2022 09:40:29 GMT+0100 (West Africa Standard Time)",
+      "platform": 3,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Mrs. Kelly Olson"
+      },
+      "title": "In sit expedita.",
+      "status": "pending",
+      "developer": {
+        "id": 2,
+        "img": "//joeschmoe.io/api/v1/random",
+        "name": "Juana Cassin"
+      },
+      "description": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients"
+    },
+    {
+      "id": "caa3b6c10ff0-a7dc",
+      "severity": "normal",
+      "created": "Fri Dec 03 2021 20:14:46 GMT+0100 (West Africa Standard Time)",
+      "platform": 1,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Ken Mante"
+      },
+      "title": "Ea consectetur sint a illum quo quam.",
+      "status": "pending",
+      "developer": {
+        "id": 2,
+        "img": "//joeschmoe.io/api/v1/random",
+        "name": "Laura O'Hara"
+      },
+      "description": "The Football Is Good For Training And Recreational Purposes"
+    },
+    {
+      "id": "be8d8cdc1ab0-94a8",
+      "severity": "normal",
+      "created": "Wed Jul 13 2022 16:23:21 GMT+0100 (West Africa Standard Time)",
+      "platform": 8,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Stanley Ruecker"
+      },
+      "title": "Cum magni sint et veritatis nobis numquam accusamus natus.",
+      "status": "open",
+      "description": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016"
+    },
+    {
+      "id": "b75233bb3973-9018",
+      "severity": "normal",
+      "created": "Fri Jul 15 2022 08:06:08 GMT+0100 (West Africa Standard Time)",
+      "platform": 3,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Gilberto Fisher"
+      },
+      "title": "Reiciendis qui consectetur quis nesciunt unde fugit sunt.",
+      "status": "open",
+      "description": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients"
+    },
+    {
+      "id": "6a4568d87d0e-be26",
+      "severity": "low",
+      "created": "Wed Jun 15 2022 08:28:01 GMT+0100 (West Africa Standard Time)",
+      "platform": 3,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Mr. Alfonso Witting"
+      },
+      "title": "Et qui perspiciatis aut.",
+      "status": "open",
+      "description": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals"
+    },
+    {
+      "id": "7135dc270c78-9065",
+      "severity": "low",
+      "created": "Fri Jun 17 2022 10:18:05 GMT+0100 (West Africa Standard Time)",
+      "platform": 3,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Miss Ira Collins"
+      },
+      "title": "Quia sequi voluptatem est at ad est quidem et iste.",
+      "status": "open",
+      "description": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit"
+    },
+    {
+      "id": "4fe79af8d9e1-bf63",
+      "severity": "normal",
+      "created": "Thu Sep 23 2021 16:02:21 GMT+0100 (West Africa Standard Time)",
+      "platform": 3,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Miss Allen Green"
+      },
+      "title": "Tenetur nihil non sunt vel adipisci libero.",
+      "status": "open",
+      "description": "The Football Is Good For Training And Recreational Purposes"
+    },
+    {
+      "id": "2f60dbd456e8-bf8e",
+      "severity": "high",
+      "created": "Thu Sep 16 2021 06:24:59 GMT+0100 (West Africa Standard Time)",
+      "platform": 1,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Mrs. Antonia Reichel"
+      },
+      "title": "Nam veritatis molestiae et praesentium consequatur id maiores temporibus.",
+      "status": "pending",
+      "developer": {
+        "id": 2,
+        "img": "//joeschmoe.io/api/v1/random",
+        "name": "Mrs. Sheila Marks"
+      },
+      "description": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit"
+    },
+    {
+      "id": "7f92bb44698a-a214",
+      "severity": "high",
+      "created": "Sun May 29 2022 15:52:53 GMT+0100 (West Africa Standard Time)",
+      "platform": 8,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Lyle Lind"
+      },
+      "title": "Et maxime quidem in blanditiis maiores.",
+      "status": "pending",
+      "developer": {
+        "id": 2,
+        "img": "//joeschmoe.io/api/v1/random",
+        "name": "Leona Crooks"
+      },
+      "description": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit"
+    },
+    {
+      "id": "95bc71427b96-aa95",
+      "severity": "low",
+      "created": "Sun Jul 10 2022 09:28:20 GMT+0100 (West Africa Standard Time)",
+      "platform": 1,
+      "reporter": {
+        "id": 20220011,
+        "img": "https://placeimg.com/100/100/people",
+        "name": "Ida Abernathy"
+      },
+      "title": "Voluptatem repellat odit.",
+      "status": "closed",
+      "developer": {
+        "id": 2,
+        "img": "//joeschmoe.io/api/v1/random",
+        "name": "Camille Cronin"
+      },
+      "description": "Lorem in commodo nostrud deserunt est Lorem dolor minim irure reprehenderit. Exercitation commodo enim aute incididunt amet consectetur officia sit cupidatat magna consequat proident enim. Ex nulla adipisicing dolor sint veniam. Reprehenderit ea non ea culpa. Laboris velit occaecat enim nisi laborum occaecat cupidatat cillum sunt aliqua."
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "img": "https://placeimg.com/100/100/people",
+      "name": "Roxanne Nicolas",
+      "dateCreated": "Thu Dec 16 2021 12:50:30 GMT+0100 (West Africa Standard Time)",
+      "contributions": 211,
+      "department": 1,
+      "team": 1,
+      "password": "7777",
+      "role": "admin",
+      "email": "admin@alienforest.com"
+    },
+    {
+      "id": 2,
+      "img": "https://placeimg.com/100/100/people",
+      "name": "Mrs. Kent Sanford",
+      "dateCreated": "Sun Dec 05 2021 13:11:51 GMT+0100 (West Africa Standard Time)",
+      "contributions": 8,
+      "department": 1,
+      "team": 2,
+      "password": "7777",
+      "role": "developer",
+      "email": "dev@alienforest.com"
+    },
+    {
+      "id": 3,
+      "img": "https://placeimg.com/100/100/people",
+      "name": "Ed Sporer DVM",
+      "dateCreated": "Thu Mar 17 2022 23:19:11 GMT+0100 (West Africa Standard Time)",
+      "contributions": 250,
+      "department": 0,
+      "team": 1,
+      "password": "7777",
+      "role": "user",
+      "email": "user@alienforest.com"
+    },
+    {
+      "id": 4,
+      "img": "https://placeimg.com/100/100/people",
+      "name": "Mrs. Marvin Champlin",
+      "dateCreated": "Sat Jan 15 2022 21:50:41 GMT+0100 (West Africa Standard Time)",
+      "contributions": 500,
+      "department": 0,
+      "team": 4,
+      "password": "7777",
+      "role": "user",
+      "email": "Karen@alienforest.com"
+    },
+    {
+      "id": 5,
+      "img": "https://placeimg.com/100/100/people",
+      "name": "Sherry Will DVM",
+      "dateCreated": "Sat May 28 2022 23:45:09 GMT+0100 (West Africa Standard Time)",
+      "contributions": 333,
+      "department": 0,
+      "team": 3,
+      "password": "7777",
+      "role": "user",
+      "email": "Kolby@alienforest.com"
+    },
+    {
+      "id": 6,
+      "img": "https://placeimg.com/100/100/people",
+      "name": "Mr. Kay Senger",
+      "dateCreated": "Fri Sep 02 2022 15:43:54 GMT+0100 (West Africa Standard Time)",
+      "contributions": 374,
+      "department": 0,
+      "team": 3,
+      "password": "7777",
+      "role": "user",
+      "email": "Jamey@alienforest.com"
+    },
+    {
+      "id": 7,
+      "img": "https://placeimg.com/100/100/people",
+      "name": "Preston Schoen",
+      "dateCreated": "Wed Aug 24 2022 09:43:55 GMT+0100 (West Africa Standard Time)",
+      "contributions": 654,
+      "department": 0,
+      "team": 2,
+      "password": "7777",
+      "role": "user",
+      "email": "Alyson@alienforest.com"
+    },
+    {
+      "id": 8,
+      "img": "https://placeimg.com/100/100/people",
+      "name": "Faith Parisian Jr.",
+      "dateCreated": "Sat Aug 06 2022 20:04:08 GMT+0100 (West Africa Standard Time)",
+      "contributions": 161,
+      "department": 0,
+      "team": 2,
+      "password": "7777",
+      "role": "user",
+      "email": "Ben@alienforest.com"
+    },
+    {
+      "id": 9,
+      "img": "https://placeimg.com/100/100/people",
+      "name": "Joanna Rice",
+      "dateCreated": "Sat Aug 20 2022 23:49:24 GMT+0100 (West Africa Standard Time)",
+      "contributions": 466,
+      "department": 0,
+      "team": 4,
+      "password": "7777",
+      "role": "user",
+      "email": "Bianka@alienforest.com"
+    },
+    {
+      "id": 10,
+      "img": "https://placeimg.com/100/100/people",
+      "name": "Blanche Reilly",
+      "dateCreated": "Fri May 20 2022 19:01:44 GMT+0100 (West Africa Standard Time)",
+      "contributions": 788,
+      "department": 0,
+      "team": 1,
+      "password": "7777",
+      "role": "user",
+      "email": "Steve@alienforest.com"
+    },
+    {
+      "id": 11,
+      "img": "https://placeimg.com/100/100/people",
+      "name": "Terry Nader",
+      "dateCreated": "Fri May 06 2022 15:59:38 GMT+0100 (West Africa Standard Time)",
+      "contributions": 58,
+      "department": 0,
+      "team": 2,
+      "password": "7777",
+      "role": "user",
+      "email": "Sibyl@alienforest.com"
+    },
+    {
+      "id": 13,
+      "img": "https://placeimg.com/100/100/people",
+      "name": "Douglas Mosciski",
+      "dateCreated": "Sun Jun 26 2022 02:16:29 GMT+0100 (West Africa Standard Time)",
+      "contributions": 85,
+      "department": 0,
+      "team": 4,
+      "password": "7777",
+      "role": "user",
+      "email": "Shawna@alienforest.com"
+    }
+  ],
+  "dailyBugReport": [
+    {
+      "name": "Day 22",
+      "value": 72
+    },
+    {
+      "name": "Day 21",
+      "value": 75
+    },
+    {
+      "name": "Day 20",
+      "value": 32
+    },
+    {
+      "name": "Day 19",
+      "value": 72
+    },
+    {
+      "name": "Day 18",
+      "value": 50
+    },
+    {
+      "name": "Day 17",
+      "value": 89
+    },
+    {
+      "name": "Day 16",
+      "value": 72
+    },
+    {
+      "name": "Day 15",
+      "value": 50
+    },
+    {
+      "name": "Day 14",
+      "value": 89
+    },
+    {
+      "name": "Day 13",
+      "value": 72
+    },
+    {
+      "name": "Day 12",
+      "value": 51
+    },
+    {
+      "name": "Day 11",
+      "value": 19
+    },
+    {
+      "name": "Day 10",
+      "value": 53
+    },
+    {
+      "name": "Day 9",
+      "value": 70
+    },
+    {
+      "name": "Day 8",
+      "value": 37
+    },
+    {
+      "name": "Day 7",
+      "value": 9
+    },
+    {
+      "name": "Day 6",
+      "value": 57
+    },
+    {
+      "name": "Day 5",
+      "value": 5
+    },
+    {
+      "name": "Day 4",
+      "value": 8
+    },
+    {
+      "name": "Day 3",
+      "value": 72
+    },
+    {
+      "name": "Day 2",
+      "value": 50
+    },
+    {
+      "name": "Day 1",
+      "value": 89
+    }
+  ],
+  "platforms": [
+    {
+      "id": 0,
+      "title": "Form M",
+      "disabled": false
+    },
+    {
+      "id": 1,
+      "title": "Mobile App",
+      "disabled": false
+    },
+    {
+      "id": 2,
+      "title": "Internet Banking",
+      "disabled": false
+    },
+    {
+      "id": 3,
+      "title": "USSD",
+      "disabled": false
+    },
+    {
+      "id": 4,
+      "title": "FORM A",
+      "disabled": false
+    },
+    {
+      "id": 5,
+      "title": "x-Path",
+      "disabled": false
+    },
+    {
+      "id": 6,
+      "title": "CIP",
+      "disabled": false
+    },
+    {
+      "id": 7,
+      "title": "Workflow",
+      "disabled": false
+    },
+    {
+      "id": 8,
+      "title": "Appraisal",
+      "disabled": false
+    },
+    {
+      "id": 9,
+      "title": "Bug Tracker",
+      "disabled": false
+    }
+  ],
+  "teams": [
+    {
+      "id": 0,
+      "title": "Regular-Banking",
+      "platforms": [],
+      "disabled": false
+    },
+    {
+      "id": 1,
+      "title": "Trade Service",
+      "platforms": [1, 2, 3],
+      "disabled": false
+    },
+    {
+      "id": 2,
+      "title": "E-Channel",
+      "platforms": [4, 5, 6],
+      "disabled": false
+    },
+    {
+      "id": 3,
+      "title": "Mobile App",
+      "platforms": [7],
+      "disabled": false
+    },
+    {
+      "id": 4,
+      "title": "Backend APIs",
+      "platforms": [8, 9],
+      "disabled": false
+    }
+  ],
+  "notifications": [
+    {
+      "id": 35644,
+      "event": "Elit non labore ex anim. Officia cillum duis sint pariatur aliquip aliquip occaecat duis enim sunt do. Veniam enim est voluptate commodo esse aliquip tempor.",
+      "date": "Tue Aug 23 2022 00:38:02 GMT+0100 (West Africa Standard Time)",
+      "user": "1"
+    },
+    {
+      "id": 79090,
+      "event": "Dolor pariatur mollit ullamco ullamco adipisicing pariatur in nostrud quis nulla duis ipsum. Tempor esse labore cupidatat excepteur ex ex. Cillum ea eiusmod cillum ea Lorem dolore excepteur aute. In officia officia amet ad excepteur.",
+      "date": "Sun Mar 13 2022 07:01:40 GMT+0100 (West Africa Standard Time)",
+      "user": "1"
+    },
+    {
+      "id": 6753,
+      "event": "Nostrud enim fugiat officia qui laboris magna nostrud excepteur aliquip veniam consectetur aute. Culpa excepteur proident enim cillum ea nisi do labore laboris est consectetur voluptate laboris. Fugiat dolor duis in do laboris in dolor mollit.",
+      "date": "Fri Sep 16 2022 19:44:49 GMT+0100 (West Africa Standard Time)",
+      "user": "2"
+    },
+    {
+      "id": 94566,
+      "event": "Nostrud in labore tempor anim consectetur reprehenderit eu quis. Sunt eiusmod pariatur non deserunt minim sit pariatur eu ut magna. Cillum qui culpa culpa deserunt officia do. Excepteur sunt eiusmod et occaecat. Culpa ea enim qui fugiat deserunt sint in ea elit voluptate laboris. Eu ad aute nulla culpa Lorem incididunt aliquip exercitation aliquip duis.",
+      "date": "Tue May 03 2022 14:18:58 GMT+0100 (West Africa Standard Time)",
+      "user": "2"
+    },
+    {
+      "id": 61793,
+      "event": "Ullamco officia irure mollit nisi. Nostrud dolore esse irure nulla pariatur sit sunt voluptate amet voluptate eu minim adipisicing. Pariatur sint proident nulla dolore commodo consequat magna qui. Enim sit quis voluptate Lorem ut et minim pariatur. Reprehenderit aute excepteur sunt cupidatat eu veniam nisi nisi occaecat exercitation nisi ea. Nulla do commodo sunt ea tempor laborum duis tempor. Veniam amet quis commodo sunt esse consequat.",
+      "date": "Thu Sep 22 2022 20:51:53 GMT+0100 (West Africa Standard Time)",
+      "user": "2"
+    },
+    {
+      "id": 95714,
+      "event": "Laborum proident eu est laboris commodo duis enim id do occaecat. Ullamco non non sit aliqua commodo pariatur et labore officia Lorem ex consequat cupidatat. Excepteur excepteur in nisi ea eu nostrud nulla culpa velit sunt adipisicing laboris excepteur officia. Exercitation eiusmod ipsum velit fugiat. Cillum culpa culpa ullamco eu incididunt officia et. Anim fugiat culpa nostrud Lorem officia occaecat qui exercitation amet.",
+      "date": "Fri Sep 30 2022 03:05:03 GMT+0100 (West Africa Standard Time)",
+      "user": "2"
+    },
+    {
+      "id": 15757,
+      "event": "Fugiat aute cupidatat enim quis culpa pariatur culpa quis aute ea irure irure. Eiusmod veniam sunt qui exercitation et elit ea tempor irure. Ea minim eu id minim deserunt ea veniam exercitation amet tempor reprehenderit.",
+      "date": "Wed Nov 24 2021 03:39:48 GMT+0100 (West Africa Standard Time)",
+      "user": "1"
+    },
+    {
+      "id": 61426,
+      "event": "Id adipisicing est ipsum cupidatat. Ipsum laboris ea ea consectetur exercitation id ad fugiat velit adipisicing duis et qui cupidatat. Voluptate amet elit enim eu.",
+      "date": "Fri Jan 14 2022 19:21:37 GMT+0100 (West Africa Standard Time)",
+      "user": "1"
+    },
+    {
+      "id": 81173,
+      "event": "Cillum officia anim consectetur velit amet amet enim nisi aute proident in sit. Eu eiusmod reprehenderit nulla laborum in ad pariatur commodo sit et velit adipisicing sit magna. Nostrud fugiat ex irure id voluptate ea laboris fugiat veniam deserunt laborum nulla nostrud culpa. Consequat laboris est voluptate non esse. Aliqua culpa ad pariatur ex sint ad nisi deserunt incididunt.",
+      "date": "Mon Feb 14 2022 19:59:01 GMT+0100 (West Africa Standard Time)",
+      "user": "1"
+    },
+    {
+      "id": 80919,
+      "event": "Laboris duis cupidatat et pariatur pariatur sunt commodo ea quis nulla dolore. Enim consequat occaecat laborum reprehenderit laboris velit exercitation Lorem esse pariatur. Pariatur esse fugiat amet pariatur qui. Qui ea occaecat et quis sunt ullamco anim ut deserunt nostrud do ad sunt veniam.",
+      "date": "Sat Mar 19 2022 01:13:29 GMT+0100 (West Africa Standard Time)",
+      "user": "1"
+    },
+    {
+      "id": 58441,
+      "event": "Officia elit occaecat laborum minim laborum voluptate esse et id incididunt aute et est. Ea ea laborum laboris nisi anim sint cupidatat officia ad aute duis est. Culpa nulla nisi consequat eu id do eiusmod deserunt amet aliquip proident sit. Laborum enim velit pariatur eu id adipisicing sit consequat consectetur nulla cupidatat minim. Esse fugiat ad consectetur aliquip reprehenderit. Id sit ad id sint duis ut sit sint reprehenderit sunt mollit.",
+      "date": "Fri Sep 09 2022 15:57:51 GMT+0100 (West Africa Standard Time)",
+      "user": "3"
+    },
+    {
+      "id": 56056,
+      "event": "Minim magna consequat esse aliqua est tempor et quis eu magna. Elit deserunt irure ex eu deserunt amet laboris irure quis elit laborum ea incididunt incididunt. Irure laboris sint minim proident ipsum cupidatat ut ex nulla sit voluptate Lorem est. Proident nulla ullamco occaecat laboris aliqua dolore. Non dolor duis aliqua reprehenderit duis est velit aliquip incididunt mollit nostrud Lorem ex. Voluptate aliquip veniam et sunt consequat sunt exercitation occaecat cupidatat. Quis minim aliquip elit in Lorem laborum qui in dolore est deserunt enim nostrud.",
+      "date": "Fri Dec 03 2021 04:40:25 GMT+0100 (West Africa Standard Time)",
+      "user": "3"
+    },
+    {
+      "id": 47593,
+      "event": "Laborum qui cupidatat nulla minim sint dolore aliquip mollit ex ipsum ipsum id ipsum elit. Consectetur est enim amet ex nostrud laboris aliquip minim cupidatat occaecat voluptate voluptate. Est dolore dolor velit sint Lorem. Cillum esse culpa reprehenderit deserunt laboris aute in incididunt fugiat cupidatat qui qui cillum magna. Duis eu incididunt minim est laborum sit. Enim aliqua reprehenderit nisi excepteur cupidatat mollit. Ullamco incididunt aliquip adipisicing eu laborum incididunt nostrud elit aliqua sunt cillum.",
+      "date": "Wed Jun 15 2022 20:09:43 GMT+0100 (West Africa Standard Time)",
+      "user": "3"
+    },
+    {
+      "id": 8867,
+      "event": "Incididunt ad Lorem ipsum fugiat est voluptate commodo ad fugiat. Magna do enim quis tempor in eu nostrud reprehenderit reprehenderit proident fugiat proident. Sit ullamco occaecat laborum proident id culpa aute consectetur et. Deserunt ad sint amet dolore amet nisi est duis officia id excepteur nulla. Dolore sunt ad exercitation non aute. Do voluptate et veniam ad consequat.",
+      "date": "Sat Oct 23 2021 23:56:06 GMT+0100 (West Africa Standard Time)",
+      "user": "3"
+    },
+    {
+      "id": 90994,
+      "event": "Voluptate aliqua ex amet culpa cupidatat elit consectetur proident do quis occaecat. Consequat ullamco qui commodo culpa laboris ullamco tempor Lorem ea. Et consequat velit ut culpa reprehenderit duis sunt sit dolore ea. Ut proident adipisicing velit dolore ad incididunt cupidatat aliqua in quis cillum dolor ad.",
+      "date": "Fri Oct 07 2022 03:39:35 GMT+0100 (West Africa Standard Time)",
+      "user": "3"
+    },
+    {
+      "id": 32821,
+      "event": "Fugiat nisi labore aliquip occaecat ea cillum exercitation est consectetur ex. Exercitation cupidatat nisi elit cillum. Qui aute veniam ullamco sint irure id. Magna in commodo consectetur aliquip reprehenderit fugiat voluptate nostrud eu veniam cupidatat.",
+      "date": "Sun Mar 20 2022 12:19:59 GMT+0100 (West Africa Standard Time)",
+      "user": "3"
+    },
+    {
+      "id": 68309,
+      "event": "Nostrud pariatur consequat incididunt adipisicing do aliquip in exercitation. Eu mollit laborum dolor sunt dolor incididunt excepteur elit sunt cillum velit culpa commodo sint. Voluptate aliquip voluptate eiusmod et dolore duis occaecat minim commodo elit dolor elit et velit. Ipsum deserunt veniam voluptate ullamco ipsum ut enim excepteur duis eu. Dolore fugiat tempor anim magna laborum. Pariatur ullamco fugiat et laboris do.",
+      "date": "Sat Jun 18 2022 04:12:26 GMT+0100 (West Africa Standard Time)",
+      "user": "4"
+    },
+    {
+      "id": 22418,
+      "event": "Tempor anim anim ipsum non nulla pariatur amet anim fugiat irure incididunt fugiat. Ex aliqua consequat qui velit ullamco cupidatat ea in laborum qui est qui enim. Aliquip commodo commodo Lorem mollit voluptate veniam veniam nisi in.",
+      "date": "Tue Aug 16 2022 07:29:30 GMT+0100 (West Africa Standard Time)",
+      "user": "54"
+    },
+    {
+      "id": 96563,
+      "event": "Est nostrud non non proident enim mollit. Aute incididunt excepteur nulla deserunt non. Sit reprehenderit tempor nisi dolore occaecat exercitation ullamco velit velit incididunt. Adipisicing magna esse nulla anim consequat aliqua ea non non.",
+      "date": "Mon Apr 25 2022 08:47:13 GMT+0100 (West Africa Standard Time)",
+      "user": "6"
+    }
+  ],
+  "activities": []
+}

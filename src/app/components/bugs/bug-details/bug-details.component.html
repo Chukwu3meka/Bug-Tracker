@@ -1,0 +1,102 @@
+<div class="bug-details" *ngIf="!!details">
+  <div>
+    <span
+      nz-icon
+      nzType="close-circle"
+      nzTheme="outline"
+      (click)="hideDrawer()"
+    ></span>
+  </div>
+
+  <h1>{{ details.title }}</h1>
+  <p>{{ details.details }}</p>
+  <!-- <div>
+    <h1>{{ details.developer }}</h1>
+    <span>.</span>
+  </div> -->
+
+  <p>{{ details.description }}</p>
+
+  <ul>
+    <li *ngFor="let data of details.screenshots">
+      <img [src]="data" alt="bug screenshot" (click)="zoomImagehandler(data)" />
+    </li>
+  </ul>
+
+  <div class="dashedTitleWhite">
+    <h1 nz-typography>Bug Activities</h1>
+  </div>
+
+  <nz-table
+    #smallTable
+    nzSize="small"
+    [nzData]="details.activities"
+    [nzFrontPagination]="false"
+  >
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of details.activities">
+        <td [width]="'120px'">{{ data.date }}</td>
+        <td>{{ data.description }}</td>
+      </tr>
+    </tbody>
+  </nz-table>
+
+  <!-- display this only if user is admin -->
+  <!-- <div *ngIf="!!details"> -->
+  <div>
+    <!-- [(ngModel)]="details.developer" -->
+    <!-- <nz-select
+      [nzAllowClear]="false"
+      id="developer"
+      [ngModel]="details.pendingDeveloper"
+      nzPlaceHolder="Assign Developer"
+    > -->
+    <nz-select
+      nzShowSearch
+      [nzAllowClear]="false"
+      nzPlaceHolder="Select a new developer"
+      [(ngModel)]="details.developer.selected"
+    >
+      <nz-option
+        *ngFor="let developer of details.developers"
+        [nzDisabled]="developer.id === details.developer.reassigned"
+        [nzValue]="developer.id"
+        [nzLabel]="developer.name"
+      ></nz-option>
+    </nz-select>
+
+    <button
+      nz-button
+      nzType="primary"
+      (click)="assignDeveloper()"
+      [disabled]="details.developer === details.developer.reassignment"
+    >
+      Assign developer
+    </button>
+  </div>
+
+  <div
+    *ngIf="zoomImage"
+    class="zoomImage"
+    (click)="zoomImagehandler(undefined)"
+  >
+    <span
+      nz-icon
+      nzType="close-circle"
+      nzTheme="outline"
+      (click)="zoomImagehandler(undefined)"
+    ></span>
+
+    <img [src]="zoomImage" alt="zoomed image" />
+  </div>
+</div>
+
+<div class="loading" *ngIf="!details">
+  <app-loading></app-loading>
+</div>

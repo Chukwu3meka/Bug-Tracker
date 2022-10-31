@@ -1,0 +1,41 @@
+<div class="dashboard">
+  <!-- *ngIf="!!bugsStat && !!dailyBugReport && !!statusData && !!severityData" -->
+  <app-bug-stat [bugsStat]="bugsStat"></app-bug-stat>
+
+  <div class="miniStat">
+    <div>
+      <ngx-charts-bar-vertical
+        [scheme]="chartOptions.bugReportColorScheme"
+        [results]="dailyBugReport"
+        [gradient]="true"
+        [xAxis]="false"
+        [yAxis]="true"
+        [roundDomains]="true"
+      >
+      </ngx-charts-bar-vertical>
+      <p>Daily Bug Report</p>
+    </div>
+
+    <div>
+      <ngx-charts-pie-chart
+        [view]="[340, 300]"
+        [scheme]="chartOptions.gaugeColors"
+        [results]="statusData"
+        [gradient]="true"
+        [legend]="true"
+        legendTitle="Bugs"
+        [labels]="true"
+        [legendPosition]="chartOptions.legendPosition"
+        [doughnut]="false"
+      >
+      </ngx-charts-pie-chart>
+    </div>
+  </div>
+
+  <div class="gauge">
+    <ngx-charts-pie-grid
+      [scheme]="chartOptions.severityColors"
+      [results]="severityData"
+    ></ngx-charts-pie-grid>
+  </div>
+</div>

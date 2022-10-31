@@ -1,0 +1,72 @@
+<div class="auth">
+  <div>
+    <img src="/assets/images/signin.jpg" alt="Zenith Bug Tracker Signin" />
+  </div>
+
+  <div>
+    <main>
+      <div>
+        <nz-avatar
+          [nzShape]="'square'"
+          [nzSize]="50"
+          nzIcon="user"
+          nzSrc="/assets/images/zenith-logo.png"
+        ></nz-avatar>
+      </div>
+
+      <!-- <h2>Bug Tracker!!!</h2> -->
+      <p>
+        Welcome to Zenith Bug Tracker, a community of developers and friendly
+        folks fixing
+      </p>
+
+      <nz-input-group nzAddOnAfterIcon="user" nzSize="large">
+        <input
+          type="text"
+          nz-input
+          [(ngModel)]="auth.email"
+          placeholder="Enter your email"
+        />
+      </nz-input-group>
+
+      <nz-input-group [nzSuffix]="suffixTemplate" nzSize="large">
+        <input
+          size="large"
+          [type]="passwordVisible ? 'text' : 'password'"
+          nz-input
+          placeholder="Enter your password"
+          [(ngModel)]="auth.password"
+        />
+      </nz-input-group>
+      <ng-template #suffixTemplate>
+        <span
+          nz-icon
+          [nzType]="passwordVisible ? 'eye-invisible' : 'eye'"
+          (click)="passwordVisible = !passwordVisible"
+        ></span>
+      </ng-template>
+
+      <div routerLink="reset">
+        <span> Recover Password </span>
+      </div>
+
+      <button
+        nz-button
+        nzSize="large"
+        [nzBlock]="true"
+        nzType="primary"
+        [nzLoading]="loginLoading"
+        (click)="loginHandler()"
+      >
+        LOGIN
+      </button>
+
+      <div>
+        <span> Not yet a user? </span>
+        <button routerLink="signup" [nzBlock]="true" nz-button nzType="primary">
+          REGISTER
+        </button>
+      </div>
+    </main>
+  </div>
+</div>

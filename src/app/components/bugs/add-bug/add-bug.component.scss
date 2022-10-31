@@ -1,0 +1,47 @@
+@import "/src/app/source/scss/variables.scss";
+
+nz-card {
+  border-radius: 10px;
+  main {
+    max-width: 600px;
+    margin: auto;
+    img {
+      width: 60px;
+      height: 80px;
+      margin: auto;
+      display: block;
+    }
+    label {
+      color: darken($secondary, 5%);
+      display: block;
+      font-weight: 700;
+      font-size: 0.8em;
+      margin-top: 10px;
+      margin-bottom: 2px;
+    }
+
+    nz-select,
+    textarea,
+    nz-date-picker,
+    nz-input-group {
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    div {
+      margin-top: 20px;
+    }
+
+    nz-upload p {
+      padding: 0 10px;
+    }
+
+    button {
+      height: 40px;
+      padding: 0 60px;
+      display: block;
+      margin: 20px 0;
+      margin-left: auto;
+    }
+  }
+}

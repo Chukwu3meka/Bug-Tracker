@@ -1,0 +1,55 @@
+@import "/src/app/source/scss/variables.scss";
+@import "/src/app/source/scss/mixin.scss";
+
+header {
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  position: fixed;
+  padding: 5px 10px 0;
+  background-color: #fff;
+  & > div {
+    margin: auto;
+    @include quickFlex($justify: space-between, $width: 100%, $align: center);
+    padding: 0 20px;
+    max-width: 1200px;
+
+    & > nz-avatar {
+      animation: spin 4s alternate infinite;
+    }
+  }
+
+  border-bottom: 3px solid lighten($secondary, 25%);
+}
+
+nav {
+  padding: 0 10px;
+  @include quickFlex($justify: space-evenly);
+  & > div {
+    min-width: 70px;
+    padding: 20px 15px 5px;
+    cursor: pointer;
+    @include quickFlex($dir: column, $justify: space-evenly);
+
+    transition: 5s linear all;
+    span {
+      color: darken($secondary, 15%);
+    }
+
+    // border: 3px solid red;
+  }
+
+  .activeTab {
+    transition: none;
+    border-bottom: 2px solid $primary;
+    span {
+      color: darken($secondary, 100%);
+    }
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotateY(360deg);
+  }
+}

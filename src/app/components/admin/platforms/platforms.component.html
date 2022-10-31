@@ -1,0 +1,40 @@
+<nz-table nzBordered [nzData]="listOfData">
+  <thead>
+    <tr>
+      <th nzWidth="15px">ID</th>
+      <th>Label</th>
+      <th nzWidth="20px">Disabled</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of listOfData">
+      <ng-container *ngIf="editCache.id !== data.id; else editTemplate">
+        <td>{{ data.id }}</td>
+        <td>{{ data.title }}</td>
+        <td>{{ data.disabled }}</td>
+        <td><a (click)="startEdit(data)">Edit</a></td>
+      </ng-container>
+      <ng-template #editTemplate>
+        <td>{{ data.id }}</td>
+        <td>
+          <input type="text" nz-input [(ngModel)]="editCache.title" />
+        </td>
+        <td>
+          <nz-select
+            [nzAllowClear]="false"
+            [(ngModel)]="editCache.disabled"
+            nzPlaceHolder="Select Platform"
+          >
+            <nz-option [nzValue]="true" nzLabel="True"></nz-option>
+            <nz-option [nzValue]="false" nzLabel="False"></nz-option>
+          </nz-select>
+        </td>
+        <td>
+          <a (click)="saveEdit(data.id)" class="save">Save</a>&nbsp;
+          <a (click)="cancelEdit()">Cancel</a>
+        </td>
+      </ng-template>
+    </tr>
+  </tbody>
+</nz-table>

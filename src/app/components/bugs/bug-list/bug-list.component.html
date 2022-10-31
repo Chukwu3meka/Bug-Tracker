@@ -1,0 +1,151 @@
+<app-bug-stat [bugsStat]="bugsStat"></app-bug-stat>
+
+<div class="dashedTitleGrey">
+  <h1 nz-typography>List of Bugs</h1>
+</div>
+
+<!-- bugs skelenton -->
+<div *ngIf="dashboardBugs === undefined">
+  <div class="bugsList" *ngFor="let i of [1, 2, 3, 4]">
+    <div>
+      <span>
+        <nz-skeleton-element
+          nzType="button"
+          [nzActive]="true"
+          [nzSize]="'small'"
+          nzShape="default"
+          style="width: 20px; overflow: hidden"
+        ></nz-skeleton-element>
+      </span>
+      <section>
+        <div>
+          <nz-skeleton
+            [nzAvatar]="false"
+            [nzParagraph]="{ rows: 2 }"
+          ></nz-skeleton>
+        </div>
+        <div>
+          <span>
+            <nz-skeleton-element
+              nzType="button"
+              [nzActive]="true"
+              [nzSize]="'small'"
+              [nzShape]="'circle'"
+            ></nz-skeleton-element>
+          </span>
+
+          <span [ngStyle]="{ height: '20px', overflow: 'hidden' }">
+            <nz-skeleton-element
+              nzType="input"
+              [nzActive]="true"
+              [nzSize]="'small'"
+              style="width: 200px"
+            ></nz-skeleton-element>
+          </span>
+        </div>
+      </section>
+      <ul>
+        <li
+          *ngFor="let i of [1, 2, 3, 4, 5]"
+          [ngStyle]="{ height: '15px', overflow: 'hidden', marginTop: '10px' }"
+        >
+          <nz-skeleton-element
+            nzType="input"
+            [nzActive]="true"
+            [nzSize]="'small'"
+          ></nz-skeleton-element>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="bugsList" *ngIf="dashboardBugs">
+  <div *ngFor="let bug of dashboardBugs">
+    <span
+      nz-icon
+      nzType="flag"
+      nzTheme="outline"
+      [style]="{ color: bug.color }"
+      (click)="displayBugHandler(bug.id)"
+    ></span>
+
+    <section>
+      <div>
+        <nz-divider
+          (click)="displayBugHandler(bug.id)"
+          nzPlain
+          [nzText]="bug.title"
+          nzOrientation="left"
+        ></nz-divider>
+        <p (click)="displayBugHandler(bug.id)">{{ bug.description }}</p>
+      </div>
+      <div>
+        <nz-avatar [nzSize]="15" [nzSrc]="bug.reporter.img"></nz-avatar>
+        <span (click)="displayProfileHandler(bug.reporter.id)">
+          {{ bug.reporter.name }}
+        </span>
+      </div>
+    </section>
+    <ul>
+      <li (click)="displayBugHandler(bug.id)">
+        <span>
+          {{ bug.ticket }}
+        </span>
+      </li>
+      <li (click)="displayBugHandler(bug.id)">
+        <span>
+          {{ bug.info }}
+        </span>
+      </li>
+      <li (click)="displayBugHandler(bug.id)">
+        <span>
+          {{ bug.platform }}
+        </span>
+      </li>
+      <li (click)="displayBugHandler(bug.id)">
+        <span>
+          {{ bug.severity }}
+        </span>
+      </li>
+      <li (click)="displayProfileHandler(bug.developer.id)">
+        <span>
+          {{ bug.developer.assigned }}
+        </span>
+      </li>
+    </ul>
+  </div>
+
+  <main>
+    <div
+      [ngClass]="currentPage === 1 ? 'disabled' : ''"
+      (click)="nextPage('-')"
+    >
+      <span nz-icon nzType="backward" nzTheme="outline"></span>
+    </div>
+    <span>{{ currentPage }}</span>
+    <div
+      [ngClass]="currentPage === totalPages ? 'disabled' : ''"
+      (click)="nextPage('+')"
+    >
+      <span nz-icon nzType="forward" nzTheme="outline"></span>
+    </div>
+  </main>
+</div>
+
+<div *ngIf="profileData" class="drawer" (click)="displayProfileHandler()">
+  <div>
+    <app-profile></app-profile>
+  </div>
+</div>
+
+<div *ngIf="!!bugId" class="drawer">
+  <div>
+    <main>
+      <app-bug-details
+        [bugId]="bugId"
+        (closeDrawerHandler)="closeDrawerHandler()"
+      ></app-bug-details>
+    </main>
+  </div>
+</div>

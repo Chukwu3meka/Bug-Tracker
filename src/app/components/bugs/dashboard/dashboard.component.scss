@@ -1,0 +1,36 @@
+@import "/src/app/source/scss/mixin.scss";
+@import "/src/app/source/scss/variables.scss";
+
+.dashboard {
+  @include quickFlex(@dir:column; @width: 100%);
+  row-gap: 20px;
+}
+
+.miniStat {
+  @include quickFlex(@width: 100%);
+  background-color: #fff;
+  border-radius: 10px !important;
+  & > div:first-of-type {
+    width: 100%;
+    height: 340px;
+    p {
+      font-weight: 700;
+      color: darken($secondary; 30);
+      text-align: center;
+    }
+  }
+  & > div:last-of-type {
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 10px;
+    margin-left: 10px;
+    background-color: #fff;
+  }
+}
+
+.gauge {
+  background-color: #fff;
+  border-radius: 10px !important;
+  height: 210px;
+  width: 100%;
+}

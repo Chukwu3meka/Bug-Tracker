@@ -1,0 +1,56 @@
+@import "/src/app/source/scss/mixin.scss";
+@import "/src/app/source/scss/variables.scss";
+
+@mixin bugStatStyle($color) {
+  border-top: 8px solid $color;
+  max-width: 300px;
+  width: 100%;
+  border-radius: 8px 8px 5px 5px;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 2px -2px,
+    rgba(0, 0, 0, 0.12) 0px 3px 6px 0px, rgba(0, 0, 0, 0.09) 0px 5px 12px 4px;
+
+  div:first-of-type {
+    @include quickFlex(
+      $justify: space-between,
+      $width: 100%,
+      $align: flex-start
+    );
+    h2 {
+      font-size: 0.8em;
+    }
+  }
+  span {
+    color: $color;
+  }
+  h1 {
+    font-size: 3em;
+    margin: -16px 0;
+    color: $color;
+  }
+  p:first-of-type {
+    color: darken($secondary, 10%);
+    font-weight: 600;
+    margin: 5px 0 -5px;
+  }
+}
+
+.bugsStat {
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 15px 10px;
+  @include quickFlex($justify: space-between, $align: stretch);
+  gap: 15px;
+  & > div:nth-of-type(1) {
+    @include bugStatStyle($allBugs);
+  }
+  & > div:nth-of-type(2) {
+    @include bugStatStyle($openBugs);
+  }
+  & > div:nth-of-type(3) {
+    @include bugStatStyle($closedBugs);
+  }
+  & > div:nth-of-type(4) {
+    @include bugStatStyle($pendingBugs);
+  }
+}

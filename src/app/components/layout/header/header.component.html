@@ -1,0 +1,38 @@
+<header>
+  <div>
+    <nz-avatar
+      [nzSize]="60"
+      [nzShape]="'square'"
+      nzIcon="user"
+      nzSrc="/assets/images/zenith-logo.png"
+    ></nz-avatar>
+
+    <nav>
+      <div
+        *ngFor="let tab of tabs; index as tabIndex"
+        routerLink="{{ tab.path }}"
+        routerLinkActive="activeTab"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <span
+          *ngIf="tab.name !== 'Profile'; else elseBlock"
+          nz-icon
+          [nzType]="tab.icon"
+          nzTheme="fill"
+        ></span>
+
+        <ng-template #elseBlock>
+          <span *ngIf="!profilePicture" nz-icon [nzType]="tab.icon"></span>
+          <nz-avatar
+            style="margin-top: -3px"
+            [nzSize]="20"
+            *ngIf="profilePicture"
+            [nzSrc]="profilePicture"
+          ></nz-avatar>
+        </ng-template>
+
+        <span nz-typography> {{ tab.name }} </span>
+      </div>
+    </nav>
+  </div>
+</header>

@@ -7,30 +7,24 @@
   nz-card {
     padding: 0 !important;
     text-align: center;
-    // border: 3px solid red;
     border-radius: 10px;
     overflow: hidden;
-    // color: lighten($secondary, 30%);
     color: $secondary;
-
     h2 {
       font-weight: 700;
-      font-size: 1.1em;
+      font-size: 1.2em;
       margin: -10px 0;
       color: darken($primary, 10%);
     }
-
     p {
       font-size: 1.1em;
       margin-top: 10px;
     }
-
     ul {
-      // border-left: 1px solid lighten($secondary, 25%);
       display: block;
-      // border: 3px solid red;
       margin: 0 0 0 -10px;
       text-align: left;
+      border: 3px solid red;
       & li {
         padding-left: 10px;
         margin-left: -30px;

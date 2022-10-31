@@ -1,7 +1,6 @@
 @import "/src/app/source/scss/variables.scss";
 
 footer {
-  // border: 3px solid red;
   background-color: lighten($secondary, 30%);
   border-top: 1px solid lighten($secondary, 20%);
   width: calc(100% + 50px);

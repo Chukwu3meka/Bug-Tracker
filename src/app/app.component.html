@@ -1,6 +1,15 @@
 <!-- App Alert -->
 <div *ngIf="!appAlert.hidden" class="appAlert" [ngClass]="appAlert.status">
-  <div>{{ appAlert.message }}</div>
+  <span
+    nz-icon
+    nzType="info-circle"
+    [nzTwotoneColor]="'#eb2f96'"
+    nzTheme="outline"
+  ></span>
+
+  <p>
+    {{ appAlert.message }}
+  </p>
 </div>
 
 <!-- check if viewport is wide enough and browser is compatible with app -->

@@ -1,53 +1,49 @@
-import { filter } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { NzUploadFile } from 'ng-zorro-antd/upload';
-import { NzMessageService } from 'ng-zorro-antd/message';
-import { HttpClient, HttpRequest, HttpResponse } from '@angular/common/http';
-import { authenticationHeader } from 'src/app/libs/appConstants';
-import { BugsService, PlatformsService } from 'src/app/services';
+import { BugsService } from 'src/app/services';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/store/app.state';
 import { Observable } from 'rxjs';
 import { ConstantsModel } from 'src/app/store/models';
-// import { getLocalProfile } from 'src/app/libs/commonFunction';
-
-// import { platforms } from 'libs/constants';
-
+import { SetAlertAction } from 'src/app/store/actions/alert.actions';
 @Component({
   selector: 'app-add-bugs',
   templateUrl: './add-bug.component.html',
   styleUrls: ['./add-bug.component.less'],
 })
 export class AddBugComponent implements OnInit {
-  inputValue: string | null = null;
-  textValue: string | null = null;
-  private serverPlatforms;
+  public bugPlatforms;
+  private maxFileSize: number = 5120;
+  private constants: Observable<ConstantsModel>;
 
   public formData = {
     bugTitle: '',
-    platform: 'mobile-app',
-    date: new Date(),
+    platform: '',
     description: '',
+    date: new Date(),
   };
-
-  // public platformOptions;
-  public maxFileSize: number = 5120;
 
   isLoadingOne = false;
   isLoadingTwo = false;
 
-  public bugPlatforms;
-
   uploading = false;
   fileList: NzUploadFile[] = [];
-
-  private constants: Observable<ConstantsModel>;
 
   constructor(
     private store: Store<AppState>,
     private bugsServices: BugsService
   ) {
     this.constants = this.store.select('constants');
+  }
+  ngOnInit(): void {
+    this.constants.subscribe(({ platforms }) => {
+      this.bugPlatforms = platforms.filter((x) => x.disabled !== true);
+      this.formData.platform = this.bugPlatforms[0].id; // <=  set default bugPlatform
+    });
+
+    this.store.dispatch(
+      SetAlertAction({ payload: { message: 'dsfdsfds', status: 'success' } })
+    );
   }
 
   beforeUpload = (file: NzUploadFile): boolean => {
@@ -60,17 +56,51 @@ export class AddBugComponent implements OnInit {
 
   submitBug = (): void => {
     // ! unnecessary code, to be sent
-    const { platformId, platformName, platformStatus } =
-      this.serverPlatforms.find((x) => x.id == this.formData.platform);
 
-    this.bugsServices
-      .addBug({
-        ...this.formData,
-        label: this.formData.bugTitle,
-        bugReview: this.formData.description || 'No data',
-        platformses: { platformId, platformName, platformStatus },
-      })
-      .subscribe();
+    const {
+      id: platformId,
+      title: platformName,
+      disabled: platformStatus,
+    } = this.bugPlatforms.find((x) => x.id == this.formData.platform);
+
+    console.log({
+      platformId,
+      platformName,
+      platformStatus,
+
+      a: this.bugPlatforms,
+      b: this.formData.platform,
+    });
+
+    // this.bugsServices
+    //   .addBug({
+    //     ...this.formData,
+    //     label: this.formData.bugTitle,
+    //     bugReview: this.formData.description || 'No data',
+    //     platformses: {
+    //       platformId,
+    //       platformName,
+    //       platformStatus: platformStatus ? 'ACTIVE' : null,
+    //     },
+    //   })
+    //   .subscribe(() => {
+    //     this.formData = {
+    //       bugTitle: '',
+    //       platform: this.bugPlatforms[0].id,
+    //       date: new Date(),
+    //       description: '',
+    //     };
+
+    //     this.store.dispatch(
+    //       SetAlertAction({
+    //         payload: {
+    //           message: 'Bug Reported Successfully',
+    //           status: 'success',
+    //           hidden: false,
+    //         },
+    //       })
+    //     );
+    //   });
 
     // // console.log(this.formData);
     // console.log({
@@ -120,19 +150,5 @@ export class AddBugComponent implements OnInit {
     //       this.msg.error('upload failed.');
     //     }
     //   );
-
-    this.formData = {
-      bugTitle: '',
-      platform: 'mobile-app',
-      date: new Date(),
-      description: '',
-    };
   };
-
-  ngOnInit(): void {
-    this.constants.subscribe(({ platforms }) => {
-      this.bugPlatforms = platforms.filter((x) => x.disabled !== true);
-      this.formData.platform = this.bugPlatforms[0].id; // <=  set default bugPlatform
-    });
-  }
 }

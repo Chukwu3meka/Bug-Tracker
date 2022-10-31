@@ -10,9 +10,13 @@ header {
   background-color: #fff;
   & > div {
     margin: auto;
-    .flex(@justify: space-between, @width: 100%   ,@align:flex-end );
+    .flex(@justify: space-between, @width: 100%   ,@align:center );
     padding: 0 20px;
     max-width: 1200px;
+
+    & > nz-avatar {
+      animation: spin 4s alternate infinite;
+    }
   }
 
   border-bottom: 3px solid lighten(@secondary, 25%);
@@ -23,7 +27,7 @@ nav {
   .flex(@justify: space-evenly);
   & > div {
     min-width: 70px;
-    padding: 5px 15px;
+    padding: 20px 15px 5px;
     cursor: pointer;
     .flex(@dir:column; @justify: space-evenly);
 
@@ -31,6 +35,8 @@ nav {
     span {
       color: darken(@secondary, 15%);
     }
+
+    // border: 3px solid red;
   }
 
   .activeTab {
@@ -39,5 +45,11 @@ nav {
     span {
       color: darken(@secondary, 100%);
     }
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotateY(360deg);
   }
 }

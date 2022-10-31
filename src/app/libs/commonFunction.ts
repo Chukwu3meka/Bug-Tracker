@@ -1,4 +1,4 @@
-import { authenticationHeader, basicAuth } from './appConstants';
+import { basicAuth } from './appConstants';
 
 export const setLocalStorage = (value: any): void => {
   localStorage.setItem('profile', JSON.stringify(value));
@@ -31,5 +31,3 @@ export const httpOptions = ({ HttpHeaders }) => ({
     // btoa(`${authenticationHeader.email}:${authenticationHeader.password}`),
   }),
 });
-
-// 'donaldwisdomnengi@gmail.com:Cassillas1nengi!'),

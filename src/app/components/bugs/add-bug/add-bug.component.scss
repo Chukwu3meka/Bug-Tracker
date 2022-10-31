@@ -8,7 +8,7 @@ nz-card {
     img {
       width: 60px;
       height: 80px;
-      margin: auto;
+      margin: 0 auto -20px;
       display: block;
     }
     label {
@@ -16,7 +16,7 @@ nz-card {
       display: block;
       font-weight: 700;
       font-size: 0.8em;
-      margin-top: 10px;
+      margin-top: 20px;
       margin-bottom: 2px;
     }
 

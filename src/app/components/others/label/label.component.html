@@ -1,0 +1,23 @@
+<label for="title">
+  <span
+    *ngIf="label.status === 2"
+    nz-icon
+    nzType="check-circle"
+    nzTheme="twotone"
+    nzTwotoneColor="#3ED833"
+  ></span>
+
+  <span
+    nz-tooltip
+    [nzTooltipTitle]="label.message"
+    nzTooltipPlacement="topLeft"
+    *ngIf="label.status === 1"
+    nz-icon
+    nzType="close-circle"
+    nzTheme="twotone"
+    nzTwotoneColor="#eb2f96"
+    nz-tooltip
+  ></span>
+
+  <span style="padding-left: 5px">{{ label.title }}</span>
+</label>

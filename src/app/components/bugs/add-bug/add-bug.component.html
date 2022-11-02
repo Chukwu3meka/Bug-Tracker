@@ -1,24 +1,23 @@
 <nz-card>
-  <main>
+  <form [formGroup]="formData">
     <img src="/assets/images/add-bug.png" alt="Add Bug" />
-    <label for="bug-title">Bug Title</label>
+    <app-label [label]="labelData.title"></app-label>
     <nz-input-group nzSize="large">
       <input
-        type="text"
         nz-input
-        [(ngModel)]="formData.bugTitle"
-        placeholder="Bug Title in one sentence"
+        id="title"
+        type="text"
+        formControlName="title"
+        placeholder="Bug Title"
       />
     </nz-input-group>
 
-    <label for="bug-platform">Bug Platform</label>
-
+    <app-label [label]="labelData.platform"></app-label>
     <nz-select
       [nzAllowClear]="false"
       nzSize="large"
-      id="bug-platform"
-      ngModel="platform"
-      [(ngModel)]="formData.platform"
+      id="platform"
+      formControlName="platform"
       nzPlaceHolder="Select Platform"
     >
       <nz-option
@@ -28,23 +27,24 @@
       ></nz-option>
     </nz-select>
 
-    <label for="date-noticed">First Noticed</label>
+    <app-label [label]="labelData.date"></app-label>
     <nz-date-picker
-      id="date-noticed"
-      [(ngModel)]="formData.date"
+      id="date"
+      formControlName="date"
       nzSize="large"
     ></nz-date-picker>
 
-    <label for="bug-description">Bug Description</label>
+    <app-label [label]="labelData.description"></app-label>
     <textarea
       nz-input
-      id="bug-description"
+      id="description"
+      formControlName="description"
       placeholder="Clearly describe your findings or issues, to enable swift debugging from our developers"
-      [(ngModel)]="formData.description"
       [nzAutosize]="{ minRows: 7, maxRows: 13 }"
     ></textarea>
 
     <div></div>
+
     <!-- ! don't delete this -->
 
     <nz-upload
@@ -82,5 +82,5 @@
       nzMessage="Reviewing Bugs"
       nzDescription="Kindly note that bugs without proper description will be removed without further troubleshooting. We expect all bugs to have Platform/Browser; Time and Date of error; Device in use before bug was noticed; as this will enable our developers fix all bugs seamscssly"
     ></nz-alert>
-  </main>
+  </form>
 </nz-card>

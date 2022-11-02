@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { catchError, delay } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { handleHttpError, httpOptions } from '../source/commonFunction';
+import { httpOptions } from '../source/commonFunction';
 import { apiDelay, localApiUrl, publicApiUrl } from '../source/appConstants';
 import { Store } from '@ngrx/store';
 import { AppState } from '../store/app.state';
@@ -13,10 +13,21 @@ import { SetAlertAction } from '../store/actions/alert.actions';
 export class UsersService {
   constructor(private http: HttpClient, private store: Store<AppState>) {}
 
-  private appAlert = ({ message, status }) =>
+  private handleHttpError = (err, message, status = null) => {
+    console.log(err);
+
     this.store.dispatch(
-      SetAlertAction({ payload: { message, status, hidden: false } })
+      SetAlertAction({
+        payload: {
+          message: message || err.message,
+          status: status || 'error',
+          hidden: false,
+        },
+      })
     );
+
+    return 'An error occured';
+  };
 
   signup({ firstName, lastName, email, password }): Observable<any> {
     return (
@@ -32,8 +43,10 @@ export class UsersService {
           },
           httpOptions({ HttpHeaders })
         )
-        .pipe(catchError((err) => handleHttpError(err)))
-        .pipe(delay(apiDelay))
+        .pipe(
+          catchError((err) => this.handleHttpError(err, 'An Error Occured'))
+        )
+      // .pipe(delay(apiDelay))
     );
   }
 
@@ -43,16 +56,9 @@ export class UsersService {
         email,
         password,
       })
-      .pipe(
-        catchError((err) =>
-          handleHttpError({
-            appAlert: this.appAlert,
-            message: 'Email/Password is incorrect',
-            err,
-          })
-        )
-      )
-      .pipe(delay(500));
+      .pipe(catchError((err) => this.handleHttpError(err, 'An Error Occured')));
+
+    // .pipe(delay(500));
 
     // .pipe(
     //   // of(
@@ -88,7 +94,7 @@ export class UsersService {
     return this.http
       .get(`${localApiUrl}/users?team=${teamId}`)
       .pipe(delay(apiDelay))
-      .pipe(catchError((err) => handleHttpError(err)));
+      .pipe(catchError((err) => this.handleHttpError(err, 'An Error Occured')));
   }
 
   // get developers belonging to a particular team
@@ -96,7 +102,7 @@ export class UsersService {
     return this.http
       .get(`${localApiUrl}/users?id=${developer}`)
       .pipe(delay(apiDelay))
-      .pipe(catchError((err) => handleHttpError(err)));
+      .pipe(catchError((err) => this.handleHttpError(err, 'An Error Occured')));
   }
 
   // get all developers
@@ -104,6 +110,6 @@ export class UsersService {
     return this.http
       .get(`${publicApiUrl}/users/getdevelopers`)
       .pipe(delay(apiDelay))
-      .pipe(catchError((err) => handleHttpError(err)));
+      .pipe(catchError((err) => this.handleHttpError(err, 'An Error Occured')));
   }
 }

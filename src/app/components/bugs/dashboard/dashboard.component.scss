@@ -1,13 +1,12 @@
-@import "/src/app/source/scss/mixin.scss";
-@import "/src/app/source/scss/variables.scss";
+@import "/src/app/source/scss/index.scss";
 
 .dashboard {
-  @include quickFlex(@dir:column; @width: 100%);
+  @include quickFlex($dir: column, $width: 100%);
   row-gap: 20px;
 }
 
 .miniStat {
-  @include quickFlex(@width: 100%);
+  @include quickFlex($width: 100%);
   background-color: #fff;
   border-radius: 10px !important;
   & > div:first-of-type {
@@ -15,7 +14,7 @@
     height: 340px;
     p {
       font-weight: 700;
-      color: darken($secondary; 30);
+      color: darken($secondary, 30);
       text-align: center;
     }
   }

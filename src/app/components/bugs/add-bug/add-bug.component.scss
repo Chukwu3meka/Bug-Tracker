@@ -2,7 +2,7 @@
 
 nz-card {
   border-radius: 10px;
-  main {
+  form {
     max-width: 600px;
     margin: auto;
     img {
@@ -10,14 +10,6 @@ nz-card {
       height: 80px;
       margin: 0 auto -20px;
       display: block;
-    }
-    label {
-      color: darken($secondary, 5%);
-      display: block;
-      font-weight: 700;
-      font-size: 0.8em;
-      margin-top: 20px;
-      margin-bottom: 2px;
     }
 
     nz-select,

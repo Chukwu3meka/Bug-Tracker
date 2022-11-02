@@ -1,0 +1,10 @@
+@import "/src/app/source/scss/variables.scss";
+
+label {
+  color: darken($secondary, 5%);
+  display: block;
+  font-weight: 700;
+  font-size: 0.8em;
+  margin-top: 20px;
+  margin-bottom: 2px;
+}

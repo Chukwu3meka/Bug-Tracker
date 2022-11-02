@@ -7,7 +7,7 @@ import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconsProviderModule } from 'src/app/source/nzIcons';
@@ -46,6 +46,7 @@ import { AdminsComponent } from './components/admin/admins/admins.component';
 import { UsersComponent } from './components/admin/users/users.component';
 import { DevelopersComponent } from './components/admin/developers/developers.component';
 import { AlertReducer } from './store/reducers/alert.reducer';
+import { LabelComponent } from './components/others/label/label.component';
 // import { ProfileReducer } from './store/reducers/profile.reducer';
 // import { FileuploadComponent } from './components/fileupload/fileupload.component';
 
@@ -78,12 +79,15 @@ registerLocaleData(en);
     AdminsComponent,
     UsersComponent,
     DevelopersComponent,
+    LabelComponent,
   ],
   imports: [
     StoreModule,
     BrowserModule,
     AppRoutingModule,
+
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     IconsProviderModule,
